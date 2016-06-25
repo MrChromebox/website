@@ -1,7 +1,237 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="MrChromebox.tech : Tips, Tweaks, and custom firmware for your ChromeOS device">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>MrChromebox.tech</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/MattDevo">View on GitHub</a>
+
+          <h1 id="project_title">MrChromebox.tech</h1>
+          <h2 id="project_tagline">Tips, Tweaks, and custom firmware for your ChromeOS device</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a id="coming-soon-i-swear" class="anchor" href="#coming-soon-i-swear" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Coming Soon, I swear!</h3>
+
+<p>in the meantime, here's the readme from my github repo for the ChromeOS Firmware Utility scripts:</p>
+
+<h2>
+<a id="chromeos-firmware-utility-and-kodi-install-scripts" class="anchor" href="#chromeos-firmware-utility-and-kodi-install-scripts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ChromeOS firmware utility and Kodi install scripts</h2>
+
+<p>These scripts allow the user to install custom firmware (aka a "full ROM"), install/update the legacy boot payload for stock firmware, and install Kodi on supported ChromeOS devices. When run from ChromeOS, these scripts require the Chromebox/book to be in <a href="https://www.chromium.org/chromium-os/poking-around-your-chrome-os-device#TOC-Putting-your-Chrome-OS-Device-into-Developer-Mode">developer mode</a>; some functionality also requires the firmware write-protect screw to be removed, the location of which is <a href="https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices">device-specific</a>. </p>
+
+<p> </p>
+
+<p><strong>setup-firmware.sh</strong> allows for the installation of custom firmware (full ROM) and/or an updated legacy boot payload (via either the RW_LEGACY or BOOT_STUB firmware regions) on supported ChromeOS devices.</p>
+
+<p>It also includes functionality to set the stock firmware boot (GBB) flags and to set the device's hardware ID (via gbb_utility). This script can be used to restore the stock firmware on a Haswell, Broadwell, or Baytrail ChromeBox, either from a backup file (on USB) or from a generic recovery image firmware file (which it will automatically download for you).  If the latter is used, the device-specific VPD (vital product data) is extracted from the running firmware and merged with the generic firmware file, to ensure the device's unique MAC address, serial #, etc are maintained. On Baytrail devices, when flashing the BOOT_STUB, a backup is automatically saved in the (unused) RW_LEGACY region, from which it can later be restored (via this same script).</p>
+
+<p>Supported Devices:</p>
+
+<table>
+<thead>
+<tr>
+<th>function</th>
+<th align="center">Haswell/Broadwell</th>
+<th align="center">BayTrail</th>
+<th align="center">WP Disable req.</th>
+<th align="center">notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Install/Update RW_LEGACY Payload</td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>Install/Update BOOT_STUB Payload</td>
+<td align="center"><g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>Install/Update coreboot Firmware (Full ROM)</td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center">Samsung Series 3 ChromeBox also supported; Chromebook support via coolstar's ROMs</td>
+</tr>
+<tr>
+<td>Set Firmware Boot Options</td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center">All x86 ChromeOS devices supported</td>
+</tr>
+<tr>
+<td>Set Hardware ID</td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center">All ChromeOS devices supported</td>
+</tr>
+<tr>
+<td>Restore Stock BOOT_STUB</td>
+<td align="center"><g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>Restore Stock Firmware</td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+
+<p>To download and run this script, from a terminal shell:<br>
+<code>cd;  
+curl -L -O http://mrchromebox.tech/firmware-util.sh 
+sudo bash firmware-util.sh</code></p>
+
+<p> </p>
+
+<p><strong>setup-kodi.sh</strong> facilitates the installation of Kodi on supported ChromeOS devices via the installation of either an updated legacy boot payload (RW_LEGACY) or custom firmware (full ROM).</p>
+
+<p>Supported Devices:</p>
+
+<table>
+<thead>
+<tr>
+<th>function</th>
+<th align="center">Haswell/Broadwell Chromebox</th>
+<th align="center">Haswell/Broadwell Chromebook</th>
+<th align="center">BayTrail</th>
+<th align="center">WP Disable</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dual Boot (LibreELEC/GalliumOS)</td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"></td>
+<td>automatically updates legacy boot payload (RW_LEGACY) as needed</td>
+</tr>
+<tr>
+<td>Update Legacy Boot Payload</td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Set Firmware Boot Options</td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td></td>
+</tr>
+<tr>
+<td>Install/Update Custom coreboot Firmware</td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td>Samsung Series 3 ChromeBox also supported</td>
+</tr>
+<tr>
+<td>Create LibreELEC boot media</td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"></td>
+<td align="center"></td>
+<td>added solely for convenience</td>
+</tr>
+</tbody>
+</table>
+
+<p>This script allows the user to install a dual-boot setup with either LibreELEC or GalliumOS
+(with or without Kodi), to set the default OS, and to set the boot timeout on the 
+developer mode splash screen.  It also provides for the installation of an updated
+legacy boot payload (in the RW_LEGACY firmware slot) for devices that need it.</p>
+
+<p>It also allows the user to flash custom firmware (full ROM), turning a ChromeBox into a regular PC, and provides for the creation of installation media for LibreELEC; though with the custom firmware, any off-the-shelf OS can be installed (including Windows 8.1/10).</p>
+
+<p>setup-kodi.sh will run on any Linux system with a full bash shell; the dual-boot functionality is restricted to ChromeOS.</p>
+
+<p>To download and run this script, from a terminal shell:<br>
+<code>cd; curl -L -O http://mrchromebox.tech/setup-kodi.sh; sudo bash setup-kodi.sh</code></p>
+
+<p>More details and support for this script can be found at:<br>
+<a href="http://forum.kodi.tv/showthread.php?tid=194362">http://forum.kodi.tv/showthread.php?tid=194362</a></p>
+
+<p> </p>
+
+<p><strong>cbox-firmware-update.sh</strong> exists solely to update the custom firmware (full ROM) on Haswell ChromeBoxes running
+Open/LibreELEC, which cannot run the above scripts due to lack of a full Bash shell.</p>
+
+<p>Supported Devices:</p>
+
+<table>
+<thead>
+<tr>
+<th>function</th>
+<th align="center">Haswell Chromebox</th>
+<th align="center">Haswell/Broadwell Chromebook</th>
+<th align="center">BayTrail</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Update Custom coreboot Firmware</td>
+<td align="center"><g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png">✅</g-emoji></td>
+<td align="center"><g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td align="center"><g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png">❌</g-emoji></td>
+<td>must already be running custom coreboot firmware, not stock</td>
+</tr>
+</tbody>
+</table>
+
+<p>This script will automatically check to see if an updated firmware is available, and if so, prompt the user to update.  Install-time options include ability to boot without a connected display ("headless" option) and ability to set the default device to USB (vs internal ssd). </p>
+
+<p>To download and run this script, from a ssh shell:<br>
+<code>cd; curl -L -O http://mrchromebox.tech/cbox-firmware-update.sh; bash cbox-firmware-update.sh</code></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
 </html>
