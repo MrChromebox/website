@@ -27,6 +27,7 @@ time, mark, audio, video {
   border: 0;
   font: inherit;
   vertical-align: baseline;
+  overflow: visible;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -35,8 +36,32 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-ol, ul {
+ol {
   list-style: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #f1f1f1;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #212121;
+    color: white;
 }
 
 table {
@@ -118,7 +143,7 @@ a {
   -ms-transition: text-shadow 0.5s ease;
 }
 
-a:hover, a:focus {text-decoration: underline;}
+main_content a:hover, a:focus {text-decoration: underline;}
 
 footer a {
   color: #F2F2F2;
@@ -200,11 +225,6 @@ ul, ol, dl {
   margin-bottom: 15px
 }
 
-ul {
-  list-style-position: inside;
-  list-style: disc;
-  padding-left: 20px;
-}
 
 ol {
   list-style-position: inside;
@@ -260,13 +280,16 @@ form {
 Full-Width Styles
 *******************************************************************************/
 
+#header_wrap,#footer_wrap,#main_content_wrap { position:absolute; right:0;left:0}
+
+
 .outer {
   width: 100%;
 }
 
 .inner {
   position: relative;
-  max-width: 640px;
+  max-width: 800px;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -287,6 +310,7 @@ Full-Width Styles
 }
 
 #header_wrap {
+  height:150px; top:0;
   background: #212121;
   background: -moz-linear-gradient(top, #373737, #212121);
   background: -webkit-linear-gradient(top, #373737, #212121);
@@ -296,7 +320,11 @@ Full-Width Styles
 }
 
 #header_wrap .inner {
-  padding: 50px 10px 30px 10px;
+  padding:10px 10px 30px 10px;
+}
+
+#side .inner {
+  padding:50px 10px 30px 10px;
 }
 
 #project_title {
@@ -355,20 +383,27 @@ Full-Width Styles
 }
 
 #main_content_wrap {
+  top:150px;
+  bottom:69px;
+  overflow:scroll;
   background: #f2f2f2;
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
 }
 
 #main_content {
-  padding-top: 40px;
+  padding-top: 0px;
+}
+
+#main_content_wrap .side {
+  padding-top: 30px;
 }
 
 #footer_wrap {
+  height:70px; bottom:0;
   background: #212121;
+  overflow:hidden;
 }
-
-
 
 /*******************************************************************************
 Small Device Styles
