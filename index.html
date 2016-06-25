@@ -16,16 +16,26 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/MattDevo">View on GitHub</a>
 
           <h1 id="project_title">MrChromebox.tech</h1>
-          <h2 id="project_tagline">Tips, Tweaks, and custom firmware for your ChromeOS device</h2>
+          <h2 id="project_tagline">Custom firmware and firmware utlities for your ChromeOS device</h2>
 
         </header>
     </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
+        <!-- Left Menu Bar -->
+        <!-- disabled for now
+        <div class="side">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+        </div>
+        -->
       <section id="main_content" class="inner">
         <h3>
 <a id="coming-soon-i-swear" class="anchor" href="#coming-soon-i-swear" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Coming Soon, I swear!</h3>
@@ -37,7 +47,7 @@
 
 <p>These scripts allow the user to install custom firmware (aka a "full ROM"), install/update the legacy boot payload for stock firmware, and install Kodi on supported ChromeOS devices. When run from ChromeOS, these scripts require the Chromebox/book to be in <a href="https://www.chromium.org/chromium-os/poking-around-your-chrome-os-device#TOC-Putting-your-Chrome-OS-Device-into-Developer-Mode">developer mode</a>; some functionality also requires the firmware write-protect screw to be removed, the location of which is <a href="https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices">device-specific</a>. </p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>setup-firmware.sh</strong> allows for the installation of custom firmware (full ROM) and/or an updated legacy boot payload (via either the RW_LEGACY or BOOT_STUB firmware regions) on supported ChromeOS devices.</p>
 
@@ -113,7 +123,7 @@
 curl -L -O http://mrchromebox.tech/firmware-util.sh 
 sudo bash firmware-util.sh</code></p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>setup-kodi.sh</strong> facilitates the installation of Kodi on supported ChromeOS devices via the installation of either an updated legacy boot payload (RW_LEGACY) or custom firmware (full ROM).</p>
 
@@ -189,7 +199,7 @@ legacy boot payload (in the RW_LEGACY firmware slot) for devices that need it.</
 <p>More details and support for this script can be found at:<br>
 <a href="http://forum.kodi.tv/showthread.php?tid=194362">http://forum.kodi.tv/showthread.php?tid=194362</a></p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>cbox-firmware-update.sh</strong> exists solely to update the custom firmware (full ROM) on Haswell ChromeBoxes running
 Open/LibreELEC, which cannot run the above scripts due to lack of a full Bash shell.</p>
@@ -227,7 +237,7 @@ Open/LibreELEC, which cannot run the above scripts due to lack of a full Bash sh
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+        <p><center><a href="https://twitter.com/MrChromebox" class="twitter-follow-button" data-show-count="false">Follow @MrChromebox</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></center></center></p>
       </footer>
     </div>
 
