@@ -40,7 +40,7 @@ ol {
   list-style: none;
 }
 
-ul .side {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -50,7 +50,7 @@ ul .side {
     overflow: auto; /* Enable scrolling if the sidenav has too much content */
 }
 
-li a .side {
+li a {
     display: block;
     color: #000;
     width: 200px;
@@ -59,7 +59,7 @@ li a .side {
 }
 
 /* Change the link color on hover */
-li a:hover .side {
+li a:hover {
     background-color: #212121;
     color: white;
 }
