@@ -395,6 +395,10 @@ Full-Width Styles
   padding-top: 0px;
 }
 
+#main_content ul {
+   padding-left:20px;
+}
+
 #main_content_wrap .side {
   padding-top: 30px;
 }
