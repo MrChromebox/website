@@ -28,16 +28,16 @@
     <div id="main_content_wrap" class="outer">
         <!-- Left Menu Bar -->
         <!-- disabled for now -->
-        <div id="nav" class="side">
+        <div id="nav" class="nav">
             <ul>
-              <li><a href="javascript:gofor('static/home.html')">Home</a></li>
-              <li><a href="#">ChromeOS Basics</a></li>
-              <li><a href="javascript:gofor('static/devmode.html')">Developer Mode</a></li>
-              <li><a href="#">Linux on ChromeOS</a></li>
-              <li><a href="#">Legacy Booting</a></li>
-              <li><a href="#">Scripts and Firmware</a></li>
-              <li><a href="#">Services and Support</a></li>
-              <li><a href="#">About</a></li>
+              <li id="home"><a href="javascript:gofor('static/home.html')">Home</a></li>
+              <li id="chromeos"><a href="#">ChromeOS Basics</a></li>
+              <li id="devmode"><a href="javascript:gofor('static/devmode.html')">Developer Mode</a></li>
+              <li id="linux"><a href="#">Linux on ChromeOS</a></li>
+              <li id="legacyboot"><a href="#">Legacy Booting</a></li>
+              <li id="firmware"><a href="#">Scripts and Firmware</a></li>
+              <li id="support"><a href="#">Services and Support</a></li>
+              <li id="about"><a href="#">About</a></li>
             </ul>
         </div>
       <!--  -->
@@ -59,6 +59,12 @@
     {    
         $('#main_content').load(page);
     }
+    $(function() {
+        $('#nav li a').click(function() {
+           $('#nav li').removeClass();
+           $($(this).attr('href')).addClass('active');
+        });
+     });
   </script>
 
 </html>
