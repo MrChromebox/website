@@ -44,7 +44,7 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 10%;
+    width: 20%;
     background-color: #f1f1f1;
     height: 100%; /* Full height */
     position: fixed; /* Make it stick, even on scroll */
@@ -53,6 +53,7 @@ ul {
 
 li a {
     display: block;
+    width: 20%;
     color: #000;
     padding: 8px 0 8px 16px;
     text-decoration: none;
