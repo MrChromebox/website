@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Developer Mode</title>
+  </head>
+  <body>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>Developer Mode Basics</h2>
+        Putting your ChromeOS device into developer mode relaxes some of the restrictions in the standard / verified boot mode, and gives the user a bit more control over the system:
+        <ul>
+          <li>Provides full root access to the system via a terminal shell</li>
+          <li>Allows installation of Linux inside ChromeOS via <a href="https://github.com/dnschneid/crouton" target="_blank">crouton</a></li>
+          <li>Allows for booting other operating systems via Legacy Boot Mode (aka SeaBIOS) on supported systems</li>
+          <li>Allows for installation of custom firmware components (some of which require removing the firmware write-protect)</li>
+        </ul>
+        Because Developer Mode is inherently less secure than standard / verified boot mode, when powering on you will be greeted by the developer mode boot screen:
+        <p><img src="https://www.chromium.org/_/rsrc/1353458982572/chromium-os/poking-around-your-chrome-os-device/meh2.jpg">
+        <p>The dev mode boot screen will show for 30 seconds, then beep and boot into the (default) OS.  You can bypass this timeout by pressing [CTRL][D] to boot into ChromeOS, or [CTRL][L] to boot in legacy mode (SeaBIOS) if enabled.
+        
+        <h2>Enabling Developer Mode</h2>
+        <p>On Most ChromeOS devices, entering Developer Mode requires you to first boot into recovery mode.  For Chromebooks, this means pressing [ESC], [Refresh], and [Power] simultaneously; On Chromeboxes, there is usually a physical recovery button (often a small hole above the SD card reader) which must be depressed when powering on.  Once at the recovery screen, press [CTRL][D] to enable Developer Mode, then confirm when prompted.  As a security measure, transitioning to/from Developer Mode will wipe out all ChromeOS user data, essentially resetting the device.
+        <p>Exiting developer mode is as simple as following the instructions on the Developer Mode boot screen (usually pressing [SPACE]), but may require resetting the firmware boot flags if you've changed them.
+      </section>
+    </div>
+  </body>
+</html>
+
+
+
+
