@@ -32,7 +32,7 @@
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">ChromeOS Basics</a></li>
-              <li><a href="#">Developer Mode</a></li>
+              <li><a href="javascript:gofor('devmode.html')"">Developer Mode</a></li>
               <li><a href="#">Linux on ChromeOS</a></li>
               <li><a href="#">Legacy Booting</a></li>
               <li><a href="#">Scripts and Firmware</a></li>
@@ -55,6 +55,14 @@
 
   <script>
     $('#main_content').load("static/home.html");
+    function gofor(page)
+    {    
+        $.get(page, processContent, 'html').fail(function() { alert('There is a problem loading a resource. Please re-try');});
+    }
+    function processContent(file_data)
+    {
+        $("#main_content").html(file_data);
+    }
   </script>
 
 </html>
