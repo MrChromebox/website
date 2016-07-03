@@ -30,7 +30,7 @@
         <!-- disabled for now -->
         <div id="nav" class="nav">
             <ul>
-              <li id="home"><a href="javascript:gofor('static/home.html')">Home</a></li>
+              <li id="home" class="active"><a href="javascript:gofor('static/home.html')">Home</a></li>
               <li id="chromeos"><a href="#">ChromeOS Basics</a></li>
               <li id="devmode"><a href="javascript:gofor('static/devmode.html')">Developer Mode</a></li>
               <li id="linux"><a href="#">Linux on ChromeOS</a></li>
@@ -55,6 +55,7 @@
 
   <script>
     $('#main_content').load("static/home.html");
+    
     function gofor(page)
     {    
         $('#main_content').load(page);
