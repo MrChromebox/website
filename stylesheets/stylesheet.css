@@ -64,6 +64,12 @@ ol {
     color: white;
 }
 
+/* Change the link color when active */
+#nav li.active a {
+    background-color: #212121;
+    color: white;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
