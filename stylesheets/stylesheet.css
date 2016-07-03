@@ -44,7 +44,7 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 20%;
+    width: 100px;
     background-color: #f1f1f1;
     height: 100%; /* Full height */
     position: fixed; /* Make it stick, even on scroll */
