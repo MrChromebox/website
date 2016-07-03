@@ -32,7 +32,7 @@
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">ChromeOS Basics</a></li>
-              <li><a href="javascript:gofor('static/devmode.html')"">Developer Mode</a></li>
+              <li><a href="javascript:gofor('static/devmode.html')">Developer Mode</a></li>
               <li><a href="#">Linux on ChromeOS</a></li>
               <li><a href="#">Legacy Booting</a></li>
               <li><a href="#">Scripts and Firmware</a></li>
@@ -61,7 +61,7 @@
     }
     function processContent(file_data)
     {
-        $("#main_content").html(file_data);
+      $('#main_content').load(file_data);
     }
   </script>
 
