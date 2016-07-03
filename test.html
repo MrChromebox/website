@@ -61,8 +61,8 @@
     }
     $(function() {
         $('#nav li a').click(function() {
-           $('#nav li').removeClass();
-           $($(this).attr('href')).addClass('active');
+           $(".nav").find(".active").removeClass("active");
+   				 $(this).parent().addClass("active");
         });
      });
   </script>
