@@ -14,12 +14,12 @@
       <li>Allows for booting other operating systems via Legacy Boot Mode (aka <a href="http://www.seabios.org" target="_blank">SeaBIOS</a>) on supported systems</li>
       <li>Allows for installation of custom firmware components (some of which require removing the firmware write-protect)</li>
     </ul>
-    <p>Because Developer Mode is inherently less secure than standard / verified boot mode, when powering on you will be greeted by the developer mode boot screen:</p>
+    <p>Because developer mode is inherently less secure than standard / verified boot mode, when powering on you will be greeted by the developer mode boot screen:</p>
     <center><img src="https://www.chromium.org/_/rsrc/1353458982572/chromium-os/poking-around-your-chrome-os-device/meh2.jpg" style="border:1px solid black"></center>
     <p>The dev mode boot screen will show for 30 seconds, then beep and boot into the default OS.  You can bypass this timeout by pressing [CTRL][D] to boot into ChromeOS, or [CTRL][L] to boot in legacy mode (SeaBIOS) if enabled.  The length of the timeout and the default OS (ChromeOS or legacy) can be changed by setting the firmware boot flags (aka GBB flags).
     
     <h3>Enabling Developer Mode</h3>
-    <p>On Most ChromeOS devices, entering Developer Mode requires you to first boot into recovery mode.  For Chromebooks, this means pressing [ESC][Refresh][Power]; On Chromeboxes, there is usually a physical recovery button (often a small hole above the SD card reader) which must be depressed when powering on.  Once at the recovery screen, press [CTRL][D] to enable Developer Mode, then confirm when prompted.  As a security measure, transitioning to/from Developer Mode will wipe out all ChromeOS user data, essentially resetting the device.
+    <p>On Most ChromeOS devices, entering developer mode requires you to first boot into recovery mode.  For Chromebooks, this means pressing [ESC][Refresh][Power]; On Chromeboxes, there is usually a physical recovery button (often a small hole above the SD card reader) which must be depressed when powering on.  Once at the recovery screen, press [CTRL][D] to enable Developer Mode, then confirm when prompted.  As a security measure, transitioning to/from Developer Mode will wipe out all ChromeOS user data, essentially resetting the device.
     <p>Exiting developer mode is as simple as following the instructions on the Developer Mode boot screen (usually pressing [SPACE]), but may require resetting the firmware boot flags if you've changed them.  As with entering developer mode, exiting will wipe all ChromeOS user data, so if you plan on keeping your device in developer mode, it's a good idea to set the firmware boot flags to prevent accidental exiting and loss of data.
     
     <h3>Getting a Root Shell</h3>
@@ -29,6 +29,27 @@
         <li>When logged in (as a guest is ok) and with a browser window open, press [CTRL][ALT][T], then type 'shell' and press enter</li>
       </ol>
       Once you have a root shell, you can do things like install Linux (via <a href="https://github.com/dnschneid/crouton" target="_blank">crouton</a> or <a href="https://chrx.org" target="_blank">chrx</a>), update the firmware, etc.
+    </p>
+    
+    <h3>Developer Mode Boot Parameters</h3>
+    <p>
+      Several boot-related parameters are stored in non-volatile storage (nvram); these can be modified from a root shell using the crossystem command.  As the nvram storage is battery backed, these settings can be reset (either accidentially or on purpose) by disconnecting or completely draining the battery (on Chromebooks) or disconnecting the CMOS battery (on Chromeboxes).  These parameters can be overriden with the firmware boot flags (GBB flags), though that requires disabling the firmware write protection.  Some useful boot parameters include:
+      <ul>
+        <li>Legacy boot mode (enable/disable):
+          <li># sudo crossystem dev_boot_legacy=[1/0]</li>
+        </li>
+        <li>External media boot (enable/disable):
+          <li># sudo crossystem dev_boot_usb=[1/0]</li>
+          <li><b>NOTE:</b> this only applies to booting ChromeOS/ChromiumOS from external media; it has <b>nothing</b> to do with booting Linux/Windows etc, which is done via Legacy Boot Mode</li>
+        </li>
+        <li>Default boot mode/target:
+          <li># sudo crossystem dev_default_boot=[disk/usb/legacy]</li>
+          <li><b>NOTE:</b> as above, USB here refers to ChromeOS/ChromiumOS on USB - not Linux</li>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Most users won't need to set these boot parameters manually, since they are set automatically by the ChromeOS Firmware Utility script, but it's useful to know what they are and what they do regardless.
     </p>
   </body>
 </html>
