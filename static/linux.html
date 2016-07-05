@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Legacy Booting and Linux</title>
+  </head>
+  <body>
+    <h3>Legacy Boot Mode</h3>
+    <p>
+      Legacy boot mode is an unsupported method for booting alternate OSes, such as Linux and Windows, available only on Intel/x86-based ChromeOS devices.  It is invoked by pressing 
+      [CTRL][L] on the developer mode boot screen.  This key sequence directs the depthcharge firmware payload (which normally boots ChromeOS) to 
+      to instead execute the payload in the RW_LEGACY firmware region.  That payload (SeaBIOS) can then boot any Linux/Windows OS of your choice.
+      Legacy boot mode requires a functional RW_LEGACY firmware component, as well as the 'dev_boot_legacy' firmware boot flag to be enabled.  
+      Otherwise, you will simply hear two beeps when pressing [CTRL][L].
+    </p>
+    <p>
+      Legacy Boot support via RW_LEGACY/SeaBIOS was first added with the 2013 Chromebook Pixel (<a href="https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/chromebook-pixel" target="_blank">link</a>), and
+      continued with the subsequent Haswell-based devices.  However, in many cases the SeaBIOS payload included with the factory firmware
+      had severe defects, ranging from no video output to non-functional USB ports.  In the base of Baytrail-based devices, legacy boot support
+      was not included in factory firmware at all.  Fortunately, fixed/updated RW_LEGACY firmware updates are available which correct 
+      these defects, offer improved funtionality, and add legacy boot capability for previously unsupported devices.
+    </p>
+
+  </body>
+</html>
+
+
+
