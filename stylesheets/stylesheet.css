@@ -417,9 +417,7 @@ Full-Width Styles
 
 # footer_wrap .inner {
   position: relative;
-  max-width: 800px;
   padding: 0px 0px;
-  margin: 0 auto;
 }
 
 /*******************************************************************************
