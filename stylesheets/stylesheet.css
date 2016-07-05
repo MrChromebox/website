@@ -390,7 +390,7 @@ Full-Width Styles
 
 #main_content_wrap {
   top:100px;
-  bottom:34px;
+  bottom:44px;
   overflow:scroll;
   background: #f2f2f2;
   border-top: 1px solid #111;
@@ -410,7 +410,7 @@ Full-Width Styles
 }
 
 #footer_wrap {
-  height:35px; bottom:0;
+  height:45px; bottom:0;
   background: #212121;
   overflow:hidden;
 }
