@@ -36,15 +36,21 @@
       Several boot-related parameters are stored in non-volatile storage (nvram); these can be modified from a root shell using the crossystem command.  As the nvram storage is battery backed, these settings can be reset (either accidentially or on purpose) by disconnecting or completely draining the battery (on Chromebooks) or disconnecting the CMOS battery (on Chromeboxes).  These parameters can be overriden with the firmware boot flags (GBB flags), though that requires disabling the firmware write protection.  Some useful boot parameters include:
       <ul>
         <li>Legacy boot mode (enable/disable):
-          <li># sudo crossystem dev_boot_legacy=[1/0]</li>
+          <ul type="square">
+            <li># sudo crossystem dev_boot_legacy=[1/0]</li>
+          </ul>
         </li>
         <li>External media boot (enable/disable):
-          <li># sudo crossystem dev_boot_usb=[1/0]</li>
-          <li><b>NOTE:</b> this only applies to booting ChromeOS/ChromiumOS from external media; it has <b>nothing</b> to do with booting Linux/Windows etc, which is done via Legacy Boot Mode</li>
+          <ul type="square">
+            <li># sudo crossystem dev_boot_usb=[1/0]</li>
+            <li><b>NOTE:</b> this only applies to booting ChromeOS/ChromiumOS from external media; it has <b>nothing</b> to do with booting Linux/Windows etc, which is done via Legacy Boot Mode</li>
+          </ul>
         </li>
         <li>Default boot mode/target:
-          <li># sudo crossystem dev_default_boot=[disk/usb/legacy]</li>
-          <li><b>NOTE:</b> as above, USB here refers to ChromeOS/ChromiumOS on USB - not Linux</li>
+          <ul type="square">
+            <li># sudo crossystem dev_default_boot=[disk/usb/legacy]</li>
+            <li><b>NOTE:</b> as above, USB here refers to ChromeOS/ChromiumOS on USB - not Linux</li>
+          </ul>
         </li>
       </ul>
     </p>
