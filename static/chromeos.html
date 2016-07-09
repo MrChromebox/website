@@ -10,28 +10,29 @@
     <p>
       ChromeOS is a Linux-based operating system built from the ground up with a focus on security.  Every part of the boot process, 
       from the firmware on up, has built-in redundancy and is cryptographically signed and verified.  While this model is fantastic 
-      from a security standpoint, it does limit what users are able to do on and to the device.  Fortunately, the built-in Developer 
-      Mode relaxes these restrictions and gives back almost full control to the user.
+      from a security standpoint, it does limit what users are able to do on and to the device.  Fortunately, a less locked-down option
+      is available that relaxes these restrictions and gives back almost full control to the user.
     </p>
     <p>
       ChromeOS has several different boot modes, which are important when it comes to extending the capabilities of your ChromeOS device:<br>
       <ul>
         <li><strong>Normal/Verified Boot Mode:</strong> Highest security level, no root access to the system, no ability to run Linux or boot other OSes.<br>
-        In verified boot mode, ChromeOS is booted directly without any opportunity for user intervention.</li>
-        <li><b>Develper Mode:</b> Loosened security restrictions, provides root access, ability to run Linux and boot other OSes.<br>
+        In verified boot mode, ChromeOS is booted directly without any opportunity for user intervention.  This is the default / 
+        out-of-the-box setting for any ChromeOS device.</li>
+        <li><strong>Develper Mode:</strong> Loosened security restrictions, provides root access, ability to run Linux and boot other OSes.<br>
         In developer mode, the device boots to the developer mode boot screen (white screen with 'OS verification is off' text), 
         from which the user can select via keystroke where to boot: 
         ChromeOS on internal storage ([CTRL][D]), ChromeOS/ChromiumOS on USB ([CTRL][U]), or Legacy Boot Mode ([CTRL][L]).<br>
         The developer mode boot screen also displays the ChromeOS device/board name in the hardware ID string 
         which is useful to know (eg) in the context of device recovery.<br>
         Developer mode is entered by booting to Recovery Mode (see below), pressing [CTRL][D], and then confirming when prompted.</li>
-        <li><b>Recovery Mode:</b> Automatically entered when a problem is encountered in the boot process, but can also manually be 
+        <li><strong>Recovery Mode:</strong> Automatically entered when a problem is encountered in the boot process, but can also manually be 
         entered via keystroke (Chromebooks: [CTRL][Refresh][Power]) or physical button (Chromeboxes), this allows for a full reset of 
         the device using device-specific recovery media.<br>
         In recovery mode, the device boots to the recovery screen (white screen with 'ChromeOS is missing or damaged' text) at which point 
         you can either enter developer mode, or insert the <a href="https://support.google.com/chromebook/answer/1080595?hl=en" 
         target="_blank">recovery media</a> to completely reformat the device and reload ChromeOS.</li>
-        <li><b>Legacy Boot Mode:</b> Allows your ChromeOS device to boot other OSes (eg, Linux, Windows, etc) via 
+        <li><strong>Legacy Boot Mode:</strong> Allows your ChromeOS device to boot other OSes (eg, Linux, Windows, etc) via 
         <a href="http://www.seabios.org/" target="_blank">SeaBIOS</a> by pressing [CTRL][L] on the developer mode boot screen, though not all 
         ChromeOS devices are capable without a firmware update.  If you hear two beeps after pressing [CTRL][L], then either your device doesn't
         have a valid legacy boot component, or legacy boot capability has been been enabled.<br>
@@ -48,9 +49,9 @@
       devices is done by removing a screw on the mainboard (some newer models have a tamper-indicating sticker covering it).  The location 
       of this screw is device-specific, so you can either Google it or see if info for your device 
       <a href="http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices" target="_blank">is listed here</a>.<br>
-      Since the legacy boot mode component is located in a RW region (RW_LEGACY), we can easily and safely update it without affecting anything 
-      on the system related to booting ChromeOS.  More info on the different firmware regions and types of firmware updates available can be 
-      found on the Firmware page. 
+      Since the legacy boot mode component is located in a RW region (RW_LEGACY), we can easily and safely update it without either removing
+      the firmware write-protect, or affecting anything on the system related to booting ChromeOS.  More info on the different firmware 
+      regions and types of firmware updates available can be found on the Firmware page. 
     </p>
     
     
