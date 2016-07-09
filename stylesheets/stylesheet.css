@@ -283,7 +283,9 @@ form {
 }
 
 .keystroke {
-  font-family: monospace; 
+  font-family: monospace  !important;
+  font-weight: bold       !important;
+  
 }
 
 /*******************************************************************************
