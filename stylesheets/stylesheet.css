@@ -300,7 +300,7 @@ Full-Width Styles
 }
 
 .inner {
-  position: fixed;
+  position: relative;
   left: 200px;
   /* max-width: 1000px;*/
   padding: 20px 30px;
