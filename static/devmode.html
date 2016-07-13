@@ -34,7 +34,9 @@
     <p>
       <strong>Note:</strong> the easiest way to set the firmware boot flags is via the ChromeOS Firmware Utility Script; it presents 
       users with the option to set the boot timeout and boot target without having to know which flags to set / what values to use. 
-      This functional also sets a flag to force-enable Developer Mode (so you don't accidentially exit it) and force enable Legacy 
+    </p>
+    <p>
+      This script function also sets the flags to force-enable Developer Mode (so you don't accidentially exit it) and force enable Legacy 
       Boot Mode (so you battery dying doesn't reset the crossystem boot flag).  Setting the firmware boot flags / GBB flags requires
       the firmware write-protect to be disabled, since it's modifying  a normally-read-only section of the firmware (the GBB region).
     </p>
@@ -60,34 +62,6 @@
       </ul>
       Once you have a root shell, you can do things like install Linux (via <a href="https://github.com/dnschneid/crouton" 
       target="_blank">crouton</a> or <a href="https://chrx.org" target="_blank">chrx</a>), update the firmware, etc.
-    </p>
-    
-    <h3>Developer Mode Boot Parameters</h3>
-    <p>
-      Several boot-related parameters are stored in non-volatile storage (nvram); these can be modified from a root shell using the crossystem command.  As the nvram storage is battery backed, these settings can be reset (either accidentially or on purpose) by disconnecting or completely draining the battery (on Chromebooks) or disconnecting the CMOS battery (on Chromeboxes).  These parameters can be overriden with the firmware boot flags (GBB flags), though that requires disabling the firmware write protection.  Some useful boot parameters include:
-      <ul>
-        <li>Legacy boot mode (enable/disable):
-          <ul type="square">
-            <li># sudo crossystem dev_boot_legacy=[1/0]</li>
-          </ul>
-        </li>
-        <li>External media boot (enable/disable):
-          <ul type="square">
-            <li># sudo crossystem dev_boot_usb=[1/0]</li>
-            <li><b>NOTE:</b> this only applies to booting ChromeOS/ChromiumOS from external media; it has <b>nothing</b> to do with booting Linux/Windows etc, which is done via Legacy Boot Mode</li>
-          </ul>
-        </li>
-        <li>Default boot mode/target:
-          <ul type="square">
-            <li># sudo crossystem dev_default_boot=[disk/usb/legacy]</li>
-            <li><strong>Note:</strong> as above, USB here refers to ChromeOS/ChromiumOS on USB - not Linux</li>
-          </ul>
-        </li>
-      </ul>
-    </p>
-    <p>
-      Most users don't need to (and shouldn't) set these boot parameters manually, since they are set automatically by the 
-      ChromeOS Firmware Utility script, but it's useful to know what they are and what they do regardless.
     </p>
   </body>
 </html>
