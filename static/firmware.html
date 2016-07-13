@@ -28,7 +28,11 @@
             <li>Carries zero risk of bricking the device</li>
             <li>On many models, includes bugfixes and enables additional functionality</li>
           </ul>
-        </li>
+          <p>
+            The <strong>RW_LEGACY</strong> firmware is for users who want to dual-boot ChromeOS + Linux/Windows, or users who want to 
+            run Linux/Windows without having to open the device/disable the firmware write-protect.
+          </p>
+      </li>
  
       <li><strong>BOOT_STUB</strong>
         <ul>
@@ -47,10 +51,14 @@
             </ul>
           </li>
         </ul>
+        <p>
+          The <strong>BOOT_STUB</strong> firmware is for users who want to run Linux/Windows exclusively, but a Full ROM isn't
+          available for their device.  This mainly applies to ChromeOS devices using an Intel Baytrail SoC (Celeron N2xxx CPUs).
+        </p>
       </li>
       <li><strong>Full ROM</strong>
         <ul>
-          <li>A complete firmware image which includes updated and/or customized versions of the hardware init  (coreboot) and 
+          <li>A complete firmware image which includes updated/customized versions of the hardware init  (coreboot) and 
           legacy boot payload (SeaBIOS) components contained in the stock firmware</li>
           <li>Removes the developer mode boot (white "OS verification is OFF") screen</li>
           <li>Completely removes the ability to run ChromeOS (and ChromeOS recovery mode), creating a small risk of bricking your device</li>
@@ -59,6 +67,10 @@
           <li>Fixes many bugs and/or idiosyncrasies associated with the stock firmware (but could potentially add new ones)</li>
           <li>Essentially turns your ChromeOS device into a "regular" PC / laptop</li>
         </ul>
+        <p>
+          The <strong>Full ROM</strong> firmware is the best option for users who want to run Linux/Windows exclusively, and who
+          don't mind opening their device to disable the firmware write-protect.
+        </p>
       </li>
     </ul>
     <p> 
