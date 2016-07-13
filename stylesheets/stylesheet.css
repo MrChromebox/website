@@ -300,9 +300,11 @@ Full-Width Styles
 }
 
 .inner {
-  position: relative;
+  position: absolute;
   left: 200px;
-  /* max-width: 1000px;*/
+  width: -moz-calc(100% - 200px);
+  width: -webkit-calc(100% - 200px);
+  width: calc(100% - 200px);
   padding: 20px 30px;
   margin: 0 auto;
 }
