@@ -21,7 +21,7 @@
         <li><strong>RW_LEGACY</strong>
           <ul>
             <li>Updates/replaces the stock legacy boot payload (SeaBIOS) included on many models; 
-            supplements the ChromeOS / secure boot payload (BOOT_STUB)</li>
+            supplements the ChromeOS / secure boot payload</li>
             <li>Leaves all stock functionality intact, including the developer mode boot screen and recovery mode</li>
             <li>Allows device to dual-boot another OS alongside ChromeOS</li>
             <li>Does not require disabling the firmware write-protect</li>
@@ -35,13 +35,14 @@
           <li>Replaces the ChromeOS verified boot payload (depthcharge) with a legacy boot payload (SeaBIOS)</li>
           <li>Removes the developer mode boot (white "OS verification is OFF") screen</li>
           <li>Removes the ability to run ChromeOS, creating a small risk of bricking your device</li>
-          <li>Requires the firmware write-protect screw to be removed</li>
-          <li>Has a "built-in" backup function, so easy to restore without keeping track of the backup file</li>
+          <li>Requires the firmware write-protect to be disabled</li>
+          <li>When flashed via the ChromeOS Firmware Utility Script, has a "built-in" backup function, so easy to restore 
+            without having to keep track of the backup file</li>
           <li>Stop-gap solution for devices which don't have a full ROM available</li>
-          <li>Leaves the recovery mode ([ESC] + [REFRESH] + [POWER]) initiation functionality intact
+          <li>Leaves the recovery mode (<span class="keystroke">[ESC+REFRESH+POWER]</span>) initiation functionality intact
             <ul type="square">
               <li>If you engage this key sequence, your device will try to boot into recovery mode, which no longer exists</li>
-              <li>To escape the recovery mode "black hole", you will have to disassemble the device and briefly disconnect the battery</li>
+              <li>To escape the Recovery Mode "black hole", you will have to disassemble the device and briefly disconnect the battery</li>
               <li>TL;DR - be careful not to do it :)</li>
             </ul>
           </li>
