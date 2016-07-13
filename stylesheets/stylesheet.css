@@ -404,7 +404,8 @@ Full-Width Styles
 }
 
 #main_content {
-  margin: 50px 50px 0 0;
+  padding-top: 50px;
+  padding-left: 50px;
 }
 
 #main_content ul {
