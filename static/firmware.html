@@ -8,29 +8,30 @@
   <body>
     <h3>ChromeOS Device Firmware</h3>
     <p>
-      The firmware used by ChromeOS devices (with the exception of the first two or three models) is stored on an 8MB SPI flash chip
-      and uses the layout shown below.  The shaded sections at the bottom are read-only, which is enforced by the firmware write-protect 
-      screw on the main board.  When we talk about updating the firmware on ChromeOS devices, we're referring to either the RW_LEGACY or 
-      (RO) BOOT_STUB sections, or to the entire firmware image (often referred to as a "full ROM").  Below we'll discuss these three update 
-      types in more detail.
+      The firmware used by ChromeOS devices resides on an 8MB SPI flash chip and uses the layout shown below.  The shaded sections 
+      at the bottom are read-only, which is enforced by the firmware write-protect screw on the main board (sometimes with a sticker as
+      well on some newer models).  When we talk about updating the firmware on ChromeOS devices, we're referring to either the RW_LEGACY
+      or (RO) BOOT_STUB sections, or to the entire firmware image (often referred to as a "full ROM").  These three update types 
+      are described in more detail below.
     </p>
     <p><center><img src="../images/stock_firmware_layout.png"></center></p>
     <h3>Firmware Update Types</h3>
-    <h4>RW_LEGACY</h4>
     <p>
-      <ul>
-        <li>Updates/replaces the stock legacy boot payload (SeaBIOS) included on many models; 
-        supplements the ChromeOS / secure boot payload (BOOT_STUB)</li>
-        <li>Leaves all stock functionality intact, including the developer mode boot screen and recovery mode</li>
-        <li>Allows device to dual-boot another OS alongside ChromeOS</li>
-        <li>Does not require disabling the firmware write-protect</li>
-        <li>Carries zero risk of bricking the device</li>
-        <li>On many models, includes bugfixes and enables additional functionality</li>
-      </ul>
-    </p>
-    <h4>BOOT_STUB</h4>
-    <p>
-      <ul>
+      <ul style="list-style-type:none">
+        <li><strong>RW_LEGACY</strong>
+          <ul>
+            <li>Updates/replaces the stock legacy boot payload (SeaBIOS) included on many models; 
+            supplements the ChromeOS / secure boot payload (BOOT_STUB)</li>
+            <li>Leaves all stock functionality intact, including the developer mode boot screen and recovery mode</li>
+            <li>Allows device to dual-boot another OS alongside ChromeOS</li>
+            <li>Does not require disabling the firmware write-protect</li>
+            <li>Carries zero risk of bricking the device</li>
+            <li>On many models, includes bugfixes and enables additional functionality</li>
+          </ul>
+        </li>
+ 
+      <li><strong>BOOT_STUB</strong>
+        <ul>
           <li>Replaces the ChromeOS verified boot payload (depthcharge) with a legacy boot payload (SeaBIOS)</li>
           <li>Removes the developer mode boot (white "OS verification is OFF") screen</li>
           <li>Removes the ability to run ChromeOS, creating a small risk of bricking your device</li>
@@ -43,25 +44,24 @@
               <li>To escape the recovery mode "black hole", you will have to disassemble the device and briefly disconnect the battery</li>
               <li>TL;DR - be careful not to do it :)</li>
             </ul>
+          </li>
         </ul>
-    </p>
-    <h4>Full ROM</h4>
-    <p>
-      <ul>
-        <li>A complete firmware image which includes updated and/or customized versions of the hardware init  (coreboot) and 
-        legacy boot payload (SeaBIOS) components contained in the stock firmware</li>
-        <li>Removes the developer mode boot (white "OS verification is OFF") screen</li>
-        <li>Completely removes the ability to run ChromeOS (and ChromeOS recovery mode), creating a small risk of bricking your device</li>
-        <li>Offers the best support for booting all OSes besides ChromeOS (including Windows)</li>
-        <li>On many models, adds full hardware support for virtualization (vmx / VT-x)</li>
-        <li>Fixes many bugs and/or idiosyncrasies associated with the stock firmware (but could potentially add new ones)</li>
-        <li>Essentially turns your ChromeOS device into a "regular" PC / laptop</li>
-      </ul>
-    </p>
-    <p>
-    </p>
+      </li>
+      <li><strong>Full ROM</strong>
+        <ul>
+          <li>A complete firmware image which includes updated and/or customized versions of the hardware init  (coreboot) and 
+          legacy boot payload (SeaBIOS) components contained in the stock firmware</li>
+          <li>Removes the developer mode boot (white "OS verification is OFF") screen</li>
+          <li>Completely removes the ability to run ChromeOS (and ChromeOS recovery mode), creating a small risk of bricking your device</li>
+          <li>Offers the best support for booting all OSes besides ChromeOS (including Windows)</li>
+          <li>On many models, adds full hardware support for virtualization (vmx / VT-x)</li>
+          <li>Fixes many bugs and/or idiosyncrasies associated with the stock firmware (but could potentially add new ones)</li>
+          <li>Essentially turns your ChromeOS device into a "regular" PC / laptop</li>
+        </ul>
+      </li>
+    </ul>
     <p> 
-      <br>All three firmware update types are available via the ChromeOS Firmware Utility script, though not all types are available for all devices.
+      <br>All three firmware update types are available via the ChromeOS Firmware Utility Script, though not all types are available for all devices.
     </p>
   </body>
 </html>
