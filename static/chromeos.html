@@ -62,20 +62,6 @@
         </li>
       </ul>
     </p>
-    <p>
-      The ChromeOS firmware makes use of several open-source components: <a href="http://www.coreboot.org" target="_blank">coreboot</a> for 
-      hardware init, depthcharge for verified boot / booting ChromeOS (and recovery mode), and <a href="http://www.seabios.org" target="_blank">
-      SeaBIOS</a> for legacy boot mode.  By default, some parts of the firmware are read-only (RO) and others are read-write (RW).  If we 
-      want to modify any of the RO sections, we'll first need to disable the firmware write-protect feature, which on most recent ChromeOS 
-      devices is done by removing a screw on the mainboard (some newer models have a tamper-indicating sticker covering it).  The location 
-      of this screw is device-specific, so you can either Google it or see if info for your device 
-      <a href="http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices" target="_blank">is listed here</a>.<br>
-      Since the legacy boot mode component is located in a RW region (RW_LEGACY), we can easily and safely update it without either removing
-      the firmware write-protect, or affecting anything on the system related to booting ChromeOS.  More info on the different firmware 
-      regions and types of firmware updates available can be found on the Firmware page. 
-    </p>
-    
-    
   </body>
 </html>
 
