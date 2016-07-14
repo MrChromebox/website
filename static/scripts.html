@@ -135,6 +135,30 @@
           </p>
       </li>
       <br>
+      <li><strong>Set Hardware ID (HWID)</strong>
+          <p>
+            This script function is also just a wrapper around the <code>gbb_utility</code> application built into ChromeOS.  It will read the 
+            GBB region from the stock firmware, set the HWID based on user input, and write it back to flash.  The only time this 
+            function is needed is if one flashed a generic recovery image firmware (aka a shellball ROM) instead of restoring 
+            a backup of their own device firmware.  The shellball ROM has a generic HWID embedded which ChromeOS does not recognize as 
+            valid for purposes of OS and firmware updates (among other things), so it's necessary to set a valid one.  HWIDs aren't 
+            unique, so any valid one will do.
+          </p>
+          <p>
+            <strong>Note:</strong> If you restored your stock firmware using the option from this script, it is not necesary to set 
+            the HWID afterward.
+          </p>
+          <p>
+            After setting a valid HWID, simply reboot and ChromeOS updates should work normally.
+          </p>
+          <p>
+            <strong>Supported Devices:</strong> <code>All ChromeOS devices running stock (or stock + RW_LEGACY) firmware</code>
+          </p>
+          <p>
+          <strong>Requires firmware write-protect disabled:</strong> <code>YES</code>
+          </p>
+      </li>
+      <br>
     </ol>
     <p>
     </p>
