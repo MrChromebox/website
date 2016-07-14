@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+</head>
+
+<html>
+  <body>
+    <h3>ChromeOS Firmware Utility Script</h3>
+
+    <p>
+      The ChromeOS Firmware Utility Script simplifies the most common functions most users need when interacting with the firmware on 
+      their ChromeOS device.  Currently, it allows the user to:
+      <ul style="list-style-type:none">
+        <li>Install/Update the RW_LEGACY firmware with a newer/working/customized version of the SeaBIOS firmware payload</li>
+        <li>Install/Update the BOOT_STUB firmware to enable booting directly Legacy Boot (using the same payload as RW_LEGACY)</li>
+        <li>Install/Update a full custom firmware image (Full ROM), built from the latest sources</li>
+        <li>Set the Boot Options (GBB Flags) (only for stock ChromeOS firmware)</li>
+        <li>Set the device's Hardware ID (only for stock ChromeOS firmware)</li>
+        <li>Restore the Stock BOOT_STUB firmware</li>
+        <li>Restore the Stock firmware image</li>
+      </ul>
+    </p>
+    <p>
+      At startup, the Firmware Utility Script will automatically detect the ChromeOS device and current firmware type, and 
+      restrict the available menu options based on this information.  An override is available for user who really know what they are 
+      doing (or really want to try and brick their device - though the script will do its best to try and prevent you from doing this). 
+      Because these operations are mostly being done to normally read-only parts of the firmware, the firmware write protect will 
+      need to be removed for most of the script's functions.  This is documented for each function below, and the script will likewise 
+      check the write-protect state for each function that requires it to be disabled.
+    </p>
+    <p>
+      To download and run this script, from a terminal/shell type:<br>
+      <code>cd; curl -L -O http://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh</code>
+    </p>
+    <p>
+      <center><img src="https://dl.dropboxusercontent.com/u/98309225/firmware_util_main.png"></center>
+    </p>
+    <h3>Script Functions Explained</h3>
+    <p>
+      <ul style="list-style-type:none">
+        <li><strong>Install/Update the RW_LEGACY firmware</strong>
+          <p>
+            This option performs two simple tasks: it sets the crossystem boot flag necessary to enable Legacy Boot mode, and it 
+            installs an RW_LEGACY firmware update appropriate for the device.  Users will have the option to set the default boot 
+            device (internal storage [default] or USB/SD); Haswell/Broadwell Chromebox users will also have the option to enable 
+            "headless" (no display attached) booting, which is really only useful if you're going to run the box without a display 
+            and connect remotely (eg, via ssh).  Changing either of these options requires re-running this script function.
+          </p>
+          <p>
+            After updating the RW_LEGACY firmware, Legacy Boot Mode can be accessed via <span class="keystroke">[CTRL+L]</span> on 
+            the Developer Mode boot screen.  It can also be set as the default by changing the GBB Flags via 'Set Boot Options' 
+            feature below.
+          </p>
+          <p>
+            <strong>Supported Devices:</strong> <code>All Haswell, Broadwell, and Baytrail ChromeOS devices</code>
+          </p>
+          <p>
+          <strong>Requires firmware write-protect disabled:</strong> <code>NO</code>
+          </p>
+      </li>
+      <br>
+      <li><strong>Install/Update the BOOT_STUB firmware</strong>
+          <p>
+            The BOOT_STUB update is slightly more complex under the hood, as it backs up the stock BOOT_STUB firmware to the unused 
+            RW_LEGACY region (as RW_LEGACY is ignored when using a modified BOOT_STUB), but is equally straightforward.  As before, 
+            users will have the option to set the default boot device (internal storage [default] or USB/SD); changing this option 
+            requires re-running this script function.
+          </p>
+          <p>
+            After updating the BOOT_STUB firmware, your device will be directly in Legacy Mode; ChromeOS will not boot (though it will 
+            try to do so and fail, until a new OS is installed).
+          </p>
+          <p>
+            <strong>Supported Devices:</strong> <code>Baytrail ChromeOS devices without a Full ROM firmware available</code>
+          </p>
+          <p>
+          <strong>Requires firmware write-protect disabled:</strong> <code>YES</code>
+          </p>
+      </li>
+      <br>
+    </ul>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    
+  </body>
+</html>
