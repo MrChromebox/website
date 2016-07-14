@@ -17,12 +17,12 @@
         <li>Install/Update a full custom firmware image (Full ROM), built from the latest sources</li>
         <li>Set the Boot Options (GBB Flags) (only for stock ChromeOS firmware)</li>
         <li>Set the device's Hardware ID (only for stock ChromeOS firmware)</li>
-        <li>Restore the Stock BOOT_STUB firmware</li>
-        <li>Restore the Stock firmware image</li>
+        <li>Restore the Stock BOOT_STUB</li>
+        <li>Restore the Stock Firmware</li>
       </ul>
     </p>
     <p>
-      At startup, the Firmware Utility Script will automatically detect the ChromeOS device and current firmware type, and 
+      At startup, the Firmware Utility Script will automatically detect the device, OS, and current firmware type, and 
       restrict the available menu options based on this information.  An override is available for user who really know what they are 
       doing (or really want to try and brick their device - though the script will do its best to try and prevent you from doing this). 
       Because these operations are mostly being done to normally read-only parts of the firmware, the firmware write protect will 
@@ -178,8 +178,40 @@
           </p>
       </li>
       <br>
+      <li><strong>Restore Stock Firmware</strong>
+          <p>
+            This script function will restore the stock firmware, preferably from a backed-up copy on USB.  For Haswell/Broadwell/Baytrail 
+            Chromeboxes, if a user-provided backup is not available, a generic recovery image firmware (shellball ROM) will be downloaded, 
+            and the VPD region embedded in the custom firmware extracted and merged before flashing.  These shellball ROMs have been modified 
+            to include a valid hardware ID (HWID), so ChromeOS updates will work normally.  Support for flashing shellball ROMs for a wider range 
+            of devices is planned for the near future.
+          </p>
+          <p>
+            After restoring the stock firmware, you will need to reboot and reinstall ChromeOS from the recovery media.  After booting ChromeOS, 
+            you will need to re-run this script and reset the Boot Flags/GBB Flags in order to exit Developer Mode and fully return to stock.
+          </p>
+          <p>
+            <strong>Supported Devices:</strong> <code>All ChromeOS devices running non-stock firmware</code>
+          </p>
+          <p>
+          <strong>Requires firmware write-protect disabled:</strong> <code>YES</code>
+          </p>
+      </li>
+      <br>
+      <p>
+        The Reboot and Power Off options are (hopefully) sufficiently self-explanitory :)
+      </p>
+      <p>
+        By default, the script only enables those menu options it deems valid for a given device/firmware/OS configuration.  The 
+        Unlock option exists as a failsafe to override this lockout, but should be used with extreme caution.  If, for instance, 
+        one flashed the RW_LEGACY update after the BOOT_STUB update on a Baytrail device, they would overwrite the backup of the 
+        stock BOOT_STUB.  The script tries to prevent you from doing such things.
+      </p>
     </ol>
     <p>
+      The source for the Firmware Utility Script (as well as all helper/accessory scripts) can be found <a 
+      href="https://github.com/MattDevo/scripts+ target="_blank">on my 'scripts' github repository</a>.  Any issues, 
+      feature requests, and/or improvements can be reported via the issue tracker or a pull request.
     </p>
     <p>
     </p>
