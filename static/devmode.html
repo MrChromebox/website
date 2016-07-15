@@ -6,62 +6,45 @@
     <title>Developer Mode</title>
   </head>
   <body>
-    <h3>Developer Mode Basics</h3>
+    <h3 id="top">Developer Mode Basics</h3>
     <p>
-      Putting your ChromeOS device into <a href="https://www.chromium.org/chromium-os/poking-around-your-chrome-os-device" 
-      target="_blank">Developer Mode</a> relaxes some of the restrictions in Verified Boot Mode, and gives the user a bit more control 
-      over the system:
+      Putting your ChromeOS device into <a href="https://www.chromium.org/chromium-os/poking-around-your-chrome-os-device" target="_blank">Developer Mode</a> relaxes some of the restrictions in Verified Boot Mode, and gives the user a bit more control over the system:
       <ul>
         <li>Provides full root access to the system via a terminal shell</li>
         <li>Allows installation of Linux inside ChromeOS via <a href="https://github.com/dnschneid/crouton" target="_blank">crouton</a></li>
-        <li>Allows for booting alternate OSes via Legacy Boot Mode (ie, <a href="http://www.seabios.org" target="_blank">SeaBIOS</a>) on 
-          supported systems</li>
+        <li>Allows for booting alternate OSes via Legacy Boot Mode (ie, <a href="http://www.seabios.org" target="_blank">SeaBIOS</a>) on supported systems</li>
         <li>Allows for serveral types of firmware updates/upgrades (some of which require disabling the firmware write-protect first)</li>
       </ul>
     </p>
     <p>
-      Because Developer Mode is inherently less secure than Verified Boot Mode, as a warning when booting you will be greeted by the 
-      developer mode boot screen:</p>
-      <center><img src="https://www.chromium.org/_/rsrc/1353458982572/chromium-os/poking-around-your-chrome-os-device/meh2.jpg" 
-      style="border:1px solid black"></center>
+      Because Developer Mode is inherently less secure than Verified Boot Mode, as a warning when booting you will be greeted by the developer mode boot screen:
     </p>
     <p>
-      The Developer Mode boot screen will show for 30 seconds, then beep and boot into ChromeOS (by default).  You can bypass this 
-      timeout by pressing <span class="keystroke">[CTRL+D]</span> to boot into ChromeOS, or <span class="keystroke">[CTRL+L]</span> to 
-      boot in legacy mode (SeaBIOS) if available.  The length of the timeout (2s or 30s) and the default boot target (ChromeOS or 
-      Legacy Boot) can be changed by setting the firmware boot flags (aka GBB flags).
+      <center><img src="https://www.chromium.org/_/rsrc/1353458982572/chromium-os/poking-around-your-chrome-os-device/meh2.jpg" style="border:1px solid black"></center>
     </p>
     <p>
-      <strong>Note:</strong> the easiest way to set the firmware boot flags is via the ChromeOS Firmware Utility Script; it presents 
-      users with the option to set the boot timeout and boot target without having to know which flags to set / what values to use. 
+      The Developer Mode boot screen will show for 30 seconds, then beep and boot into ChromeOS (by default).  You can bypass this timeout by pressing <span class="keystroke">[CTRL+D]</span> to boot into ChromeOS, or <span class="keystroke">[CTRL+L]</span> to boot in legacy mode (SeaBIOS) if available.  The length of the timeout (2s or 30s) and the default boot target (ChromeOS or Legacy Boot) can be changed by setting the firmware boot flags (aka GBB flags).
     </p>
     <p>
-      This script function also sets the flags to force-enable Developer Mode (so you don't accidentially exit it) and force enable Legacy 
-      Boot Mode (so you battery dying doesn't reset the crossystem boot flag).  Setting the firmware boot flags / GBB flags requires
-      the firmware write-protect to be disabled, since it's modifying  a normally-read-only section of the firmware (the GBB region).
+      <strong>Note:</strong> the easiest way to set the firmware boot flags is via the ChromeOS Firmware Utility Script; it presents users with the option to set the boot timeout and boot target without having to know which flags to set / what values to use. 
+    </p>
+    <p>
+      This script function also sets the flags to force-enable Developer Mode (so you don't accidentially exit it) and force enable Legacy Boot Mode (so you battery dying doesn't reset the crossystem boot flag).  Setting the firmware boot flags / GBB flags requires the firmware write-protect to be disabled, since it's modifying  a normally-read-only section of the firmware (the GBB region).
     </p>
     
     <h3>Enabling Developer Mode</h3>
     <p>
-      Entering Developer Mode requires you to first boot into Recovery Mode.  For Chromebooks, this means pressing 
-      <span class="keystroke">[ESC+Refresh+Power]</span>; On Chromeboxes, there is usually a physical recovery button (often a small 
-      hole above the SD card reader) which must be depressed when powering on.  Once at the recovery screen, press <span class="keystroke">
-      [CTRL+D]</span> to enable developer mode, then confirm when prompted.  As a security measure, transitioning to/from Developer Mode
-      will wipe out all ChromeOS user data, essentially powerwashing (resetting) the device.
+      Entering Developer Mode requires you to first boot into Recovery Mode.  For Chromebooks, this means pressing <span class="keystroke">[ESC+Refresh+Power]</span>; On Chromeboxes, there is usually a physical recovery button (often a small hole above the SD card reader) which must be depressed when powering on.  Once at the recovery screen, press <span class="keystroke">[CTRL+D]</span> to enable developer mode, then confirm when prompted.  As a security measure, transitioning to/from Developer Mode will wipe out all ChromeOS user data, essentially powerwashing (resetting) the device.
     <p>
-      Exiting Developer Mode is as simple as following the instructions on the Developer Mode boot screen (usually pressing 
-      <span class="keystroke">[SPACE]</span>), but may require resetting the firmware boot flags if you've changed them.  As with entering developer mode, exiting will wipe all ChromeOS user data, so if you plan on keeping your device in developer mode, it's a good idea to set the firmware boot flags to prevent accidental exiting and loss of data.
-    
+      Exiting Developer Mode is as simple as following the instructions on the Developer Mode boot screen (usually pressing <span class="keystroke">[SPACE]</span>), but may require resetting the firmware boot flags if you've changed them.  As with entering developer mode, exiting will wipe all ChromeOS user data, so if you plan on keeping your device in developer mode, it's a good idea to set the firmware boot flags to prevent accidental exiting and loss of data.
+    </p>
     <h3>Getting a (Root-capable) Shell</h3>
     <p>Once in developer mode, there are two ways to get a root-capable shell, which is required for doing anything useful:
       <ul>
-        <li>On the login screen, press <span class="keystroke">[CTRL+ALT+F2]</span> (F2 is right-arrow on ChromeOS keyboards), then 
-          login with user 'chronos' (no password is required, nor should one be set)</li>
-        <li>When logged in (as a guest is ok) and with a browser window open, press <span class="keystroke">[CTRL+ALT+T]</span>, 
-          then type <code>shell</code> and press <span class="keystroke">[ENTER]</span></li>
+        <li>On the login screen, press <span class="keystroke">[CTRL+ALT+F2]</span> (F2 is right-arrow on ChromeOS keyboards), then  login with user 'chronos' (no password is required, nor should one be set)</li>
+        <li>When logged in (as a guest is ok) and with a browser window open, press <span class="keystroke">[CTRL+ALT+T]</span>, then type <code>shell</code> and press <span class="keystroke">[ENTER]</span></li>
       </ul>
-      Once you have a root-capable shell, you can do things like install Linux (via <a href="https://github.com/dnschneid/crouton" 
-      target="_blank">crouton</a> or <a href="https://chrx.org" target="_blank">chrx</a>), update the firmware, etc.
+      Once you have a root-capable shell, you can do things like install Linux (via <a href="https://github.com/dnschneid/crouton" target="_blank">crouton</a> or <a href="https://chrx.org" target="_blank">chrx</a>), update the firmware, etc.
     </p>
   </body>
 </html>
