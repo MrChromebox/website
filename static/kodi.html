@@ -6,7 +6,7 @@
 
 <html>
   <body>
-    <h3>Kodi E-Z Setup Script</h3>
+    <h3 id="top">Kodi E-Z Setup Script</h3>
 
     <p>
       The Kodi E-Z Setup Script simplifies the installation of Kodi on a ChromeOS device via Linux (either GalliumOS or LibreELEC).  Currently, it allows the user to:
@@ -128,17 +128,16 @@
       <br>
       <li><strong>Create LibreELEC Install Media</strong>
           <p>
-            This script function was added purely for user convenince - it automates the download of the LibreELEC install image, extracts it, and writes it to USB.
+            This script function was added purely for user convenince - it automates the download of the LibreELEC install image, extracts it, and writes it to USB.  Occasionally the installation media created by this script won't boot, be it due to a problematic USB stick or a random write error.  In such a case, simply <a href="https://libreelec.tv/download-temp/" target="blank">download the LibreELEC install image</a> (Generic Build / .img.gz format) and follow the <a href="https://wiki.libreelec.tv/index.php?title=Installation" target="_blank">instructions on their wiki page</a> to create fresh install media.
           </p>
           <p>
-            After restoring the stock BOOT_STUB, you will need to reboot and reinstall ChromeOS from the recovery media.  You can also 
-            install the RW_LEGACY firmware if you're switching to it for some reason.
+            After flashing the custom coreboot firmware and then creating the LibreELEC install media, reboot and press <span class="keystroke">[ESC]</span> when prompted to display the boot menu, then select the USB/SD install media.
           </p>
           <p>
-            <strong>Supported Devices:</strong> <code>All Baytrail ChromeOS devices running a modified BOOT_STUB installed by this script</code>
+            <strong>Supported Devices:</strong> <code>All ChromeOS devices capable of running this script</code>
           </p>
           <p>
-          <strong>Requires firmware write-protect disabled:</strong> <code>YES</code>
+          <strong>Requires firmware write-protect disabled:</strong> <code>NO</code>
           </p>
       </li>
       <br>
