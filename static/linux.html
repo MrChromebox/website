@@ -6,42 +6,21 @@
     <title>Legacy Booting and Linux</title>
   </head>
   <body>
-    <h3>Legacy Boot Mode</h3>
+    <h3 id="top">Legacy Boot Mode</h3>
     <p>
-      Legacy boot mode is an unsupported method for booting alternate OSes, such as Linux and Windows, available only on Intel/x86-based 
-      ChromeOS devices (sorry ARM owners).  It is invoked by pressing <span class="keystroke">[CTRL+L]</span> on the Developer Mode boot 
-      screen.  This key sequence directs the depthcharge firmware payload (which normally boots ChromeOS) to instead execute the payload 
-      in the RW_LEGACY firmware region.  That payload (SeaBIOS) can then boot any Linux/Windows OS of your choice. Legacy Boot Mode 
-      requires a functional RW_LEGACY firmware component, as well as the <code>dev_boot_legacy</code> boot flag to be enabled.  
-      Otherwise, you will simply hear two beeps when pressing <span class="keystroke">[CTRL+L]</span>.
+      Legacy boot mode is an unsupported method for booting alternate OSes, such as Linux and Windows, available only on Intel/x86-based ChromeOS devices (sorry ARM owners).  It is invoked by pressing <span class="keystroke">[CTRL+L]</span> on the Developer Mode boot screen.  This key sequence directs the depthcharge firmware payload (which normally boots ChromeOS) to instead execute the payload in the RW_LEGACY firmware region.  That payload (SeaBIOS) can then boot any Linux/Windows OS of your choice. Legacy Boot Mode requires a functional RW_LEGACY firmware component, as well as the <code>dev_boot_legacy</code> boot flag to be enabled. Otherwise, you will simply hear two beeps when pressing <span class="keystroke">[CTRL+L]</span>.
     </p>
     <p>
-      Legacy Boot support via RW_LEGACY/SeaBIOS was first added with the 2013 Chromebook Pixel (board name: 
-      <a href="https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/chromebook-pixel" 
-      target="_blank">link</a>), and continued with the subsequent Haswell-based devices.  However, in many cases the SeaBIOS payload 
-      included with the factory firmware had severe defects, ranging from no video output to non-functional USB ports.  In the case of 
-      Baytrail-based devices, the RW_LEGACY firmware was not included at all.  Fortunately, an RW_LEGACY firmware update is available 
-      for many models which correct these defects, offer improved funtionality, and add Legacy Boot Mode capability for previously 
-      unsupported devices.
+      Legacy Boot support via RW_LEGACY/SeaBIOS was first added with the 2013 Chromebook Pixel (aka <a href="https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/chromebook-pixel"  target="_blank">link</a>), and continued with the subsequent Haswell-based devices.  However, in many cases the SeaBIOS payloadincluded with the factory firmware had severe defects, ranging from no video output to non-functional USB ports.  In the case of  Baytrail-based devices, the RW_LEGACY firmware was not included at all.  Fortunately, an RW_LEGACY firmware update is available for many models which correct these defects, offer improved funtionality, and add Legacy Boot Mode capability for previously unsupported devices.
     </p>
     
     <h3>SeaBIOS: The Legacy Boot Payload</h3>
     <p>
-      Booting in Legacy Mode presents the user with the rather spartan looking SeaBIOS boot screen shown on the left below.  Pressing 
-      <span class="keystroke">[ESC]</span> when prompted before the timeout (~3s) will display the boot menu shown on the right.<br> 
-      <center><img src="../images/seabios_boot_1.png" style="max-width:47%;">&nbsp;&nbsp;&nbsp;
-      <img src="../images/seabios_boot_2.png" style="max-width:47%;"></center><br>
-      With the boot menu displayed, simply press the number corresponding to the desired boot device. If the timeout occurs before 
-      <span class="keystroke">[ESC]</span> is pressed, the boot device with the highest priority will be booted.  This is normally the
-      internal storage (SSD or eMMC) unless the user has opted to default to USB when installing the firmware (this applies to all 
-      firmware update types).
+      Booting in Legacy Mode presents the user with the rather spartan looking SeaBIOS boot screen shown on the left below.  Pressing <span class="keystroke">[ESC]</span> when prompted before the timeout (~3s) will display the boot menu shown on the right.<br> <center><img src="../images/seabios_boot_1.png" style="max-width:47%;">&nbsp;&nbsp;&nbsp;<img src="../images/seabios_boot_2.png" style="max-width:47%;"></center><br>
+      With the boot menu displayed, simply press the number corresponding to the desired boot device. If the timeout occurs before <span class="keystroke">[ESC]</span> is pressed, the boot device with the highest priority will be booted.  This is normally the internal storage (SSD or eMMC) unless the user has opted to default to USB when installing the firmware (this applies to all firmware update types).
     </p>
     <p>
-      <strong>Note:</strong> If only one boot device is available -- either no USB/SD devices are attached, or they are not properly
-      detected/initialized by SeaBIOS -- then the boot menu prompt ("Press ESC for boot menu") will not be shown, and the internal 
-      storage will be booted.  In the case where ChromeOS is still installed/is the only OS installed, this can result in the screen 
-      showing text indicating a kernel panic, or simply a blank screen.  If this happens, simply reboot and try using a different 
-      USB/SD device to install/boot from.
+      <strong>Note:</strong> If only one boot device is available -- either no USB/SD devices are attached, or they are not properly detected/initialized by SeaBIOS -- then the boot menu prompt ("Press ESC for boot menu") will not be shown, and the internal storage will be booted.  In the case where ChromeOS is still installed/is the only OS installed, this can result in the screen showing text indicating a kernel panic, or simply a blank screen.  If this happens, simply reboot and try using a different USB/SD device to install/boot from.
     </p>
     <h3>Installing Linux</h3>
     <p>
@@ -54,24 +33,14 @@
       </ul>
     </p>
     <p>
-      There are some caveats, of course.  Running crouton means you're stuck with the (relatively) older drivers which ChromeOS uses, 
-      which aren't ideal for video playback or gaming performance.  Using either the RW_LEGACY or BOOT_STUB firmware to run Linux 
-      exposes some of issues with the stock firmware on many devices: mainly regarding the TPM (disable it via the grub command line 
-      using <code>tpm_tis.force=1 tpm_tis.interrupts=0</code> or with the Syslinux bootloader (<code>mem=1952M</code> is needed on 
-      some devices to boot, and Syslinux 6.0.x doesn't boot at all (use 5.10 or 6.04-pre1).
+      There are some caveats, of course.  Running crouton means you're stuck with the (relatively) older drivers which ChromeOS uses,  which aren't ideal for video playback or gaming performance.  Using either the RW_LEGACY or BOOT_STUB firmware to run Linux exposes some of issues with the stock firmware on many devices: mainly regarding the TPM (disable it via the grub command line using <code>tpm_tis.force=1 tpm_tis.interrupts=0</code> or with the Syslinux bootloader (<code>mem=1952M</code> is needed on some devices to boot, and Syslinux 6.0.x doesn't boot at all (use 5.10 or 6.04-pre1).
     </p>
     <h3>What About Windows?</h3>
     <p>
-      Windows is without a doubt a second-class citizen on ChromeOS devices, assuming it boots at all -- mainly due to firmware that was 
-      built with the goal of doing the absolute minimum to (securely) boot the OS.  Large strides have been made in 
-      getting Windows running on many ChromeOS devices (Haswell and Broadwell devices run it quite well, with a few limitations) but 
-      others are much more problematic (older SandyBridge/IvyBridge and BayTrail devices).  Not to mention that Windows typically 
-      prefers to have more storage than most ChromeOS devices include from the factory, can't be dual-booted with ChromeOS on 
-      internal storage, and runs poorly from external media (even a fast USB3-attached SSD).
+      Windows is without a doubt a second-class citizen on ChromeOS devices, assuming it boots at all -- mainly due to firmware that was built with the goal of doing the absolute minimum to (securely) boot the OS.  Large strides have been made in getting Windows running on many ChromeOS devices (Haswell and Broadwell devices run it quite well, with a few limitations) but others are much more problematic (older SandyBridge/IvyBridge and BayTrail devices).  Not to mention that Windows typically prefers to have more storage than most ChromeOS devices include from the factory, can't be dual-booted with ChromeOS on internal storage, and runs poorly from external media (even a fast USB3-attached SSD).
     </p>
     <p>
-      That said, if you really really want to run Windows, head on over to the <a href="https://www.reddit.com/r/chrultrabook/" 
-      target="_blank">ChrUltrabook Reddit community</a> where the fine folks there will do their best to help make it happen.
+      That said, if you really really want to run Windows, head on over to the <a href="https://www.reddit.com/r/chrultrabook/" target="_blank">ChrUltrabook Reddit community</a> where the fine folks there will do their best to help make it happen.
     </p>
   </body>
 </html>
