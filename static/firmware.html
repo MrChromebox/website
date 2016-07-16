@@ -81,17 +81,30 @@
     <h3>Custom Firmware / Firmware Updates</h3>
     <p>
       The components of the stock firmware for any given ChromeOS device can be found in the device-specific branches of Google's firmware trees:<br>
+      <br>
       <a href="https://chromium.googlesource.com/chromiumos/third_party/coreboot/" target="_blank">https://chromium.googlesource.com/chromiumos/third_party/coreboot/</a><br>
       <a href="https://chromium.googlesource.com/chromiumos/platform/depthcharge/" target="_blank">https://chromium.googlesource.com/chromiumos/platform/depthcharge/</a><br>
       <a href="https://chromium.googlesource.com/chromiumos/third_party/seabios/" target="_blank">https://chromium.googlesource.com/chromiumos/third_party/seabios/</a><br>
-      For instance, the coreboot component for the Asus Chromebox CN60 (PANTHER) is <a href="https://chromium.googlesource.com/chromiumos/third_party/coreboot/+/firmware-panther-4920.24.B" target="_blank">https://chromium.googlesource.com/chromiumos/third_party/coreboot/+/firmware-panther-4920.24.B</a><br>
-      The Google firmware branch for a specific device is pretty much a fixed snapshot of the firmware component at/around the time of the device's release, and usually has minimal bugfix updates after release.  In contrast, the firmware updates available here via the Firmware Utility Script are built using the latest upstream (main / master copy) source code directly from coreboot/SeaBIOS, with additional fixes/tweaks applied on top.<br>
-      The upstream repositories for coreboot and SeaBIOS can be found on github:
+    </p>
+    <p>
+      For instance, the coreboot component for the Asus Chromebox CN60 (PANTHER) is <a href="https://chromium.googlesource.com/chromiumos/third_party/coreboot/+/firmware-panther-4920.24.B" target="_blank">https://chromium.googlesource.com/chromiumos/third_party/coreboot/+/firmware-panther-4920.24.B</a>
+    </p>
+    <p>
+      The Google firmware branch for a specific device is pretty much a fixed snapshot of the firmware component at/around the time of the device's release, and usually has minimal bugfix updates after release.  In contrast, the firmware updates available here via the Firmware Utility Script are built using the latest upstream (main / master copy) source code directly from coreboot/SeaBIOS, with additional fixes/tweaks applied on top.
+    </p>
+    <p>
+      The upstream repositories for coreboot and SeaBIOS can be found on github:<br>
+      <br>
       <a href="https://github.com/coreboot/coreboot" target="_blank">https://github.com/coreboot/coreboot/</a><br>
       <a href="https://github.com/coreboot/seabios" target="_blank">https://github.com/coreboot/seabios</a><br>
-      My personal coreboot and SeaBIOS repositories are also available on github:
+    </p>
+    <p>
+      My personal coreboot and SeaBIOS repositories are also available on github:<br>
+      <br>
       <a href="https://github.com/MattDevo/coreboot" target="_blank">https://github.com/MattDevo/coreboot</a><br>
       <a href="https://github.com/MattDevo/SeaBIOS" target="_blank">https://github.com/MattDevo/SeaBIOS</a><br>
+    </p>
+    <p>
       These repos contain not only the source used to build the current firmware releases, but also the build scripts and configurations used as well.  The only components not included are the various binary "blobs" which are not redistributable; if you want to build your own firmware, you have to extract these blobs from your existing factory firmware (there are instructions for doing so on coreboot's site).
     </p>
   </body>
