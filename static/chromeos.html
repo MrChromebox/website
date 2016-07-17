@@ -8,28 +8,28 @@
   <body>
     <h3 id="top">ChromeOS basics</h3>
     <p>
-      ChromeOS has several different boot modes, which are important to understand in the context of modifying your device:<br>
+      ChromeOS has several different boot modes, which are important to understand in the context of modifying your device to run an alternate OS:<br>
       <ul>
         <li><strong>Normal/Verified Boot Mode</strong>
           <ul style="list-style-type:square">
             <li>Can only boot Google-signed ChromeOS images</li>
             <li>Full verification of firmware and OS kernel</li>
             <li>No root access to the system, no ability to run Linux or boot other OSes</li>
-            <li>Automatically enters Recovery Mode if any step of verified boot fails</li>
+            <li>Automatically enters Recovery Mode if any step of Verified Boot fails</li>
             <li>Default / out-of-the-box setting for all ChromeOS devices</li>
           </ul>
         </li>
-        <li><strong>Develper Mode</strong> 
+        <li><strong>Developer Mode</strong> 
           <ul style="list-style-type:square">
             <li>"Jailbreak" mode built-in to every ChromeOS device</li>
             <li>Loosened security restrictions, allows root access, ability to run Linux via <a href="https://github.com/dnschneid/crouton" target="_blank">crouton</a></li>
-            <li>Enabled via <span class="keystroke">[CTRL+D]</span> on the Recovery Mode screen</li>
+            <li>Enabled via <span class="keystroke">[CTRL+D]</span> on the Recovery Mode boot screen</li>
             <li>Boots to the developer mode boot screen (white screen with 'OS verification is off' text), from which the user can select via keystroke where to boot: <br>
-              &nbsp;ChromeOS (in developer mode) on internal storage ( <span class="keystroke">[CTRL+D]</span> )<br>
-              &nbsp;ChromeOS/ChromiumOS on USB ( <span class="keystroke">[CTRL+U]</span> )<br>
-              &nbsp;Legacy Boot Mode ( <span class="keystroke">[CTRL+L]</span> )
+              &nbsp;&nbsp;&nbsp;ChromeOS (in developer mode) on internal storage ( <span class="keystroke">[CTRL+D]</span> )<br>
+              &nbsp;&nbsp;&nbsp;ChromeOS/ChromiumOS on USB ( <span class="keystroke">[CTRL+U]</span> )<br>
+              &nbsp;&nbsp;&nbsp;Legacy Boot Mode ( <span class="keystroke">[CTRL+L]</span> )
             </li>
-            <li>Boot screen displays the ChromeOS device/board name (eg <code>Panther</code>) in the hardware ID string (eg <code>PANTHER F5U-C92</code>, which is useful to know in the context of device recovery, or in determining what steps are required to install a given alternate OS on the device.</li>
+            <li>Boot screen displays the ChromeOS device/board name in the hardware ID string (eg, <code>PANTHER F5U-C92</code>, which is useful to know in the context of device recovery, firmware support, or in determining what steps are required to install a given alternate OS on the device.</li>
           </ul>
         <li><strong>Recovery Mode</strong> 
         <ul style="list-style-type:square">
@@ -40,19 +40,20 @@
           <li>Allows for transition from Verified Boot Mode to Developer Mode via <span class="keystroke">[CTRL+D]</span></li>
           <li>Booting <a href="https://support.google.com/chromebook/answer/1080595?hl=en" 
             target="_blank">recovery media</a> on USB/SD will completely repartition/reformat internal storage and reload ChromeOS (as well as some RW firmware components)</li>
+            <p><strong>Note:</strong> The ChromeOS recovery process does <strong>not</strong> reset the firmware boot flags (GBB Flags), so if those are changed from the default, they will still need to be reset post-recovery.</p>
         </ul>
         <li><strong>Legacy Boot Mode</strong> 
           <ul style="list-style-type:square">
-            <li>Unsupported (by Google) method for booting alternate OSes (Linux, Windows) via <a href="http://www.seabios.org/" target="_blank">SeaBIOS</a></li>
+            <li>Unsupported (by Google) method for booting alternate OSes (Linux, Windows) via the <a href="http://www.seabios.org/" target="_blank">SeaBIOS</a> firmware payload / RW_LEGACY firmware region</li>
             <li>Accessed via <span class="keystroke">[CTRL+L]</span> on the developer mode boot screen</li>
             <li>Requires explicit enabling in Developer Mode via command line: <code>sudo crossystem dev_boot_legacy=1</code></li>
-            <li>Not all ChromeOS devices are capable OOTB, some require a firmware update (to the RW_LEGACY region)</li>
+            <li>Not all ChromeOS devices are capable out of the box, some require a RW_LEGACY firmware update first</li>
             <li>Boots to the (black) SeaBIOS splash screen; if multiple boot devices are available, a prompt to show the boot menu will be displayed.</li>
           </ul>
-          <p><strong>Note:</strong> If you hear two beeps after pressing <span class="keystroke">[CTRL+L]</span>, then either your device doesn't have a valid legacy boot mode firmware component, or legacy boot capability has not been been enabled via crossystem.
+          <p><strong>Note:</strong> If you hear two beeps after pressing <span class="keystroke">[CTRL+L]</span>, then either your device doesn't have a valid Legacy Boot Mode / RW_LEGACY firmware, or legacy boot capability has not been been enabled via crossystem.
           </p>
           <p>
-            Using the ChromeOS Firmware Utility Script from this site to update your device's RW_LEGACY firmware region will address both of these issues, as it not only provides an updated, fully functional RW_LEGACY firmware, but also sets the required boot flag.</p>
+            Using the <a href="javascript:document.getElementById('firmware').onclick()">ChromeOS Firmware Utility Script</a> to update your device's RW_LEGACY firmware region will address both of these issues, as it not only provides an updated, fully functional RW_LEGACY firmware, but also sets the required boot flag.</p>
           </p>
         </li>
       </ul>
