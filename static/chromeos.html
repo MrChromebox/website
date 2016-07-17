@@ -22,12 +22,12 @@
         <li><strong>Develper Mode</strong> 
           <ul style="list-style-type:square">
             <li>"Jailbreak" mode built-in to every ChromeOS device</li>
-            <li>Loosened security restrictions, allows root access, ability to run Linux via crouton</li>
+            <li>Loosened security restrictions, allows root access, ability to run Linux via <a href="https://github.com/dnschneid/crouton" target="_blank">crouton</a></li>
             <li>Enabled via <span class="keystroke">[CTRL+D]</span> on the Recovery Mode screen</li>
             <li>Boots to the developer mode boot screen (white screen with 'OS verification is off' text), from which the user can select via keystroke where to boot: <br>
-              ChromeOS (in developer mode) on internal storage ( <span class="keystroke">[CTRL+D]</span> )<br>
-              ChromeOS/ChromiumOS on USB ( <span class="keystroke">[CTRL+U]</span> )<br>
-              Legacy Boot Mode ( <span class="keystroke">[CTRL+L]</span> )
+              &nbsp;ChromeOS (in developer mode) on internal storage ( <span class="keystroke">[CTRL+D]</span> )<br>
+              &nbsp;ChromeOS/ChromiumOS on USB ( <span class="keystroke">[CTRL+U]</span> )<br>
+              &nbsp;Legacy Boot Mode ( <span class="keystroke">[CTRL+L]</span> )
             </li>
             <li>Boot screen displays the ChromeOS device/board name (eg <code>Panther</code>) in the hardware ID string (eg <code>PANTHER F5U-C92</code>, which is useful to know in the context of device recovery, or in determining what steps are required to install a given alternate OS on the device.</li>
           </ul>
@@ -45,12 +45,11 @@
           <ul style="list-style-type:square">
             <li>Unsupported (by Google) method for booting alternate OSes (Linux, Windows) via <a href="http://www.seabios.org/" target="_blank">SeaBIOS</a></li>
             <li>Accessed via <span class="keystroke">[CTRL+L]</span> on the developer mode boot screen</li>
-            <li>Requires explicit enabling in Developer Mode via command line: <code>crossystem dev_boot_legacy=1</code></li>
+            <li>Requires explicit enabling in Developer Mode via command line: <code>sudo crossystem dev_boot_legacy=1</code></li>
             <li>Not all ChromeOS devices are capable OOTB, some require a firmware update (to the RW_LEGACY region)</li>
             <li>Boots to the (black) SeaBIOS splash screen; if multiple boot devices are available, a prompt to show the boot menu will be displayed.</li>
           </ul>
-          <p><strong>Note:</strong> If you hear two beeps after pressing <span class="keystroke">[CTRL+L]</span>, then either your device doesn't
-            have a valid legacy boot mode firmware component, or legacy boot capability has not been been enabled via crossystem.
+          <p><strong>Note:</strong> If you hear two beeps after pressing <span class="keystroke">[CTRL+L]</span>, then either your device doesn't have a valid legacy boot mode firmware component, or legacy boot capability has not been been enabled via crossystem.
           </p>
           <p>
             Using the ChromeOS Firmware Utility Script from this site to update your device's RW_LEGACY firmware region will address both of these issues, as it not only provides an updated, fully functional RW_LEGACY firmware, but also sets the required boot flag.</p>
