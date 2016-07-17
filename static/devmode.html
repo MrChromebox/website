@@ -26,7 +26,7 @@
       The Developer Mode boot screen will show for 30 seconds, then beep and boot into ChromeOS (by default).  You can bypass this timeout by pressing <span class="keystroke">[CTRL+D]</span> to boot into ChromeOS, or <span class="keystroke">[CTRL+L]</span> to boot in legacy mode (SeaBIOS) if available.  The length of the timeout (2s or 30s) and the default boot target (ChromeOS or Legacy Boot) can be changed by setting the firmware boot flags (aka GBB flags).
     </p>
     <p>
-      <strong>Note:</strong> the easiest way to set the firmware boot flags is via the ChromeOS Firmware Utility Script; it presents users with the option to set the boot timeout and boot target without having to know which flags to set / what values to use. 
+      <strong>Note:</strong> the easiest way to set the firmware boot flags is via the <a href="javascript:gofor('static/scripts.html#top')">ChromeOS Firmware Utility Script</a>; it presents users with the option to set the boot timeout and boot target without having to know which flags to set / what values to use. 
     </p>
     <p>
       This script function also sets the flags to force-enable Developer Mode (so you don't accidentially exit it) and force enable Legacy Boot Mode (so you battery dying doesn't reset the crossystem boot flag).  Setting the firmware boot flags / GBB flags requires the firmware write-protect to be disabled, since it's modifying  a normally-read-only section of the firmware (the GBB region).
