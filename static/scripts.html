@@ -9,8 +9,7 @@
     <h3 id="top">ChromeOS Firmware Utility Script</h3>
 
     <p>
-      The ChromeOS Firmware Utility Script simplifies the most common functions most users need when interacting with the firmware on 
-      their ChromeOS device.  Currently, it allows the user to:
+      The ChromeOS Firmware Utility Script simplifies the most common functions most users need when interacting with the firmware on their ChromeOS device.  Currently, it allows the user to:
       <ul>
         <li>Install/Update the RW_LEGACY firmware with a newer/working/customized version of the SeaBIOS firmware payload</li>
         <li>Install/Update the BOOT_STUB firmware to enable booting directly Legacy Boot (using the same payload as RW_LEGACY)</li>
@@ -22,12 +21,7 @@
       </ul>
     </p>
     <p>
-      At startup, the Firmware Utility Script will automatically detect the device, OS, and current firmware type, and 
-      restrict the available menu options based on this information.  An override is available for user who really know what they are 
-      doing (or really want to try and brick their device - though the script will do its best to try and prevent you from doing this). 
-      Because these operations are mostly being done to normally read-only parts of the firmware, the firmware write protect will 
-      need to be removed for most of the script's functions.  This is documented for each function below, and the script will likewise 
-      check the write-protect state for each function that requires it to be disabled.
+      At startup, the Firmware Utility Script will automatically detect the device, OS, and current firmware type, and restrict the available menu options based on this information.  An override is available for user who really know what they are doing (or really want to try and brick their device - though the script will do its best to try and prevent you from doing this). Because these operations are mostly being done to normally read-only parts of the firmware, the firmware write protect will need to be removed for most of the script's functions.  This is documented for each function below, and the script will likewise check the write-protect state for each function that requires it to be disabled.
     </p>
     <p>
       To download and run this script, from a terminal/shell type:<br>
@@ -46,16 +40,10 @@
       <ol>
         <li><strong>Install/Update the RW_LEGACY Firmware</strong>
           <p>
-            This option performs two simple tasks: it sets the crossystem boot flag necessary to enable Legacy Boot mode, and it 
-            installs an RW_LEGACY firmware update appropriate for the device.  Users will have the option to set the default boot 
-            device (internal storage [default] or USB/SD); Haswell/Broadwell Chromebox users will also have the option to enable 
-            "headless" (no display attached) booting, which is really only useful if you're going to run the box without a display 
-            and connect remotely (eg, via ssh).  Changing either of these options requires re-running this script function.
+            This option performs two simple tasks: it sets the crossystem boot flag necessary to enable Legacy Boot mode, and it installs an RW_LEGACY firmware update appropriate for the device.  Users will have the option to set the default boot device (internal storage [default] or USB/SD); Haswell/Broadwell Chromebox users will also have the option to enable "headless" (no display attached) booting, which is really only useful if you're going to run the box without a display and connect remotely (eg, via ssh).  Changing either of these options requires re-running this script function.
           </p>
           <p>
-            After updating the RW_LEGACY firmware, Legacy Boot Mode can be accessed via <span class="keystroke">[CTRL+L]</span> on 
-            the Developer Mode boot screen.  It can also be set as the default by changing the GBB Flags via 'Set Boot Options' 
-            feature below.
+            After updating the RW_LEGACY firmware, Legacy Boot Mode can be accessed via <span class="keystroke">[CTRL+L]</span> on the Developer Mode boot screen.  It can also be set as the default by changing the GBB Flags via 'Set Boot Options' feature below.
           </p>
           <p>
             <strong>Supported Devices:</strong> <code>All Haswell, Broadwell, and Baytrail ChromeOS devices</code>
@@ -67,14 +55,10 @@
       <br>
       <li><strong>Install/Update the BOOT_STUB Firmware</strong>
           <p>
-            The BOOT_STUB update is slightly more complex under the hood, as it backs up the stock BOOT_STUB firmware to the unused 
-            RW_LEGACY region (as RW_LEGACY is ignored when using a modified BOOT_STUB), but is equally straightforward.  As before, 
-            users will have the option to set the default boot device (internal storage [default] or USB/SD); changing this option 
-            requires re-running this script function.
+            The BOOT_STUB update is slightly more complex under the hood, as it backs up the stock BOOT_STUB firmware to the unused RW_LEGACY region (as RW_LEGACY is ignored when using a modified BOOT_STUB), but is equally straightforward.  As before, users will have the option to set the default boot device (internal storage [default] or USB/SD); changing this option requires re-running this script function.
           </p>
           <p>
-            After updating the BOOT_STUB firmware, your device will boot directly in Legacy Mode; ChromeOS will not boot (though it will 
-            try to do so and fail, until a new OS is installed).
+            After updating the BOOT_STUB firmware, your device will boot directly in Legacy Mode; ChromeOS will not boot (though it will try to do so and fail, until a new OS is installed).
           </p>
           <p>
             <strong>Supported Devices:</strong> <code>Baytrail ChromeOS devices without a Full ROM firmware available</code>
@@ -86,23 +70,13 @@
       <br>
       <li><strong>Install/Update Custom coreboot Firmware (Full ROM)</strong>
           <p>
-            As this is a full replacement firmware, the script will offer users the option to back up their stock firmware on USB. 
-            Users will have the option to set the default boot device (internal storage [default] or USB/SD); Haswell/Broadwell 
-            Chromebox users will also have the option to enable "headless" (no display attached) booting, as well as the option to 
-            enable PXE (Ethernet/network) booting via <a href="http://ipxe.org/" target="_blank">iPXE</a> (the BayTrail-based AOpen 
-            Chromebox commerical supports this too).  If PXE support is enabled, it can also be set to be the default boot device.  
-            As before, changing any of these boot options requires re-running this script function.
+            As this is a full replacement firmware, the script will offer users the option to back up their stock firmware on USB. Users will have the option to set the default boot device (internal storage [default] or USB/SD); Haswell/Broadwell Chromebox users will also have the option to enable "headless" (no display attached) booting, as well as the option to enable PXE (Ethernet/network) booting via <a href="http://ipxe.org/" target="_blank">iPXE</a> (the BayTrail-based AOpen Chromebox commerical supports this too).  If PXE support is enabled, it can also be set to be the default boot device.  As before, changing any of these boot options requires re-running this script function.
           </p>
           <p>
-            Since Haswell/Broadwell/Baytrail Chromeboxes store their Ethernet MAC address in the VPD (vital product data) region of 
-            the stock firmware, the script will extract that region from the stock firmware and inject it into the new firmware 
-            ensuring the unique MAC address isn't lost.  It will also persist the VPD region across firmware 
-            updates, so this is all transparent to the user.
+            Since Haswell/Broadwell/Baytrail Chromeboxes store their Ethernet MAC address in the VPD (vital product data) region of the stock firmware, the script will extract that region from the stock firmware and inject it into the new firmware ensuring the unique MAC address isn't lost.  It will also persist the VPD region across firmware updates, so this is all transparent to the user.
           </p>
           <p>
-            After installing the Custom coreboot / Full ROM Firmware, your device will boot directly in Legacy Mode; ChromeOS will not boot (though it will 
-            try to do so and fail, until a new OS is installed).  Your ChromeOS device is now a "regular PC," and you can install the OS 
-            of your choice without any special instructions.
+            After installing the Custom coreboot / Full ROM Firmware, your device will boot directly in Legacy Mode; ChromeOS will not boot (though it will try to do so and fail, until a new OS is installed).  Your ChromeOS device is now a "regular PC," and you can install the OS of your choice without any special instructions.
           </p>
           <p>
             <strong>Supported Devices:</strong> <code>All Haswell and Broadwell ChromeOS devices; select Baytrail devices, and the Samsung Series 3 Chromebox</code>
@@ -114,28 +88,16 @@
       <br>
         <li><strong>Set Boot Options (GBB Flags)</strong>
           <p>
-            This script function is just a wrapper around the <code>gbb_utility</code> application built into ChromeOS.  It will read the 
-            GBB region from the stock firmware, set the GBB flags based on user input, and write it back to flash.  The options presented 
-            to the user allow for setting the timeout for the Developer Mode boot screen (2s or 30s) and the default boot target 
-            (ChromeOS or Legacy Boot Mode).  For all options except 'Factory Default,' the GBB flags will also be set to enable 
-            legacy booting (GBB_FLAG_FORCE_DEV_BOOT_LEGACY), which overrides the crosssytem <code>dev_boot_legacy</code> flag, and to 
-            force-enable Developer Mode (GBB_FLAG_FORCE_DEV_SWITCH_ON), which prevents exiting Developer Mode via the spacebar (either 
-            accidentially or intentionally).
+            This script function is just a wrapper around the <code>gbb_utility</code> application built into ChromeOS.  It will read the GBB region from the stock firmware, set the GBB flags based on user input, and write it back to flash.  The options presented to the user allow for setting the timeout for the Developer Mode boot screen (2s or 30s) and the default boot target (ChromeOS or Legacy Boot Mode).  For all options except 'Factory Default,' the GBB flags will also be set to enable legacy booting (GBB_FLAG_FORCE_DEV_BOOT_LEGACY), which overrides the crosssytem <code>dev_boot_legacy</code> flag, and to force-enable Developer Mode (GBB_FLAG_FORCE_DEV_SWITCH_ON), which prevents exiting Developer Mode via the spacebar (either accidentially or intentionally).
           </p>
           <p>
-            Regardless of which default boot mode is selected, one can always override the default via keystroke: <span 
-            class="keystroke">[CTRL+D]</span> for ChromeOS Developer Mode, or <span class="keystroke">[CTRL+L]</span> for Legacy Boot
-            Mode.
+            Regardless of which default boot mode is selected, one can always override the default via keystroke: <span class="keystroke">[CTRL+D]</span> for ChromeOS Developer Mode, or <span class="keystroke">[CTRL+L]</span> for Legacy Boot Mode.
           </p>
           <p>
-            <strong>Note:</strong> Whenever the GBB Flags are set to anything besides the Factory Default, their current value will be displayed in a small black box 
-            in the upper-left corner of the Developer Mode boot screen, along with other some other firmware/OS-related info.  This is normal 
-            and no cause for alarm, though you'll need to re-run the script and reset them to the Factory Default before exiting 
-            Developer Mode (should you want to do so).
+            <strong>Note:</strong> Whenever the GBB Flags are set to anything besides the Factory Default, their current value will be displayed in a small black box in the upper-left corner of the Developer Mode boot screen, along with other some other firmware/OS-related info.  This is normal and no cause for alarm, though you'll need to re-run the script and reset them to the Factory Default before exiting Developer Mode (should you want to do so).
           </p>
           <p>
-            After setting the Boot Options / GBB flags, the boot timeout and default OS will be whatever you selected, and can be changed at 
-            any time by re-running this script function.
+            After setting the Boot Options / GBB flags, the boot timeout and default OS will be whatever you selected, and can be changed at any time by re-running this script function.
           </p>
           <p>
             <strong>Supported Devices:</strong> <code>All ChromeOS devices running stock (or stock + RW_LEGACY) firmware</code>
@@ -147,16 +109,10 @@
       <br>
       <li><strong>Set Hardware ID (HWID)</strong>
           <p>
-            This script function is also just a wrapper around the <code>gbb_utility</code> application built into ChromeOS.  It will read the 
-            GBB region from the stock firmware, set the HWID based on user input, and write it back to flash.  The only time this 
-            function is needed is if one flashed a generic recovery image firmware (aka a shellball ROM) instead of restoring 
-            a backup of their own device firmware.  The shellball ROM has a generic HWID embedded which ChromeOS does not recognize as 
-            valid for purposes of OS and firmware updates (among other things), so it's necessary to set a valid one.  HWIDs aren't 
-            unique, so any valid one will do.
+            This script function is also just a wrapper around the <code>gbb_utility</code> application built into ChromeOS.  It will read the GBB region from the stock firmware, set the HWID based on user input, and write it back to flash.  The only time this function is needed is if one flashed a generic recovery image firmware (aka a shellball ROM) instead of restoring a backup of their own device firmware.  The shellball ROM has a generic HWID embedded which ChromeOS does not recognize as valid for purposes of OS and firmware updates (among other things), so it's necessary to set a valid one.  HWIDs aren't unique, so any valid one will do.
           </p>
           <p>
-            <strong>Note:</strong> If you restored your stock firmware using the option from this script, it is not necesary to set 
-            the HWID afterward.
+            <strong>Note:</strong> If you restored your stock firmware using the option from this script, it is not necesary to set the HWID afterward.
           </p>
           <p>
             After setting a valid HWID, simply reboot and ChromeOS updates should work normally.
@@ -171,13 +127,10 @@
       <br>
       <li><strong>Restore Stock BOOT_STUB</strong>
           <p>
-            This script function will restore the stock BOOT_STUB, assuming you used this script to install the modified BOOT_STUB 
-            originally.  Currently it cannot restore the BOOT_STUB if you flashed a different one (eg, John Lewis'), since there's no 
-            built-in backup to restore (hopefully support will be added in the near future).
+            This script function will restore the stock BOOT_STUB, assuming you used this script to install the modified BOOT_STUB originally.  Currently it cannot restore the BOOT_STUB if you flashed a different one (eg, John Lewis'), since there's no built-in backup to restore (hopefully support will be added in the near future).
           </p>
           <p>
-            After restoring the stock BOOT_STUB, you will need to reboot and reinstall ChromeOS from the recovery media.  You can also 
-            install the RW_LEGACY firmware if you're switching to it for some reason.
+            After restoring the stock BOOT_STUB, you will need to reboot and reinstall ChromeOS from the recovery media.  You can also install the RW_LEGACY firmware if you're switching to it for some reason.
           </p>
           <p>
             <strong>Supported Devices:</strong> <code>All Baytrail ChromeOS devices running a modified BOOT_STUB installed by this script</code>
@@ -189,15 +142,10 @@
       <br>
       <li><strong>Restore Stock Firmware</strong>
           <p>
-            This script function will restore the stock firmware, preferably from a backed-up copy on USB.  For Haswell/Broadwell/Baytrail 
-            Chromeboxes, if a user-provided backup is not available, a generic recovery image firmware (shellball ROM) will be downloaded, 
-            and the VPD region embedded in the custom firmware extracted and merged before flashing.  These shellball ROMs have been modified 
-            to include a valid hardware ID (HWID), so ChromeOS updates will work normally.  Support for flashing shellball ROMs for a wider range 
-            of devices is planned for the near future.
+            This script function will restore the stock firmware, preferably from a backed-up copy on USB.  For Haswell/Broadwell/Baytrail Chromeboxes, if a user-provided backup is not available, a generic recovery image firmware (shellball ROM) will be downloaded, and the VPD region embedded in the custom firmware extracted and merged before flashing.  These shellball ROMs have been modified to include a valid hardware ID (HWID), so ChromeOS updates will work normally.  Support for flashing shellball ROMs for a wider range of devices is planned for the near future.
           </p>
           <p>
-            After restoring the stock firmware, you will need to reboot and reinstall ChromeOS from the recovery media.  After booting ChromeOS, 
-            you will need to re-run this script and reset the Boot Flags/GBB Flags in order to exit Developer Mode and fully return to stock.
+            After restoring the stock firmware, you will need to reboot and reinstall ChromeOS from the recovery media.  After booting ChromeOS, you will need to re-run this script and reset the Boot Flags/GBB Flags in order to exit Developer Mode and fully return to stock.
           </p>
           <p>
             <strong>Supported Devices:</strong> <code>All ChromeOS devices running non-stock firmware</code>
@@ -206,22 +154,16 @@
           <strong>Requires firmware write-protect disabled:</strong> <code>YES</code>
           </p>
       </li>
-
-      <p>
-        The Reboot and Power Off options are (hopefully) sufficiently self-explanitory :)
-      </p>
-      <p>
-        By default, the script only enables those menu options it deems valid for a given device/firmware/OS configuration.  The 
-        <strong>Unlock option</strong> exists as a failsafe to override this lockout, but should be used with extreme caution.  If, 
-        for instance, one flashed the RW_LEGACY update after the BOOT_STUB update on a Baytrail device, they would overwrite the 
-        backup of the stock BOOT_STUB.  The script tries to prevent you from doing such things.
-      </p>
     </ol>
+    <p>
+        The Reboot and Power Off options are (hopefully) sufficiently self-explanitory :)
+    </p>
+    <p>
+        By default, the script only enables those menu options it deems valid for a given device/firmware/OS configuration.  The <strong>Unlock option</strong> exists as a failsafe to override this lockout, but should be used with extreme caution.  If, for instance, one flashed the RW_LEGACY update after the BOOT_STUB update on a Baytrail device, they would overwrite the backup of the stock BOOT_STUB.  The script tries to prevent you from doing such things.
+    </p>
     <br>
     <p>
-      The source for the Firmware Utility Script (as well as all helper/accessory scripts) can be found <a 
-      href="https://github.com/MattDevo/scripts+ target="_blank">on my 'scripts' github repository</a>.  Any issues, 
-      feature requests, and/or improvements can be reported via the issue tracker or a pull request.
+      The source for the Firmware Utility Script (as well as all helper/accessory scripts) can be found <a href="https://github.com/MattDevo/scripts+ target="_blank">on my 'scripts' github repository</a>.  Any issues, feature requests, and/or improvements can be reported via the issue tracker or a pull request.
     </p>
   </body>
 </html>
