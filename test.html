@@ -58,12 +58,14 @@
     function gofor(page)
     {    
         $('#main_content').load(page);
+        /*
         document.getElementById(page.hash.substr(1)).scrollIntoView(true);
         // now account for fixed header
         var scrolledY = window.scrollY;
         if(scrolledY){
           window.scroll(0, scrolledY - 150);
         }
+        */
     }
     $(function() {
         $('#nav li a').click(function() {
