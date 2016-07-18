@@ -79,7 +79,7 @@ table {
 Theme Styles
 *******************************************************************************/
 
-body {
+html, body {
   box-sizing: border-box;
   color:#373737;
   background: #212121;
@@ -429,10 +429,6 @@ Full-Width Styles
 
 #footer_wrap p {
   margin: 10px 0 0 0;
-}
-
-html, body {
-  overflow:hidden 
 }
 
 /*******************************************************************************
