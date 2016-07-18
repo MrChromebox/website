@@ -55,15 +55,13 @@
   <script>
     $('#main_content').load("static/home.html");
     
-    
+    $(document).ready(function () {
+        window.scrollTo(0,0);
+    });
     
     function gofor(page)
     {    
         $('#main_content').load(page);
-        
-        $(document).ready(function () {
-            window.scrollTo(0,0);
-        });
         /*
         document.getElementById(page.hash.substr(1)).scrollIntoView(true);
         // now account for fixed header
