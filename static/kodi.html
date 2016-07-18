@@ -9,19 +9,19 @@
     <h3 id="top">Kodi E-Z Setup Script</h3>
 
     <p>
-      The Kodi E-Z Setup Script simplifies the installation of Kodi on a ChromeOS device via Linux (either GalliumOS/Ubuntu or LibreELEC).  Currently, it allows the user to:
+      The Kodi E-Z Setup Script simplifies the installation of <a href="http://www.kodi.tv" target="_blank">Kodi Media Center</a> software on a ChromeOS device via either <a href="http://www.galliumos.org" target="_blank">GalliumOS</a>/<a href="http://www.ubuntu.com" target="_blank">Ubuntu</a> or <a href="http://www.libreelec.tv" target="_blank">LibreELEC</a>).  Currently, it allows the user to:
       <ul>
-        <li>Dual Boot ChromeOS + GalliumOS/Ubuntu (w/Kodi preinstalled) on internal storage</li>
-        <li>Dual Boot ChromeOS + LibreELEC (<a href="https://en.wikipedia.org/wiki/Just_enough_operating_system" target="_blank">JeOS</a> for Kodi) on internal storage</li>
+        <li>Dual Boot ChromeOS + GalliumOS/Ubuntu on internal storage</li>
+        <li>Dual Boot ChromeOS + LibreELEC on internal storage</li>
         <li>Dual Boot ChromeOS + LibreELEC on external storage</li>
-        <li>Set the Boot Options (only for dual-boot setups)</li>
-        <li>Update the Legacy BIOS (only for dual-boot setups)</li>
-        <li>Install Custom coreboot firmware (only for standalone setups)</li>
-        <li>Create LibreELEC install media (only for standalone setups)</li>
+        <li>Set the Boot Options  (only for dual-boot setups)</li>
+        <li>Update the Legacy BIOS  (only for dual-boot setups)</li>
+        <li>Install/Update Custom coreboot firmware  (only for standalone setups)</li>
+        <li>Create LibreELEC install media  (only for standalone setups)</li>
       </ul>
     </p>
     <p>
-      At startup, the Kodi E-Z Setup Script will automatically restrict the available menu options based on the running OS. Some of these functions involve modifying the normally read-only parts of the firmware, in which case the firmware write protect will need to be disabled. This is documented for each function below, and the script will likewise check the write-protect state for each function that requires it to be disabled.
+      At startup, the Kodi E-Z Setup Script will automatically restrict the available menu options based on the running OS. Some of these functions involve modifying the normally read-only parts of the device's firmware, in which case the firmware write protect will need to be disabled. This is documented for each function below, and the script will likewise check the write-protect state for each function that requires it to be disabled.
     </p>
     <p>
       To download and run this script, from a terminal/shell type:<br>
@@ -33,7 +33,7 @@
     </p>
     <p>
       Official support for using the Kodi E-Z Setup Script can be found at <a href="http://forum.kodi.tv/showthread.php?tid=194362" target="_blank">this thread on the Kodi forums</a>.<br>
-      Also very useful is the <a href="http://kodi.wiki/view/Chromebox" target="_blank">Kodi Chromebox wiki page</a>, to which I contributed substantially and still (semi-)actively maintain.
+      Also very useful is the <a href="http://kodi.wiki/view/Chromebox" target="_blank">Kodi Chromebox wiki page</a>, to which I contributed substantially and still maintain.
       
     </p>
     <h3>Script Functions Explained</h3>
@@ -41,7 +41,7 @@
       <ol>
         <li><strong>Dual Boot ChromeOS + GalliumsOS</strong>
           <p>
-            Dual Booting ChromeOS + <a href="http://galliumos.org" target="_blank">GalliumOS</a> (w/Kodi) is a two stage operation.  First, the partition layout is modified to make room for GalliumOS - which means shrinking the ChromeOS userdata partition by an appropriate amount.  The script will prompt the user for the amount of space to allocate for GalliumOS, with (strongly) recommended min/max values.  Once the partition table modifications are done (this is very quick), you will need to reboot, at which point ChromeOS will "repair" itself and securely wipe the resized userdata partition.  Once complete, the script must be re-run to actually install GalliumOS (and Kodi).  During the 2nd stage, the user will have the option to install either GalliumOS (a Ubuntu derivative optimized for ChromeOS devices) or their Ubuntu flavor of choice.
+            Dual Booting ChromeOS + Kodi via <a href="http://www.galliumos.org" target="_blank">GalliumOS</a> (or any Ubuntu flavor) is a two stage operation.  First, the partition layout is modified to make room for GalliumOS - which means shrinking the ChromeOS userdata partition by an appropriate amount.  The script will prompt the user for the amount of space to allocate for GalliumOS, with (strongly) recommended min/max values.  Once the partition table modifications are done (this is very quick), you will need to reboot, at which point ChromeOS will "repair" itself and securely wipe the resized userdata partition.  Once complete, the script must be re-run to actually install GalliumOS (and Kodi).  During the 2nd stage, the user will have the option to install either GalliumOS (a Ubuntu derivative optimized for ChromeOS devices) or their Ubuntu flavor of choice.
           </p>
           <p>
             After completing the dual boot setup, it is recommended to boot it manually ( <span class="keystroke">[CTRL+L]</span> ) before making any changes to the boot options (see below) just in case something didn't go quite right.
@@ -59,7 +59,7 @@
       <br>
       <li><strong>Dual Boot ChromeOS + LibreELEC</strong>
           <p>
-            Dual Booting ChromeOS + <a href="http://libreelec.tv" target="_blank">LibreELEC</a> is a two stage operation.  First, the partition layout is modified to make room for LibreELEC - which means shrinking the ChromeOS userdata partition by an appropriate amount.  The script will prompt the user for the amount of space to allocate for LibreELEC, with (strongly) recommended min/max values.  Once the partition table modifications are done (this is very quick), you will need to reboot, at which point ChromeOS will "repair" itself and securely wipe the resized userdata partition.  Once complete, the script must be re-run to actually install LibreELEC. During the 2nd stage, the user will have the option to install either the current stable version or the latest beta version (if available).
+            Dual Booting ChromeOS + Kodi via <a href="http://libreelec.tv" target="_blank">LibreELEC</a> is a two stage operation.  First, the partition layout is modified to make room for LibreELEC - which means shrinking the ChromeOS userdata partition by an appropriate amount.  The script will prompt the user for the amount of space to allocate for LibreELEC, with (strongly) recommended min/max values.  Once the partition table modifications are done (this is very quick), you will need to reboot, at which point ChromeOS will "repair" itself and securely wipe the resized userdata partition.  Once complete, the script must be re-run to actually install LibreELEC. During the 2nd stage, the user will have the option to install either the current stable version or the latest beta version (if available).
           </p>
           <p>
             After completing the dual boot setup, it is recommended to boot it manually ( <span class="keystroke">[CTRL+L]</span> ) before making any changes to the boot options (see below) just in case something didn't go quite right.
@@ -78,14 +78,10 @@
       <br>
       <li><strong>Install LibreELEC on USB/SD</strong> (Dual Boot)
           <p>
-            This option installs LibreELEC to the selected external media (USB, SD, USB-attached SSD, etc) along with a bootloader compatible with the stock firmware (Syslinux 6.0.3 which LibreELEC ships with is not).  The user will have the option to install either the current stable version or the latest beta version (if available).
+            This option installs LibreELEC to the selected external media (USB, SD, USB-attached SSD, etc) along with a bootloader compatible with the stock firmware (Syslinux 6.0.3, which LibreELEC ships with, is not compatible).  The user will have the option to install either the current stable version or the latest beta version of LibreELEC (if available).
           </p>
           <p>
             After completing the install to external media, it is recommended to boot it manually ( <span class="keystroke">[CTRL+L]</span> ) before making any changes to the boot options (see below) just in case something didn't go quite right.
-          </p>
-          <p>
-            <strong>Note:</strong> If you later wish to redo the dual boot setup with either a different version of LibreELEC or with GalliumOS/Ubuntu, only the 2nd stage will have to be redone (unless you wish to change the partition size).  If you wish to change the partition size, you'll need to do a <a href="https://support.google.com/chromebook/answer/1080595?hl=en" 
-            target="_blank">factory reset</a> first, then re-run both stages of the dual boot setup.
           </p>
           <p>
             <strong>Supported Devices:</strong> <code>All Haswell, Broadwell, and Baytrail ChromeOS devices</code>
@@ -97,13 +93,13 @@
       <br>
         <li><strong>Set Boot Options</strong> (Dual Boot)
           <p>
-            This script function sets the ChromeOS firmware boot flags via the built-in tool <code>gbb_utility</code>.  The options presented to the user allow for setting the timeout for the ChromeOS Developer Mode boot screen (2s or 30s) and the default boot target (ChromeOS or Kodi via LibreELEC/GalliumOS).  For all options except 'Factory Default,' the firmware  boot flags are also set to force-enable Legacy Boot Mode, and to force-enable Developer Mode, which prevents exiting Developer Mode via the spacebar (either accidentially or intentionally).
+            This script function sets the ChromeOS firmware boot flags via the built-in tool <code>gbb_utility</code>.  The options presented to the user allow for setting the timeout for the ChromeOS Developer Mode boot screen (2s or 30s) and the default boot target (ChromeOS or Kodi).  For all options except 'Factory Default,' the firmware  boot flags are also set to force-enable Legacy Boot Mode, and to force-enable Developer Mode, which prevents exiting Developer Mode via the spacebar (either accidentially or intentionally).
           </p>
           <p>
             Regardless of which default boot target is selected, one can always override the default via keystroke on the Developer Mode boot screen: <span class="keystroke">[CTRL+D]</span> for ChromeOS Developer Mode, or <span class="keystroke">[CTRL+L]</span> for Kodi (via Legacy Boot Mode).
           </p>
           <p>
-            <strong>Note:</strong> Whenever the firmware flags are set to anything besides the Factory Default, their current value will be displayed in a small black box in the upper-left corner of the Developer Mode boot screen, along with other some other firmware/OS-related info.  This is normal and no cause for alarm, though you'll need to re-run the script and reset them to Factory Default before exiting Developer Mode / resetting to stock (should you want to do so).
+            <strong>Note:</strong> Whenever the firmware flags are set to anything besides the Factory Default, their current value will be displayed in a small black box in the upper-left corner of the Developer Mode boot screen, along with some other firmware-related info.  This is normal and no cause for alarm, though you'll need to re-run the script and reset the Boot Options / boot flags to Factory Default before exiting Developer Mode / resetting to stock (should you want to do so).
           </p>
           <p>
             After setting the Boot Options / firmware boot flags, the boot timeout and default OS will be whatever you selected, and can be changed at any time by re-running this script function.
@@ -118,7 +114,7 @@
       <br>
       <li><strong>Update Legacy BIOS (SeaBIOS)</strong>
           <p>
-            This option performs two simple tasks: it sets the ChromeOS Developer Mode boot flag necessary to enable Legacy Boot mode, and it installs an RW_LEGACY firmware update appropriate for the device.  Users will have the option to set the default boot device (internal storage [default] or USB/SD); Haswell/Broadwell Chromebox users will also have the option to enable "headless" (no display attached) booting, which is really only useful if you're going to run the box without a display and connect remotely (eg, via ssh).  Changing either of these options requires re-running this script function.
+            This option sets the ChromeOS Developer Mode boot flag necessary to enable Legacy Boot mode, and it installs an RW_LEGACY firmware update appropriate for the device.  During installation, users will have the option to set the default boot device (internal storage [default] or USB/SD); Haswell/Broadwell Chromebox users will also have the option to enable "headless" (no display attached) booting, which is really only useful if you're going to run the box without a display and connect remotely (eg, via ssh) - that is to say, not at all for running Kodi.  Changing either of these options requires re-running this script function.
           </p>
           <p>
               The Legacy BIOS is automatically updated as part of any of the Dual Boot setups listed above.  It's only necessary to run this manually if you need to update, change the default boot device, or are doing a custom dual boot configuration. 
@@ -127,7 +123,7 @@
             After updating the Legacy BIOS, Legacy Boot Mode can be accessed via <span class="keystroke">[CTRL+L]</span> on the ChromeOS Developer Mode boot screen.  It can also be set as the default by changing the firmware boot flags via 'Set Boot Options' feature above.
           </p>
           <p>
-            <strong>Supported Devices:</strong> <code>All Haswell, Broadwell, and Baytrail ChromeOS devices dual ChromeOS + booting Kodi</code>
+            <strong>Supported Devices:</strong> <code>All Haswell, Broadwell, and Baytrail ChromeOS devices dual booting ChromeOS +  Kodi</code>
           </p>
           <p>
           <strong>Requires firmware write-protect disabled:</strong> <code>NO</code>
@@ -139,10 +135,13 @@
             This will replace the stock firmware on your ChromeOS device with and updated one optimized to run Linux (and Kodi).  As this is a full replacement firmware, the script will offer users the option to back up their stock firmware on USB. Users will have the option to set the default boot device (internal storage [default] or USB/SD); Haswell/Broadwell Chromebox users will also have the option to enable "headless" (no display attached) booting, as well as the option to enable PXE (Ethernet/network) booting via <a href="http://ipxe.org/" target="_blank">iPXE</a> (the BayTrail-based AOpen Chromebox commerical supports this too).  If PXE support is enabled, it can also be set to be the default boot device.  Changing any of these boot options requires re-running this script function / re-flashing the firmware.
           </p>
           <p>
-            After installing the Custom coreboot Firmware, your device will boot directly in Legacy Mode; ChromeOS will not boot (though it will try to do so and fail, until a new OS is installed).  Your ChromeOS device is now a "regular PC," and you can install LibreEKEC (or the OS of your choice) without any special instructions.
+            Most Kodi users should simply hit <span class="keystroke">Enter</span> when prompted to accept the default options.
           </p>
           <p>
-            <strong>Supported Devices:</strong> <code>All SandyBridge, Haswell,  Broadwell, and Baytrail Chrome<strong>boxes</strong></code>
+            After installing the Custom coreboot Firmware, your device will boot directly in Legacy Mode; ChromeOS will not boot (though it will try to do so and fail, until a new OS is installed).  Your ChromeOS device is now a "regular PC," and you can install LibreELEC (or the OS of your choice) without any special instructions.
+          </p>
+          <p>
+            <strong>Supported Devices:</strong> <code>All SandyBridge, Haswell, Broadwell, and Baytrail Chrome<strong>boxes</strong></code>
           </p>
           <p>
           <strong>Requires firmware write-protect disabled:</strong> <code>YES</code>
@@ -171,7 +170,7 @@
     <br>
     <p>
       The source for the Kodi E-Z Setup Script (as well as all helper/accessory scripts) can be found <a 
-      href="https://github.com/MattDevo/scripts+ target="_blank">on my 'scripts' github repository</a>.  Any issues, 
+      href="https://github.com/MattDevo/scripts" target="_blank">on my 'scripts' github repository</a>.  Any issues, 
       feature requests, and/or improvements can be reported via the issue tracker or a pull request.
     </p>
   </body>
