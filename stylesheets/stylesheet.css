@@ -403,7 +403,8 @@ Full-Width Styles
 #main_content_wrap {
   top:100px;
   bottom:39px;
-  overflow:scroll;
+  overflow-y:scroll;
+  overflow-x:hidden;
   background: #f2f2f2;
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
