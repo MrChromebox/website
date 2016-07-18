@@ -33,8 +33,8 @@
               <li id="_intro"><a href="javascript:gofor('static/chromeos.html#top')" id="intro" title="Introduction">Introduction</a></li>
               <li id="_devmode"><a href="javascript:gofor('static/devmode.html#top')" id="devmode" title="Developer Mode">Developer Mode</a></li>
               <li id="_firmware"><a href="javascript:gofor('static/firmware.html#top')" id="firmware" title="Firmware">All About Firmware</a></li>
-              <li id="_linux"><a href="javascript:gofor('static/linux.html#top')" id="legacyboot" title="Legacy Booting">Legacy Booting and Linux</a></li>
-              <li id="_fwscript"><a href="javascript:gofor('static/scripts.html#top')" id="fwscript" title="Firmware Utility Script">Firmware Utility Script</a></li>
+              <li id="_linux"><a href="javascript:gofor('static/legacyboot.html#top')" id="legacyboot" title="Legacy Booting">Legacy Booting and Beyond</a></li>
+              <li id="_fwscript"><a href="javascript:gofor('static/fwutil.html#top')" id="fwscript" title="Firmware Utility Script">Firmware Utility Script</a></li>
               <li id="_kodi"><a href="javascript:gofor('static/kodi.html#top')" id="kodi" title="Kodi E-Z Setup Script">Kodi E-Z Setup Script</a></li>
               <li id="_support"><a href="javascript:gofor('static/support.html#top')" id="support" title="Services & Support">Services and Support</a></li>
               <li id="_faq"><a href="javascript:gofor('static/faq.html#top')" id="faq" title="FAQ">FAQ</a></li>
@@ -58,6 +58,7 @@
     function gofor(page)
     {    
         $('#main_content').load(page);
+        document.getElementById(page.hash.substr(1)).scrollIntoView();
     }
     $(function() {
         $('#nav li a').click(function() {
