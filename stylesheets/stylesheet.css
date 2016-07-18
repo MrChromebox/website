@@ -314,6 +314,13 @@ Full-Width Styles
   margin: 0 auto;
 }
 
+.nav {
+  position: absolute;
+  width: 200px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 #forkme_banner {
   display: block;
   position: absolute;
@@ -418,10 +425,6 @@ Full-Width Styles
 
 #main_content ul {
    padding-left:50px;
-}
-
-#main_content_wrap .side {
-  padding-top: 30px;
 }
 
 #footer_wrap {
