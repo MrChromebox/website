@@ -54,12 +54,14 @@
 
   <script>
     $('#main_content').load("static/home.html");
-    window.onload="window.parent.parent.scrollTo(0,0)"
+    
+    $(document).ready(function(){
+        $(this).scrollTop(0);
+    });
     
     function gofor(page)
     {    
         $('#main_content').load(page);
-        window.scrollTo(0, 0);
         /*
         document.getElementById(page.hash.substr(1)).scrollIntoView(true);
         // now account for fixed header
