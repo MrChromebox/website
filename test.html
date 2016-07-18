@@ -54,22 +54,10 @@
 
   <script>
     $('#main_content').load("static/home.html");
-    
-    $(document).ready(function () {
-        window.scrollTo(0,0);
-    });
-    
+
     function gofor(page)
     {    
         $('#main_content').load(page);
-        /*
-        document.getElementById(page.hash.substr(1)).scrollIntoView(true);
-        // now account for fixed header
-        var scrolledY = window.scrollY;
-        if(scrolledY){
-          window.scroll(0, scrolledY - 150);
-        }
-        */
     }
     $(function() {
         $('#nav li a').click(function() {
@@ -77,6 +65,11 @@
    				 $(this).parent().addClass("active");
         });
      });
+     
+   $(window).one("scroll",function() { 
+     document.body.scrollTop = document.documentElement.scrollTop = 0;
+   });
+     
   </script>
 
 </html>
