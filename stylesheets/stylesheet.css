@@ -314,13 +314,6 @@ Full-Width Styles
   margin: 0 auto;
 }
 
-.nav {
-  position: absolute;
-  width: 200px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
 #forkme_banner {
   display: block;
   position: absolute;
