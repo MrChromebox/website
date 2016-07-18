@@ -58,7 +58,7 @@
     function gofor(page)
     {    
         $('#main_content').load(page);
-        document.getElementById(page.hash.substr(1)).scrollIntoView();
+        document.getElementById(page.hash.substr(1)).scrollIntoView(true);
     }
     $(function() {
         $('#nav li a').click(function() {
