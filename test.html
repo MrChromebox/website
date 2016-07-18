@@ -58,6 +58,7 @@
     function gofor(page)
     {    
         $('#main_content').load(page);
+        window.scrollTo(0, 0);
         /*
         document.getElementById(page.hash.substr(1)).scrollIntoView(true);
         // now account for fixed header
