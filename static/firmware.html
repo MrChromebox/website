@@ -18,7 +18,7 @@
           <ul>
             <li>Updates/replaces the stock legacy boot payload (SeaBIOS) included on many models; 
             supplements the ChromeOS / secure boot payload</li>
-            <li>Leaves all stock functionality intact, including the developer mode boot screen and recovery mode</li>
+            <li>Leaves all stock functionality intact, including the Developer Mode boot screen and Recovery Mode functionality</li>
             <li>Allows device to dual-boot another OS alongside ChromeOS</li>
             <li>Does not require disabling the firmware write-protect</li>
             <li>Carries zero risk of bricking the device</li>
@@ -31,15 +31,15 @@
       <br>
       <li><strong>BOOT_STUB</strong>
         <ul>
-          <li>Replaces the ChromeOS verified boot payload (depthcharge) with a legacy boot payload (SeaBIOS)</li>
-          <li>Removes the developer mode boot (white "OS verification is OFF") screen</li>
+          <li>Replaces the ChromeOS Verified Boot firmware payload (depthcharge) with a legacy boot payload (SeaBIOS)</li>
+          <li>Removes the Developer Mode boot screen (white "OS verification is OFF")</li>
           <li>Removes the ability to run ChromeOS, creating a small risk of bricking your device</li>
           <li>Requires the firmware write-protect to be disabled</li>
           <li>When flashed via the ChromeOS Firmware Utility Script, has a "built-in" backup function, so easy to restore without having to keep track of the backup file</li>
-          <li>Stop-gap solution for devices which don't have a full ROM available</li>
-          <li>Leaves the recovery mode ( <span class="keystroke">[ESC+REFRESH+POWER]</span> ) initiation functionality intact
+          <li>Stop-gap solution for devices which don't have a Full ROM firmware available</li>
+          <li>Leaves the Recovery Mode ( <span class="keystroke">[ESC+REFRESH+POWER]</span> ) initiation intact
             <ul type="square">
-              <li>If you engage this key sequence, your device will try to boot into recovery mode, which no longer exists</li>
+              <li>If you engage this key sequence, your device will try to boot into Recovery Mode, which no longer exists</li>
               <li>To escape the Recovery Mode "black hole", you will have to disassemble the device and briefly disconnect the battery</li>
               <li>TL;DR - be careful not to do it :)</li>
             </ul>
@@ -54,8 +54,8 @@
         <ul>
           <li>A complete firmware image which includes updated/customized versions of the hardware init  (coreboot) and legacy boot payload (SeaBIOS) components contained in the stock firmware</li>
           <li>Removes the developer mode boot (white "OS verification is OFF") screen</li>
-          <li>Completely removes the ability to run ChromeOS (and ChromeOS recovery mode), creating a small risk of bricking your device</li>
-          <li>Offers the best support for booting all OSes besides ChromeOS (including Windows)</li>
+          <li>Completely removes the ability to run ChromeOS (and ChromeOS Recovery Mode), creating a small risk of bricking your device</li>
+          <li>Offers the best support for booting all OSes besides ChromeOS</li>
           <li>On many models, adds full hardware support for virtualization (vmx / VT-x)</li>
           <li>Fixes many bugs and/or idiosyncrasies associated with the stock firmware (but could potentially add new ones)</li>
           <li>Essentially turns your ChromeOS device into a "regular" PC / laptop</li>
@@ -71,13 +71,13 @@
     <br>
     <h3>ChromeOS Firmware Boot Flags (GBB Flags)</h3>
     <p>
-      The firmware boot flags / Google Binary Block (GBB) flags are firmware level settings stored directly in the firmware flash chip itself in a read-only (RO) area, and so require the firmware write protect to be disabled before setting. The GBB flags control the behavior of the firmware payload used to boot ChromeOS (depthcharge), and are used to set the default boot mode (ChromeOS or Legacy Boot Mode),  the Developer Mode boot screen timeout (2s or 30s), prevent exiting Developer Mode via spacebar, and to enable Legacy Boot Mode regardless of crossystem <code>dev_boot_legacy</code> setting, among other things. 
+      The firmware boot flags / Google Binary Block (GBB) flags are firmware level settings stored directly in the firmware flash chip itself in a read-only (RO) area, and therefore require the firmware write protect to be disabled before setting. The GBB flags control the behavior of the firmware payload used to boot ChromeOS (depthcharge); they are used to set the default boot mode (ChromeOS or Legacy Boot Mode),  the Developer Mode boot screen timeout (2s or 30s), prevent exiting Developer Mode via spacebar, and to enable Legacy Boot Mode regardless of crossystem <code>dev_boot_legacy</code> setting, among other things. 
     </p>
     <p>
       <strong>Important:</strong> The GBB Flags are only valid when using the the stock firmware, or stock + RW_LEGACY firmware update.  They have no effect (and cannot be set) when using either the BOOT_STUB or Full ROM firmware.
     </p>
     <p>
-      Most users should not attempt to set these manually, but instead use the <a href="javascript:document.getElementById('fwscript').click()">ChromeOS Firmware Utility Script</a> to set them based on their preferred default boot mode and boot timeout (the script automatically sets the dev mode and legacy boot mode overrides for all options except factory default). For those curious, a full description of all the GBB flags can be found in <a href="https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/master/firmware/include/gbb_header.h"  target="_blank">Google's source code here</a>.
+      Most users should not attempt to set these manually, but instead use the <a href="javascript:document.getElementById('fwscript').click()">ChromeOS Firmware Utility Script</a> to set them based on their preferred default boot mode and boot timeout (the script automatically sets the Developer Mode and Legacy Boot Mode overrides for all options except factory default). For those curious, a full description of all the GBB flags can be found in <a href="https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/master/firmware/include/gbb_header.h"  target="_blank">Google's source code here</a>.
     </p>
     <br>
     <h3>Custom Firmware / Firmware Updates</h3>
@@ -92,7 +92,7 @@
       For instance, the coreboot component for the Asus Chromebox CN60 (PANTHER) is <a href="https://chromium.googlesource.com/chromiumos/third_party/coreboot/+/firmware-panther-4920.24.B" target="_blank">https://chromium.googlesource.com/chromiumos/third_party/coreboot/+/firmware-panther-4920.24.B</a>
     </p>
     <p>
-      The Google firmware branch for a specific device is pretty much a fixed snapshot of the firmware component at/around the time of the device's release, and usually has minimal bugfix updates after release.  In contrast, the firmware updates available here via the Firmware Utility Script are built using the latest upstream (main / master copy) source code directly from coreboot/SeaBIOS, with additional fixes/tweaks applied on top.
+      The Google firmware branch for a specific device is pretty much a fixed snapshot of the firmware component at/around the time of the device's release, and usually has minimal bugfix updates after release.  In contrast, the firmware updates available here via the Firmware Utility Script are built using the latest upstream (main / master copy) source code directly from the coreboot and SeaBIOS projects, with additional fixes/tweaks applied on top.
     </p>
     <p>
       The upstream repositories for coreboot and SeaBIOS can be found on github:<br>
