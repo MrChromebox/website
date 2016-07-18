@@ -310,8 +310,8 @@ Full-Width Styles
 
 .inner {
   position: absolute;
-  left: 225px;
-  /*width: -moz-calc(100% - 300px);
+  /*left: 225px;
+  width: -moz-calc(100% - 300px);
   width: -webkit-calc(100% - 300px);
   width: calc(100% - 300px);*/
   width: 100%;
