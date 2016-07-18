@@ -48,7 +48,6 @@ ol {
     height: 100%; /* Full height */
     position: absolute; /* Make it stick, even on scroll */
     overflow: auto; /* Enable scrolling if the sidenav has too much content */
-    overflow-y: scroll;
 }
 
 #nav li a {
