@@ -296,7 +296,7 @@ Full-Width Styles
 *******************************************************************************/
 
 /*#header_wrap,#footer_wrap,#main_content_wrap { position:absolute; right:0;left:0} */
-#main_content_wrap { position:absolute; right:0;left:0}
+#main_content_wrap { position:fixed; right:0;left:0}
 #header_wrap,#footer_wrap { position:fixed; right:0;left:0}
 
 
