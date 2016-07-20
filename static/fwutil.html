@@ -127,13 +127,13 @@
       <br>
       <li><strong>Restore Stock BOOT_STUB</strong>
           <p>
-            This script function will restore the stock BOOT_STUB, assuming you used this script to install the modified BOOT_STUB originally.  Currently it cannot restore the BOOT_STUB if you flashed a different one (eg, John Lewis'), since there's no built-in backup to restore (hopefully support will be added in the near future).
+            This script function will restore the stock BOOT_STUB for any device running a modified BOOT_STUB firmware.  It will first attempt to use the built-in backup created by this script, and failing that, will download the firmware from a recovery image (a shellball ROM) and extract the stock BOOT_STUB from that.
           </p>
           <p>
             After restoring the stock BOOT_STUB, you will need to reboot and reinstall ChromeOS from the recovery media.  You can also install the RW_LEGACY firmware if you're switching to it for some reason.
           </p>
           <p>
-            <strong>Supported Devices:</strong> <code>All Baytrail ChromeOS devices running a modified BOOT_STUB installed by this script</code>
+            <strong>Supported Devices:</strong> <code>All Haswell, Broadwell, and Baytrail ChromeOS devices running a modified BOOT_STUB (whether from this script or another)</code>
           </p>
           <p>
           <strong>Requires firmware write-protect disabled:</strong> <code>YES</code>
@@ -142,7 +142,7 @@
       <br>
       <li><strong>Restore Stock Firmware</strong>
           <p>
-            This script function will restore the stock firmware, preferably from a backed-up copy on USB.  For Haswell/Broadwell/Baytrail Chromeboxes, if a user-provided backup is not available, a generic recovery image firmware (shellball ROM) will be downloaded, and the VPD region embedded in the custom firmware extracted and merged before flashing.  These shellball ROMs have been modified to include a valid hardware ID (HWID), so ChromeOS updates will work normally.  Support for flashing shellball ROMs for a wider range of devices is planned for the near future.
+            This script function will restore the stock firmware, preferably from a backed-up copy on USB.  For Haswell/Broadwell/Baytrail devices, if a user-provided backup is not available, the script will download the firmware from a recovery image (a shellball ROM).  For Chromeboxes, if the current fimware contains an embedded VPD region, it will be extracted and merged before flashing.  These (device-specific) shellball ROMs have been modified to include a valid hardware ID (HWID), so ChromeOS updates will work normally.  Support for flashing shellball ROMs for additional devices is planned for the near future.
           </p>
           <p>
             After restoring the stock firmware, you will need to reboot and reinstall ChromeOS from the recovery media.  After booting ChromeOS, you will need to re-run this script and reset the Boot Flags/GBB Flags in order to exit Developer Mode and fully return to stock.
