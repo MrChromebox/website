@@ -19,6 +19,17 @@
             <li>Default / out-of-the-box setting for all ChromeOS devices</li>
           </ul>
         </li>
+        <li><strong>Recovery Mode</strong> 
+        <ul style="list-style-type:square">
+          <li>User presented with Recovery Mode boot screen (white screen with 'ChromeOS is missing or damaged' text)</li>
+          <li>Boots only USB/SD with signed Google recovery image</li>
+          <li>Automatically entered when Verified Boot Mode fails</li>
+          <li>Can be manually invoked via keystroke (Chromebooks: <span class="keystroke">[CTRL+Refresh+Power]</span>) or physical button (Chromeboxes)</li>
+          <li>Allows for transition from Verified Boot Mode to Developer Mode via <span class="keystroke">[CTRL+D]</span></li>
+          <li>Booting <a href="https://support.google.com/chromebook/answer/1080595?hl=en" 
+            target="_blank">recovery media</a> on USB/SD will completely repartition/reformat internal storage and reload ChromeOS (as well as some RW firmware components)</li>
+            <p><strong>Note:</strong> The ChromeOS recovery process does <strong>not</strong> reset the firmware boot flags (GBB Flags), so if those are changed from the default, they will still need to be reset post-recovery.</p>
+        </ul>
         <li><strong>Developer Mode</strong> 
           <ul style="list-style-type:square">
             <li>"Jailbreak" mode built-in to every ChromeOS device</li>
@@ -30,17 +41,6 @@
               &nbsp;&nbsp;&nbsp;Legacy Boot Mode ( <span class="keystroke">[CTRL+L]</span> )
             </li>
             <li>Boot screen displays the ChromeOS device/board name in the hardware ID string (eg, <code>PANTHER F5U-C92</code>, which is useful to know in the context of device recovery, firmware support, or in determining what steps are required to install a given alternate OS on the device.</li>
-          </ul>
-        <li><strong>Recovery Mode</strong> 
-        <ul style="list-style-type:square">
-          <li>User presented with Recovery Mode boot screen (white screen with 'ChromeOS is missing or damaged' text)</li>
-          <li>Boots only USB/SD with signed Google recovery image</li>
-          <li>Automatically entered when Verified Boot Mode fails</li>
-          <li>Can be manually invoked via keystroke (Chromebooks: <span class="keystroke">[CTRL+Refresh+Power]</span>) or physical button (Chromeboxes)</li>
-          <li>Allows for transition from Verified Boot Mode to Developer Mode via <span class="keystroke">[CTRL+D]</span></li>
-          <li>Booting <a href="https://support.google.com/chromebook/answer/1080595?hl=en" 
-            target="_blank">recovery media</a> on USB/SD will completely repartition/reformat internal storage and reload ChromeOS (as well as some RW firmware components)</li>
-            <p><strong>Note:</strong> The ChromeOS recovery process does <strong>not</strong> reset the firmware boot flags (GBB Flags), so if those are changed from the default, they will still need to be reset post-recovery.</p>
         </ul>
         <li><strong>Legacy Boot Mode</strong> 
           <ul style="list-style-type:square">
