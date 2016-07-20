@@ -243,6 +243,10 @@ ol {
   padding-left: 20px;
 }
 
+li {
+  overflow: visible;
+}
+
 dl dt {
   font-weight: bold;
 }
@@ -413,60 +417,3 @@ Full-Width Styles
 #footer_wrap p {
   margin: 10px 0 0 0;
 }
-
-/*******************************************************************************
-Small Device Styles
-*******************************************************************************/
-
-/*
-@media screen and (max-width: 480px) {
-  body {
-    font-size: 14px;
-    overflow: hidden;
-  }
-
-  #downloads {
-    display: none;
-  }
-
-  .inner {
-    min-width: 320px;
-    max-width: 480px;
-  }
-
-  #project_title {
-  font-size: 32px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-
-  h3 {
-    font-size: 21px;
-  }
-
-  h4 {
-    font-size: 18px;
-  }
-
-  h5 {
-    font-size: 14px;
-  }
-
-  h6 {
-    font-size: 12px;
-  }
-
-  code, pre {
-    min-width: 320px;
-    max-width: 480px;
-    font-size: 11px;
-  }
-
-}
-*/
