@@ -36,9 +36,11 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+/*
 ol {
   list-style: none;
 }
+*/
 
 #nav ul {
     list-style-type: none;
