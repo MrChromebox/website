@@ -50,6 +50,18 @@
       Currently, the firmware available via the Firmware Utility Script only supports Legacy Boot mode / Legacy BIOS functionality, regardless of which type of firmware upgrade you install.  <a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank">UEFI (Unified Extensible Firmware Interface)</a> is the successor to Legacy BIOS, and is the firmware type used by virtually all Windows PC's (and Macs) shipped in the last 5+ years.  
     </p>
     <p>
+      UEFI firmware on ChromeOS devices will offer many benefits over the existing Legacy BIOS offerings:
+      <ul>
+        <li>Better Windows support and faster Windows boot time (50%+ faster)</li>
+        <li>Support for compressed Windows installs (~5GB for Windows 8.1)</li>
+        <li>Fixes keyboard-related bugs plaguing many Chromebooks with SeaBIOS</li>
+        <li>Better support for dual/triple/quad boot scenarios</li>
+        <li>Ability to run OSX / MacOS on Core i3/i5/i7-based machines</li>
+        <li>Better support for USB devices at boot time (SeaBIOS was/is quite finnicky)</li>
+      </ul>
+      And a few more I'm forgetting as well.
+    </p>
+    <p>
       Work has been underway for some time to bring UEFI functionality to ChromeOS devices via the open-source <a href="http://www.tianocore.org/" target="blank">Tianocore</a> firmware payload, and preliminary support exists now. <a href="http://www.coolstar.org" target="_blank">coolstar</a> has released <a href="https://www.reddit.com/r/chrultrabook/comments/4t8kd5/flashing_script_for_uefi_available/" target="_blank">UEFI-compatible firmware for Haswell and Broadwell-based Chromebooks</a>.  This early-release firmware chain loads a special Tianocore package on top of SeaBIOS (which is stripped down to the minimum needed to load Tianocore) in a manner invisible to user. It also has a few limitations: among other things, it lacks the ability to boot in Legacy Mode (often referred to as UEFI-CSM), and it lacks the ability to set/adjust the default boot device (USB-attached devices are the default, then internal storage).  The UI is also not as polished as other UEFI implementations, but that's open source for you :).  
     </p>
     <p>
