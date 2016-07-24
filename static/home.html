@@ -16,6 +16,14 @@
       <br>
       <h3 id="top">Latest Updates</h3>
       <br>
+      <h5 id="top">Baytrail Windows Update</h3>(2016.07.24)
+      <p>
+         All Baytrail Full ROMs have been updated to fix the detection/operation of emmc/SD storage controllers by Windows, so you can now install Windows onto the internal emmc (or at least access it if booting from external media).  Baytrail Full ROMs are currently available for ENGUARDE, GLIMMER, GNAWTY, NINJA, QUAWKS, and SWANKY.  If you'd like support for your Baytrail Chromebook added, just let me know.
+      </p>
+      <p>
+          Also, fixed an issue with the Firmware Utility Script's listing of available USB devices for firmware backup on ChromeOS devices with emmc internal storage (vs SSD).  Previously, the first USB device wasn't being displayed as the script assumed it was the internal ssd (and therefore excluded it).
+      </p>
+      <br>
       <h5 id="top">A few bug fixes, plus Cloudready support</h3>(2016.07.20)
       <p>
           As is usual with changes of this magnitude, a small bug or two emerged (related to the Stock Firmware Restore functionality of the Firmware Utility Script) and were promptly fixed.  Also, support has been addded for Neverware's Cloudready OS, a ChromiumOS derivative.  It uses a slightly different partition layout than ChromeOS/ChromiumOS, and the scripts were not prepared for it.  Clouldready is handled the same as ChromiumOS - that is, ChromeOS-specific functions are still locked out/not available.
