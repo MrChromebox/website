@@ -16,6 +16,14 @@
       <br>
       <h3 id="top">Latest Updates</h3>
       <br>
+      <h5 id="top">Skylake RW_LEGACY support added</h3>(2016.08.05)
+      <p>
+         RW_LEGACY firmware support has been added for current Skylake-based Chromebooks (CHELL, LARS, SENTRY).  While these models may have included basic RW_LEGACY functionality stock, this improved version features proper video initialization in Legacy Boot Mode, resulting in the correct screen resolution being set (ie, text is more readable) and screen redraws are significantly faster (ie, instant).  And, like all firmware updates offered via the Firmware Utility Script, it allows the user to set their preferred boot device in Legacy Boot Mode (either internal storage or external USB/SD).
+      </p>
+      <p>
+          Additionally, a Full ROM firmware was added for the 2014 Dell Chromebook 11 (CANDY), and several improvements were made to the script related to eMMC controller address support for Baytrail devices.
+      </p>
+      <br>
       <h5 id="top">(Preliminary) Braswell support added</h3>(2016.07.30)
       <p>
          RW_LEGACY firmware support has been added for current Braswell-based Chromebooks (Celeron N3xxx models: CELES, CYAN, EDGAR, REKS, TERRA, ULTIMA).  I don't have confirmation of the eMMC and SD card controller addresses for all of them (only CYAN and EDGAR so far), so eMMC/SD might not show up in the SeaBIOS boot menu for some models.  In that case, drop me a line and I'll give you instructions to retrieve the firmware boot log, which will tell me the correct addresses.
