@@ -61,7 +61,7 @@
             After updating the BOOT_STUB firmware, your device will boot directly in Legacy Mode; ChromeOS will not boot (though it will try to do so and fail, until a new OS is installed).
           </p>
           <p>
-            <strong>Supported Devices:</strong> <code>Baytrail ChromeOS devices without a Full ROM firmware available</code>
+            <strong>Supported Devices:</strong> <code>All Baytrail ChromeOS devices without a Full ROM firmware available</code>
           </p>
           <p>
           <strong>Requires firmware write-protect disabled:</strong> <code>YES</code>
@@ -70,7 +70,7 @@
       <br>
       <li><strong>Install/Update Custom coreboot Firmware (Full ROM)</strong>
           <p>
-            As this is a full replacement firmware, the script will offer users the option to back up their stock firmware on USB. Users will have the option to set the default boot device (internal storage [default] or USB/SD); Haswell/Broadwell Chromebox users will also have the option to enable "headless" (no display attached) booting, as well as the option to enable PXE (Ethernet/network) booting via <a href="http://ipxe.org/" target="_blank">iPXE</a> (the BayTrail-based AOpen Chromebox commerical supports this too).  If PXE support is enabled, it can also be set to be the default boot device.  As before, changing any of these boot options requires re-running this script function.
+            As this is a full replacement firmware, the script will offer users the option to back up their stock firmware on USB.  Haswell/Broadwell users have the option of a Legacy Boot or UEFI compatible firmware.   When the Legacy Boot option is selected, users will have the option to set the default boot device (internal storage [default] or USB/SD); Haswell/Broadwell Chromebox users will also have the option to enable "headless" (no display attached) booting, as well as the option to enable PXE (Ethernet/network) booting via <a href="http://ipxe.org/" target="_blank">iPXE</a> (the BayTrail-based AOpen Chromebox commerical supports this too).  If PXE support is enabled, it can also be set to be the default boot device.  As before, changing any of these boot options requires re-running this script function.
           </p>
           <p>
             Since Haswell/Broadwell/Baytrail Chromeboxes store their Ethernet MAC address in the VPD (vital product data) region of the stock firmware, the script will extract that region from the stock firmware and inject it into the new firmware ensuring the unique MAC address isn't lost.  It will also persist the VPD region across firmware updates, so this is all transparent to the user.

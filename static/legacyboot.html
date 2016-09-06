@@ -11,7 +11,7 @@
       Legacy boot mode is an unsupported method for booting alternate OSes, such as Linux and Windows, available only on Intel/x86-based ChromeOS devices (sorry ARM owners).  It is invoked by pressing <span class="keystroke">[CTRL+L]</span> on the Developer Mode boot screen.  This key sequence directs the depthcharge firmware payload (which normally boots ChromeOS) to instead execute the payload in the RW_LEGACY firmware region.  That payload (SeaBIOS) can then boot any Linux/Windows OS of your choice. Legacy Boot Mode requires a functional RW_LEGACY firmware component, as well as the <code>dev_boot_legacy</code> boot flag to be enabled. Otherwise, you will simply hear two beeps when pressing <span class="keystroke">[CTRL+L]</span>.
     </p>
     <p>
-      Legacy Boot support via RW_LEGACY/SeaBIOS was first added with the 2013 Chromebook Pixel (<a href="https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/chromebook-pixel"  target="_blank">LINK</a>), and continued with the subsequent Haswell-based devices.  However, in many cases the SeaBIOS payloadincluded with the factory firmware had severe defects, ranging from no video output to non-functional USB ports.  In the case of  Baytrail-based devices, the RW_LEGACY firmware was not included at all.  Fortunately, an RW_LEGACY firmware update is available for most recent models which correct these defects, offer improved funtionality, and add Legacy Boot Mode capability for previously unsupported devices.
+      Legacy Boot support via RW_LEGACY/SeaBIOS was first added with the 2013 Chromebook Pixel (<a href="https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/chromebook-pixel"  target="_blank">LINK</a>), and continued with the subsequent Haswell-based devices.  However, in many cases the SeaBIOS payload included with the factory firmware had severe defects, ranging from no video output to non-functional USB ports.  In the case of  Baytrail-based devices, the RW_LEGACY firmware was not included at all.  Fortunately, an RW_LEGACY firmware update is available for most recent models which correct these defects, offer improved funtionality, and add Legacy Boot Mode capability for previously unsupported devices.
     </p>
     
     <h3>SeaBIOS: The Legacy Boot Payload</h3>
@@ -47,25 +47,28 @@
     </p>
     <h3>UEFI and the Future</h3>
     <p>
-      Currently, the firmware available via the Firmware Utility Script only supports Legacy Boot mode / Legacy BIOS functionality, regardless of which type of firmware upgrade you install.  <a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank">UEFI (Unified Extensible Firmware Interface)</a> is the successor to Legacy BIOS and is the firmware type used by virtually all Windows PC's (and Macs) shipped in the last 5+ years.  
+      As of 2016-09-06, the Firmware Utility Script now offers Full ROMs offering either Legacy Boot or UEFI Boot for all Haswell and Broadwell devices.  <a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank">UEFI (Unified Extensible Firmware Interface)</a> is the successor to Legacy BIOS and is the firmware type used by virtually all Windows PC's (and Macs) shipped in the last 5+ years.  
     </p>
     <p>
-      UEFI firmware on ChromeOS devices will offer many benefits over the existing Legacy BIOS offerings:
+      <center><img src="../images/seabios_boot_1.png" style="max-width:47%;">&nbsp;&nbsp;&nbsp;<img src="../images/seabios_boot_2.png" style="max-width:47%;"></center><br>
+      The Tianocore Boot screen shown above is accessed by pressing any key (other than Enter) during the 3s boot timeout (there will be a brief progress bar across the bottom, as well as a blinking cursor); if no key is pressed, it will attempt to boot any externally-connected devices, followed by the internal storage.  If not UEFI boot devices are available, it will simply take you to the screen above.  If you didn't get your USB boot media inserted in time, simply power off and back on.
+    </p>
+    <p>
+      UEFI firmware on ChromeOS devices offers many benefits over the existing Legacy BIOS offerings:
       <ul>
         <li>Better Windows support and faster Windows boot time (50%+ faster)</li>
         <li>Support for compressed Windows installs (<5GB for Windows 8.1)</li>
-        <li>Fixes keyboard-related bugs plaguing many Chromebooks with SeaBIOS</li>
         <li>Better support for dual/triple/quad boot scenarios</li>
-        <li>Ability to run OSX / MacOS on Core i3/i5/i7-based machines</li>
+        <li>Ability to run OS X / MacOS on Core i3/i5/i7-based machines</li>
         <li>Better support for USB devices at boot time (SeaBIOS was/is quite finnicky)</li>
       </ul>
       And a few more I'm forgetting as well.
     </p>
     <p>
-      Work has been underway for some time to bring UEFI functionality to ChromeOS devices via the open-source <a href="http://www.tianocore.org/" target="blank">Tianocore</a> firmware payload, and preliminary support exists now. <a href="http://www.coolstar.org" target="_blank">coolstar</a> has released <a href="https://www.reddit.com/r/chrultrabook/comments/4t8kd5/flashing_script_for_uefi_available/" target="_blank">UEFI-compatible firmware for Haswell and Broadwell-based Chromebooks</a>.  This early-release firmware chain loads a special Tianocore package on top of SeaBIOS (which is stripped down to the minimum needed to load Tianocore) in a manner invisible to user. It also has a few limitations: among other things, it lacks the ability to boot in Legacy Mode (often referred to as UEFI-CSM; this will likely never be implemented), and it lacks the ability to change/save settings, including the default boot device (USB-attached devices are the default, then internal storage).  The UI is also not as polished as other UEFI implementations, but that's open source for you :)
+      Work has been underway for some time to bring UEFI functionality to ChromeOS devices via the open-source <a href="http://www.tianocore.org/" target="blank">Tianocore</a> firmware payload, and preliminary support exists now. This initial release chain loads a special Tianocore package on top of SeaBIOS (which is stripped down to the minimum needed to load Tianocore) in a manner invisible to user. It also has a few limitations: among other things, it lacks the ability to boot in Legacy Mode (often referred to as UEFI-CSM; this will likely never be implemented), and it lacks the ability to change/save settings, including the default boot device (USB-attached devices are the default, then internal storage).  The UI is also not as polished as other UEFI implementations, but that's open source for you :)
     </p>
     <p>
-      All of these issues are being worked on, and in the near future all Full ROM firmware offered by the Firmware Utility Script will be fully UEFI-compatible.  Until then, check the links above if you'd like to be an early adopter. 
+      All of these issues are being worked on, and hopfully in the near future all Full ROM firmware offered by the Firmware Utility Script will be fully UEFI-compatible. For now, feel free to check the status on/report any issues <a href="https://github.com/MattDevo/firmware/issues" target="_blank"> on the Github tracker</a>. 
     </p>
   </body>
 </html>
