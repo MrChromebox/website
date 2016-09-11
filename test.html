@@ -66,6 +66,7 @@
         var hash = window.location.hash.substring(1);
         var pageUrl = 'static/' + hash + '.html';
         gofor(pageUrl);
+        $(hash).click(); 
     } else {
         $('#main_content').load("static/home.html");
     }
