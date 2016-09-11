@@ -53,19 +53,29 @@
   </body>
 
   <script>
-    $('#main_content').load("static/home.html");
+    var gofor; 
 
-    function gofor(page)
-    {    
+    gofor = function (page) {
+        var pageName = page.replace('static/','').slice(0, -5);
         $('#main_content').load(page);
         document.getElementById('main_content_wrap').scrollTop =0;
+        window.location.hash = '#' + pageName;
     }
-    $(function() {
+
+    if (window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        var pageUrl = 'static/' + hash + '.html';
+        gofor(pageUrl);
+    } else {
+        $('#main_content').load("static/home.html");
+    }
+
+    $(function() { 
         $('#nav li a').click(function() {
            $(".nav").find(".active").removeClass("active");
-   				 $(this).parent().addClass("active");
-        });
-     });
-  </script>
+           $(this).parent().addClass("active");
+        });        
+    });
+</script>
 
 </html>
