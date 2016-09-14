@@ -52,7 +52,7 @@
     </div>
   </body>
 
-  <script>
+<script>
     var gofor; 
 
     gofor = function (page) {
@@ -66,6 +66,8 @@
         var hash = window.location.hash.substring(1);
         var pageUrl = 'static/' + hash + '.html';
         gofor(pageUrl);
+        $('#nav').find('li').removeClass('active');
+        $('#nav').find('#_' + hash).addClass('active');
     } else {
         $('#main_content').load("static/home.html");
     }
