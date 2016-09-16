@@ -16,7 +16,17 @@
       <br>
       <h3 id="top">Latest Updates</h3>
       <br>
-      <h5 id="top">Legacy and UEFI Full ROMs added for all Haswell/Broadwell devices</h3>(2016.09.06)
+      <h5 id="top">New Script Functions: Remove/Restore ChromeOS Bitmaps</h5>(2016.09.06)
+      <p>
+         Lots of people use ChromeOS in Developer Mode, and the one thing they can all agree on is that the bright white Developer Mode boot screen is a travesty.  To that end, I've added a new script function which removes the ChromeOS bitmap images used for the Developer Mode and Recovery Mode splash screens, which leaves your device with a simple and pleasant black screen with white text: 
+      </p>
+      <p><center><img src="../images/devmode_normal.png" style="max-width:40%;" style="border:1px solid black">&nbsp;&nbsp;becomes&nbsp;&nbsp;<img src="../images/dev_no_bmp.png" style="max-width:40%;"></center>
+      </p>
+      <p>
+          If you want to restore the stock bitmaps, the <a href="#fwscript">Firmware Utility Script</a> has you covered there too :)
+      </p>
+      <br>
+      <h5 id="top">Legacy and UEFI Full ROMs added for all Haswell/Broadwell devices</h5>(2016.09.06)
       <p>
          Haswell/Broadwell device owners now have the option of flashing a Full ROM with either Legacy Boot (SeaBIOS) or UEFI Boot (Tianocore).  UEFI booting is needed/optimal for users who want to run Windows, OS X, or a multi-boot setup; Most Linux users will need to install a boot manager such as <a href="http://www.rodsbooks.com/refind/" target="_blank">rEFInd</a> since the UEFI firmware currently only looks for the default EFI boot path (EFI\BOOT\BOOTX64.EFI).  GalliumOS users will want to stick with the Legacy Boot option, since GalliumOS isn't UEFI compatible yet.
       </p>
@@ -24,7 +34,7 @@
          All Full ROMs feature improvements to the SMBIOS tables, which fixes the amount of RAM reported to the system (mainly affected Windows and OS X).  Haswell/Broadwell Full ROMs also get fixes to the onboard audio, which improve the headphone jack detection/functionality, and fix the subsystem ID reported so that Windows will automatically install the correct drivers via Windows Update. Baytrail Full ROMs have been updated with a fix for battery status under Windows.
       </p>
       <br>
-      <h5 id="top">Skylake RW_LEGACY support added</h3>(2016.08.05)
+      <h5 id="top">Skylake RW_LEGACY support added</h5>(2016.08.05)
       <p>
          RW_LEGACY firmware support has been added for current Skylake-based Chromebooks (CHELL, LARS, SENTRY).  While these models may have included basic RW_LEGACY functionality stock, this improved version features proper video initialization in Legacy Boot Mode, resulting in the correct screen resolution being set (ie, text is more readable) and screen redraws are significantly faster (ie, instant).  And, like all firmware updates offered via the Firmware Utility Script, it allows the user to set their preferred boot device in Legacy Boot Mode (either internal storage or external USB/SD).
       </p>
@@ -46,7 +56,7 @@
           Also, the syslinux bootloader used for installing LibreELEC in dual-boot and external USB configurations has been updated, as well as the flashrom binary used on non-ChromeOS/ChromiumOS systems.  Both were updated to add Braswell support, and didn't appear problematic on older platforms in my (albeit limited) testing here.
       </p>
       <br>
-      <h5 id="top">Baytrail Windows Update</h3>(2016.07.24)
+      <h5 id="top">Baytrail Windows Update</h5>(2016.07.24)
       <p>
          All Baytrail Full ROMs have been updated to fix the detection/operation of emmc/SD storage controllers by Windows, so you can now install Windows onto the internal emmc (or at least access it if booting from external media).  Unfortunately, the I2C bus functionality is not yet working, so an external mouse is required since the trackpad will be non-functional.  Baytrail Full ROMs are currently available for ENGUARDE, GLIMMER, GNAWTY, NINJA, QUAWKS, and SWANKY.  If you'd like support for your Baytrail Chromebook added, just let me know.
       </p>
@@ -54,12 +64,12 @@
           Also, fixed an issue with the Firmware Utility Script's listing of available USB devices for firmware backup on ChromeOS devices with emmc internal storage (vs SSD).  Previously, the first USB device wasn't being displayed as the script assumed it was the internal ssd (and therefore excluded it).
       </p>
       <br>
-      <h5 id="top">A few bug fixes, plus Cloudready support</h3>(2016.07.20)
+      <h5 id="top">A few bug fixes, plus Cloudready support</h5>(2016.07.20)
       <p>
           As is usual with changes of this magnitude, a small bug or two emerged (related to the Stock Firmware Restore functionality of the Firmware Utility Script) and were promptly fixed.  Also, support has been addded for Neverware's Cloudready OS, a ChromiumOS derivative.  It uses a slightly different partition layout than ChromeOS/ChromiumOS, and the scripts were not prepared for it.  Clouldready is handled the same as ChromiumOS - that is, ChromeOS-specific functions are still locked out/not available.
       </p>
       <br>
-      <h5 id="top">New Site, New Firmware, New Script Functions! </h3>(2016.07.19)
+      <h5 id="top">New Site, New Firmware, New Script Functions! </h5>(2016.07.19)
       <p>
           Along with the revamped website, all firmware files have been rebuilt and updated using the latest sources.  Plus, Full ROM firmware has been added for several BayTrail Chromebooks (ENGUARDE, GLIMMER, GNAWTY, and SWANKY) with more to come in the near future.
       </p>
