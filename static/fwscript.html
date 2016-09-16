@@ -125,6 +125,35 @@
           </p>
       </li>
       <br>
+      <li><strong>Remove ChromeOS Bitmaps</strong>
+          <p>
+            This function removes the ChromeOS bitmap (image) files used to display the Developer Mode and Recovery boot screens, leaving you with a simple black screen with white terminal text -- much easier on the eyes, esp when booting in a darkened environment.
+          </p>
+          <p><center><img src="../images/devmode_normal.png" style="max-width:47%; style="border:1px solid black">">&nbsp;&nbsp;becomes&nbsp;&nbsp;<img src="../imagesdev_no_bmp.png" style="max-width:47%;"></center></p>
+          <p>
+            <strong>Note:</strong> ChromeOS updates might occasionally restore the missing bitmaps, so if you're still running ChromeOS you may need to re-run this function as needed.
+          </p>
+
+          <p>
+            <strong>Supported Devices:</strong> <code>All ChromeOS devices running stock (or stock + RW_LEGACY) firmware</code>
+          </p>
+          <p>
+          <strong>Requires firmware write-protect disabled:</strong> <code>YES</code>
+          </p>
+      </li>
+      <br>
+      <li><strong>Restore ChromeOS Bitmaps</strong>
+          <p>
+            This script function reverses the function above :)
+          </p>
+          <p>
+            <strong>Supported Devices:</strong> <code>All ChromeOS devices running stock (or stock + RW_LEGACY) firmware</code>
+          </p>
+          <p>
+          <strong>Requires firmware write-protect disabled:</strong> <code>YES</code>
+          </p>
+      </li>
+      <br>
       <li><strong>Restore Stock BOOT_STUB</strong>
           <p>
             This script function will restore the stock BOOT_STUB for any device running a modified BOOT_STUB firmware.  It will first attempt to use the built-in backup created by this script, and failing that, will download the firmware from a recovery image (a shellball ROM) and extract the stock BOOT_STUB from that.
