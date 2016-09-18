@@ -16,7 +16,15 @@
       <br>
       <h3 id="top">Latest Updates</h3>
       <br>
-      <h5 id="top">New Script Functions: Remove/Restore ChromeOS Bitmaps</h5>(2016.09.06)
+      <h5 id="top">Full ROM Firmware Update for HSW/BDW</h5>(2016.09.18)
+      <p>
+         Today's Full ROM updates feature an updated VGA BIOS (VBIOS) for Haswell Chromebooks, which speeds up initial power on a bit (by not setting a video mode that's never used), as well as a Wifi fix for all devices using an Intel wifi card (the issue seemed to not affect most users, but there's no harm in the fix). 
+      </p>
+      <p>
+          It's also the last set of Full ROMs I'll be offering for Baytrail Chromebooks, since the current Full ROMs 1) don't offer any real advantage over the BOOT_STUB firmware, 2) introduce some minor issues, like not always powering on when the lid opens, 3) only cover a handful of Baytrail devices, and 4) never fulfilled their original goal of making the devices usable under Windows, due to lack of working trackpad/touchscreen/sound.  I'll keep the code around in a separate branch in case anyone wants to build their own from my sources, but it won't be updated and I won't be distributing new builds after today (unless something happens to change the conditions above).
+      </p>
+      <br>
+      <h5 id="top">New Script Functions: Remove/Restore ChromeOS Bitmaps</h5>(2016.09.15)
       <p>
          Lots of people use ChromeOS in Developer Mode, and the one thing they can all agree on is that the bright white Developer Mode boot screen is a retina-searing travesty.  To that end, I've added a new script function which removes the ChromeOS bitmap images used for the Developer Mode and Recovery Mode splash screens, which leaves your device with a simple and pleasant black screen with white text: 
       </p>
