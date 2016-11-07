@@ -16,6 +16,19 @@
       <br>
       <h3 id="top">Latest Updates</h3>
       <br>
+      <h5 id="top">Full ROM support added for Monroe</h5>(2016.11.07)
+      <p>
+         A device-specific Full ROM has been added for Monroe, the Haswell-based LG Chromebase.  Previously, Monroe was covered under the Haswell Chromebox umbrella, but it was brought to my attention that there are enough differences to warant a separate build.
+      </p>
+      <p>
+          Additionally, a whole slew of fixes are included for other devices as well:<br>
+          - Parrot: use correct interrupt values for SandyBridge/IvyBridge variants under Linux
+          - Parrot: include SD/MMC drivers to support booting from SD under UEFI
+          - Panther: add USB ACPI port definitions to improve Windows, OS X support
+          - Haswell/Broadwell Chromeboxes: increase timeout to enter UEFI setup at boot
+          - a few other minor fixes that escape me
+      </p>
+      <br>
       <h5 id="top">Fix for SandyBridge-based Acer C710 (Parrot)</h5>(2016.10.20)
       <p>
          Shortly after the release of the Full ROM firmware for the Acer C710 (Parrot), we discovered a bug affecting the amount of RAM reported by Linux/Windows on the SandyBridge (Celeron 847U) models; it also caused some significant performance issues as well.  This issue has now been corrected.  IvyBridge (Celeron 1007U) models were not affected.
