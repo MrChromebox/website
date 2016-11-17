@@ -16,6 +16,17 @@
       <br>
       <h3 id="top">Latest Updates</h3>
       <br>
+      <h5 id="top">Huge improvements in UEFI Firmware! (for all devices with UEFI firmware)</h5>(2016.11.17)
+      <p>
+         Thanks in no small part to the efforts of <a href="https://www.reddit.com/user/coolstarorg" target="_blank">coolstar</a>, we are now able to say goodbye to the VGA BIOS in our UEFI firmware, relying excusively on the EFI GOP driver.  This fixes a whole slew of audio/video related problems, including HDMI audio under Windows (now works OOTB for all devices), Windows installer video mode/output (particularly on the SandyBridge c710), and many others.
+      </p>
+      <p>
+          Additionally, there's a handful of other fixes as well:<br>
+          - Haswell Chromeboxes: fix fan spinup under Windows<br>
+          - All Haswell devices: increase default video memory (DVMT) from 32MB to 96MB (putting it back on par with Broadwell)<br>
+        As usual, the full list of changes can be found <a href="https://github.com/MattDevo/coreboot/commits/master" target="_blank">on my github repo</a>.
+      </p>
+      <br>
       <h5 id="top">Full ROM support added for Monroe</h5>(2016.11.07)
       <p>
          A device-specific Full ROM has been added for Monroe, the Haswell-based LG Chromebase.  Previously, Monroe was covered under the Haswell Chromebox umbrella, but it was brought to my attention that there are enough differences to warant a separate build.
