@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Legacy Booting and Linux</title>
+    <title>Legacy and UEFI Boot Modes</title>
   </head>
   <body>
     <h3 id="top">Legacy Boot Mode</h3>
@@ -37,7 +37,7 @@
     </p>
     <h3>What About Windows?</h3>
     <p>
-      Windows is somewhat of a second-class citizen on ChromeOS devices, mainly due to firmware that was built with the goal of doing the absolute minimum to securely boot ChromeOS.  However, considerable progress has been made in getting Windows running on many ChromeOS devices. Haswell and Broadwell devices run it quite well, with a few limitations (HDMI audio, fan control, lack of PAVP support); others (older SandyBridge/IvyBridge devices, BayTrail/Braswell devices) are much more problematic. 
+      Windows has historically been second-class citizen on ChromeOS devices, mainly due to firmware that was built with the goal of doing the absolute minimum to securely boot ChromeOS.  However, with recent improvements in the UEFI firmware, Windows now runs extremely well on many ChromeOS devices. Haswell and Broadwell devices run it pretty much as well as native devices, as do the SandyBridge/IvyBridge Acer c710; others (mainly BayTrail/Braswell devices) are much more problematic and not worth the effort. 
       </p>
       <p>
       If you’d like to run Windows from internal storage, it is recommended that you upgrade your SSD if possible. 16-32GB can be much more limiting for Windows than it is for ChromeOS. There are, however, some approaches available for compressing Windows if the storage in your Chromebook is non-upgradeable.
@@ -47,17 +47,18 @@
     </p>
     <h3>UEFI and the Future</h3>
     <p>
-      As of 2016-09-06, the Firmware Utility Script now offers Full ROMs offering either Legacy Boot or UEFI Boot for all Haswell and Broadwell devices.  <a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank">UEFI (Unified Extensible Firmware Interface)</a> is the successor to Legacy BIOS and is the firmware type used by virtually all Windows PC's (and Macs) shipped in the last 5+ years.  
+      As of 2016-09-06, the Firmware Utility Script now offers Full ROMs offering either Legacy Boot or UEFI Boot for all Haswell and Broadwell devices (as well as for both the SandyBridge and IvyBridge variants of the Acer c710).  <a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank">UEFI (Unified Extensible Firmware Interface)</a> is the successor to Legacy BIOS and is the firmware type used by virtually all Windows PC's (and Macs) shipped in the last 5+ years.  
     </p>
     <p>
       <center><img src="../images/duet_boot.png" style="max-width:47%;"></center><br>
-      UEFI functionality is provided by the <a href="http://www.tianocore.org/" target="blank">Tianocore</a> coreboot payload.  The boot screen shown above is accessed by pressing any key (other than Enter) during the 3s boot timeout (there will be a brief progress bar across the bottom, as well as a blinking cursor); if no key is pressed, it will attempt to boot any externally-connected devices, followed by the internal storage.  If not UEFI boot devices are available, it will simply take you to the screen above.  If you didn't get your USB boot media inserted in time, simply power off and back on.
+      UEFI functionality is provided by the <a href="http://www.tianocore.org/" target="blank">Tianocore</a> coreboot payload.  The boot screen shown above is accessed by pressing any key (other than Enter) during the ~3s boot timeout (there will be a brief progress bar across the bottom, as well as a blinking cursor); if no key is pressed, it will attempt to boot any externally-connected devices, followed by the internal storage.  If not UEFI boot devices are available, it will simply take you to the screen above.  If you didn't get your USB boot media inserted in time, simply power off and back on.
     </p>
     <p>
       UEFI firmware on ChromeOS devices offers many benefits over the existing Legacy BIOS offerings:
       <ul>
         <li>Better Windows support and faster Windows boot time (50%+ faster)</li>
-        <li>Support for compressed Windows installs (<5GB for Windows 8.1)</li>
+        <li>Full working HDMI audio under Windows, without any special drivers or hackery</li>
+        <li>Support for compressed Windows installs (under 5GB for Windows 8.1) </li>
         <li>Better support for dual/triple/quad boot scenarios</li>
         <li>Ability to run OS X / MacOS on Core i3/i5/i7-based machines</li>
         <li>Better support for USB devices at boot time (SeaBIOS was/is quite finnicky)</li>
@@ -65,7 +66,7 @@
       And a few more I'm forgetting as well.
     </p>
     <p>
-       This initial UEFI firmware release chain loads a special Tianocore package on top of SeaBIOS (which is stripped down to the minimum needed to load Tianocore) in a manner invisible to user. It also has a few limitations: among other things, it lacks the ability to boot in Legacy Mode (often referred to as UEFI-CSM; this will likely never be implemented), and it lacks the ability to change/save settings, including the default boot device (USB-attached devices are the default, then internal storage).  The UI is also not as polished as other UEFI implementations, but that's open source for you :)
+       This initial UEFI firmware release chain loads a special Tianocore package on top of SeaBIOS (which is stripped down to the minimum needed to load Tianocore) in a manner invisible to user. It also has a few limitations: among other things, it lacks the ability to boot in Legacy Mode (often referred to as UEFI-CSM; this will likely never be implemented), and -- <b>critically</b> -- it lacks the ability to change/save settings, including the default boot device (USB-attached devices are the default, then internal storage).  Another side effect of this limitation is that a UEFI bootloader (like <a href="http://www.rodsbooks.com/refind/" target="_blank">rEFInd</a>) is requried for multi-OS booting, or for booting any OS which doesn't install its own bootloader into the default UEFI boot path (/EFI/BOOT/BOOTX64.efi).  The UI is also not as polished as other UEFI implementations, but that's open source for you :)
     </p>
     <p>
       All of these issues are being worked on, and hopfully in the near future all Full ROM firmware offered by the Firmware Utility Script will be fully UEFI-compatible. For now, feel free to check the status on/report any issues <a href="https://github.com/MattDevo/firmware/issues" target="_blank"> on the Github tracker</a>. 
