@@ -16,6 +16,14 @@
       <br>
       <h3 id="top">Latest Updates</h3>
       <br>
+      <h5 id="top">More UEFI Improvements, new ROMs for Haswell Chromeboxes</h5>(2016.11.27)
+      <p>
+         This UEFI release fixes some issues with backlight control for Haswell Chromebooks under Linux and OS X/MacOS, adds support for 3 new Haswell Chromebox models (Acer/McCloud, Dell/Tricky, and HP/Zako) which were previously handled by the firmware for the Asus model (Panther).  Handling them separately allows for better control of the power LEDs (and their blinking state on McCloud/Tricky) and fan speeds optimized for each model.
+      </p>
+      <p>
+          Additionally, the UEFI firmware now has the option to select either internal (SSD) or external (USB/SD) storage as the preferred boot target at time of install; previously it was fixed at external.  Regardless of which option is selected, the boot menu is available by hitting ESC (or any key other than Enter) while the progress bar is visible at the bottom of the screen, then selecting 'Boot Manager' from the UEFI firmware setup menu.  Once we have the ability to save the firmware settings, choosing the boot priority at install time will no longer be necessary.
+      </p>
+      <br>
       <h5 id="top">Huge improvements in UEFI Firmware! (for all devices with UEFI firmware)</h5>(2016.11.17)
       <p>
          Thanks in no small part to the efforts of <a href="https://www.reddit.com/user/coolstarorg" target="_blank">coolstar</a>, we are now able to say goodbye to the VGA BIOS in our UEFI firmware, relying excusively on the EFI GOP driver.  This fixes a whole slew of audio/video related problems, including HDMI audio under Windows (now works OOTB for all devices), Windows installer video mode/output (particularly on the SandyBridge c710), and many others.
