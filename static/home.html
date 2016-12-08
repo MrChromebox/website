@@ -16,6 +16,14 @@
       <br>
       <h3 id="top">Latest Updates</h3>
       <br>
+      <h5 id="top">Another round of UEFI Updates</h5>(2016.12.08)
+      <p>
+         This UEFI release adds pre-OS HDMI video output for Chromebooks; previously, on many models, the firmware settings and boot manager screens were visible only on the internal display - now they should be visible on both internal and external displays.  Though external displays do take a lot longer to turn on/init, so there may be a 2-3s delay defore output is visible.
+      </p>
+      <p>
+          There are also fixes for the power LED on the Dell Chromebox 3010 (Tricky) and for the trackpad on the Dell Chromebook 13 7310 (Lulu) which previously required a kernel command-line parameter to work around a fix for the Windows trackpad driver - it should work OOTB now for all Linux distros outside of ChromiumOS/CloudReady, which doesn't include the correct driver/config (still).  Also, the master display clock on Broadwell devices has been bumped back up (now that the HDMI audio issue has been resolved), which should enable 2160p60 (4K 60Hz) output on capable devices (Chromeboxes, Pixel2).
+      </p>
+      <br>
       <h5 id="top">More UEFI Improvements, new ROMs for Haswell Chromeboxes</h5>(2016.11.27)
       <p>
          This UEFI release fixes some issues with backlight control for Haswell Chromebooks under Linux and OS X/MacOS, adds support for 3 new Haswell Chromebox models (Acer/McCloud, Dell/Tricky, and HP/Zako) which were previously handled by the firmware for the Asus model (Panther).  Handling them separately allows for better control of the power LEDs (and their blinking state on McCloud/Tricky) and fan speeds optimized for each model.
