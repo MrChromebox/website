@@ -22,36 +22,13 @@
     <p>
       <strong>Note:</strong> If only one boot device is available -- either no USB/SD devices are attached, or they are not properly detected/initialized by SeaBIOS -- then the boot menu prompt ("Press ESC for boot menu") will not be shown, and the internal storage will be booted.  In the case where ChromeOS is still installed/is the only OS installed, this can result in the screen showing text indicating a kernel panic, or simply a blank screen.  If this happens, simply reboot and try using a different USB/SD device to install/boot from.
     </p>
-    <h3>Installing Linux</h3>
-    <p>
-      How one installs Linux depends on the use case:
-      <ul style="list-style-type:square">
-        <li>Running Linux inside ChromeOS: use <a href="https://github.com/dnschneid/crouton" target="_blank">crouton</a></li>
-        <li>Dual Booting Linux along with ChromeOS on internal storage: use <a href="https://chrx.org" target="_blank">chrx</a></li>
-        <li>Dual Booting Linux on external media: boot Linux USB installer in Legacy Mode and install to USB/SD</li>
-        <li>Installing only Linux on internal storage: boot Linux USB installer install like you would on any other PC</li>
-      </ul>
-    </p>
-    <p>
-      There are some caveats, of course.  Running crouton means you're stuck with the (relatively) older drivers which ChromeOS uses,  which aren't ideal for video playback or gaming performance.  Using either the RW_LEGACY or BOOT_STUB firmware to run Linux exposes some of issues with the stock firmware on many devices: mainly regarding the TPM (disable it via the grub command line using <code>tpm_tis.force=1 tpm_tis.interrupts=0</code> or with the Syslinux bootloader (<code>mem=1952M</code> is needed on some devices to boot, and Syslinux 6.0.x doesn't boot at all (use 5.10 or 6.04-pre1).
-    </p>
-    <h3>What About Windows?</h3>
-    <p>
-      Windows has historically been second-class citizen on ChromeOS devices, mainly due to firmware that was built with the goal of doing the absolute minimum to securely boot ChromeOS.  However, with recent improvements in the UEFI firmware, Windows now runs extremely well on many ChromeOS devices. Haswell and Broadwell devices run it pretty much as well as native devices, as do the SandyBridge/IvyBridge Acer c710; others (mainly BayTrail/Braswell devices) are much more problematic and not worth the effort. 
-      </p>
-      <p>
-      If you’d like to run Windows from internal storage, it is recommended that you upgrade your SSD if possible. 16-32GB can be much more limiting for Windows than it is for ChromeOS. There are, however, some approaches available for compressing Windows if the storage in your Chromebook is non-upgradeable.
-    </p>
-    <p>
-      That said, if you're interested in running Windows, head on over to the <a href="https://www.reddit.com/r/chrultrabook/" target="_blank">chrultrabook Reddit community</a> where the fine folks there will do their best to help you make it happen. Also check out <a href="https://coolstar.org/chromebook/windows-install.html" target="blank">coolstar's handy Windows for Chromebooks Installation Helper</a>.
-    </p>
     <h3>UEFI and the Future</h3>
     <p>
       As of 2016-09-06, the Firmware Utility Script now offers Full ROMs offering either Legacy Boot or UEFI Boot for all Haswell and Broadwell devices (as well as for both the SandyBridge and IvyBridge variants of the Acer c710).  <a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank">UEFI (Unified Extensible Firmware Interface)</a> is the successor to Legacy BIOS and is the firmware type used by virtually all Windows PC's (and Macs) shipped in the last 5+ years.  
     </p>
     <p>
       <center><img src="../images/duet_boot.png" style="max-width:47%;"></center><br>
-      UEFI functionality is provided by the <a href="http://www.tianocore.org/" target="blank">Tianocore</a> coreboot payload.  The boot screen shown above is accessed by pressing any key (other than Enter) during the ~2s boot timeout (there will be a brief progress bar across the bottom, as well as a blinking cursor); if no key is pressed, it will attempt to boot any externally-connected devices, followed by the internal storage (unless you opted to prioritize internal storage at the time of installation).  If not UEFI boot devices are available, it will simply take you to the screen above.  If you didn't get your USB boot media inserted in time, simply power off and back on.
+      UEFI functionality is provided by the <a href="http://www.tianocore.org/" target="blank">Tianocore</a> coreboot payload.  The boot screen shown above is accessed by pressing any key (other than Enter) during the ~2s boot timeout (there will be a brief progress bar across the bottom, as well as a blinking cursor); if no key is pressed, it will attempt to boot any externally-connected devices, followed by the internal storage.  If no UEFI boot devices are available, it will dump you into the EFI shell application; simply type 'exit' and hit enter to get to the firmware settings screen shown above.  If you didn't get your USB boot media inserted in time, simply power off and back on.
     </p>
     <p>
       UEFI firmware on ChromeOS devices offers many benefits over the existing Legacy BIOS offerings:
@@ -73,6 +50,3 @@
     </p>
   </body>
 </html>
-
-
-
