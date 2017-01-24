@@ -16,6 +16,21 @@
       <br>
       <h3 id="top">Latest Updates</h3>
       <br>
+      <h5 id="top">Holy Baytrail, Batman!</h5>(2016.12.14)
+      <p>
+         It's been a long time coming, but we finally have proper support for all 15(!) Baytrail devices (Celeron N2xxx).  All BYT devices now have UEFI Full ROM firmware, fully capable of running Windows** and Linux; Legacy (SeaBIOS) Full ROMs are also available, but most users will be better served by the UEFI firmware.
+      </p>
+      <p> Additionally, other devices received a handful of fixes and improvements too:<br>
+          - fixed VGA output on UEFI firmware for Samsung Series 3 Chromebox (STUMPY); DisplayPort still non-functional as the primary/only output however<br>
+          - fixed intermittent issue with UEFI pre-boot graphics init on some devices with 1080p (or higher) displays<br>
+          - devices with a Google Embedded Controller (EC) now boot with their updated RW firmware (vs the base RO firmware) active<br>
+          <br>
+          As usual, the full list of changes can be found <a href="https://github.com/MattDevo/coreboot/commits/2017.01.23" target="_blank">on my github repo</a>.
+      </p>
+      <p>
+         ** Built-in audio (including the headphone jack) will not work on Baytrail devices due to lack of audio drivers from the manufacturer; this is not something we're able to hack ourselves unfortunately.  HDMI audio is functional, and Bluetooth/USB audio devices will work without issue as well.
+      </p>
+      <br>     
       <h5 id="top">So Long, SeaBIOS!</h5>(2016.12.14)
       <p>
          After months of hard work, we've finally managed to extricate SeaBIOS from the UEFI firmware -- now they directly boot into the UEFI payload (Tianocore) without using SeaBIOS as a shim.  This paves the way for many future improvements, like functional NVRAM for saving the UEFI settings/boot paths (hopefully).
