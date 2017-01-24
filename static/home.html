@@ -16,7 +16,21 @@
       <br>
       <h3 id="top">Latest Updates</h3>
       <br>
-      <h5 id="top">Holy Baytrail, Batman!</h5>(2016.12.14)
+      <h5 id="top">Two Steps Forward, One Step Back?</h5>(2017.01.27)
+      <p>
+         Despite our best efforts, it seems a few gremlins snuck into the 01/23 release, so pushing a new round of UEFI firmware to address the issues that popped up:<br>
+          - fixed trackpad functionality on Banjo<br>
+          - fixed Windows Display output on Gandolf, Guado, Rikku, and Tidus<br>
+          - fixed touchscreen functionality on Clapper and Glimmer<br>
+          - increased graphics memory pre-allocation (DVMT) on Baytrail devices from 64 to 128MB<br>
+          - reverted Legacy Boot (SeaBIOS) Full ROM firmware to previous release to fix backlight control issue<br>
+          - removed Legacy Boot (SeaBIOS) Full ROM firmware for Baytrail devices, as it wasn't thoroughly tested, and really isn't necessary since BYT devices have the BOOT_STUB firmware option<br>
+          <br>
+          As usual, the full list of changes (and source code) can be found <a href="https://github.com/MattDevo/coreboot/commits/2017.01.27" target="_blank">on my github repo</a>.
+      </p>
+      <p>
+      <br>
+      <h5 id="top">Holy Baytrail, Batman!</h5>(2017.01.23)
       <p>
          It's been a long time coming, but we finally have proper support for all 15(!) Baytrail devices (Celeron N2xxx).  All BYT devices now have UEFI Full ROM firmware, fully capable of running Windows** and Linux; Legacy (SeaBIOS) Full ROMs are also available, but most users will be better served by the UEFI firmware.
       </p>
