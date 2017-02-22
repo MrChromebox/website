@@ -16,6 +16,25 @@
       <br>
       <h3 id="top">Latest Updates</h3>
       <br>
+      <h5 id="top">EC Firmware updates For Everyone! (almost)</h5>(2017.02.21)
+      <p>
+         The big feature in this release is that we're now able to update not only the main system firmware, but also the firmware for the embedded controller (EC) on Chromebooks as well.  This has a few immediate benefits:<br>
+          - The keyboard is now fully PS2 compliant, and should work OOTB without any special drivers on all OSes.  Special drivers are still needed for the correct mapping of the media keys, but you no longer have to use an external keyboard to install Windows (eg).<br>
+          - Resume from suspend via opening the lid is now fixed on all Haswell Chromebooks (Falco, Leon, Peppy, and Wolf)<br>
+          - Adjusted the fan speeds on the HP Chromebook 14 G1 (Falco), which was a universal complaint from all owners<br>
+          <br>
+          While updating the EC firmware is something that's usually fraught with dragons, on Chromebooks it's easy and safe: the EC maintains two copies of the firmware - a read-only (RO) copy and a read-write (RW) copy.  When the system boots, the main firmware checks that the version of the EC RW firmware matches what's expected; if there's a mismatch, the RW copy gets updated.  Upon successful update, or if no update is needed, the EC is rebooted using the RW firwmare and system boot proceeds as normal.  If there's a problem updating, then the EC uses the RO firmware and an update attempt is made again on the next reboot.  All of this is completely transparent to the end user, and adds less than 0.1s to the boot time.<br>
+          <br>
+          These EC firmware updates are included for all Haswell, Broadwell, and Baytrail Chromebooks running the UEFI Full ROM firmware. Older SandyBridge/IvyBridge devices don't use Google's ChromeEC, so can't be updated.  Chromeboxes don't use an EC, so this doesn't apply to them.
+      </p>
+      <p> There's also a handful of other fixes and improvements too:<br>
+          - UEFI firmware added for the HP Pavilion Chromebook 14 (butterfly)<br>
+          - Fixed an issue related to external display detection on Chromeboxes<br>
+          <br>
+          As usual, the full list of changes can be found <a href="https://github.com/MattDevo/coreboot/commits/2017.02.21" target="_blank">on my github repo</a>.
+      </p>
+      <p>
+      <br>
       <h5 id="top">Two Steps Forward, One Step Back?</h5>(2017.01.27)
       <p>
          Despite our best efforts, it seems a few gremlins snuck into the 01/23 release, so pushing a new round of UEFI firmware to address the issues that popped up:<br>
