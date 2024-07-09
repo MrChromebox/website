@@ -1,6 +1,7 @@
 # Latest Updates
 
-### Major Website Overhaul!
+
+## Major Website Overhaul!
 (2024.07.04)
 
 Long Overdue, the backend of the website here has been migrated from the old hand-crafted HTML to a new markdown-based setup using [Vuepress](https://vuepress.vuejs.org), with the source all [on Github](https://github.com/MrChromebox/website) for ease of updates and automated deployment. This means community contributions can be more easily integrated, and hopefully will improve the flow of information (in both directions) between this project and [chrultrabook](https://chrultrabook.com).
@@ -9,7 +10,7 @@ There are problably a lot of rough edges still, so feel free to [submit an issue
 
 
 
-### MrChromebox-2405 Release
+## MrChromebox-2405 Release
 
 (2024.06.15)
 
@@ -30,7 +31,7 @@ The full list of changes can be found [on my github repos](https://github.com/Mr
 
   
 
-### MrChromebox-4.22.4 Release
+## MrChromebox-4.22.4 Release
 
 (2024.04.16)
 
@@ -44,7 +45,7 @@ The full list of changes can be found [on my github repos](https://github.com/Mr
 
   
 
-### MrChromebox-4.22.3 Release
+## MrChromebox-4.22.3 Release
 
 (2024.04.15)
 
@@ -62,7 +63,7 @@ The full list of changes can be found [on my github repos](https://github.com/Mr
 
   
 
-### Firmware Utility Script back up and running
+## Firmware Utility Script back up and running
 
 (2024.02.23 -- #2)
 
@@ -72,7 +73,7 @@ The site wiki pages are still a bit of a mess formatting-wise, and I hope to hav
 
   
 
-### Site Issues and Downtime
+## Site Issues and Downtime
 
 (2024.02.23)
 
@@ -81,7 +82,7 @@ As many of you have realized, the site was down the past few days as the old hos
 To those who complained that my site/service being down has cost you money, I would suggest you contact me for a commercial support contract which would allow you to self-host and avoid that issue.  
   
 
-### MrChromebox-4.22.2 Release
+## MrChromebox-4.22.2 Release
 
 (2024.01.20)
 
@@ -92,7 +93,7 @@ The full list of changes can be found [on my github repos](https://github.com/Mr
 
   
 
-### MrChromebox-4.22.1 Release
+## MrChromebox-4.22.1 Release
 
 (2024.01.16)
 
@@ -104,7 +105,7 @@ The full list of changes can be found [on my github repos](https://github.com/Mr
 
   
 
-### MrChromebox-4.22.0 Release
+## MrChromebox-4.22.0 Release
 
 (2023.12.22)
 
@@ -114,7 +115,7 @@ The full list of changes can be found [on my github repos](https://github.com/Mr
 
   
 
-### MrChromebox-4.21.1 Release
+## MrChromebox-4.21.1 Release
 
 (2023.10.29)
 
@@ -133,7 +134,7 @@ As usual, the full list of changes can be found [on my github repos](https://git
 
   
 
-### MrChromebox-4.21.0 Release
+## MrChromebox-4.21.0 Release
 
 (2023.10.01)
 
@@ -153,7 +154,7 @@ As usual, the full list of changes can be found [on my github repos](https://git
 
   
 
-### coreboot 4.20.1 Release
+## coreboot 4.20.1 Release
 
 (2023.07.21)
 
@@ -171,7 +172,7 @@ Mainly a bugfix release, this adds support for a few more boards as well:
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/MrChromebox-4.20) [\[2\]](https://github.com/MrChromebox/edk2/commits/uefipayload_202306) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### coreboot 4.20 Release
+## coreboot 4.20 Release
 
 (2023.05.15)
 
@@ -190,7 +191,7 @@ Beside updating the base coreboot code, this release as usual is full of fixes a
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/MrChromebox-4.20) [\[2\]](https://github.com/MrChromebox/edk2/commits/upp_202304) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### coreboot 4.19 Release
+## coreboot 4.19 Release
 
 (2023.01.23)
 
@@ -207,19 +208,19 @@ Beta UEFI images are available upon request for newer boards using Jasperlake, o
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/MrChromebox-4.19) [\[2\]](https://github.com/MrChromebox/edk2/commits/upp_202301) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### coreboot 4.18.2 Update
+## coreboot 4.18.2 Update
 
 (2022.11.29)
 
 Squashed some more USB-related issues introduced in the initial 4.18 release. Added UEFI Full ROM images for a handful of TGL and JSL boards.  
 
-### coreboot 4.18.1 Update
+## coreboot 4.18.1 Update
 
 (2022.10.27)
 
 A sneaky USB enumersation bug snuck into the 4.18 release as part of the Tianocore/edk2 update, which (mostly) prevented the detection of USB keyboards on SKL/KBL Chromeboxes (though I had a few reports of BDW Chromeboxes being affected too, althought I could not reproduce). The root cause has been identified and fixed, so pushing out a 4.18.1 update for all boards using the new/fixed Tianocore build.  
 
-### coreboot 4.18 Release
+## coreboot 4.18 Release
 
 (2022.10.24)
 
@@ -236,7 +237,7 @@ Beta UEFI images are available upon request for newer boards using Intel Tigerla
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/2022.10.24) [\[2\]](https://github.com/MrChromebox/edk2/commits/upp_202210) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### coreboot 4.16 Release
+## coreboot 4.16 Release
 
 (2022.04.09)
 
@@ -253,13 +254,13 @@ NOTE: c720 (PEPPY) users running Windows need to be using the latest touchpad dr
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/2022.04.09) [\[2\]](https://github.com/MrChromebox/edk2/commits/upp_202111) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### Pixelbook 4.14 firmware updated
+## Pixelbook 4.14 firmware updated
 
 (2021.08.06)
 
 The 4.14 release added an updated EC-RW firmware for the Pixelbook, but apparently the update was failing due to a timeout erasing the RW region, causing the EC to fall back to the much older factory RO firmware. This broke suspend and the keyboard under Windows. An update has been release which fixes the issue and allows the EC-RW firmware update to complete successfully, so suspend and Windows (10 and 11) work properly now. Update via the Firmware Utility script from (natively booted) Linux (wsl does not work).  
 
-### coreboot 4.14 Release
+## coreboot 4.14 Release
 
 (2021.07.25)
 
@@ -271,7 +272,7 @@ Beside updating the base coreboot code, this release as usual is full of fixes a
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/2021.07.25) [\[2\]](https://github.com/MrChromebox/edk2/commits/uefipayload_202107) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### RW_LEGACY/AltFw support for Jasperlake, Zen2 Chromebooks Added
+## RW_LEGACY/AltFw support for Jasperlake, Zen2 Chromebooks Added
 
 (2021.06.02)
 
@@ -291,7 +292,7 @@ Unlike many previous devices using Altfw, Jasperlake devices have fully working 
   
 As always, RW_LEGACY firmware does \*\*not\*\* require disabling firmware write protection to flash/use.
 
-### coreboot 4.13 Release
+## coreboot 4.13 Release
 
 (2021.04.21)
 
@@ -307,7 +308,7 @@ Beside updating the base coreboot code, this release as usual is full of fixes a
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/2021.04.21) [\[2\]](https://github.com/MrChromebox/edk2/commits/2021.04.21) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### RW_LEGACY/AltFw support for Cometlake Chromeboxes Added
+## RW_LEGACY/AltFw support for Cometlake Chromeboxes Added
 
 (2020.11.26)
 
@@ -320,13 +321,13 @@ While probably not available via retail channels just yet, buyers of the soon-to
   
 UEFI Full ROM support for all Cometlake-based ChromeOS devices (books and boxes) is in the works as well.
 
-### It's always something with Braswell
+## It's always something with Braswell
 
 (2020.06.06)
 
 It seems that several Braswell users have run into firmware/pre-OS display init issues with the new UefiPayloadPkg in the 4.12 release, so I'm rolling them back to the older CorebotPayloadPkg UEFI payload, with some tweaks to help address the NVRAM issues which plagued the previous release. Hopefully that will tide things over until I can figure out what's going on / why others are running into issues I'm not seeing here.  
 
-### coreboot 4.12 Release
+## coreboot 4.12 Release
 
 (2020.06.04)
 
@@ -344,7 +345,7 @@ Beside updating the base coreboot code, this release as usual is full of fixes a
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/2020.06.04) [\[2\]](https://github.com/MrChromebox/edk2/commits/2020.06.04) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### Another coreboot 4.11 Respin (4.11.2 point release)
+## Another coreboot 4.11 Respin (4.11.2 point release)
 
 (2020.03.17)
 
@@ -367,23 +368,23 @@ Also added UEFI firmware support for the AMD Stoneyridge devices:
  * Lenovo 14e Chromebook / S345 (LIARA)  
 
 And as a bonus, the Firmware Utility Script will now let you know if an update for your device is available:
-<p align="center"> <img src="/images/fwscript_update.png" width="500"/></p>
+<p align="center"> <img src="/images/fwscript_update.png" alt="fwscript update notification" width="500"/></p>
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/2020.03.17) [\[2\]](https://github.com/MrChromebox/edk2/commits/2020.03.17) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### RW_LEGACY Firmware Added for NOCTURNE
+## RW_LEGACY Firmware Added for NOCTURNE
 
 (2020.02.23)
 
 RW_LEGACY firmware has been added for the Google Pixel Slate, so masochists who want to run Linux natively whilst dual booting ChromeOS now have that option. As mentioned below but worth repeating: firmware support often preceeds OS support, so users shouldn't expect any additional functionality under Linux compared to any other Kabylake devices (and in the case of NOCTURNE, it's probably worse, due to Linux's poor support for DPCD backlight control).  
 
-### UEFI Firmware Added for ATLAS and NOCTURNE
+## UEFI Firmware Added for ATLAS and NOCTURNE
 
 (2020.02.15)
 
 Completing support for Kabylake ChromeOS devices, support has been added for ATLAS (Google Pixelbook Go) and NOCTURNE (Google Pixel Slate). As is often the case, the availablity of custom UEFI firmware preceeds OS support, so users shouldn't expect any additional functionality under Linux compared to any other Kabylake devices (and in the case of NOCTURNE, it's probably worse, due to Linux's poor support for DPCD backlight control).  
 
-### Pixelbook Windows backlight control fixed!
+## Pixelbook Windows backlight control fixed!
 
 (2020.01.10)
 
@@ -391,7 +392,7 @@ A few weeks ago, a firmware update was released for the Pixelbook (EVE) which en
 
 Additionally, the power-on screen brightness was reduced slightly, which should benefit Linux users who mostly still don't have backlight control  
 
-### AMD eMMC booting fixed!
+## AMD eMMC booting fixed!
 
 (2020.01.07)
 
@@ -399,7 +400,7 @@ AMD Chromebooks are the first to use Google's new Legacy Boot Mode implementatio
 
 This means work can resume on UEFI Full ROM firmware for AMD Chromebooks -- stay tuned!  
 
-### coreboot 4.11 Respin (4.11.1 point release)
+## coreboot 4.11 Respin (4.11.1 point release)
 
 (2019.12.01)
 
@@ -426,7 +427,7 @@ Also took the opportunity to slip in a few improvements as well:
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/2019.12.01) [\[2\]](https://github.com/MrChromebox/edk2/commits/2019.12.01) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### coreboot 4.11 + Tiano improvements
+## coreboot 4.11 + Tiano improvements
 
 (2019.11.25)
 
@@ -442,7 +443,7 @@ Hot off the heels of the previous update, we have a fresh release based on the n
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/2019.11.25) [\[2\]](https://github.com/MrChromebox/edk2/commits/2019.11.25) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### coreboot 4.10 remix
+## coreboot 4.10 remix
 
 (2019.10.28)
 
@@ -456,7 +457,7 @@ With the coreboot 4.11 release not too far off, more fixes/improvements are comi
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/2019.08.22) [\[2\]](https://github.com/MrChromebox/edk2/commits/master) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### coreboot 4.10 release (and more)
+## coreboot 4.10 release (and more)
 
 (2019.08.22)
 
@@ -476,7 +477,7 @@ Additionally, preliminary RW_LEGACY support has been added for AMD StoneyRidge-b
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/2019.08.22) [\[2\]](https://github.com/MrChromebox/edk2/commits/master) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### NVRAM? Yep, we got that!
+## NVRAM? Yep, we got that!
 
 (2018.12.30)
 
@@ -496,7 +497,7 @@ The UEFI Full ROM firmware for all devices has been updated and rebuilt, with th
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/2018.12.30) [\[2\]](https://github.com/MrChromebox/edk2/commits/2018.12.30) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### UEFI Full ROM Firmware now available for all Skylake Chromebooks and Kabylake Chromeboxes
+## UEFI Full ROM Firmware now available for all Skylake Chromebooks and Kabylake Chromeboxes
 
 (2018.08.02)
 
@@ -518,7 +519,7 @@ The UEFI Full ROM firmware for all devices has been updated and rebuilt, with th
 
 As usual, the full list of changes can be found [on my github repos](https://github.com/MrChromebox?tab=repositories) [\[1\]](https://github.com/MrChromebox/coreboot/commits/2018.08.02) [\[2\]](https://github.com/MrChromebox/edk2/commits/2018.08.02) [\[3\]](https://github.com/MrChromebox/chrome-ec/branches/all).
 
-### UEFI Full ROM Firmware now available for all Braswell devices (and Stout too!)
+## UEFI Full ROM Firmware now available for all Braswell devices (and Stout too!)
 
 (2018.02.04)
 
@@ -545,7 +546,7 @@ As usual, the full list of changes can be found [on my github repos](https://git
 
   
 
-### RW_LEGACY Support added for all ApolloLake Devices! (and the Pixelbook)
+## RW_LEGACY Support added for all ApolloLake Devices! (and the Pixelbook)
 
 (2017.12.02)
 
@@ -557,7 +558,7 @@ While this is a quick/small update, work continues on UEFI/Full ROM firmware for
 
   
 
-### Support added for Link and Lumpy
+## Support added for Link and Lumpy
 
 (2017.07.14)
 
@@ -571,13 +572,13 @@ As usual, the full list of changes can be found [on my github repos](https://git
 
   
 
-### New Splash Screen added; BayTrail Audio on Windows fixed
+## New Splash Screen added; BayTrail Audio on Windows fixed
 
 (2017.04.09)
 
 Gone is the brief "Start Boot Option" text - the UEFI firmware now has a proper splash screen, with the coreboot logo (a European brown hare) and a printout of the amount of system RAM. The splash will show for ~1s, during which time you can press ESC to enter the UEFI firmware settings.
 
-<p align="center"> <img src="/images/tiano_splash.png" width="500"/></p>
+<p align="center"> <img src="/images/tiano_splash.png" alt="Tianocore boot logo" width="500"/></p>
 
 Baytrail devices also got a handful of fixes, most notably working audio under Windows when using coolstar's Maxim audio driver. This release also fixes an issue where selecting the eMMC from the boot menu would fail to boot Windows, and an issue with going into sleep on devices with a light sensor (which isn't used/supported).  
   
@@ -589,7 +590,7 @@ As usual, the full list of changes can be found [on my github repos](https://git
 
   
 
-### UEFI Headless Booting is Fixed! CTRL-ALT-DEL added!
+## UEFI Headless Booting is Fixed! CTRL-ALT-DEL added!
 
 (2017.03.19)
 
@@ -603,7 +604,7 @@ As usual, the full list of changes can be found [on my github repos](https://git
 
   
 
-### EC Firmware updates For Everyone! (almost)
+## EC Firmware updates For Everyone! (almost)
 
 (2017.02.21)
 
@@ -625,7 +626,7 @@ As usual, the full list of changes can be found [on my github repo](https://gith
 
   
 
-### Two Steps Forward, One Step Back?
+## Two Steps Forward, One Step Back?
 
 (2017.01.27)
 
@@ -641,7 +642,7 @@ As usual, the full list of changes (and source code) can be found [on my github 
 
   
 
-### Holy Baytrail, Batman!
+## Holy Baytrail, Batman!
 
 (2017.01.23)
 
@@ -658,7 +659,7 @@ As usual, the full list of changes can be found [on my github repo](https://gith
 
   
 
-### So Long, SeaBIOS!
+## So Long, SeaBIOS!
 
 (2016.12.14)
 
@@ -676,7 +677,7 @@ As usual, the full list of changes can be found [on my github repo](https://gith
 
   
 
-### Another round of UEFI Updates
+## Another round of UEFI Updates
 
 (2016.12.08)
 
@@ -686,7 +687,7 @@ There are also fixes for the power LED on the Dell Chromebox 3010 (Tricky) and f
 
   
 
-### More UEFI Improvements, new ROMs for Haswell Chromeboxes
+## More UEFI Improvements, new ROMs for Haswell Chromeboxes
 
 (2016.11.27)
 
@@ -696,7 +697,7 @@ Additionally, the UEFI firmware now has the option to select either internal (SS
 
   
 
-### Huge improvements in UEFI Firmware! (for all devices with UEFI firmware)
+## Huge improvements in UEFI Firmware! (for all devices with UEFI firmware)
 
 (2016.11.17)
 
@@ -710,7 +711,7 @@ As usual, the full list of changes can be found [on my github repo](https://gith
 
   
 
-### Full ROM support added for Monroe
+## Full ROM support added for Monroe
 
 (2016.11.07)
 
@@ -727,7 +728,7 @@ Edit: also updated Stumpy (Samsung Series 3 Chromebox) to automatically power on
 
   
 
-### Fix for SandyBridge-based Acer C710 (Parrot)
+## Fix for SandyBridge-based Acer C710 (Parrot)
 
 (2016.10.20)
 
@@ -737,7 +738,7 @@ Also, the Firmware Utility Script main menu got a minor facelift, improving read
 
   
 
-### Full ROM Support Added for Acer C710 (Parrot)
+## Full ROM Support Added for Acer C710 (Parrot)
 
 (2016.10.15)
 
@@ -747,7 +748,7 @@ Also, the Full ROMs (both Legacy and UEFI) for Broadwell devices have been updat
 
   
 
-### Audio fix for Auron devices
+## Audio fix for Auron devices
 
 (2016.09.29)
 
@@ -755,7 +756,7 @@ Just a quick update to the Full ROMs for Auron devices (Auron_Paine and Auron_Yu
 
   
 
-### More Full ROM Firmware Updates
+## More Full ROM Firmware Updates
 
 (2016.09.22)
 
@@ -767,7 +768,7 @@ And while I previously said the last update would be the final Full ROM for any 
 
   
 
-### Full ROM Firmware Update for HSW/BDW
+## Full ROM Firmware Update for HSW/BDW
 
 (2016.09.18)
 
@@ -777,15 +778,15 @@ It's also the last set of Full ROMs I'll be offering for Baytrail Chromebooks, s
 
   
 
-### New Script Functions: Remove/Restore ChromeOS Bitmaps
+## New Script Functions: Remove/Restore ChromeOS Bitmaps
 
 (2016.09.15)
 
 Lots of people use ChromeOS in Developer Mode, and the one thing they can all agree on is that the bright white Developer Mode boot screen is a retina-searing travesty. To that end, I've added a new script function which removes the ChromeOS bitmap images used for the Developer Mode and Recovery Mode splash screens, which leaves your device with a simple and pleasant black screen with white text:
 
-<p align="center"> <img src="/images/devmode_normal.png" width="300"/>
+<p align="center"> <img src="/images/devmode_normal.png" alt="Developer Mode boot screen" width="300"/>
 &nbsp;&nbsp;becomes&nbsp;&nbsp;    
-<img src="/images/dev_no_bmp.png" width="300"/></p>
+<img src="/images/dev_no_bmp.png" alt="Developer Mode text only" width="300"/></p>
 
 If you want to restore the stock bitmaps, the [Firmware Utility Script](docs/fwscript) has you covered there too :)
 
@@ -793,7 +794,7 @@ Edit: Sadly this doesn't work on Skylake Chromebooks, as they use a different me
 
   
 
-### Legacy and UEFI Full ROMs added for all Haswell/Broadwell devices
+## Legacy and UEFI Full ROMs added for all Haswell/Broadwell devices
 
 (2016.09.06)
 
@@ -803,7 +804,7 @@ All Full ROMs feature improvements to the SMBIOS tables, which fixes the amount 
 
   
 
-### Skylake RW_LEGACY support added
+## Skylake RW_LEGACY support added
 
 (2016.08.05)
 
@@ -813,7 +814,7 @@ Additionally, a Full ROM firmware was added for the 2014 Dell Chromebook 11 (CAN
 
   
 
-### (Preliminary) Braswell support added
+## (Preliminary) Braswell support added
 
 (2016.07.30)
 
@@ -827,7 +828,7 @@ Also, the syslinux bootloader used for installing LibreELEC in dual-boot and ext
 
   
 
-### Baytrail Windows Update
+## Baytrail Windows Update
 
 (2016.07.24)
 
@@ -837,7 +838,7 @@ Also, fixed an issue with the Firmware Utility Script's listing of available USB
 
   
 
-### A few bug fixes, plus Cloudready support
+## A few bug fixes, plus Cloudready support
 
 (2016.07.20)
 
@@ -845,7 +846,7 @@ As is usual with changes of this magnitude, a small bug or two emerged (related 
 
   
 
-### New Site, New Firmware, New Script Functions!
+## New Site, New Firmware, New Script Functions!
 
 (2016.07.19)
 

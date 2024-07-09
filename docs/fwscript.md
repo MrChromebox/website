@@ -36,13 +36,13 @@ and press `[ENTER]`.
 Starting with ChromeOS R117, this script must be run from a VT2 terminal (from login screen: `[CTRL+ALT+F2]`, login `chronos`); it cannot be run from a crosh shell (`[CTRL+ALT+T]` when logged in) due to the removal of sudo, or from a crostini (penguin) terminal; crostini is a virtualized container and lacks the necessary access to read or modify the firmware.
 :::
 
-![](/images/fwutil_cros_wp-on.png)  
+![fwscript WP ON](/images/fwutil_cros_wp-on.png)  
 Firmware Utility Script, on device with stock firmware and WP enabled
 
-![](/images/fwutil_cros_wp-off.png)  
+![fwscript WP OFF](/images/fwutil_cros_wp-off.png)  
 Firmware Utility Script, on device with stock firmware and WP disabled
 
-![](/images/fwutil_uefi_menu.png)  
+![fwscript UEFI menu](/images/fwutil_uefi_menu.png)  
 Firmware Utility Script, on device with Full ROM firmware and WP disabled
 
 In the screenshots above, only the script functions available for the device and current firmware are enabled (cyan text); unavailable functions are in grey. Features which require the firmware WP to be disabled are clearly labeled as such, along with the ability of that function to be used based on the current WP state.
@@ -103,7 +103,7 @@ In the screenshots above, only the script functions available for the device and
     
     This function removes the ChromeOS bitmap (image) files used to display the Developer Mode and Recovery boot screens, leaving you with a simple black screen with white terminal text -- much easier on the eyes, esp when booting in a darkened environment.
     
-    ![](/images/devmode_normal.png)  becomes  ![](/images/dev_no_bmp.png)
+    ![Developer Mode normal](/images/devmode_normal.png)  becomes  ![Developer Mode text only](/images/dev_no_bmp.png)
     
     **Note:** ChromeOS updates might occasionally restore the missing bitmaps, so if you're still running ChromeOS you may need to re-run this function as needed.
     

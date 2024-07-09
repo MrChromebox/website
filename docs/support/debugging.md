@@ -15,13 +15,13 @@ To debug firmware, you will need the following tools:
 
 To dump the cbmem buffer, follow these steps:
 1. Download the cbmem utility:
-   - `wget https://mrchromebox.tech/files/util/cbmem.tar.gz`
+    - `wget https://mrchromebox.tech/files/util/cbmem.tar.gz`
 
 2. Unzip the file and give the binary executable permissions:
-   - `tar -xf cbmem.tar.gz;rm cbmem.tar.gz;chmod +x cbmem`
+    - `tar -xf cbmem.tar.gz;rm cbmem.tar.gz;chmod +x cbmem`
 
 3. Run `cbmem` and redirect the output to `cbmem.log` file:
-   - `sudo ./cbmem -1 > cbmem.log`
+    - `sudo ./cbmem -1 > cbmem.log`
 
 4. Provide the `cbmem.log` file via the chrultrabook forums, Github issue tracker, or email for further analysis.
 
@@ -46,18 +46,18 @@ The SuzyQable provides three serial ports (UARTs) which can be accessed using a 
 ## ACPI and Linux kernelspace
 
 1. Download the chrultrabook debugging script.
-   * `cd ~/Desktop;wget https://raw.githubusercontent.com/chrultrabook/linux-tools/main/debugging.sh`
+    * `cd ~/Desktop;wget https://raw.githubusercontent.com/chrultrabook/linux-tools/main/debugging.sh`
 
-It will dump:
-  * ACPI tables from sysfs (`/sys/firmware/acpi/*`)
-  * DMI information (`dmidecode`)
-  * Coreboot buffer (`cbmem`)
-  * Linux kernel logs (`dmesg`)
-  * List of PCI devices (`lspci`)
-  * List of USB devices (`lsusb`)
-  * Information about soundcards present in the system and their configuration
+    It will dump:
+    * ACPI tables from sysfs (`/sys/firmware/acpi/*`)
+    * DMI information (`dmidecode`)
+    * Coreboot buffer (`cbmem`)
+    * Linux kernel logs (`dmesg`)
+    * List of PCI devices (`lspci`)
+    * List of USB devices (`lsusb`)
+    * Information about soundcards present in the system and their configuration
 
-  Into `debug-logs.tar.gz` archive on your desktop.
+    Into `debug-logs.tar.gz` archive on your desktop.
 
 2. Run it: `chmod +x debugging.sh;./debugging.sh`
 

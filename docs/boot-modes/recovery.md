@@ -5,12 +5,12 @@ A ChromeOS device will boot to Recovery Mode when something goes wrong, but it c
 Some example recovery mode screens: 
 
 <p align="center">
-<img src="/images/cros_recovery_old.jpg" width="300">
-<img src="/images/cros_recovery_old_details.jpg" width="300"/>
+<img src="/images/cros_recovery_old.jpg" alt="Recovery Mode 1" width="300">
+<img src="/images/cros_recovery_old_details.jpg" alt="Recovery Mode 1 detail" width="300"/>
 </p>
 <p align="center">
-<img src="/images/cros_recovery_new.jpg" width="300"/>
-<img src="/images/cros_recovery_new_details.jpg" width="300"/>
+<img src="/images/cros_recovery_new.jpg" alt="Recovery Mode 2" width="300"/>
+<img src="/images/cros_recovery_new_details.jpg" alt="Recovery Mode 2 detail" width="300"/>
 </p>
 
 
@@ -24,7 +24,7 @@ Press `ESC` + `Refresh` (arrow icon), + `Power` at the same time
 On some devices (mainly convertibles), the key in the upper right corner of the keyboard is for screen lock, with the power button on the side of the device. Look at the icon on the key closely.
 :::
 
-<img src="/recovery/recovery-keyboard-hint.png" width=500>
+<img src="/recovery/recovery-keyboard-hint.png" alt="Chromebook keyboard layout" width=500>
 
 ### Chromeboxes
 
@@ -32,13 +32,13 @@ Depress the recovery button using a paperclip or SIM card tool, then power on th
 
 The hole for the recovery button is usually located above the Kensington Lock slot.
 
-<img src="/recovery/recovery-chromebox-hint.png">
+<img src="/recovery/recovery-chromebox-hint.png" alt="Chromebox recovery button">
 
 ### Tablets
 
 Press and hold down the `Volume Up` + `Volume Down` + `Power` buttons for 10 seconds, then release.
 
-<img src="/recovery/recovery-tablet-hint.png" width=500>
+<img src="/recovery/recovery-tablet-hint.png" alt="Chrome tablet buttons" width=500>
 
 
 ::: warning IMPORTANT

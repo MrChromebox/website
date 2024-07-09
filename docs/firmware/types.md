@@ -1,6 +1,6 @@
 # Firmware Update Types
 
-*   **RW_LEGACY**
+##   **RW_LEGACY**
     
     *   Updates/replaces the stock legacy boot payload (SeaBIOS) included on many models; supplements the ChromeOS / secure boot payload
     *   Leaves all stock functionality intact, including the Developer Mode boot screen and Recovery Mode functionality
@@ -12,7 +12,7 @@
     The **RW_LEGACY** firmware is for users who want to dual-boot ChromeOS + Linux, or users who want to run Linux without having to open the device/disable the firmware write-protect (and are ok with the accompanying limitations).
     
   
-*   **BOOT_STUB** (now deprecated; listed for historical purposes only)
+##   **BOOT_STUB** (now deprecated; listed for historical purposes only)
     
     *   Replaces the ChromeOS Verified Boot firmware payload (depthcharge) with a legacy boot payload (SeaBIOS)
     *   Removes the Developer Mode boot screen (white "OS verification is OFF")
@@ -28,7 +28,7 @@
     The **BOOT_STUB** firmware was originally an option for some platforms which lacked UEFI (Full ROM) firmware support, but it's no longer needed and support for it has been dropped).
     
   
-*   **(UEFI) Full ROM**
+##   **(UEFI) Full ROM**
     
     *   A complete firmware image which includes updated/customized versions of the hardware init component (coreboot) and UEFI boot payload (Tianocore); Chromeboxes have the option of a Legacy Boot (SeaBIOS) firmware also, since some specialized Linux distros run on them are not yet UEFI compatible (e.g., roon)
     *   Removes the developer mode boot (white "OS verification is OFF") screen

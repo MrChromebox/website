@@ -11,7 +11,7 @@ Putting your ChromeOS device into [Developer Mode](https://www.chromium.org/chro
 
 Because Developer Mode is inherently less secure than Verified Boot Mode, as a warning when booting you will be greeted by the developer mode boot screen:
 
-<p align="center"> <img src="/images/cros_dev_mode.jpg" width="500"/></p>
+<p align="center"> <img src="/images/cros_dev_mode.jpg" alt="Developer Mode boot screen" width="500"/></p>
 
 The Developer Mode boot screen will show for 30 seconds, then beep and boot into ChromeOS (by default). You can bypass this timeout by pressing `[CTRL+D]` to boot into ChromeOS, or `[CTRL+L]` to boot in legacy mode/to the Alternate Bootloader Menu if available. The length of the timeout (2s or 30s) and the default boot target (ChromeOS or Legacy Boot Mode) can be changed by setting the firmware boot flags (aka GBB flags).
 

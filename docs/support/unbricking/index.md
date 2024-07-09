@@ -8,5 +8,5 @@ If you think your device is bricked, the quickest and easist thing you can do is
 
 There are serveral methods which can be used, though not all apply to all devices. All 2017+ models with a CR50 Google Security Chip (GSC) can be recovered with a SuzyQable.
 
-### [Unbricking with a ch341a USB programmer](unbrick-ch341a)
-### [Unbricking with a SuzyQable (aka SuzyQ cable)](unbrick-suzyq)
+## [Unbricking with a ch341a USB programmer](unbrick-ch341a)
+## [Unbricking with a SuzyQable (aka SuzyQ cable)](unbrick-suzyq)
