@@ -27,7 +27,7 @@ There are problably a lot of rough edges still, so feel free to [submit an issue
 
 (2024.06.15)
 
-As coreboot as changed its version numbering to a YYMM scheme, MrChromebox releases will now do the same. This new release is based on the coreboot 24.05 tag (May 2024) and includes the following changes:
+As coreboot has changed its version numbering to a YYMM scheme, MrChromebox releases will now do the same. This new release is based on the coreboot 24.05 tag (May 2024) and includes the following changes:
  * Rebased on coreboot tag 24.05
  * Added support for several new Intel Jasperlake boards (beadrix, boxy, dexi, peezer, taranza)
  * Added latest Google-built EC-RW updates for all Jasperlake boards
