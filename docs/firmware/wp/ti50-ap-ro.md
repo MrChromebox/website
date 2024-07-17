@@ -12,7 +12,7 @@ If you disabled WP via CCD and reset your CCD flags with `ccd reset factory`, yo
 
 ## Step 1: Verify the device has a Ti50
 
-1. Open VT-2 (`ctrl` + `alt` + `f2` (right arrow)).
+1. Open VT-2 terminal: press `[CTRL+ALT+F2]` (F2 is the right arrow or refresh key).
 2. Login as `root`.
 3. Run `gsctool -a -I | grep AllowUnverifiedRo`.
 4. If that command has any output, your device has a Ti50. If you get no output or an error, your device either has a Cr50 or no GSC at all.
@@ -32,7 +32,7 @@ If your device has a Ti50 and you don't disable RO verification, flashing full r
 ### Chromebooks
 
 1. Press and hold the `Power` button.
-2. Press the `Refresh` (arrow icon) button twice.
+2. Press `[F2]` twice.
 3. Release the `Power` button.
 4. Repeat the above steps a second time.
 
