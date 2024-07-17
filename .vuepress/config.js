@@ -118,7 +118,11 @@ export default defineUserConfig ({
               {
                 text: 'Disabling FW WP',
                 link: '/docs/firmware/wp/disabling',
-              }
+              },
+              {
+                text: 'Disabling RO WP on Ti50',
+                link: '/docs/firmware/wp/ti50-ap-ro',
+              },
             ]
           },
           {
