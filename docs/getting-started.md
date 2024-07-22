@@ -31,8 +31,8 @@ Following a Youtube video or blog post with "simplified" instructions will only 
 
 If you want to dual boot ChromeOS and Linux on your device:
 
-* Verify your device has [RW_LEGACY support](/docs/suppported-devices.md)
-* Put your device in [Developer Mode](developer.md)
+* Verify your device has [RW_LEGACY support](/docs/supported-devices.md)
+* Put your device in [Developer Mode](/boot-modes/developer.md)
 * Run the [Firmware Utility Script](fwscript.md)
 * Flash the [RW_LEGACY Firmware](firmware/types.md)
 * Reboot
@@ -47,8 +47,8 @@ Installing Linux on the internal storage along with ChromeOS requires repartitio
 
 If you want to wipe ChromeOS form your device and replace it with Linux or Windows:
 
-* Verify your device has [UEFI Full ROM support](/docs/suppported-devices.md)
-* Put your device in [Developer Mode](developer.md)
+* Verify your device has [UEFI Full ROM support](/docs/supported-devices.md)
+* Put your device in [Developer Mode](/boot-modes/developer.md)
 * Disable the device's **hardware** [firmware write protection](firmware/wp/index.md)
     (via screw, jumper, battery, or CCD)
 * Run the [Firmware Utility Script](fwscript.md)
