@@ -1,6 +1,5 @@
 {
     "Intel Sandybridge/Ivybridge": {
-        "default_wpmethod": "<a rel=\"nofollow noopener noreferrer\" class=\"external text\" href=\"https://www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/samsung-sandy-bridge\" target=\"_blank\">jumper</a>",
         "default_rwLegacy": false,
         "default_fullrom": true,
         "devices": [
@@ -9,7 +8,7 @@
                     "HP Pavilion Chromebook 14"
                 ],
                 "boardname": "BUTTERFLY",
-                "wpMethod": "<a rel=\"nofollow noopener noreferrer\" class=\"external text\" href=\"https://www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/hp-pavilion-14-chromebook\" target=\"_blank\">switch</a>"
+                "wpMethod": "<a href=\"/images/wp/Butterfly_wp_switch.jpg\" class=\"internal\" title=\"Butterfly_wp_switch.jpg\" target=\"_blank\">switch</a>"
             },
             {
                 "device": [
@@ -17,20 +16,21 @@
                 ],
                 "boardname": "LINK",
                 "rwLegacy": null,
-                "wpMethod": "<a rel=\"nofollow noopener noreferrer\" class=\"external text\" href=\"https://www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/chromebook-pixel\" target=\"_blank\">screw</a>"
+                "wpMethod": "<a href=\"/images/wp/Link_wp_screw.jpg\" class=\"internal\" title=\"Link_wp_screw.jpg\" target=\"_blank\">screw</a>"
             },
             {
                 "device": [
                     "Samsung Chromebook Series 5 550"
                 ],
-                "boardname": "LUMPY"
+                "boardname": "LUMPY",
+		"wpMethod": "<a href=\"/images/wp/Lumpy_wp_jumper.jpg\" class=\"internal\" title=\"Lumpy_wp_jumper.jpg\" target=\"_blank\">jumper</a>"
             },
             {
                 "device": [
                     "Acer C7/C710 Chromebook"
                 ],
                 "boardname": "PARROT",
-                "wpMethod": "<a rel=\"nofollow noopener noreferrer\" class=\"external text\" href=\"https://www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/acer-c7-chromebook\" target=\"_blank\">jumper</a>"
+                "wpMethod": "<a href=\"/images/wp/Parrot_wp_jumper.jpg\" class=\"internal\" title=\"Parrot_wp_jumper.jpg\" target=\"_blank\">jumper</a>"
             },
             {
                 "device": [
@@ -43,7 +43,8 @@
                 "device": [
                     "Samsung Chromebox Series 3"
                 ],
-                "boardname": "STUMPY"
+                "boardname": "STUMPY",
+		"wpMethod": "screw"
             }
         ]
     },
@@ -57,14 +58,14 @@
                     "HP Chromebook 14"
                 ],
                 "boardname": "FALCO",
-                "wpMethod": "<a rel=\"nofollow noopener noreferrer\" class=\"external text\" href=\"https://www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/hp-chromebook-14\" target=\"_blank\">screw</a>"
+                "wpMethod": "screw"
             },
             {
                 "device": [
                     "Toshiba Chromebook 13 (CB30)"
                 ],
                 "boardname": "LEON",
-                "wpMethod": "<a rel=\"nofollow noopener noreferrer\" class=\"external text\" href=\"https://www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/toshiba-cb30-chromebook\" target=\"_blank\">screw</a>"
+                "wpMethod": "<a href=\"/images/wp/Leon_wp_screw.jpg\" class=\"internal\" title=\"Leon_wp_screw.jpg\" target=\"_blank\">screw</a>"
             },
             {
                 "device": [
@@ -78,7 +79,7 @@
                     "LG Chromebase 22"
                 ],
                 "boardname": "MONROE",
-                "wpMethod": "<a rel=\"nofollow noopener noreferrer\" class=\"external text\" href=\"https://www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/lg-chromebase-22cv241-w\" target=\"_blank\">screw</a>"
+                "wpMethod": "screw"
             },
             {
                 "device": [
@@ -92,7 +93,7 @@
                     "Acer C720/C720P Chromebook"
                 ],
                 "boardname": "PEPPY",
-                "wpMethod": "<a rel=\"nofollow noopener noreferrer\" class=\"external text\" href=\"https://www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/acer-c720-chromebook\" target=\"_blank\">screw</a>"
+                "wpMethod": "<a href=\"/images/wp/Peppy_wp_screw.jpg\" class=\"internal\" title=\"Peppy_wp_screw.jpg\" target=\"_blank\">screw</a>"
             },
             {
                 "device": [
@@ -106,7 +107,7 @@
                     "Dell Chromebook 11 (CB1C13)"
                 ],
                 "boardname": "WOLF",
-                "wpMethod": "<a rel=\"nofollow noopener noreferrer\" class=\"external text\" href=\"https://www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/dell-chromebook-11\" target=\"_blank\">screw</a>"
+                "wpMethod": "<a href=\"/images/wp/Wolf_wp_screw.jpg\" class=\"internal\" title=\"Wolf_wp_screw.jpg\" target=\"_blank\">screw</a>"
             },
             {
                 "device": [
@@ -118,7 +119,7 @@
         ]
     },
     "Intel Broadwell": {
-        "default_wpmethod": "<a rel=\"nofollow noopener noreferrer\" class=\"external text\" href=\"https://www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/acer-c720-chromebook\" target=\"_blank\">screw</a>",
+        "default_wpmethod": "screw",
         "default_rwLegacy": null,
         "default_fullrom": true,
         "devices": [
@@ -173,7 +174,7 @@
                     "Google Chromebook Pixel (2015)"
                 ],
                 "boardname": "SAMUS",
-                "wpMethod": "<a rel=\"nofollow noopener noreferrer\" class=\"external text\" href=\"https://www.chromium.org/chromium-os/developer-library/reference/development/developer-information-for-chrome-os-devices/chromebook-pixel-2015\" target=\"_blank\">screw</a>"
+                "wpMethod": "<a href=\"/images/wp/Samus_wp_screw.jpg\" class=\"internal\" title=\"Samus_wp_screw.jpg\" target=\"_blank\">screw</a>"
             },
             {
                 "device": [
