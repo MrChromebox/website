@@ -23,7 +23,7 @@
                     "Samsung Chromebook Series 5 550"
                 ],
                 "boardname": "LUMPY",
-		"wpMethod": "<a href=\"/images/wp/Lumpy_wp_jumper.jpg\" class=\"internal\" title=\"Lumpy_wp_jumper.jpg\" target=\"_blank\">jumper</a>"
+                "wpMethod": "<a href=\"/images/wp/Lumpy_wp_jumper.jpg\" class=\"internal\" title=\"Lumpy_wp_jumper.jpg\" target=\"_blank\">jumper</a>"
             },
             {
                 "device": [
@@ -44,7 +44,7 @@
                     "Samsung Chromebox Series 3"
                 ],
                 "boardname": "STUMPY",
-		"wpMethod": "screw"
+                "wpMethod": "screw"
             }
         ]
     },
@@ -71,7 +71,7 @@
                 "device": [
                     "Acer Chromebox CXI"
                 ],
-                "boardname": "McCLOUD",
+                "boardname": "MCCLOUD",
                 "wpMethod": "<a href=\"/images/wp/mccloud_wp.jpg\" class=\"internal\" title=\"mccloud_wp.jpg\" target=\"_blank\">screw</a>"
             },
             {
@@ -125,18 +125,6 @@
         "devices": [
             {
                 "device": [
-                    "Acer C740 Chromebook"
-                ],
-                "boardname": "AURON_PAINE"
-            },
-            {
-                "device": [
-                    "Acer C910 Chromebook (CB5-571)"
-                ],
-                "boardname": "AURON_YUNA"
-            },
-            {
-                "device": [
                     "Acer Chromebase 24"
                 ],
                 "boardname": "BUDDY",
@@ -144,7 +132,7 @@
             },
             {
                 "device": [
-                    "Toshiba Chromebook2 (2015)"
+                    "Toshiba Chromebook 2 (2015)"
                 ],
                 "boardname": "GANDOF",
                 "wpMethod": "screw"
@@ -161,6 +149,12 @@
                     "Dell Chromebook 13 7310"
                 ],
                 "boardname": "LULU"
+            },
+            {
+                "device": [
+                    "Acer C740 Chromebook"
+                ],
+                "boardname": "PAINE"
             },
             {
                 "device": [
@@ -182,6 +176,12 @@
                 ],
                 "boardname": "TIDUS",
                 "wpMethod": "<a href=\"/images/wp/tidus_wp.jpg\" class=\"internal\" title=\"tidus_wp.jpg\" target=\"_blank\">screw</a>"
+            },
+            {
+                "device": [
+                    "Acer C910 Chromebook (CB5-571)"
+                ],
+                "boardname": "YUNA"
             }
         ]
     },
@@ -210,6 +210,7 @@
             },
             {
                 "device": [
+                    "CTL N6 Education Chromebook",
                     "Lenovo N21 Chromebook"
                 ],
                 "boardname": "ENGUARDE"
@@ -350,16 +351,11 @@
             },
             {
                 "device": [
-                    "Asus Chromebook C202S/C202SA"
+                    "Asus Chromebook C202S/C202SA",
+                    "Asus Chromebook C300SA/C301SA"
                 ],
                 "boardname": "TERRA",
                 "wpMethod": "<a href=\"/images/wp/C202sa_wp.jpg\" class=\"internal\" title=\"C202sa wp.jpg\" target=\"_blank\">screw</a>"
-            },
-            {
-                "device": [
-                    "Asus Chromebook C300SA/C301SA"
-                ],
-                "boardname": "TERRA13"
             },
             {
                 "device": [
@@ -476,13 +472,13 @@
             },
             {
                 "device": [
-                    "Acer Chromebook 514"
+                    "Acer Chromebook 514 (CB514-1H, CB514-1HT)"
                 ],
                 "boardname": "EPAULETTE"
             },
             {
                 "device": [
-                    "Acer Chromebook Spin 11 CP311"
+                    "Acer Chromebook Spin 11 (CP311-1H, CP311-1HN)"
                 ],
                 "boardname": "LAVA"
             },
@@ -532,13 +528,13 @@
             },
             {
                 "device": [
-                    "Acer Chromebook 15 (CB515-1HT)"
+                    "Acer Chromebook 15 (CB515-1H, CB515-1HT)"
                 ],
                 "boardname": "SAND"
             },
             {
                 "device": [
-                    "Acer Chromebook 11 (CB311-8H)"
+                    "Acer Chromebook 11 (CB311-8H, CB311-8HT)"
                 ],
                 "boardname": "SANTA"
             },
@@ -569,13 +565,13 @@
         "devices": [
             {
                 "device": [
-                    "Acer Chromebook 13"
+                    "Acer Chromebook 13 (CB713-1W)"
                 ],
                 "boardname": "AKALI"
             },
             {
                 "device": [
-                    "Acer Chromebook Spin 13"
+                    "Acer Chromebook Spin 13 (CP713-1WN)"
                 ],
                 "boardname": "AKALI360"
             },
@@ -756,7 +752,7 @@
             },
             {
                 "device": [
-                    "Acer Chromebook 315"
+                    "Acer Chromebook 315 (CB315-3H, CB315-3HT)"
                 ],
                 "boardname": "BLORB"
             },
@@ -800,7 +796,7 @@
             },
             {
                 "device": [
-                    "Acer Chromebook 314 (CB314)",
+                    "Acer Chromebook 314 (C933, C933T, CB314-1H, CB314-1HT)",
                     "Packard Bell Chromebook 314 (PCB314)"
                 ],
                 "boardname": "DROID"
@@ -869,31 +865,14 @@
             },
             {
                 "device": [
-                    "Acer Chromebook 311"
-                ],
-                "boardname": "GLK"
-            },
-            {
-                "device": [
-                    "Acer Chromebook Spin 311"
-                ],
-                "boardname": "GLK360"
-            },
-            {
-                "device": [
                     "Dell Chromebook 3100 2-in-1"
                 ],
                 "boardname": "GRABBITER"
             },
             {
                 "device": [
-                    "Lenovo Chromebook C340"
-                ],
-                "boardname": "LASER"
-            },
-            {
-                "device": [
-                    "Lenovo Chromebook S340/IdeaPad 3"
+                    "Lenovo Chromebook S340",
+                    "Lenovo IdeaPad Flex 3 Chromebook 14\""
                 ],
                 "boardname": "LASER14"
             },
@@ -935,16 +914,13 @@
             },
             {
                 "device": [
-                    "Lenovo 300e Chromebook Gen 2/IdeaPad Flex 3",
+                    "Lenovo 300e Chromebook Gen 2",
+                    "Lenovo 500e Chromebook Gen 2",
+                    "Lenovo Chromebook C340",
+                    "Lenovo IdeaPad Flex 3 Chromebook 11\"",
                     "NEC Chromebook Y1"
                 ],
                 "boardname": "PHASER360"
-            },
-            {
-                "device": [
-                    "Lenovo 500e Chromebook Gen 2"
-                ],
-                "boardname": "PHASER360S"
             },
             {
                 "device": [
@@ -1029,6 +1005,13 @@
                     "Dell Latitude 7410 Chromebook Enterprise"
                 ],
                 "boardname": "DRALLION",
+                "rwLegacy": true
+            },
+            {
+                "device": [
+                    "Dell Latitude 7410 2-in-1 Chromebook Enterprise"
+                ],
+                "boardname": "DRALLION360",
                 "rwLegacy": true
             },
             {
@@ -1188,7 +1171,7 @@
             },
             {
                 "device": [
-                    "Acer Chromebook Spin 514 (CB514-2H)"
+                    "Acer Chromebook Spin 514 (CP514-2H)"
                 ],
                 "boardname": "VOEMA"
             },
@@ -1407,7 +1390,7 @@
             },
             {
                 "device": [
-                    "Acer Chromebook Spin 314"
+                    "Acer Chromebook Spin 314 [CP314-1H, CP314-1HN]"
                 ],
                 "boardname": "MAGISTER"
             },
@@ -1640,21 +1623,22 @@
                     "Acer Chromebook Plus 515 (CB515-2H, CB515-2HT)"
                 ],
                 "boardname": "OMNIGUL",
-				"wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (battery)</a>"
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (battery)</a>"
             },
             {
                 "device": [
-                    "Acer Chromebook Plus Enterprise 515"
+                    "Acer Chromebook Plus Enterprise 515 (CBE595-2/CBE595-2T)"
                 ],
                 "boardname": "ONMIKNIGHT",
-				"wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (battery)</a>"
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (battery)</a>"
             },
             {
                 "device": [
-                    "Acer Chromebook 516 GE [CBG516-1H]"
+                    "Acer Chromebook 516 GE [CBG516-1H]",
+                    "Acer Chromebook Plus 516 GE [CBG516-2H]"
                 ],
                 "boardname": "OSIRIS",
-				"wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (battery)</a>"
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (battery)</a>"
             },
             {
                 "device": [
@@ -1694,7 +1678,7 @@
             },
             {
                 "device": [
-                    "Acer Chromebook Vero 514"
+                    "Acer Chromebook Vero 514 (CBV514-1H, CBV514-1HT)"
                 ],
                 "boardname": "VOLMAR"
             },
@@ -1725,43 +1709,45 @@
             },
             {
                 "device": [
+                    "Acer Chromebook Spin 512 (R856T, R856LT)"
+                ],
+                "boardname": "CRAASK"
+            },
+            {
+                "device": [
                     "Acer Chromebook 311"
                 ],
                 "boardname": "CRAASKANA"
             },
             {
                 "device": [
-                    "Acer Chromebook Spin 511"
+                    "Acer Chromebook Spin 511 (R756T, R756LT)"
                 ],
                 "boardname": "CRAASKBOWL"
             },
             {
                 "device": [
-                    "Acer Chromebook Spin 512"
-                ],
-                "boardname": "CRAASK"
-            },
-            {
-                "device": [
-                    "Acer Chromebook 315 [CB315-5H]"
+                    "Acer Chromebook 315 (CB315-5H, CB315-5HT)"
                 ],
                 "boardname": "CRAASKINO"
             },
             {
                 "device": [
-                    "Acer Chromebook 511"
+                    "Acer Chromebook 511 (C736, C736T, C736L, C736LT)"
                 ],
                 "boardname": "CRAASKVIN"
             },
             {
                 "device": [
-                    "Acer Chromebook 314"
+                    "Acer Chromebook 314 (C936, C936T)",
+                    "Acer Chromebook 314 (CB314-4H, CB314-4HT)",
+                    "Acer Chromebook Plus 514 (CB514-4H, CB514-4HT)"
                 ],
                 "boardname": "CRAASNETO"
             },
             {
                 "device": [
-                    "Acer Chromebook Spin 314"
+                    "Acer Chromebook Spin 314 (CP314-2H, CP314-2HN)"
                 ],
                 "boardname": "CRAASWELL"
             },
@@ -1773,21 +1759,16 @@
             },
             {
                 "device": [
-                    "Lenovo 500e Yoga Chromebook Gen 4"
-                ],
-                "boardname": "PUJJO1E"
-            },
-            {
-                "device": [
-                    "Lenovo Flex 3i Chromebook 12\""
+                    "Lenovo 500e Yoga Chromebook Gen 4",
+                    "Lenovo Flex 3i Chromebook 12\" / IdeaPad Flex 3i Chromebook 12\""
                 ],
                 "boardname": "PUJJO"
             },
             {
                 "device": [
-                    "Lenovo IdeaPad Flex 3i Chromebook"
+                    "Lenovo 100e Chromebook Gen 4"
                 ],
-                "boardname": "PUJJOFLEX"
+                "boardname": "PUJJO1E"
             },
             {
                 "device": [
@@ -1945,7 +1926,7 @@
             },
             {
                 "device": [
-                    "Acer Chromebook Spin 514 (CP514-1W)"
+                    "Acer Chromebook Spin 514 (CP514-1H, CP514-1W)"
                 ],
                 "boardname": "EZKINIL"
             },
@@ -2032,7 +2013,7 @@
             },
             {
                 "device": [
-                    "Acer Chromebook Plus 514"
+                    "Acer Chromebook Plus 514 (CB514-3H, CB514-3HT)"
                 ],
                 "boardname": "MARKARTH"
             },
