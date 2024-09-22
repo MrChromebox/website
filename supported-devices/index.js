@@ -66,7 +66,6 @@ function generateHTML(chromebooks) {
 
         devices.devices.forEach((device, index) => {
             let devicename = device.device.join("<br>");
-            let boardname = device.boardname.join("<br>");
             let rw_legacy = "";
             if (device.rwLegacy === null) {
                 rw_legacy = "<span style=\"color:#ff0000\"><b>EOL</b></span>";
@@ -79,7 +78,7 @@ function generateHTML(chromebooks) {
             html += `
         <tr>
             <td>${devicename}</td>
-            <td style="text-align:center;"> ${boardname}</td>
+            <td style="text-align:center;"> ${device.boardname}</td>
             <td style="text-align:center;"> ${rw_legacy}</td>
             <td style="text-align:center;"> ${full_rom}</td>
             <td style="text-align:center;"> ${device.wpMethod}</td>
