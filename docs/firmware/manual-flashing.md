@@ -10,15 +10,19 @@ The steps below assume you are flashing an image named `coreboot.rom`; substitut
    * `wget -o flashrom.tar.gz https://mrchromebox.tech/files/util/flashrom_ups_libpci37_20240418.tar.gz`
    * `tar zxf flashrom.tar.gz`
    * `chmod +x flashrom`
+
 2. Flash your custom ROM
    * Backup your current firmware (just in case things go wrong):
      `sudo ./flashrom -p internal -r backup.rom`
-   * Flash your custom firmware: 
+   * Extract your VPD from your backup and inject it into your custom ROM
+       * Download and extract cbfstool binary: 
+         `wget https://mrchromebox.tech/files/util/cbfstool.tar.gz && tar -zxf cbfstool.tar.gz`
+       * Extract your VPD: 
+         `./cbfstool backup.rom read -r RO_VPD -f vpd.bin`
+       * Inject VPD into the custom ROM: 
+         `./cbfstool coreboot.rom write -r RO_VPD -f vpd.bin`
+   * Flash your custom firmware:
        * AMD devices: `sudo ./flashrom -p internal -w coreboot.rom`
        * Intel devices: `sudo ./flashrom -p internal --ifd -i bios -w coreboot.rom`
 3. Reboot
    * Assuming flashrom shows `success` at the end of the process, reboot.
-
-::: warning IMPORTANT
-Flashing your firmware directly in this manner does not preserve any of the device-specific info from the stock firmware (e.g., serial number, HWID, ethernet MAC address) that flashing via the Firmware Utility Script does. 
-:::
