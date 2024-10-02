@@ -22,15 +22,6 @@ The steps below assume you are flashing an image named `coreboot.rom`; substitut
    * Extract your HWID and inject it into the custom ROM (if it exists)
        * `./cbfstool backup.rom extract -n hwid -f hwid.txt` if this fails, don't run the following command
        * `./cbfstool coreboot.rom add -n hwid -f hwid.txt`
-   * Extract your serial number and inject it into the custom ROM (if it exists)
-       * `./cbfstool backup.rom extract -n serial_number -f serial.txt` if this fails, don't run the following command
-       * `./cbfstool coreboot.rom add -n serial_number -f serial.txt`
-   * Extract your RW_MRC_CACHE and inject it into the custom ROM (if it exists)
-       * `./cbfstool backup.rom read -r RW_MRC_CACHE -f mrc.cache` if this fails, don't run the following command
-       * `./cbfstool coreboot.rom write -r RW_MRC_CACHE -f mrc.cache`
-   * Extract your SMMSTORE and inject it into the custom ROM (if it exists)
-       * `./cbfstool backup.rom read -r SMMSTORE -f smmstore` if this fails, don't run the following command
-       * `./cbfstool coreboot.rom write -r SMMSTORE -f smmstore`
    * Flash your custom firmware:
        * AMD devices: `sudo ./flashrom -p internal -w coreboot.rom`
        * Intel devices: `sudo ./flashrom -p internal --ifd -i bios -w coreboot.rom`
