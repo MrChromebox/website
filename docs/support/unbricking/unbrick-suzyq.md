@@ -60,7 +60,7 @@ Let's get to it:
        * `wget https://mrchromebox.tech/files/firmware/shellball/shellball.edgar.bin`
 
 ::: tip
-If you're not sure which file to use for your device / don't know your device's board name, you can reference [the supported devices page](supported-device.html).
+If you're not sure which file to use for your device / don't know your device's board name, you can reference [the supported devices page](https://docs.mrchromebox.tech/docs/supported-devices.html).
 :::
 
 ### Persisting the board's Vital Product Data (VPD)
