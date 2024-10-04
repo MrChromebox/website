@@ -76,10 +76,13 @@ You don't need to do this if flashing a stock firmware backup created by the Fir
    * Option 1: Extract VPD from the firmware on device
      * `sudo flashrom -p raiden_debug_spi:target=AP -r badflash.rom`
      * `./cbfstool badflash.rom read -r RO_VPD -f vpd.bin`
-   * Option 2: Extract VPD from stock firmware backup created by Firmware Utility Script (this assumes the file has been copied into working directory)
+     * `./cbfstool badflash.rom extract -n hwid -f hwid.txt`
+   * Option 2: Extract VPD and HWID from stock firmware backup created by Firmware Utility Script (this assumes the file has been copied into working directory)
      * `./cbfstool stock-firmware-<devicename>-<date>.rom read -r RO_VPD -f vpd.bin`
-2. Then we inject the VPD into the firmware image to be flashed.
+     * `./cbfstool stock-firmware-<devicename>-<date>.rom extract -n hwid -f hwid.txt`
+2. Then we inject the VPD and HWID into the firmware image to be flashed.
      * `./cbfstool <Shellball ROM/UEFI Full ROM filename> write -r RO_VPD -f vpd.bin`
+     * `./cbfstool <Shellball ROM/UEFI Full ROM filename> add -n hwid -f hwid.txt`
 
 Now the firmware image is ready to be flashed, and will maintain the device's unique serial, LAN MAC address, etc.
 
