@@ -63,7 +63,7 @@ Let's get to it:
 If you're not sure which file to use for your device / don't know your device's board name, you can reference [the supported devices page](supported-device.html).
 :::
 
-### Persisting the board's Vital Product Data (VPD)
+### Persisting the board's Vital Product Data (VPD) and Hardware ID (HWID)
 
 The firmware in all ChromeOS devices contains a section (RO_VPD) which stores board-specific data, like the serial number, localization settings, and on many devices which have an Ethernet port, the LAN MAC address as well. When flashing via the Firmware Utility Script, the script will automatically extract this from the running firmware and inject it into the firmware to be flashed, so the device serial, LAN MAC address, etc are all maintained. Without this, the device will use a default/generic LAN MAC address set by coreboot. While not ideal, this is only really an issue if two or more of the same device are on the same LAN segment (or you're statically assigning IP addresses based on MAC). But for completeness, if flashing the UEFI firmware or shellball ROM, we'll extract the VPD (either from the board itself or a backup made by the script) and inject it into the firmware to be flashed.
 
