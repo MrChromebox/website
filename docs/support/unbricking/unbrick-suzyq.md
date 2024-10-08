@@ -71,15 +71,16 @@ The firmware in all ChromeOS devices contains a section (RO_VPD) which stores bo
 You don't need to do this if flashing a stock firmware backup created by the Firmware Utility Script; that image already contains the VPD.
 :::
 
-1. For both the options below, we'll need to use the cbfstool (coreboot filesystem) binary, so let's download/extract that:
-   * `wget https://mrchromebox.tech/files/util/cbfstool.tar.gz && tar -zxf cbfstool.tar.gz`
+1. For both the options below, we'll need to use the gbb_utility and cbfstool (coreboot filesystem) binaries, so let's download/extract those:
+    * `wget https://mrchromebox.tech/files/util/cbfstool.tar.gz && tar -zxf cbfstool.tar.gz`
+    * `wget https://mrchromebox.tech/files/util/gbb_utility.tar.gz && tar -zxf gbb_utility.tar.gz`
    * Option 1: Extract VPD from the firmware on device
      * `sudo flashrom -p raiden_debug_spi:target=AP -r badflash.rom`
      * `./cbfstool badflash.rom read -r RO_VPD -f vpd.bin`
      * `./cbfstool badflash.rom extract -n hwid -f hwid.txt`
    * Option 2: Extract VPD and HWID from stock firmware backup created by Firmware Utility Script (this assumes the file has been copied into working directory)
      * `./cbfstool stock-firmware-<devicename>-<date>.rom read -r RO_VPD -f vpd.bin`
-     * `./cbfstool stock-firmware-<devicename>-<date>.rom extract -n hwid -f hwid.txt`
+     * `./gbb_utility stock-firmware-<devicename>-<date>.rom --get --hwid | sed 's/[^ ]* //' > hwid.txt`
 2. Then we inject the VPD and HWID into the firmware image to be flashed.
      * `./cbfstool <Shellball ROM/UEFI Full ROM filename> write -r RO_VPD -f vpd.bin`
      * `./cbfstool <Shellball ROM/UEFI Full ROM filename> add -n hwid -f hwid.txt`
