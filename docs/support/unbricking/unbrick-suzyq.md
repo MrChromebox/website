@@ -77,7 +77,7 @@ You don't need to do this if flashing a stock firmware backup created by the Fir
    * Option 1: Extract VPD from the firmware on device
      * `sudo flashrom -p raiden_debug_spi:target=AP -r badflash.rom`
      * `./cbfstool badflash.rom read -r RO_VPD -f vpd.bin`
-     * `./cbfstool badflash.rom extract -n hwid -f hwid.txt`
+     * `./gbb_utility badflash.rom --get --hwid | sed 's/[^ ]* //' > hwid.txt`
    * Option 2: Extract VPD and HWID from stock firmware backup created by Firmware Utility Script (this assumes the file has been copied into working directory)
      * `./cbfstool stock-firmware-<devicename>-<date>.rom read -r RO_VPD -f vpd.bin`
      * `./gbb_utility stock-firmware-<devicename>-<date>.rom --get --hwid | sed 's/[^ ]* //' > hwid.txt`

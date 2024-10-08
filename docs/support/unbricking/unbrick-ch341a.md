@@ -104,7 +104,7 @@ You don't need to do this if flashing a stock firmware backup created by the Fir
     * Option 1: Extract VPD and HWID from the firmware on device
       * `sudo flashrom -p ch341a_spi -r badflash.rom`
       * `./cbfstool badflash.rom read -r RO_VPD -f vpd.bin`
-      * `./gbb_utility backup.rom --get --hwid | sed 's/[^ ]* //' > hwid.txt`
+      * `./gbb_utility badflash.rom --get --hwid | sed 's/[^ ]* //' > hwid.txt`
     * Option 2: Extract VPD and HWID from stock firmware backup created by Firmware Utility Script (this assumes the file has been copied into working directory)
       * `./cbfstool stock-firmware-<devicename>-<date>.rom read -r RO_VPD -f vpd.bin`
       * `./gbb_utility stock-firmware-<devicename>-<date>.rom --get --hwid | sed 's/[^ ]* //' > hwid.txt`
