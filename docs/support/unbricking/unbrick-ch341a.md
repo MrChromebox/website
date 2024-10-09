@@ -25,7 +25,7 @@ While this is somewhat device-specific, the main points are the same:
 
 * Disconnect all external power
 * Remove bottom cover (screws are often located under rubber feet or strips)
-  * Some Chromebooks open up through the back and some through the keyboard, and as mentioned in [Disabling write protect via Battery](../firmware/battery.html). On keyboard, you have to pry it out and remove a ribbon wire under the keyboard.
+  * Some Chromebooks open up through the back and some through the keyboard, and as mentioned in [Disabling write protect via Battery](/docs/firmware/wp/disabling.html#disconnecting-the-battery). On keyboard, you have to pry it out and remove a ribbon wire under the keyboard.
 * Disconnect the internal battery (for Chromeboxes, disconnect the small CMOS battery)
 * Locate the SPI flash chip
 
@@ -87,7 +87,7 @@ So let's get to it:
         * `wget https://mrchromebox.tech/files/firmware/shellball/shellball.edgar.bin`
 
 ::: tip
-If you're not sure which file to use for your device / don't know your device's board name, you can reference [the supported devices page](supported-device.html).
+If you're not sure which file to use for your device / don't know your device's board name, you can reference [the supported devices page](/docs/supported-devices.html).
 :::
 
 ### Persisting the board's Vital Product Data (VPD)

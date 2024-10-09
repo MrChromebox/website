@@ -9,16 +9,16 @@ These instructions do not apply to any device which is locked/managed. Enterpris
 :::
 
 * A USB-C debug cable ([aka Suzy-Q cable](https://www.sparkfun.com/products/retired/14746))
-* The device must have the CCD flags factory reset (as per instructions to [Disable write protect with a SuzyQable](/docs/firmware/wp/disabling.md)), or the battery must be unplugged/disconnected from the mainboard.
+* The device must have the CCD flags factory reset (as per instructions to [Disable write protect with a SuzyQable](/docs/firmware/wp/disabling.html#using-closed-case-debugging-ccd-using-a-suzyqable)), or the battery must be unplugged/disconnected from the mainboard.
 * Another device running Linux, preferably a current Debian/Ubuntu-based distro
 
 ## Hardware Disassembly
 
-As above, this is only needed if you failed to factory reset the CCD flags if you didnt follow the guide to [Disable write protect with a SuzyQable](../firmware/suzyq). While this is somewhat device-specific, the main points are the same:
+As above, this is only needed if you failed to factory reset the CCD flags if you didnt follow the guide to [Disable write protect with a SuzyQable](/docs/firmware/wp/disabling.html#using-closed-case-debugging-ccd-using-a-suzyqable). While this is somewhat device-specific, the main points are the same:
 
 * Disconnect all external power
 * Remove bottom cover (screws are often located under rubber feet or strips)
-  - Some Chromebooks open up through the back and some through the keyboard, and as mentioned in [Disabling write protect via Battery](../firmware/battery.html). On keyboard, you have to pry it out and remove a ribbon wire under the keyboard.
+  - Some Chromebooks open up through the back and some through the keyboard, and as mentioned in [Disabling write protect via Battery](/docs/firmware/wp/disabling.html#disconnecting-the-battery). On keyboard, you have to pry it out and remove a ribbon wire under the keyboard.
 * Disconnect the internal battery
 
 ## Prepping to Flash
@@ -60,7 +60,7 @@ Let's get to it:
        * `wget https://mrchromebox.tech/files/firmware/shellball/shellball.edgar.bin`
 
 ::: tip
-If you're not sure which file to use for your device / don't know your device's board name, you can reference [the supported devices page](supported-device.html).
+If you're not sure which file to use for your device / don't know your device's board name, you can reference [the supported devices page](/docs/supported-devices.html).
 :::
 
 ### Persisting the board's Vital Product Data (VPD) and Hardware ID (HWID)
