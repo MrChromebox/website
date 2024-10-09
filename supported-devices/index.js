@@ -7,7 +7,7 @@
     "cpu generation": {
         "default_rwLegacy": false, //null = EOL (display red EOL message), true = supported (display checkbox), false = not supported
         "default_fullrom": true, //true = supported, false = not supported.
-        "default_wpmethod": ""<a rel=\"nofollow noopener noreferrer\" class=\"external text\" href=\"https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/hp-pavilion-14-chromebook\" target=\"_blank\">switch</a>", //default wp method link.
+        "default_wpmethod": ""<a rel=\"nofollow noopener noreferrer\" class=\"external text\" href=\"https://web.archive.org/web/20231009064928/https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/hp-pavilion-14-chromebook\" target=\"_blank\">switch</a>", //default wp method link.
         "devices": [ //This is an array
             {
                 "device": [

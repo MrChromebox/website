@@ -25,6 +25,9 @@ To dump the cbmem buffer, follow these steps:
 
 4. Provide the `cbmem.log` file via the chrultrabook forums, Github issue tracker, or email for further analysis.
 
+::: tip NOTE
+The parameter following the cbmem command is the number one (-1), not the letter l (-l).
+:::
 
 ## SuzyQable Debug Cable
 
