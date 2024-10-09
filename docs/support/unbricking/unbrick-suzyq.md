@@ -72,19 +72,21 @@ You don't need to do this if flashing a stock firmware backup created by the Fir
 :::
 
 1. For both the options below, we'll need to use the gbb_utility and cbfstool (coreboot filesystem) binaries, so let's download/extract those:
-    * `wget https://mrchromebox.tech/files/util/cbfstool.tar.gz && tar -zxf cbfstool.tar.gz`
-    * `wget https://mrchromebox.tech/files/util/gbb_utility.tar.gz && tar -zxf gbb_utility.tar.gz`
-   * Option 1: Extract VPD from the firmware on device
-     * `sudo flashrom -p raiden_debug_spi:target=AP -r badflash.rom`
-     * `./cbfstool badflash.rom read -r RO_VPD -f vpd.bin`
-     * `./gbb_utility badflash.rom --get --hwid | sed 's/[^ ]* //' > hwid.txt`
-   * Option 2: Extract VPD and HWID from stock firmware backup created by Firmware Utility Script (this assumes the file has been copied into working directory)
-     * `./cbfstool stock-firmware-<devicename>-<date>.rom read -r RO_VPD -f vpd.bin`
-     * `./gbb_utility stock-firmware-<devicename>-<date>.rom --get --hwid | sed 's/[^ ]* //' > hwid.txt`
+      * `wget https://mrchromebox.tech/files/util/cbfstool.tar.gz && tar -zxf cbfstool.tar.gz`
+      * `wget https://mrchromebox.tech/files/util/gbb_utility.tar.gz && tar -zxf gbb_utility.tar.gz`
+    * Option 1: Extract VPD and HWID from the firmware on device
+      * `sudo flashrom -p raiden_debug_spi:target=AP -r badflash.rom`
+      * `./cbfstool badflash.rom read -r RO_VPD -f vpd.bin`
+      * `./gbb_utility badflash.rom --get --hwid | sed 's/[^ ]* //' > hwid.txt`
+    * Option 2: Extract VPD and HWID from stock firmware backup created by Firmware Utility Script (this assumes the file has been copied into working directory)
+      * `./cbfstool stock-firmware-<devicename>-<date>.rom read -r RO_VPD -f vpd.bin`
+      * `./gbb_utility stock-firmware-<devicename>-<date>.rom --get --hwid | sed 's/[^ ]* //' > hwid.txt`
 2. Then we inject the VPD and HWID into the firmware image to be flashed.
-     * `./cbfstool <Shellball ROM/UEFI Full ROM filename> write -r RO_VPD -f vpd.bin`
-     * `./cbfstool <Shellball ROM/UEFI Full ROM filename> add -n hwid -f hwid.txt`
-
+    * `./cbfstool <Shellball ROM/UEFI Full ROM filename> write -r RO_VPD -f vpd.bin`
+    * For UEFI Full ROM run 
+      * `./cbfstool <UEFI Full ROM filename> add -n hwid -f hwid.txt -t raw`
+    * For Shellball run
+      * `./gbb_utility <Shellball ROM> --set --hwid="$(cat hwid.txt)"`
 Now the firmware image is ready to be flashed, and will maintain the device's unique serial, LAN MAC address, etc.
 
 ## Flashing Your Device
