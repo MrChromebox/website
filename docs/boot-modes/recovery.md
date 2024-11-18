@@ -1,6 +1,6 @@
 # Recovery Mode
 
-A ChromeOS device will boot to Recovery Mode when something goes wrong, but it can be accessed manually as well. Its primary function is to reload the OS and and any modified RW firmnware components. It is also the mechanism by which you switch the device from Normal Mode to Developer Mode. While the recovery mode UI has evolved over the years, the core functions remain unchanged.
+A ChromeOS device will boot to Recovery Mode when something goes wrong, but it can be accessed manually as well. Its primary function is to reload the OS and and any modified RW firmware components. It is also the mechanism by which you switch the device from Normal Mode to Developer Mode. While the recovery mode UI has evolved over the years, the core functions remain unchanged.
 
 Some example recovery mode screens:
 
