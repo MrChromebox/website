@@ -132,7 +132,7 @@ then reboot to test. What we're doing is copying the grub EFI boot stub from the
 
 ### I'm trying to install Cloudready/ChromeOS Flex and use in a managed environment, but getting an error related to the TPM - how to I fix this?
 
-* The MrChromebox-4.20.0 firmware release added support for TPM 1.2/2.0 management via the UEFI Device Manager, so this should no lonmger be an issue. If running an older firmware version, boot a current Linux ISO and run the [Firmware Utility Script](/docs/fwscript.md) to update to the latest release.
+* The MrChromebox-4.20.0 firmware release added support for TPM 1.2/2.0 management via the UEFI Device Manager, so this should no longer be an issue. If running an older firmware version, boot a current Linux ISO and run the [Firmware Utility Script](/docs/fwscript.md) to update to the latest release.
 
 ### I am trying to boot Linux from USB and getting an error:
 "error: unknown filesystem. alloc magic is broken at 0x78cd97c0" -- how do I fix it?
