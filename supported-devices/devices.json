@@ -1689,7 +1689,7 @@
             },
             {
                 "device": [
-                    "Lenovo IdeaPad Gaming Chromebook 16 [i3-1250u/eMMC*]",
+                    "Lenovo IdeaPad Gaming Chromebook 16 [i3-1215u/eMMC*]",
                     "Lenovo IdeaPad Gaming Chromebook 16 [i5-1235u/NVME]",
                     "*eMMC is disabled with UEFI firmware"
                 ],
