@@ -14,7 +14,7 @@ These instructions do not apply to any device which is locked/managed. Enterpris
 
 ## Hardware Disassembly
 
-As above, this is only needed if you failed to factory reset the CCD flags if you didnt follow the guide to [Disable write protect with a SuzyQable](/docs/firmware/wp/disabling.html#using-closed-case-debugging-ccd-using-a-suzyqable). While this is somewhat device-specific, the main points are the same:
+As above, this is only needed if you failed to factory reset the CCD flags if you didn't follow the guide to [Disable write protect with a SuzyQable](/docs/firmware/wp/disabling.html#using-closed-case-debugging-ccd-using-a-suzyqable). While this is somewhat device-specific, the main points are the same:
 
 * Disconnect all external power
 * Remove bottom cover (screws are often located under rubber feet or strips)
@@ -37,7 +37,7 @@ Let's get to it:
 6. Verify the cable is properly connected:
    * `ls /dev/ttyUSB*`
      * This command should return 3 items: `ttyUSB0`, `ttyUSB1`, and `ttyUSB2`.
-     * If not, then your cable is connected to the wrong port or is upside down; adjust and repeat comment until output is as expected
+     * If not, then your cable is connected to the wrong port or is upside down; adjust and repeat command until output is as expected
 7. Set the CCD state to open:
    * `echo "ccd open" | sudo tee -a /dev/ttyUSB0 > /dev/null`
 8. Determine file to be flashed
