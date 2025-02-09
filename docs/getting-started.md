@@ -6,12 +6,12 @@ Any and all changes are made **at your own risk**!
 :::
 
 ::: warning IMPORTANT
-If your device is currently managed/enrolled by a organization (such as a school or employer), then you do not own the device, and you should not be modifying it in any way without direct, express, written permission.
+If your device is currently managed/enrolled by an organization (such as a school or employer), then you do not own the device, and you should not be modifying it in any way without direct, express, written permission.
 :::
 
 ## Prerequisites
 
-* An x86_86 (Intel/AMD) architecture device -- ARM-based devices are not supported
+* An x86_64 (Intel/AMD) architecture device -- ARM-based devices are not supported
 * The device's Hardware ID (HWID) / ChromeOS board name
     * The device's HWID can be found at the bottom of the Recovery Mode and Developer Mode screens, as well as by going to `chrome://system` in the browser and searching for `HWID`
 * To actually own the Chromebook -- devices managed by a school or company generally are locked down and cannot be switched to Developer Mode
@@ -40,12 +40,12 @@ If you want to dual boot ChromeOS and Linux on your device:
 * Boot and install your new OS
 
 ::: tip NOTE
-Installing Linux on the internal storage along with ChromeOS requires repartitiong the device using tools which can handle ChromeOS partition types; see the [Chrultrabook docs](https://docs.chrultrabook.com) for more info.
+Installing Linux on the internal storage along with ChromeOS requires repartitioning the device using tools which can handle ChromeOS partition types; see the [Chrultrabook docs](https://docs.chrultrabook.com) for more info.
 :::
 
 ### Replacing ChromeOS via Full ROM firmware
 
-If you want to wipe ChromeOS form your device and replace it with Linux or Windows:
+If you want to wipe ChromeOS from your device and replace it with Linux or Windows:
 
 * Verify your device has [UEFI Full ROM support](/docs/supported-devices.md)
 * Put your device in [Developer Mode](/docs/boot-modes/developer.md)
@@ -62,7 +62,7 @@ Again, I cannot stress it enough: flashing your device's firmware and changing t
 
 ## Asking for help properly
 
-If you are facing a issue, please read the [FAQ](faq.md) first.
+If you are facing an issue, please read the [FAQ](faq.md) first.
 
 
 **Do not use manufacturer's model name or serial number when asking for help** (i.e: HP Chromebook 14a), it doesn't help with identifying the machine. Provide the HWID/boardname, otherwise your support request will be ignored.
