@@ -15,7 +15,7 @@ Refer to [Firmware Types](types.md) for information about the different firmware
 5. Assuming no errors occur, power off the device using the script menu option.
 
 ::: warning IMPORTANT
-If an error occurs when flashing the UEFI Full ROM firwmare, **do not shutdown**.
+If an error occurs when flashing the UEFI Full ROM firmware, **do not shutdown**.
 Using the script menu option, restore the stock firmware from your backup, and copy the log file to a safe place so you can provide it for troubleshooting.
 :::
 
