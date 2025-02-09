@@ -73,7 +73,7 @@ In the screenshots above, only the script functions available for the device and
 
 *   **Set Boot Options (GBB Flags)**
 
-    This script function allows one to change the timeout for the Developer Mode boot screen (2s or 30s) and the default boot target (ChromeOS or Legacy Boot Mode). Setting the boot target to Legacy Boot removes the requirement of pressing `[CTRL+L]` at boot; instead, you must press `[CTRL+D]` to boot ChromeOS. This function is just a wrapper around the `gbb_utility` application built into ChromeOS that will read the GBB region from the stock firmware, set the GBB flags based on user input, and write it back to flash. For all options except 'Factory Default,' the GBB flags will also be set to force-enable legacy booting (GBB_FLAG_FORCE_DEV_BOOT_LEGACY), which overrides the crosssytem `dev_boot_legacy` flag, and to force-enable Developer Mode (GBB_FLAG_FORCE_DEV_SWITCH_ON), which prevents exiting Developer Mode via the spacebar (either accidentially or intentionally).
+    This script function allows one to change the timeout for the Developer Mode boot screen (2s or 30s) and the default boot target (ChromeOS or Legacy Boot Mode). Setting the boot target to Legacy Boot removes the requirement of pressing `[CTRL+L]` at boot; instead, you must press `[CTRL+D]` to boot ChromeOS. This function is just a wrapper around the `gbb_utility` application built into ChromeOS that will read the GBB region from the stock firmware, set the GBB flags based on user input, and write it back to flash. For all options except 'Factory Default,' the GBB flags will also be set to force-enable legacy booting (GBB_FLAG_FORCE_DEV_BOOT_LEGACY), which overrides the crosssytem `dev_boot_legacy` flag, and to force-enable Developer Mode (GBB_FLAG_FORCE_DEV_SWITCH_ON), which prevents exiting Developer Mode via the spacebar (either accidentally or intentionally).
 
     Regardless of which default boot mode is selected, one can always override the default via keystroke: `[CTRL+D]` for ChromeOS Developer Mode, or `[CTRL+L]` for Legacy Boot Mode.
 
@@ -90,7 +90,7 @@ In the screenshots above, only the script functions available for the device and
 
     This script function is also just a wrapper around the `gbb_utility` application built into ChromeOS. It will read the GBB region from the stock firmware, set the HWID based on user input, and write it back to flash. The only time this function is needed is if one flashed a generic recovery image firmware (aka a shellball ROM) from a source **other than this script** instead of restoring a backup of their own device firmware. Shellball ROMs extracted from a recovery image (or obtained from other sites/sources) have a generic HWID embedded which ChromeOS does not recognize as valid for purposes of OS and firmware updates (among other things), so it's necessary to set a valid one. HWIDs aren't unique, so any valid one will do.
 
-    **Note:** If you restored your stock firmware using the option from this script, it is not necesary to set the HWID afterward.
+    **Note:** If you restored your stock firmware using the option from this script, it is not necessary to set the HWID afterward.
 
     After setting a valid HWID, simply reboot and ChromeOS updates should work normally.
 
@@ -145,7 +145,7 @@ In the screenshots above, only the script functions available for the device and
     **Requires firmware write-protect disabled:** `YES`
 
 
-The Reboot and Power Off options are (hopefully) sufficiently self-explanitory :)
+The Reboot and Power Off options are (hopefully) sufficiently self-explanatory :)
 
 If running UEFI Full ROM firmware, there will be an additional option to clear the NVRAM. This will delete all bootorder entries stored in NVRAM, and they will be created again on the next boot (or next time grub is updated).
 
