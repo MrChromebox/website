@@ -10,7 +10,7 @@ Flashing Ventoy or ISOs to an external drive will **wipe all data** on said driv
 2. An internet connection
 3. An external drive like a USB drive or SD card that is at least 8GB.
 
-## Downloading a ISO
+## Downloading an ISO
 
 1. Determine what OS you want.
    * For Linux, keep in mind Ubuntu and Ubuntu-based derivatives **are not supported**.
@@ -42,7 +42,7 @@ Ventoy allows you to boot multiple ISO's from a single drive.
      ![image](/ventoy/download-alt.png)
 
 2. Run `Ventoy2Disk.exe` for Windows or `VentoyGUI.x86_64` for Linux.
-   * Make sure to allow administrator privilages when prompted.
+   * Make sure to allow administrator privileges when prompted.
 
 3. Plug in your external drive and click the green circle to refresh devices. It should pick up your external drive.
 4. Click Options > Partition Style and select "GPT".
