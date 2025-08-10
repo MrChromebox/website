@@ -176,6 +176,6 @@ Then re-run the script.
 
 ### Where can I find a SuzyQ cable (SuzyQable)?
 
-* They used to be available from Sparkfun, but aren't any longer. A young entrepeneur has made some cables/adapters available and [sells them on ebay](hhttps://www.ebay.com/itm/316024978790)
+* They used to be available from Sparkfun, but aren't any longer. A young entrepeneur has made some cables/adapters available and [sells them on ebay](https://www.ebay.com/itm/316024978790)
 
 There are also schematics online which show how to make a cable using a USB-C cable and a breakout board, along with a few resistors.
