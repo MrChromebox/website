@@ -1244,8 +1244,21 @@
         "devices": [
             {
                 "device": [
+                    "ASUS Chromebook CX1505CKA/CB1505CKA"
+                ],
+                "boardname": "AWADORON"
+            },
+            {
+                "device": [
+                    "ASUS Chroembook CX1405CKA/CB1405CKA"
+                ],
+                "boardname": "AWASUKI"
+            },{
+                "device": [
                     "DINATECH Gen1 Chromebook  SG20JL1C",
                     "Multilaser Chromebook M11C-PC919",
+                    "Evolve III Chromebook 11 E1",
+                    "Positivo Chromebook N2320",
                     "Allied Chromebook 11 N5100E"
                 ],
                 "boardname": "BEADRIX"
@@ -1283,6 +1296,12 @@
                 ],
                 "boardname": "BOTENFLEX",
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Boten_wp.jpg\" class=\"internal\" title=\"Boten wp.jpg\" target=\"_blank\">jumper</a>"
+            },
+            {
+                "device": [
+                    "??? Chromebox Micro"
+                ],
+                "boardname": "BOXY"
             },
             {
                 "device": [
