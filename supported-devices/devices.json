@@ -90,7 +90,7 @@
             },
             {
                 "device": [
-                    "Acer C720/C720P Chromebook"
+                    "Acer Chromebook 11 (C720/C720P)"
                 ],
                 "boardname": "PEPPY",
                 "wpMethod": "<a href=\"/images/wp/c720_c740_wp.png\" class=\"internal\" title=\"c720_c740_wp.png\" target=\"_blank\">screw</a>"
@@ -125,14 +125,14 @@
         "devices": [
             {
                 "device": [
-                    "Acer C740 Chromebook"
+                    "Acer Chromebook 11 (C740)"
                 ],
                 "boardname": "AURON_PAINE / PAINE",
                 "wpMethod": "<a href=\"/images/wp/c720_c740_wp.png\" class=\"internal\" title=\"c720_c740_wp.png\" target=\"_blank\">screw</a>"
             },
             {
                 "device": [
-                    "Acer C910 Chromebook (CB5-571)"
+                    "Acer Chromebook 15 (CB5-571, C910)"
                 ],
                 "boardname": "AURON_YUNA / YUNA",
                 "wpMethod": "<a href=\"/images/wp/c910_wp.png\" class=\"internal\" title=\"c910_wp.png\" target=\"_blank\">screw</a>"
@@ -213,9 +213,26 @@
             {
                 "device": [
                     "CTL N6 Education Chromebook",
-                    "Lenovo N21 Chromebook"
+                    "Lenovo N21 Chromebook",
+                    "M&A Chromebook",
+                    "Senkatel C1101 Chromebook",
+                    "Edxis Education Chromebook",
+                    "RGS Education Chromebook",
+                    "Crambo Chromebook",
+                    "True IDC Chromebook",
+                    "Videonet Chromebook",
+                    "eduGear Chromebook R",
+                    "ASI Chromebook"
                 ],
                 "boardname": "ENGUARDE"
+            },
+            {
+                "device": [
+                    "HEXA Chromebook Pi",
+                    "Bobicus Chromebook 11",
+                    "Edxis Chromebook"
+                ],
+                "boardname": "EXPRESSO"
             },
             {
                 "device": [
@@ -342,7 +359,8 @@
                     "Edxis Education Chromebook (NL6D)",
                     "HP Chromebook 11 G5 EE",
                     "Mecer V2 Chromebook",
-                    "Positivo Chromebook C216B"
+                    "Positivo Chromebook C216B",
+                    "Quanta OEM Chromebook"
                 ],
                 "boardname": "RELM",
                 "wpMethod": "<a href=\"/images/wp/C731_wp.jpg\" class=\"internal\" title=\"C731 wp.jpg\" target=\"_blank\">screw</a>"
@@ -376,7 +394,9 @@
                     "Multilaser Chromebook M11C",
                     "PCMerge Chromebook PCM-116T-432B",
                     "Prowise Chromebook Proline",
-                    "Viglen Chromebook 360"
+                    "Viglen Chromebook 360",
+                    "Wizpig BSW Chromebook",
+                    "Haier Convertible Chromebook 11 C"
                 ],
                 "boardname": "WIZPIG"
             }
@@ -489,6 +509,12 @@
                     "Acer Chromebook Spin 15 (CP315)"
                 ],
                 "boardname": "BRUCE"
+            },
+            {
+                "device": [
+                    "Acer Chromebook Spin 11 (R751T)"
+                ],
+                "boardname": "ELECTRO"
             },
             {
                 "device": [
@@ -615,7 +641,7 @@
             },
             {
                 "device": [
-                    "Meet Compute System - Series One (Lenovo)"
+                    "Google Meet Series One (Lenovo)"
                 ],
                 "boardname": "ENDEAVOUR",
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Excelsior_wp.jpg\" class=\"internal\" title=\"Excelsior wp.jpg\" target=\"_blank\">screw</a>"
@@ -628,7 +654,9 @@
             },
             {
                 "device": [
-                    "Asus Google Meet kit (KBL)"
+                    "Asus Google Meet kit (KBL)",
+                    "Google Meet kit (KBL)",
+                    "CTL Google Meet kit (KBL)"
                 ],
                 "boardname": "EXCELSIOR",
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Excelsior_wp.jpg\" class=\"internal\" title=\"Excelsior wp.jpg\" target=\"_blank\">screw</a>"
@@ -897,6 +925,12 @@
             },
             {
                 "device": [
+                    "Lenovo Chromebook C340"
+                ],
+                "boardname": "LASER"
+            },
+            {
+                "device": [
                     "Lenovo Chromebook S340",
                     "Lenovo IdeaPad Flex 3 Chromebook 14\""
                 ],
@@ -940,8 +974,7 @@
             },
             {
                 "device": [
-                    "Lenovo 300e Chromebook Gen 2",
-                    "Lenovo 500e Chromebook Gen 2",
+                    "Lenovo 300e/500e Chromebook 2nd Gen",
                     "Lenovo Chromebook C340",
                     "Lenovo IdeaPad Flex 3 Chromebook 11\"",
                     "NEC Chromebook Y1"
@@ -1010,6 +1043,7 @@
                     "CTL Meet Compute System (Intel 10th Gen)"
                 ],
                 "boardname": "AMBASSADOR",
+                "rwLegacy": true,
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, jumper"
             },
             {
@@ -1064,9 +1098,10 @@
             },
             {
                 "device": [
-                    "Meet Compute System - Series One (Intel 10th Gen)"
+                    "Google Meet Series One (Intel 10th Gen)"
                 ],
                 "boardname": "GENESIS",
+                "rwLegacy": true,
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, jumper"
             },
             {
@@ -1142,7 +1177,8 @@
                 "device": [
                     "CTL Chromebox CBx2",
                     "Promethean Chromebox 2",
-                    "ViewSonic NMP760 Chromebox"
+                    "ViewSonic NMP760 Chromebox",
+                    "Wyvern MobLab"
                 ],
                 "boardname": "WYVERN",
                 "rwLegacy": true,
@@ -1206,8 +1242,7 @@
             },
             {
                 "device": [
-                    "Lenovo 5i-14 Chromebook",
-                    "Lenovo Slim 5 Chromebook"
+                    "Lenovo Slim 5/5i-14 Chromebook"
                 ],
                 "boardname": "LINDAR"
             },
@@ -1250,10 +1285,11 @@
             },
             {
                 "device": [
-                    "ASUS Chroembook CX1405CKA/CB1405CKA"
+                    "ASUS Chromebook CX1405CKA/CB1405CKA"
                 ],
                 "boardname": "AWASUKI"
-            },{
+            },
+            {
                 "device": [
                     "DINATECH Gen1 Chromebook  SG20JL1C",
                     "Multilaser Chromebook M11C-PC919",
@@ -1278,7 +1314,8 @@
             },
             {
                 "device": [
-                    "Lenovo 100e Chromebook Gen 3"
+                    "Lenovo 100e Chromebook Gen 3",
+                    "Lenovo Chromebook 11"
                 ],
                 "boardname": "BOOKEM",
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Boten_wp.jpg\" class=\"internal\" title=\"Boten wp.jpg\" target=\"_blank\">jumper</a>"
@@ -1299,7 +1336,7 @@
             },
             {
                 "device": [
-                    "??? Chromebox Micro"
+                    "Lenovo Chromebox Micro"
                 ],
                 "boardname": "BOXY"
             },
@@ -1330,7 +1367,8 @@
             },
             {
                 "device": [
-                    "Acer Chromebox Mini CXM1"
+                    "Acer Chromebox Mini CXM1",
+                    "AOPEN Chromebox P1"
                 ],
                 "boardname": "DITA"
             },
@@ -1419,7 +1457,9 @@
                     "CTL Chromebook NL72",
                     "Edxis Chromebook 11",
                     "Poin2 Chromebook 11B",
-                    "Zyrex Chromebook M432-64"
+                    "Zyrex Chromebook M432-64",
+                    "Multilaser Chromebook M11HC-PC916",
+                    "Positivo Chromebook N2310"
                 ],
                 "boardname": "KRACKO"
             },
@@ -1427,7 +1467,8 @@
                 "device": [
                     "CTL Chromebook NL72T",
                     "LG Chromebook 11TC50Q/11TQ50Q",
-                    "Poin2 Chromebook 11E"
+                    "Poin2 Chromebook 11E",
+                    "Positivo Chromebook N2312"
                 ],
                 "boardname": "KRACKO360"
             },
@@ -1484,7 +1525,6 @@
                 ],
                 "boardname": "MAGLITH",
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Maglith_wp.jpg\" class=\"internal\" title=\"Maglith wp.jpg\" target=\"_blank\">jumper</a>"
-            
             },
             {
                 "device": [
@@ -1531,7 +1571,8 @@
             },
             {
                 "device": [
-                    "Gateway Chromebook 15"
+                    "Gateway Chromebook 15",
+                    "Edxis E-Lite Chromebook 15"
                 ],
                 "boardname": "PASARA"
             },
@@ -1541,7 +1582,9 @@
                     "ASUS Chromebook CA11J2",
                     "CTL Chromebook PX11EG",
                     "Edxis E-Lite Chromebook 11",
-                    "Multilaser Chromebook M11C-PC924"
+                    "Multilaser Chromebook M11C-PC924",
+                    "Gateway Chromebook 311",
+                    "Zyrex Chromebook M432-2P"
                 ],
                 "boardname": "PEEZER"
             },
@@ -1550,7 +1593,8 @@
                     "Axioo Chromebook P11",
                     "CTL Chromebook PX11E",
                     "SPC Chromebook Z1 Mini",
-                    "Zyrex Chromebook M432-2"
+                    "Zyrex Chromebook M432-2",
+                    "Allied Chromebook 11 N5100P"
                 ],
                 "boardname": "PIRETTE"
             },
@@ -1558,7 +1602,9 @@
                 "device": [
                     "Axioo Chromebook P14",
                     "CTL Chromebook Enterprise",
-                    "Gateway Chromebook 14"
+                    "Gateway Chromebook 14",
+                    "Arai Nimbus S1 Chromebook Enterprise",
+                    "Edxis E-Lite Chromebook 14"
                 ],
                 "boardname": "PIRIKA"
             },
@@ -1571,7 +1617,7 @@
             },
             {
                 "device": [
-                    "SamsungGalaxy Chromebook Go 11"
+                    "Samsung Galaxy Chromebook Go 11"
                 ],
                 "boardname": "SASUKETTE",
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/sasukette_wp_jumper.png\" class=\"internal\" title=\"sasukette_wp_jumper\" target=\"_blank\">jumper</a>"
@@ -1620,6 +1666,15 @@
                     "Framework Laptop Chromebook Edition"
                 ],
                 "boardname": "BANSHEE"
+            },
+            {
+                "device": [
+                    "Satsuki Chromebox OPS",
+                    "ViewSonic Bujia",
+                    "AOPEN Chromebox OPS",
+                    "IMAGO Chromebox OPS"
+                ],
+                "boardname": "BUJIA"
             },
             {
                 "device": [
@@ -1673,6 +1728,18 @@
             },
             {
                 "device": [
+                    "Acer Chromebook Plus 514"
+                ],
+                "boardname": "JUBILANT"
+            },
+            {
+                "device": [
+                    "Acer Chromebook Plus 516"
+                ],
+                "boardname": "JUBILEUM"
+            },
+            {
+                "device": [
                     "Acer Chromebook Spin 714 [CP714-1WN/2WN]"
                 ],
                 "boardname": "KANO"
@@ -1691,9 +1758,17 @@
             },
             {
                 "device": [
-                    "CTL Chromebox CBx3"
+                    "CTL Chromebox CBx3",
+                    "Promethean Chromebox 3",
+                    "Centerm Chromebox D661"
                 ],
                 "boardname": "LISBON"
+            },
+            {
+                "device": [
+                    "Lenovo Chromebook Plus 2-in-1"
+                ],
+                "boardname": "LOTSO"
             },
             {
                 "device": [
@@ -1716,10 +1791,22 @@
             },
             {
                 "device": [
+                    "Acer Chromebox CXI6"
+                ],
+                "boardname": "MOXIE"
+            },
+            {
+                "device": [
                     "Acer Chromebook Plus 515 (CB515-2H, CB515-2HT)"
                 ],
                 "boardname": "OMNIGUL",
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ, battery)</a>"
+            },
+            {
+                "device": [
+                    "Acer Chromebook Plus Enterprise 515 (CBE595-2/2T)"
+                ],
+                "boardname": "OMNIKNIGHT"
             },
             {
                 "device": [
@@ -1750,7 +1837,7 @@
             },
             {
                 "device": [
-                    "Lenovo Flex 5i Chromebook / IdeaPad Flex 5i Chromebook"
+                    "Lenovo IdeaPad/Flex 5i Chromebook 14"
                 ],
                 "boardname": "TAEKO"
             },
@@ -1762,7 +1849,7 @@
             },
             {
                 "device": [
-                    "Lenovo 5i Chromebook 16\""
+                    "Lenovo IdeaPad 5i Chromebook 16"
                 ],
                 "boardname": "TARLO"
             },
@@ -1777,6 +1864,12 @@
                     "Acer Chromebook Vero 514 (CBV514-1H, CBV514-1HT)"
                 ],
                 "boardname": "VOLMAR"
+            },
+            {
+                "device": [
+                    "Galaxy Chromebook Plus"
+                ],
+                "boardname": "XOL"
             },
             {
                 "device": [
@@ -1855,6 +1948,91 @@
             },
             {
                 "device": [
+                    "Acer Chromebox Mini CXM2 (TWL)"
+                ],
+                "boardname": "DIRKS"
+            },
+            {
+                "device": [
+                    "HP Fortis G1i 11 Chromebook"
+                ],
+                "boardname": "DOMIKA"
+            },
+            {
+                "device": [
+                    "HP Fortis Flip G1i 11 Chromebook"
+                ],
+                "boardname": "DOMILLY"
+            },
+            {
+                "device": [
+                    "HP Fortis G1i 14 Chromebook"
+                ],
+                "boardname": "DOMISO"
+            },
+            {
+                "device": [
+                    "Acer Chromebook Spin 311"
+                ],
+                "boardname": "GALLIDA360"
+            },
+            {
+                "device": [
+                    "CTL Chromebook PX111E"
+                ],
+                "boardname": "GANA"
+            },
+            {
+                "device": [
+                    "Poin2 Chromebook Plus 14",
+                    "CTL Chromebook Plus PX141GX",
+                    "CTL Chromebook Enterprise PX141E"
+                ],
+                "boardname": "GLASSWAY"
+            },
+            {
+                "device": [
+                    "Gothrax",
+                    "Positivo Chromebook N2422",
+                    "Centerm Chromebook M612B",
+                    "Aiwa Chromebook S11",
+                    "Multi Chromebook M11HC-PC925",
+                    "Acer Chromebook Spin 311(ROA732LTN)"
+                ],
+                "boardname": "GOTHRAX"
+            },
+            {
+                "device": [
+                    "Centerm Chromebook M612A",
+                    "GothraxCS",
+                    "Positivo Chromebook N2420",
+                    "Multi Chromebook M11C-PC926"
+                ],
+                "boardname": "GOTHRAXCS"
+            },
+            {
+                "device": [
+                    "CTL Chromebook PX121E",
+                    "Pegatron CA31T"
+                ],
+                "boardname": "GUREN"
+            },
+            {
+                "device": [
+                    "Pegatron CA32TC",
+                    "Poin2 Chromebook 12P"
+                ],
+                "boardname": "GUREN360"
+            },
+            {
+                "device": [
+                    "Centerm Chromebook Plus M621",
+                    "Centerm Chromebook M621"
+                ],
+                "boardname": "HIDEO"
+            },
+            {
+                "device": [
                     "HP Chromebook Plus x360"
                 ],
                 "boardname": "JOXER"
@@ -1874,27 +2052,137 @@
             },
             {
                 "device": [
-                    "Lenovo 14e Chromebook Gen 3"
+                    "Lenovo IdeaPad Flex 3i Chromebook"
+                ],
+                "boardname": "PUJJOFLEX"
+            },
+            {
+                "device": [
+                    "Lenovo 500e Chromebook Gen 4s"
+                ],
+                "boardname": "PUJJOGA"
+            },
+            {
+                "device": [
+                    "Lenovo 500e Chromebook Gen 4s"
+                ],
+                "boardname": "PUJJOGATWIN"
+            },
+            {
+                "device": [
+                    "Lenovo Chromebook Plus 2-in-1 14ITN10",
+                    "Lenovo Chromebook 2-in-1 14ITN10"
+                ],
+                "boardname": "PUJJONIRU"
+            },
+            {
+                "device": [
+                    "Lenovo 14e Chromebook Gen 3",
+                    "Lenovo IdeaPad Slim 3i Chromebook Plus"
                 ],
                 "boardname": "PUJJOTEEN"
             },
             {
                 "device": [
-                    "Lenovo Ideapad Slim 3i Chromebook"
+                    "Lenovo Ideapad Slim 3i Chromebook",
+                    "Lenovo 14e Chromebook Gen 3"
                 ],
                 "boardname": "PUJJOTEEN15W"
             },
             {
                 "device": [
-                    "CTL Chromebook NL73"
+                    "CTL Chromebook NL73",
+                    "Edxis Chromebook 11 (S30-C25)",
+                    "LI7A"
                 ],
                 "boardname": "QUANDISO"
             },
             {
                 "device": [
-                    "CTL Chromebook NL73T"
+                    "CTL Chromebook NL73 Gen 2"
+                ],
+                "boardname": "QUANDISO2"
+            },
+            {
+                "device": [
+                    "CTL Chromebook NL73T",
+                    "Mouse Chromebook U1-DAU01GY-A",
+                    "Edxis Chromebook 11 (S30-X25)"
                 ],
                 "boardname": "QUANDISO360"
+            },
+            {
+                "device": [
+                    "LI7D",
+                    "CTL Chromebook NL73T Gen 2"
+                ],
+                "boardname": "QUANDISO3602"
+            },
+            {
+                "device": [
+                    "Acer Chromebook Spin 511"
+                ],
+                "boardname": "RIVEN"
+            },
+            {
+                "device": [
+                    "Acer Chromebook Plus 514"
+                ],
+                "boardname": "RORIC"
+            },
+            {
+                "device": [
+                    "Acer Chromebook Spin 512"
+                ],
+                "boardname": "RUDRIKS"
+            },
+            {
+                "device": [
+                    "Acer Chromebook 315"
+                ],
+                "boardname": "RUKE"
+            },
+            {
+                "device": [
+                    "Acer Chromebook 514 C937"
+                ],
+                "boardname": "RULL"
+            },
+            {
+                "device": [
+                    "Acer Chromebook 511"
+                ],
+                "boardname": "RYNAX"
+            },
+            {
+                "device": [
+                    "NEC Chromebook Y4"
+                ],
+                "boardname": "SUNDANCE"
+            },
+            {
+                "device": [
+                    "ASUS Chromebook CR11 (CR1104CTA)"
+                ],
+                "boardname": "TELIKS"
+            },
+            {
+                "device": [
+                    "ASUS Chromebook CR11 Flip (CR1104FTA)"
+                ],
+                "boardname": "TELIKS360"
+            },
+            {
+                "device": [
+                    "ASUS Chromebook CX15 (CX1505CTA)"
+                ],
+                "boardname": "TELITH"
+            },
+            {
+                "device": [
+                    "ASUS Chromebook CX14 (CX1405CTA)"
+                ],
+                "boardname": "TELTIC"
             },
             {
                 "device": [
@@ -1926,7 +2214,6 @@
                 ],
                 "boardname": "YAHIKO",
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50/Ti50 (SuzyQ)</a>, <a href=\"/images/wp/yahiko_wp_jumper.jpg\" class=\"internal\" title=\"yahiko_wp\" target=\"_blank\">jumper</a>"
-            
             },
             {
                 "device": [
@@ -2005,7 +2292,8 @@
             },
             {
                 "device": [
-                    "Lenovo 300e Chromebook Gen 2 AMD"
+                    "Lenovo 300e Chromebook Gen 2 AMD",
+                    "NEC Chromebook Y1 Gen2A"
                 ],
                 "boardname": "TREEYA360"
             }
@@ -2106,7 +2394,7 @@
         "devices": [
             {
                 "device": [
-                    "TBD"
+                    "SPC Chromebook V1"
                 ],
                 "boardname": "CRYSTALDRIFT"
             },
