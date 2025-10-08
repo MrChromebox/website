@@ -3,7 +3,84 @@
 
 
 
-## MrChromebox-2503.0 Release
+## MrChromebox-2509.0 Release
+
+(2025.10.07)
+
+This new release is based on the coreboot 25.09 tag (September 2025) and includes the following changes:
+
+### New Boards Supported (36 new configs)
+
+#### Intel Alder Lake (12th Gen) - 9 new boards
+- AOpen Chromebox Commercial 3 (aurash)
+- AOpen/ViewSonic/IMAGO Chromebox variants (bujia)
+- Acer Chromebook Plus Spin 514 (dochi)
+- Acer Chromebook Plus 514 (jubilant)
+- Acer Chromebook Plus 516 (jubileum)
+- Lenovo Chromebook Plus 2-in-1 (lotso)
+- Acer Chromebox CXI6 (moxie)
+- Acer Chromebook Plus Enterprise 515 (omniknight)
+- Galaxy Chromebook Plus (xol)
+
+#### Intel Alder Lake-N (12th Gen) - 23 new boards
+- Acer Chromebox Mini CXM2 (dirks)
+- HP Fortis G1i 11/14 and Flip variants (domika, domilly, domiso)
+- Acer Chromebook Spin 311 (gallida360)
+- CTL Chromebook PX111E (gana)
+- CTL/Poin2 Chromebook Plus variants (glassway)
+- Centerm/Positivo/Multi/Aiwa/Acer Spin 311 variants (gothrax)
+- CTL/Pegatron/Poin2 12" variants (guren, guren360)
+- Centerm Chromebook M621 variants (hideo)
+- Lenovo 500e Gen 4s (pujjoga, pujjogatwin)
+- CTL/Edxis/Mouse Chromebook variants (quandiso2, quandiso3602)
+- Acer Chromebook Plus 514 (roric)
+- Acer Chromebook 315 (ruke)
+- Acer Chromebook 514 C937 (rull)
+- Acer Chromebook 511 (rynax)
+- NEC Chromebook Y4 (sundance)
+- ASUS Chromebook CR11 and Flip variants (teliks, teliks360)
+- ASUS Chromebook CX15 (telith)
+- ASUS Chromebook CX14 (teltic)
+
+#### Intel Jasper Lake (11th Gen) - 2 new boards
+- ASUS Chromebook CX1505CKA (awadoron)
+- ASUS Chromebook CX1405CKA/CB1405CKA (awasuki)
+
+#### Intel Meteor Lake (14th Gen) - 2 new boards
+- Acer Chromebook Plus Spin 714 (karis)
+- ASUS ExpertBook CX54 Chromebook Plus (screebo)
+
+### MrChromebox-Specific Enhancements
+
+#### Coreboot Firmware Runtime (CFR) Support
+Added CFR configuration support to enable runtime firmware option changes via edk2 setup menu:
+- **Mainboards**: Brya, Volteer, Drallion, Hatch, Octopus, Reef, Eve, Poppy, Glados, Auron, Slippy, Link, Rex, Zork, Puff, Fizz
+- **ChromeEC options**: Keyboard backlight level at boot, EC sync, RW jump control
+- **Apollo Lake**: CFR configuration objects for SoC-level options
+
+#### edk2 Payload Updated
+Updated edk2 payload to rebase on upstream tag edk2-stable202505.
+
+
+
+ ## Some backend improvements
+
+(2025.10.07)
+
+In preparation for the MrChromebox-2509 release, some much needed backend improvements have been made to the Firmware Utility script, and some new utility scripts added: 
+
+  - New menu functions to backup current firmware and flash custom firmware
+  - Major refactoring of device information storage in device-db
+  - A handful of performance improvements
+  - New edk2/UEFI RW_LEGACY firmware option for Apollo Lake boards
+  - New helper script to identify boards without firmware
+  - New helper script to update the supported devices list here from device database
+  - New helper script to update the device DB from Google's recovery config
+  - Updated the README - documentation improvements are always good :)
+
+
+
+ ## MrChromebox-2503.0 Release
 
 (2025.04.27)
 
