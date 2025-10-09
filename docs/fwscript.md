@@ -22,14 +22,14 @@ At startup, the Firmware Utility Script will automatically detect the device, OS
 This script must be run \*\*as a normal/non-root user\*\*. Running it as root will break things. DO NOT RUN 'SUDO SU' BEFORE RUNNING THE SCRIPT CMD BELOW.
 :::
 
-And do note that in the script command below, it's \`-LO\` **(L capital O), not L zero.**
+And do note that in the script command below, it's \`-LOf\` **(L capital O f), not L zero f.**
 
 To download and run this script under ChromeOS or Linux, from a terminal/shell type:
-`cd; curl -LO mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh`
+`cd; curl -LOf mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh`
 and press `[ENTER]`.
 
 If you encounter certificate related errors when downloading the script from ChromeOS, then add `-k` to the curl command and script command to bypass SSL certificate checking as so:
-`cd; curl -LOk mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh`
+`cd; curl -LOfk mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh`
 and press `[ENTER]`.
 
 ::: warning NOTE
