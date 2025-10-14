@@ -2,6 +2,20 @@
 
 
 
+ ## MrChromebox-2509.1 Release
+
+(2025.10.13)
+
+This point release addresses issues in the 2509.0 release, with a few improvements as well:
+
+ * Fixed I2C controllers not working under Windows on some platforms
+   (Haswell, Broadwell, Baytrail, Braswell)
+ * Fixed Windows display brightness control on Alderlake-N (nissa) devices
+ * Added CFR option menu support for Jasperlake boards (and Purism devices)
+ * Added a CFR option for TANIKS/TAEKO to select eMMC or NVMe storage type
+ * Updated EC-RW firmware on Tigerlake and Alderlake/Raptorlake devices to improve TBT5 compatibility
+ * Updated edk2 branch (uefipayload_2508), rebased on upstream edk2-stable202508 tag
+
 
 ## MrChromebox-2509.0 Release
 
