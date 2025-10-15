@@ -667,7 +667,7 @@
                     "Newline Chromebox A10"
                 ],
                 "boardname": "JAX",
-                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/fizz_wp.jpg\" class=\"internal\" title=\"fizz wp.jpg\" target=\"_blank\">screw</a>"
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/jax_wp_screw.jpg\" class=\"internal\" title=\"fizz wp.jpg\" target=\"_blank\">screw</a>"
             },
             {
                 "device": [
