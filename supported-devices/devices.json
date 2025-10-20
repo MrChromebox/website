@@ -2241,6 +2241,31 @@
             }
         ]
     },
+    "Intel Meteorlake": {
+        "default_wpmethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50/Ti50 (SuzyQ)</a>",
+        "default_rwLegacy": true,
+        "default_fullrom": true,
+        "devices": [
+            {
+                "device": [
+                    "Acer Chromebook Plus 714"
+                ],
+                "boardname": "KANIX"
+            },
+            {
+                "device": [
+                    "Acer Chromebook Plus Spin 714"
+                ],
+                "boardname": "KARIS"
+            },
+            {
+                "device": [
+                    "ASUS ExpertBook CX54 Chromebook Plus (CX5403)"
+                ],
+                "boardname": "SCREEBO"
+            }
+        ]
+    },
     "AMD Stoneyridge": {
         "default_wpmethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ, battery)</a>",
         "default_rwLegacy": true,
