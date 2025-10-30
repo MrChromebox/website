@@ -224,7 +224,8 @@
                     "eduGear Chromebook R",
                     "ASI Chromebook"
                 ],
-                "boardname": "ENGUARDE"
+                "boardname": "ENGUARDE",
+                "wpMethod": "<a href=\"/images/wp/enguarde_wp_screw.jpg\" class=\"internal\" title=\"enguarde_wp_screw.jpg\" target=\"_blank\">screw</a>"
             },
             {
                 "device": [
