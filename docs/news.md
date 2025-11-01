@@ -1,6 +1,20 @@
 # Latest Updates
 
 
+ ## RW_LEGACY updates for everyone!
+
+(2025.10.31)
+
+Usually RW_LEGACY support is released when a platform is first supported, and doesn't change much unless there's an issue to address. But now that I have a separate branch and build script for updating the RW_LEGACY payload, I figured it was time to unify things, as well as fix a few outstanding issues. This new release supports all non-EOL ChromeOS devices, other than Hatch-based Cometlake Chromebooks, which still lack RWL support due to bugs in Google's stock firmware that I have yet to work around.
+
+ * Unified RWL release for all platforms Kabylake/Apollolake and newer
+ * Improved UFS support
+ * Added support for eMMC on devices using GL9763E controller
+ * Added support for SD cards on devices using GL9750/9755 controllers
+ * Simplified edk2 menus with unavilable options removed
+ * Removed edk2 shell
+ * Auto-boot to setup menu when no boot devices available
+
 
  ## MrChromebox-2509.1 Release
 
