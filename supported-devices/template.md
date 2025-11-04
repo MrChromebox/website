@@ -13,7 +13,9 @@ NOTE - do not edit the supported-devices.md file, edit the template file in the 
 
 What's in a name? All ChromeOS devices have a board/device name, which determines which firmware, OS build, etc a device uses. The board name is listed at the bottom of both the Recovery Mode and Developer Mode screens -- it's the first part of the hardware ID (HWID), before any spaces or hyphens. 
 
+::: important
 **Your device's board name is what determines if it's supported or not** -- not the make, model, CPU, or anything else. The only thing that matters is the name, so use that when determining support in the table below (or for anything else really).
+:::
 
 The chart below provides a full, authoritative list of all ChromeOS devices currently supported by the Firmware Utility Script, the firmware types available for each, and the hardware write-protect method used. In most cases, all of the devices in a given platform/family are supported identically, but sometimes there are outliers (esp with older or newer devices). The goal is to offer both RW_LEGACY and UEFI Full ROM firmware for all devices wherever possible, so you have the option of dual booting ChromeOS, or liberating your device completely :)
 
