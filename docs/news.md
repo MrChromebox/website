@@ -1,6 +1,35 @@
 # Latest Updates
 
 
+ ## MrChromebox-2509.2 Release
+
+(2025.11.01)
+
+This point release addresses issues in the 2509.1 release, with a few improvements as well:
+
+ * Fixed (hopefully) UFS storage not enumerating under edk2 / unable to boot
+ * Added support for Genesys Logic GL9763E eMMC controllers
+ * Added support for Genesys Logic GL9750/9755 SD card controllers (still WIP)
+ * Fixed fan stalling under Windows for Haswell/Broadwell Chromeboxes
+ * Improved thermal management for HSW/BDW Chromeboxes
+ * Improved keyboard backlight detection for setting level at boot via menu option
+ * Added automatic fan control menu option for boards with fans
+ * Added touchpad type menu option for PEPPY (should fix touchpad under Windows)
+ * Added touchscreen enable/disable menu option for LULU
+ * Added menu option to toggle IPU camera(s) on/off for Kabylake Chromebooks
+ * Added touchscreen type menu option for DRAWCIA
+ * Added touchpad type menu option for GALTIC
+ * Fixed EC-RW updates for Tigerlake Chromebooks
+ * Improved eMMC driver for AMD Picasso Chromebooks
+ * Improved/fixed EC-RW firmware sync 
+ * Consolidated firmware builds -- 115 images removed
+ * All devices using the same board/build now differntiated via HWID, which is read from CBFS
+ * New script feature to set HWID on UEFI firmware (hopefully not needed)
+ * Removed 'Power on after fail' menu option for Chromebooks; only makes sense for Chromeboxes/bases
+ * Added new script options to generate debug and cbmem-enabled builds (for self-compilers)
+ * Added new script to generate edk2 RW_LEGACY payload
+ 
+
  ## RW_LEGACY updates for everyone!
 
 (2025.10.31)
