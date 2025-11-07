@@ -94,7 +94,7 @@ This method requires a ChromeOS debug cable (aka SuzyQ cable or SuzyQable).
 
 ## Disable AP RO Firmware Verification
 
-On 2023+ ChromeOS devices using a Gen2 CR50 security chip (aka `Ti50`), there is a new feature where the CR50 will verify the RO portion of the AP firmware at boot. If you want to flash custom firmware, you **must** use the CCD method above to disable firmware write protection, regardless if the device supports disablement via battery disconnect or a jumper as well.
+On 2023+ ChromeOS devices using a Gen2 CR50 security chip (aka `Ti50`), there is a new feature where the CR50 will verify the RO portion of the AP firmware and the state of the software write protect registers (both range and enable) at boot. If you want to flash custom firmware, you **must** use the CCD method above to disable firmware write protection, regardless if the device supports disablement via battery disconnect or a jumper as well.
 
 For more info, see the [Chromium documentation](https://www.chromium.org/chromium-os/developer-library/guides/device/ro-firmware-unlock/) on this feature.
 
