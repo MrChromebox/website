@@ -1,6 +1,16 @@
 # Latest Updates
 
 
+ ## MrChromebox-2509.3 Release
+
+(2025.11.08)
+
+This point release addresses a few small issues in the 2509.2 release:
+
+ * Fixed SMBIOS product name capitalization
+ * Re-set S3 as default sleep mode on older boards
+ 
+
  ## MrChromebox-2509.2 Release
 
 (2025.11.01)
