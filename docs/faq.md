@@ -85,7 +85,7 @@ For a Linux ISO, select the ISO, then change the write mode from 'ISO Image' to 
 * If you are having problems with USB drives not detecting:
     Make sure you created the USB install media correctly:
 
-*   Be sure to use a 64-bit OS; on the Windows side, use only Windows 10 -- Windows 7 will not work, Win 8/8,1 doesn't support all the required drivers; 32-bit anything (Windows or Linux) will not work (the UEFI firmware is 64-bit only)
+*   Be sure to use a 64-bit OS; on the Windows side, use only Windows 10 -- Windows 7 will not work, Win 8/8.1 doesn't support all the required drivers; 32-bit anything (Windows or Linux) will not work (the UEFI firmware is 64-bit only)
 *   For Windows, use Rufus or the Windows Media Creation Tool. Almost any options in Rufus should work, but UEFI/GPT is recommended. FAT vs NTFS should not matter. The UEFI firmware supports both
 *   For Linux, ensure your distro supports UEFI. Any tool that supports UEFI Linux (such as Rufus) or a dd mode or dd itself on any \*nix should be able to make a working installation USB. Do **not** use Unetbootin. It is known to have issues making UEFI-capable installation USBs.
 
