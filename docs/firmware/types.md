@@ -66,21 +66,21 @@ The components of the stock firmware for any given ChromeOS device can be found 
 [https://chromium.googlesource.com/chromiumos/platform/depthcharge](https://chromium.googlesource.com/chromiumos/platform/depthcharge/)  
 [https://chromium.googlesource.com/chromiumos/third_party/seabios](https://chromium.googlesource.com/chromiumos/third_party/seabios/)  
 
-For instance, the coreboot component for the Asus Chromebox CN60 (PANTHER) is [https://chromium.googlesource.com/chromiumos/third_party/coreboot/+/firmware-panther-4920.24.B](https://chromium.googlesource.com/chromiumos/third_party/coreboot/+/firmware-panther-4920.24.B)
+For instance, the coreboot component for the Asus Chromebox CN60 (PANTHER) is <https://chromium.googlesource.com/chromiumos/third_party/coreboot/+/firmware-panther-4920.24.B>
 
 The Google firmware branch for a specific device is pretty much a fixed snapshot of the firmware component at/around the time of the device's release, and usually has minimal bugfix updates after release. In contrast, the firmware updates available here via the Firmware Utility Script are built using the latest upstream (main / master copy) source code directly from the coreboot and SeaBIOS projects, with additional fixes/tweaks applied on top.
 
 The upstream repositories for coreboot and SeaBIOS can be found on github:  
   
-[https://github.com/coreboot/coreboot](https://github.com/coreboot/coreboot)  
-[https://github.com/coreboot/seabios](https://github.com/coreboot/seabios)  
+<https://github.com/coreboot/coreboot>  
+<https://github.com/coreboot/seabios>  
 
 My personal coreboot, SeaBIOS, Tianocore, and EC firmware repositories, along with the source for the scripts on this site, are also available on github:  
   
-[https://github.com/MrChromebox/coreboot](https://github.com/MrChromebox/coreboot)  
-[https://github.com/MrChromebox/SeaBIOS](https://github.com/MrChromebox/SeaBIOS)  
-[https://github.com/MrChromebox/edk2](https://github.com/MrChromebox/edk2)  
-[https://github.com/MrChromebox/scripts](https://github.com/MrChromebox/scripts)  
+<https://github.com/MrChromebox/coreboot>  
+<https://github.com/MrChromebox/SeaBIOS>  
+<https://github.com/MrChromebox/edk2>  
+<https://github.com/MrChromebox/scripts>  
 
 These repos contain not only the source used to build the current firmware releases, but also the build scripts and configurations used as well. 
 
