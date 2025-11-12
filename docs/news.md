@@ -506,7 +506,7 @@ Support for booting Linux natively via the new legacy boot replacement (Alternat
 
 Unlike many previous devices using Altfw, Jasperlake devices have fully working sleep (ACPI SS3); Zen2 devices do not.
 
-As always, RW_LEGACY firmware does \*\*not\*\* require disabling firmware write protection to flash/use.
+As always, RW_LEGACY firmware does **not** require disabling firmware write protection to flash/use.
 
 ## coreboot 4.13 Release
 

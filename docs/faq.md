@@ -110,7 +110,7 @@ Type 'exit' to return to the UEFI settings menu, then select Boot Manager. From 
 
 `sudo su`
 `mkdir -p /boot/efi/EFI/BOOT`
-`cp /boot/efi/EFI/\[distro name from above\]/grubx64.efi /boot/efi/EFI/BOOT/BOOTX64.efi`
+`cp /boot/efi/EFI/[distro name from above]/grubx64.efi /boot/efi/EFI/BOOT/BOOTX64.efi`
 
 then reboot to test. What we're doing is copying the grub EFI boot stub from the OS installed location to the location the firmware is expecting (`/EFI/BOOT/BOOTX64.efi`) on the EFI system partition (ESP), which most (Debian/Ubuntu-based?) distros will mount at `/boot/efi`. You may need to adjust slightly for your distro, but these instructions should work in most cases.
 
