@@ -135,7 +135,7 @@ Now that everything is prepped, time to flash the device. To be thorough, we'll 
     * For all other devices, use
       * `sudo flashrom -p ch341a_spi -w <filename>`
 
-    Where `<filename\>` is the name of your backup file, UEFI firmware file, or shellball firmware file. This will usually take 30s-90s to complete; flashrom will first read the flash chip, determine which sectors differ, erase those sectors, write the new data, then verify the data written.
+    Where `<filename>` is the name of your backup file, UEFI firmware file, or shellball firmware file. This will usually take 30s-90s to complete; flashrom will first read the flash chip, determine which sectors differ, erase those sectors, write the new data, then verify the data written.
 
 2. Verify the firmware
 
