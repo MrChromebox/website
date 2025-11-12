@@ -9,7 +9,7 @@ This point release addresses a few small issues in the 2509.2 release:
 
  * Fixed SMBIOS product name capitalization
  * Re-set S3 as default sleep mode on older boards
- 
+
 
  ## MrChromebox-2509.2 Release
 
@@ -31,14 +31,14 @@ This point release addresses issues in the 2509.1 release, with a few improvemen
  * Added touchpad type menu option for GALTIC
  * Fixed EC-RW updates for Tigerlake Chromebooks
  * Improved eMMC driver for AMD Picasso Chromebooks
- * Improved/fixed EC-RW firmware sync 
+ * Improved/fixed EC-RW firmware sync
  * Consolidated firmware builds -- 115 images removed
  * All devices using the same board/build now differntiated via HWID, which is read from CBFS
  * New script feature to set HWID on UEFI firmware (hopefully not needed)
  * Removed 'Power on after fail' menu option for Chromebooks; only makes sense for Chromeboxes/bases
  * Added new script options to generate debug and cbmem-enabled builds (for self-compilers)
  * Added new script to generate edk2 RW_LEGACY payload
- 
+
 
  ## RW_LEGACY updates for everyone!
 
@@ -134,7 +134,7 @@ Updated edk2 payload to rebase on upstream tag edk2-stable202505.
 
 (2025.10.07)
 
-In preparation for the MrChromebox-2509 release, some much needed backend improvements have been made to the Firmware Utility script, and some new utility scripts added: 
+In preparation for the MrChromebox-2509 release, some much needed backend improvements have been made to the Firmware Utility script, and some new utility scripts added:
 
   - New menu functions to backup current firmware and flash custom firmware
   - Major refactoring of device information storage in device-db
@@ -173,8 +173,8 @@ Just a quick rollup to capture the previous hotfixes:
  * Fix presence of some USB ports on TGL Chromebooks
  * Fix ACPI battery code which prevented booting Windows on SNB/IVB/HSW/BDW/BYT/BSW Chromebooks
  * Update JSL devices with fixed images, which were rolled back after an issue was found in the 2408 release
- 
- 
+
+
  ## Some small MrChromebox-2408 Updates
 
 (2024.09.11)
@@ -185,8 +185,8 @@ As with any release, some small issues sneak past testing, so pushing a few fixe
  * Fix ACPI battery code which prevented booting Windows on SNB/IVB/HSW/BDW/BYT/BSW Chromebooks
 
 Updated boards will have a firmware version of MrChromebox-2408-1 or MrChromebox-2408-2 and a build date of 2024/09/10 or 2024/09/11.
- 
- 
+
+
  ## MrChromebox-2408 Release
 
 (2024.09.08)
@@ -203,8 +203,8 @@ This new release is based on the coreboot 24.08 tag (August 2024) and includes t
  * Added ability to configure (when compiling) UMA allocation for Intel Sandy/Ivybridge and AMD Stoneyridge and Picasso devices
  * Fixed display init on some boards (LASER14, MARASOV, OMNIGUL, KINOX)
  * AMD Picasso devices no longer use vboot
- 
- 
+
+
  ## MrChromebox-2405.1 Point Release
 
 (2024.07.10)

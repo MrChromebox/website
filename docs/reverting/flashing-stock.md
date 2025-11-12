@@ -26,4 +26,3 @@ If your device has hit AUE/EOL, you will not be able to revert it to ChromeOS.
 5. Follow the prompts. Reboot after successful completion.
 
 With the stock ChromeOS firmware restored, you can now perform a [ChromeOS USB recovery](./booting-recovery-usb.md) to reload ChromeOS.
-
