@@ -17,4 +17,3 @@ footerHtml: false
 This site is designed to provide background info on ChromeOS, Developer Mode, and Legacy Boot Mode, as well as info on modifying/replacing the the firmware on your device in order to better meet your needs. If you're looking for information on how to run Linux or Windows on your ChromeOS device, you've come to the right place.
 
 It's also the home of the ChromeOS Firmware Utility Script, which simplifies and automates many of the tasks required to run an alternate OS on your Chromebook/Chromebox.
-

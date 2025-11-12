@@ -166,4 +166,3 @@ The ChromeOS/ChromiumOS version of flashrom can manipulate the software write pr
 *   Change software write protection addresses range:
 
 `sudo flashrom --wp-range 0 0` (`--wp-range 0,0` on newer versions of flashrom)
-

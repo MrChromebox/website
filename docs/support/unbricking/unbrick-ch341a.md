@@ -118,7 +118,7 @@ You don't need to do this if flashing a stock firmware backup created by the Fir
       * `./gbb_utility stock-firmware-<devicename>-<date>.rom --get --hwid | sed 's/^hardware_id: //' > hwid.txt`
 2. Then we inject the VPD and HWID into the firmware image to be flashed.
     * `./cbfstool <Shellball ROM/UEFI Full ROM filename> write -r RO_VPD -f vpd.bin`
-    * For UEFI Full ROM run 
+    * For UEFI Full ROM run
       * `./cbfstool <UEFI Full ROM filename> add -n hwid -f hwid.txt -t raw`
     * For Shellball run
       * `./gbb_utility <Shellball ROM> --set --hwid="$(cat hwid.txt)"`

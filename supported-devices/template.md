@@ -11,7 +11,7 @@ NOTE - do not edit the supported-devices.md file, edit the template file in the 
 
 ## Determining Device Support
 
-What's in a name? All ChromeOS devices have a board/device name, which determines which firmware, OS build, etc a device uses. The board name is listed at the bottom of both the Recovery Mode and Developer Mode screens -- it's the first part of the hardware ID (HWID), before any spaces or hyphens. 
+What's in a name? All ChromeOS devices have a board/device name, which determines which firmware, OS build, etc a device uses. The board name is listed at the bottom of both the Recovery Mode and Developer Mode screens -- it's the first part of the hardware ID (HWID), before any spaces or hyphens.
 
 ::: important
 **Your device's board name is what determines if it's supported or not** -- not the make, model, CPU, or anything else. The only thing that matters is the name, so use that when determining support in the table below (or for anything else really).
