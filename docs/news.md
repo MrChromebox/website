@@ -1014,7 +1014,7 @@ Edit: Sadly this doesn't work on Skylake Chromebooks, as they use a different me
 
 (2016.09.06)
 
-Haswell/Broadwell device owners now have the option of flashing a Full ROM with either Legacy Boot (SeaBIOS) or UEFI Boot (Tianocore). UEFI booting is needed/optimal for users who want to run Windows, OS X, or a multi-boot setup; Most Linux users will need to install a boot manager such as [rEFInd](http://www.rodsbooks.com/refind/) since the UEFI firmware currently only looks for the default EFI boot path (EFI\\BOOT\\BOOTX64.EFI). GalliumOS users will want to stick with the Legacy Boot option, since GalliumOS isn't UEFI compatible yet.
+Haswell/Broadwell device owners now have the option of flashing a Full ROM with either Legacy Boot (SeaBIOS) or UEFI Boot (Tianocore). UEFI booting is needed/optimal for users who want to run Windows, OS X, or a multi-boot setup; Most Linux users will need to install a boot manager such as [rEFInd](http://www.rodsbooks.com/refind/) since the UEFI firmware currently only looks for the default EFI boot path (`EFI\BOOT\BOOTX64.EFI`). GalliumOS users will want to stick with the Legacy Boot option, since GalliumOS isn't UEFI compatible yet.
 
 All Full ROMs feature improvements to the SMBIOS tables, which fixes the amount of RAM reported to the system (mainly affected Windows and OS X). Haswell/Broadwell Full ROMs also get fixes to the onboard audio, which improve the headphone jack detection/functionality, and fix the subsystem ID reported so that Windows will automatically install the correct drivers via Windows Update. Baytrail Full ROMs have been updated with a fix for battery status under Windows.
 
