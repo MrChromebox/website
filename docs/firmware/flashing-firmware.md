@@ -6,7 +6,7 @@ Refer to [Firmware Types](types.md) for information about the different firmware
 **Flashing the firmware has the potential to brick your device**, requiring relatively inexpensive hardware and some technical knowledge to recover. Not all boards can be tested prior to release, and even then slight differences in hardware can lead to unforeseen failures. If you don't have the ability to recover from a bad flash, **you're taking a risk**. Flashing Full ROM firmware will remove your ability to run ChromeOS.
 :::
 
-## Firmware Flashing TLDR 
+## Firmware Flashing TLDR
 
 1. [Enable developer mode](/docs/boot-modes/developer.md).
 2. [Disable write protect](/docs/firmware/wp/disabling.md) (if flashing the UEFI Full ROM firmware).
@@ -23,7 +23,7 @@ Using the script menu option, restore the stock firmware from your backup, and c
 If you disconnected the battery to [disable firmware write protect](/docs/firmware/wp/disabling.md), you can plug it back in now. You will not need to disconnect it again for any subsequent flashing.
 :::
 
-## Booting 
+## Booting
 
 ### UEFI Full ROM Firmware
 

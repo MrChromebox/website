@@ -36,7 +36,7 @@ The SuzyQable provides three serial ports (UARTs) which can be accessed using a 
    * `minicom -D /dev/ttyUSB0`
 2. CPU console under /dev/ttyUSB1:
    * `minicom -D /dev/ttyUSB1`
-3. Embedded Controller (EC) console under /dev/ttyUSB2
+3. Embedded Controller (EC) console under /dev/ttyUSB2:
    * `minicom -D /dev/ttyUSB2`
 
 * The CPU console can be used to debug coreboot, edk2, or the Linux kernel, but you need to re-compile coreboot with following configuration options enabled:

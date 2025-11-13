@@ -19,11 +19,10 @@ If your device has hit AUE/EOL, you will not be able to revert it to ChromeOS.
    * For Ubuntu-based distros, run: `sudo apt update && sudo apt install -y curl`
 
 3. Run the [Firmware Utility Script](/docs/fwscript.md):
-   * `cd; curl -LOf mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh`
+   * `cd; curl -LOf https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh`
 
 4. Choose option 2: `Restore Stock ChromeOS Firmware`.
 
 5. Follow the prompts. Reboot after successful completion.
 
 With the stock ChromeOS firmware restored, you can now perform a [ChromeOS USB recovery](./booting-recovery-usb.md) to reload ChromeOS.
-

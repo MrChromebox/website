@@ -85,7 +85,7 @@ For a Linux ISO, select the ISO, then change the write mode from 'ISO Image' to 
 * If you are having problems with USB drives not detecting:
     Make sure you created the USB install media correctly:
 
-*   Be sure to use a 64-bit OS; on the Windows side, use only Windows 10 -- Windows 7 will not work, Win 8/8,1 doesn't support all the required drivers; 32-bit anything (Windows or Linux) will not work (the UEFI firmware is 64-bit only)
+*   Be sure to use a 64-bit OS; on the Windows side, use only Windows 10 -- Windows 7 will not work, Win 8/8.1 doesn't support all the required drivers; 32-bit anything (Windows or Linux) will not work (the UEFI firmware is 64-bit only)
 *   For Windows, use Rufus or the Windows Media Creation Tool. Almost any options in Rufus should work, but UEFI/GPT is recommended. FAT vs NTFS should not matter. The UEFI firmware supports both
 *   For Linux, ensure your distro supports UEFI. Any tool that supports UEFI Linux (such as Rufus) or a dd mode or dd itself on any \*nix should be able to make a working installation USB. Do **not** use Unetbootin. It is known to have issues making UEFI-capable installation USBs.
 
@@ -106,13 +106,13 @@ For a Linux ISO, select the ISO, then change the write mode from 'ISO Image' to 
 
 * Sounds like your Linux distro doesn't install the EFI bootloader in the default location - no worries, it's an easy fix:
 
-Type 'exit' to return to the UEFI settings menu, then select Boot Manager. From there, select Boot From File, then navigate to and boot from /EFI/\[distro name\]/grubx64.efi (where \[distro name\] will be ubuntu, arch, debian, etc). Once your OS is booted, open a terminal/shell, and type the following (observing case):
+Type 'exit' to return to the UEFI settings menu, then select Boot Manager. From there, select Boot From File, then navigate to and boot from `/EFI/[distro name]/grubx64.efi` (where `[distro name]` will be ubuntu, arch, debian, etc). Once your OS is booted, open a terminal/shell, and type the following (observing case):
 
 `sudo su`
 `mkdir -p /boot/efi/EFI/BOOT`
-`cp /boot/efi/EFI/\[distro name from above\]/grubx64.efi /boot/efi/EFI/BOOT/BOOTX64.efi`
+`cp /boot/efi/EFI/[distro name from above]/grubx64.efi /boot/efi/EFI/BOOT/BOOTX64.efi`
 
-then reboot to test. What we're doing is copying the grub EFI boot stub from the OS installed location to the location the firmware is expecting (/EFI/BOOT/BOOTX64.efi) on the EFI system partition (ESP), which most (Debian/Ubuntu-based?) distros will mount at /boot/efi. You may need to adjust slightly for your distro, but these instructions should work in most cases.
+then reboot to test. What we're doing is copying the grub EFI boot stub from the OS installed location to the location the firmware is expecting (`/EFI/BOOT/BOOTX64.efi`) on the EFI system partition (ESP), which most (Debian/Ubuntu-based?) distros will mount at `/boot/efi`. You may need to adjust slightly for your distro, but these instructions should work in most cases.
 
 
 ## OS-Related
