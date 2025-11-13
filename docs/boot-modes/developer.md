@@ -51,7 +51,9 @@ First, boot to [Recovery Mode](recovery.md). Then proceed below with the applica
 
 3. Press `[CTRL+D]` to boot from internal disk.
 
-4. Connect to a network as usual, but **do not enable debugging features**.
+4. **Do not enable additional debugging features**, even when ChromeOS gives you this option.
+
+5. Connect to the internet as usual. (You will be downloading some files later on.)
 
 ### Tablets
 
@@ -60,6 +62,10 @@ First, boot to [Recovery Mode](recovery.md). Then proceed below with the applica
 2. Use the `Volume Up` and `Volume Down` to navigate to "Confirm Enabling Developer Mode", then press `Power` to select it. The system should reboot and bring you to the "OS Verification is OFF" screen.
 
 3. Select "Developer Options", then select "Boot from Internal Disk".
+
+4. **Do not enable additional debugging features**, even when ChromeOS gives you this option.
+
+5. Connect to the internet as usual. (You will be downloading some files later on.)
 
 
 ## Getting a (Root-capable) Shell
