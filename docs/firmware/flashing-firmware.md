@@ -11,7 +11,7 @@ Refer to [Firmware Types](types.md) for information about the different firmware
 1. [Enable developer mode](/docs/boot-modes/developer.md).
 2. [Disable write protect](/docs/firmware/wp/disabling.md) (if flashing the UEFI Full ROM firmware).
 3. Run the [Firmware Utility Script](/docs/fwscript).
-4. If you are flashing Full ROM firmware, the script will prompt you to make a backup of your stock firmware. **Store it in a safe place** (Google Drive, another PC, etc), as reverting to stock firmware without a backup is **more difficult and has some limitations**.
+4. If you are flashing Full ROM firmware, the script will prompt you to make a backup of your stock firmware. **Store it in a safe place** (Google Drive, another PC, etc), as reverting to stock firmware without a backup is **more difficult and has some limitations** ([you can easily lose your VPD and HWID](/docs/support/unbricking/unbrick-ch341a.md#persisting-the-board-s-vital-product-data-vpd-and-hardware-id-hwid)).
 5. Assuming no errors occur, power off the device using the script menu option.
 
 ::: warning IMPORTANT
