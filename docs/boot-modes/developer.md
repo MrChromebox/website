@@ -51,10 +51,6 @@ First, boot to [Recovery Mode](recovery.md). Then proceed below with the applica
 
 3. Press `[CTRL+D]` to boot from internal disk.
 
-4. **Do not enable additional debugging features**, even when ChromeOS gives you this option.
-
-5. Connect to the internet as usual. (You will be downloading some files later on.)
-
 ### Tablets
 
 1. Press `Volume Up` + `Volume Down` to bring up the menu selection screen.
@@ -63,10 +59,9 @@ First, boot to [Recovery Mode](recovery.md). Then proceed below with the applica
 
 3. Select "Developer Options", then select "Boot from Internal Disk".
 
-4. **Do not enable additional debugging features**, even when ChromeOS gives you this option.
-
-5. Connect to the internet as usual. (You will be downloading some files later on.)
-
+::: warning IMPORTANT
+**Do not** enable additional ChromeOS debugging features. While the welcome screen might give you such an option, those will interfere with what you are doing here. This guide **is not** designed with them in mind.
+:::
 
 ## Getting a (Root-capable) Shell
 
@@ -76,6 +71,6 @@ Once in Developer Mode, there are two ways to get a root-capable shell, which is
 
 *   When logged in (as a guest is ok) and with a browser window open, press `[CTRL+ALT+T]`, then type `shell` and press `[ENTER]`. This gives you a crosh shell.
 
-::: warning IMPORTANT
+::: tip NOTE
 ChromeOS R117 removed the ability to use the `sudo` command in a crosh shell, making it significantly less useful. For anything requiring `sudo` (like the [Firmware Utility Script](/docs/fwscript.md)), you'll need to use a VT2 shell instead.
 :::
