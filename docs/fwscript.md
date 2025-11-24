@@ -4,7 +4,7 @@
 
 The ChromeOS Firmware Utility Script simplifies the most common functions most users need when interacting with the firmware on their ChromeOS device.
 
-It can be run from ChromeOS, or any Linux distribution which has a full shell. It cannot be run via WSL or a virtualized environment (ie, a ChromeOS penguin shell)
+It can be run from ChromeOS, or any Linux distribution which has a full shell. It cannot be run via WSL or a virtualized environment (i.e., a ChromeOS penguin shell).
 
 Currently, it allows the user to:
 
@@ -28,7 +28,7 @@ To download and run this script under ChromeOS or Linux, from a terminal/shell t
 `cd; curl -LOf https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh`
 and press `[ENTER]`.
 
-If you encounter certificate related errors when downloading the script from ChromeOS, then add `-k` to the curl command and script command to bypass SSL certificate checking as so:
+If you encounter certificate related errors when downloading the script from ChromeOS, then add `-k` to the curl command to bypass SSL certificate checking as so:
 `cd; curl -LOfk https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh`
 and press `[ENTER]`.
 
@@ -53,7 +53,7 @@ In the screenshots above, only the script functions available for the device and
 
 *   **Install/Update the RW_LEGACY Firmware**
 
-    This option performs two simple tasks: it sets the crossystem boot flag necessary to enable Legacy Boot mode, and it installs an RW_LEGACY firmware update appropriate for the device. Users will have the option to set the default boot device (internal storage \[default\] or USB/SD); Haswell/Broadwell Chromebox users will also have the option to enable "headless" (no display attached) booting, which is really only useful if you're going to run the box without a display and connect remotely (eg, via ssh). Changing either of these options requires re-running this script function.
+    This option performs two simple tasks: it sets the crossystem boot flag necessary to enable Legacy Boot mode, and it installs an RW_LEGACY firmware update appropriate for the device. Users will have the option to set the default boot device (internal storage \[default\] or USB/SD); Haswell/Broadwell Chromebox users will also have the option to enable "headless" (no display attached) booting, which is really only useful if you're going to run the box without a display and connect remotely (e.g., via ssh). Changing either of these options requires re-running this script function.
 
     After updating the RW_LEGACY firmware, Legacy Boot Mode can be accessed via `[CTRL+L]` on the Developer Mode boot screen. It can also be set as the default by changing the GBB Flags via 'Set Boot Options' feature below.
 
@@ -62,11 +62,11 @@ In the screenshots above, only the script functions available for the device and
 
 *   **Install/Update UEFI (Full ROM) Firmware**
 
-    As this is a full replacement firmware, the script will offer users the option to back up their stock firmware on USB (required if the script is not capable of providing a stock firmware image).
+    As this is a full replacement firmware, the script will offer users the option to back up their stock firmware to USB (required if the script is not capable of providing a stock firmware image).
 
     As Chromeboxes store their Ethernet MAC address in the RO_VPD (read-only vital product data) region of the stock firmware, the script will extract that region from the stock firmware and inject it into the new firmware ensuring the unique MAC address isn't lost. It will also persist the VPD region across firmware updates, so this is all transparent to the user.
 
-    After installing the UEFI (Full ROM) Firmware, your device will boot directly in UEFI Mode; ChromeOS will not be able boot. Your ChromeOS device is now a "regular PC," and you can install the OS of your choice without any special instructions.
+    After installing the UEFI (Full ROM) Firmware, your device will boot directly in UEFI Mode; ChromeOS will not be able to boot. Your ChromeOS device is now a "regular PC," and you can install the OS of your choice without any special instructions.
 
     **Requires firmware write-protect disabled:** `YES`
 
@@ -90,7 +90,7 @@ In the screenshots above, only the script functions available for the device and
 
     This script function is also just a wrapper around the `gbb_utility` application built into ChromeOS. It will read the GBB region from the stock firmware, set the HWID based on user input, and write it back to flash. The only time this function is needed is if one flashed a generic recovery image firmware (aka a shellball ROM) instead of restoring a backup of their own device firmware. Shellball ROMs extracted from a recovery image have a generic HWID embedded which ChromeOS does not recognize as valid for purposes of OS and firmware updates (among other things), so it's necessary to set a valid one. HWIDs aren't unique, so any valid one for a given do will do.
 
-    **Note:** If you restored your stock firmware using the option from this script, it is not necessary (nor should you) to set the HWID afterward.
+    **Note:** If you restored your stock firmware using the option from this script, it is not necessary to (nor should you) set the HWID afterward.
 
     After setting a valid HWID, simply reboot and ChromeOS updates should work normally.
 
@@ -110,10 +110,10 @@ In the screenshots above, only the script functions available for the device and
     **Requires firmware write-protect disabled:** `YES`
 
 
-The Reboot and Power Off options are (hopefully) sufficiently self-explanatory :)
+The Reboot and Power Off options are (hopefully) sufficiently self-explanatory :).
 
 If running UEFI Full ROM firmware, there will be an additional option to clear the NVRAM. This will delete all bootorder entries stored in NVRAM, and they will be created again on the next boot (or next time grub is updated).
 
 
 
-The source for the Firmware Utility Script (as well as all helper/accessory scripts) can be found [on my 'scripts' github repository](https://github.com/MrChromebox/scripts). Any issues, feature requests, and/or improvements can be reported via the issue tracker or a pull request.
+The source for the Firmware Utility Script (as well as all helper/accessory scripts) can be found [on my 'scripts' GitHub repository](https://github.com/MrChromebox/scripts). Any issues, feature requests, and/or improvements can be reported via the issue tracker or a pull request.
