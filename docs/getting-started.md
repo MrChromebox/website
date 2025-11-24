@@ -11,18 +11,18 @@ If your device is currently managed/enrolled by an organization (such as a schoo
 
 ## Prerequisites
 
-* An x86_64 (Intel/AMD) architecture device -- ARM-based devices are not supported
+* An x86_64 (Intel/AMD) architecture device — ARM-based devices are not supported
 * The device's Hardware ID (HWID) / ChromeOS board name
     * The device's HWID can be found at the bottom of the Recovery Mode and Developer Mode screens, as well as by going to `chrome://system` in the browser and searching for `HWID`
-* To actually own the Chromebook -- devices managed by a school or company generally are locked down and cannot be switched to Developer Mode
-* A basic understanding of how the firmware and boot process on ChromeOS devices differs from Windows PC's, so that you understand the changes being made
+* To actually own the Chromebook — devices managed by a school or company generally are locked down and cannot be switched to Developer Mode
+* A basic understanding of how the firmware and boot process on ChromeOS devices differs from standard PCs, so that you understand the changes being made
 * Familiarity with command line input / how to use a terminal/command prompt
 * A few USB flash drives which you can format/overwrite as needed
 * Another (non-mobile) device in case things go sideways and you need to recover
 
 ::: warning
-It cannot be stressed enough: **This is NOT a one click procedure**. Modifying your device's firmware is serious business.
-Following a Youtube video or blog post with "simplified" instructions will only end in tears.
+It cannot be stressed enough: **This is NOT a one-click procedure**. Modifying your device's firmware is serious business.
+Following a YouTube video or blog post with "simplified" instructions will only end in tears.
 :::
 
 ## What's the TL;DR?
@@ -65,4 +65,4 @@ Again, I cannot stress it enough: flashing your device's firmware and changing t
 If you are facing an issue, please read the [FAQ](faq.md) first.
 
 
-**Do not use manufacturer's model name or serial number when asking for help** (i.e: HP Chromebook 14a), it doesn't help with identifying the machine. Provide the HWID/boardname, otherwise your support request will be ignored.
+**Do not use the manufacturer's model name when asking for help** (e.g. HP Chromebook 14a), as it doesn't help with identifying the machine. Provide the HWID/boardname (e.g. CAREENA), otherwise your support request will be ignored.
