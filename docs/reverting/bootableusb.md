@@ -1,20 +1,32 @@
 # Making a Bootable USB
 
-::: danger
-Flashing Ventoy or ISOs to an external drive will **wipe all data** on said drive. Back up anything if you need to.
+Creating a bootable USB drive is essential for installing an operating system on your Chromebook/Chromebox after flashing custom firmware, or for creating a ChromeOS recovery USB to restore stock firmware.
+
+This guide covers creating bootable USB drives for Linux and Windows installation. For creating a ChromeOS recovery USB, see [Making a ChromeOS Recovery USB](/docs/reverting/making-recovery-usb.md).
+
+::: danger DATA LOSS WARNING
+Flashing Ventoy or ISOs to an external drive will **wipe all data** on that drive. Back up any important files before proceeding.
 :::
 
 ## Prerequisites
 
-1. Another PC or laptop with at least 8GB storage
-2. An internet connection
-3. An external drive like a USB drive or SD card that is at least 8GB.
+1. Another PC or laptop (Windows, Linux, or macOS)
+2. An internet connection to download ISO files and tools
+3. A USB drive or SD card with at least 8GB capacity (16GB+ recommended for Windows)
 
 ## Downloading an ISO
 
 1. Determine what OS you want.
-   * For Linux, keep in mind Ubuntu and Ubuntu-based derivatives **are not supported**.
-   * For Windows, keep in mind only official versions of Windows 10 and newer are supported.
+   
+   **For Linux:**
+   * Most modern Linux distributions work well with MrChromebox firmware
+   * For best results, use distributions with recent kernels (6.1+)
+   * See the [chrultrabook Supported Devices page](https://docs.chrultrabook.com/docs/devices.html) for specific OS compatibility by device
+   
+   **For Windows:**
+   * Only official versions of Windows 10 (version 1709 or later) and Windows 11 are supported
+   * Driver support varies by device - check [chrultrabook compatibility](https://docs.chrultrabook.com/docs/devices.html) before installing
+   
 2. Place the ISO in a safe place.
 
 ## Flashing using Rufus (Windows)
@@ -58,5 +70,27 @@ Ventoy allows you to boot multiple ISO's from a single drive.
 3. Flash with `dd if=myfile.iso of=/dev/<device name (as shown by lsblk)> bs=16M status=progress`.
 
 ::: tip
-Be sure to target the drive itself and not a partition.
+Be sure to target the drive itself and not a partition (e.g., `/dev/sdb`, not `/dev/sdb1`).
 :::
+
+## Next Steps
+
+After creating your bootable USB:
+
+**For installing an OS on your device:**
+1. Insert the USB drive into your Chromebook/Chromebox
+2. Power on and access the boot menu:
+   - **Stock firmware with RW_LEGACY**: Press `CTRL+L` in Developer Mode, then `ESC` to access boot menu
+   - **UEFI Full ROM firmware**: Press `ESC` during boot to access UEFI setup menu, select "Boot Manager"
+3. Select your USB drive from the boot menu
+4. Follow the OS installation instructions
+
+**For reverting to stock firmware:**
+- See [Restoring Stock Firmware](/docs/reverting/flashing-stock.md) for complete instructions
+- You'll need either a firmware backup or a ChromeOS recovery USB
+
+## Additional Resources
+
+- [Booting from USB/SD Card](/docs/firmware/booting.md) - Understanding boot modes and boot order
+- [Restoring Stock Firmware](/docs/reverting/flashing-stock.md) - Reverting to ChromeOS
+- [chrultrabook Documentation](https://docs.chrultrabook.com/) - OS installation guides and compatibility information
