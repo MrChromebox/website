@@ -51,9 +51,9 @@ Following a YouTube video or blog post with "simplified" instructions will only 
 Use this decision tree to determine the right path for your needs:
 
 ```
-                    ┌─────────────────────────────────────┐
-                    │  What do you want to do?            │
-                    └──────────────┬──────────────────────┘
+                ┌──────────────────────────────────────┐
+                │       What do you want to do?        │
+                └──────────────────┬───────────────────┘
                                    │
                 ┌──────────────────┴───────────────────┐
                 │                                      │
@@ -72,7 +72,7 @@ Use this decision tree to determine the right path for your needs:
     │ ✗ Limited boot options│              │ ✗ Removes ChromeOS   │
     │ ✗ No NVRAM            │              │ ✗ Requires HW WP     │
     │                       │              │   disable            │
-    └───────────┬───────────┘              └──────────┬───────────┘
+    └───────────┬───────────┘              └───────────┬──────────┘
                 │                                      │
                 ▼                                      ▼
     See "Dual Booting" below          See "Replacing ChromeOS" below
