@@ -2,14 +2,19 @@
 
 ##   **RW_LEGACY**
 
-    *   Updates/replaces the stock legacy boot payload (SeaBIOS) included on many models; supplements the ChromeOS / secure boot payload
+    *   Updates/replaces the stock legacy boot payload with edk2 (UEFI); supplements the ChromeOS / secure boot payload
     *   Leaves all stock functionality intact, including the Developer Mode boot screen and Recovery Mode functionality
     *   Allows device to dual-boot another OS alongside ChromeOS
     *   Does not require disabling the firmware write-protect
     *   Carries zero risk of bricking the device
     *   On many models, includes bugfixes and enables additional functionality
+    *   **Limitation:** Does not support UEFI NVRAM, so boot order and boot entries cannot be saved between boots
 
-**RW_LEGACY** firmware is for users who want to dual-boot ChromeOS + Linux, or users who want to run Linux without having to open the device/disable the firmware write-protect (and are ok with the accompanying limitations).
+::: tip NOTE
+Some older ChromeOS devices (mostly EOL) use SeaBIOS instead of edk2. All modern ChromeOS devices use edk2.
+:::
+
+**RW_LEGACY** firmware is for users who want to dual-boot ChromeOS + Linux, or users who want to run Linux without having to open the device/disable the firmware write-protect (and are ok with the NVRAM limitation).
 
 
 ##   **BOOT_STUB** (now deprecated; listed for historical purposes only)
@@ -30,8 +35,8 @@
 
 ##   **(UEFI) Full ROM**
 
-    *   A complete firmware image which includes updated/customized versions of the hardware init component (coreboot) and UEFI boot payload (edk2/Tianocore)
-    *   Removes the developer mode boot (white "OS verification is OFF") screen
+    *   A complete firmware image which includes updated/customized versions of the hardware init component (coreboot) and UEFI boot payload (edk2)
+    *   Removes the Developer Mode boot (white "OS verification is OFF") screen
     *   Completely removes the ability to run ChromeOS (and ChromeOS Recovery Mode), creating a small risk of bricking your device
     *   Offers the best support for booting all OSes besides ChromeOS
     *   Adds full hardware support for virtualization (vmx / VT-x)
@@ -52,7 +57,7 @@ Firmware updates are exclusively available via the [ChromeOS Firmware Utility Sc
 
 The ChromeOS firmware boot flags / Google Binary Block (GBB) flags are firmware level settings stored directly in the firmware flash chip itself in a read-only (RO) area, and therefore require the firmware write protect to be disabled before setting. The GBB flags control the behavior of the firmware payload used to boot ChromeOS (depthcharge); they are used to set the default boot mode (ChromeOS or Legacy Boot Mode), the Developer Mode boot screen timeout (2s or 30s), prevent exiting Developer Mode via spacebar, and to enable Legacy Boot Mode regardless of crossystem `dev_boot_legacy` setting, among other things.
 
-**Important:** The GBB Flags are only valid when using the the stock firmware, or stock + RW_LEGACY firmware update. They have no effect (and cannot be set) when using the UEFI Full ROM firmware.
+**Important:** The GBB Flags are only valid when using the stock firmware, or stock + RW_LEGACY firmware update. They have no effect (and cannot be set) when using the UEFI Full ROM firmware.
 
 Most users should not attempt to set these manually, but instead use the [ChromeOS Firmware Utility Script](/docs/fwscript.md) to set them based on their preferred default boot mode and boot timeout (the script automatically sets the Developer Mode and Legacy Boot Mode overrides for all options except factory default). For those curious, a full description of all the GBB flags can be found in [Google's source code here](https://chromium.googlesource.com/chromiumos/platform/vboot/+/master/_vboot_reference/firmware/include/gbb_header.h).
 
@@ -70,12 +75,13 @@ For instance, the coreboot component for the Asus Chromebox CN60 (PANTHER) is <h
 
 The Google firmware branch for a specific device is pretty much a fixed snapshot of the firmware component at/around the time of the device's release, and usually has minimal bugfix updates after release. In contrast, the firmware updates available here via the Firmware Utility Script are built using the latest upstream (main / master copy) source code directly from the coreboot and SeaBIOS projects, with additional fixes/tweaks applied on top.
 
-The upstream repositories for coreboot and SeaBIOS can be found on github:
+The upstream repositories for coreboot, edk2 and SeaBIOS can be found on GitHub:
 
 <https://github.com/coreboot/coreboot>
+<https://github.com/tianocore/edk2>
 <https://github.com/coreboot/seabios>
 
-My personal coreboot, SeaBIOS, Tianocore, and EC firmware repositories, along with the source for the scripts on this site, are also available on github:
+My personal coreboot, SeaBIOS, edk2, and EC firmware repositories, along with the source for the scripts on this site, are also available on GitHub:
 
 <https://github.com/MrChromebox/coreboot>
 <https://github.com/MrChromebox/SeaBIOS>
