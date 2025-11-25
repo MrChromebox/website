@@ -131,12 +131,12 @@ export default defineUserConfig ({
             link: '/docs/firmware/flashing-firmware'
           },
           {
-            text: 'Flashing Manually',
-            link: '/docs/firmware/manual-flashing',
-          },
-          {
             text: 'Updating Firmware',
             link: '/docs/firmware/updating-firmware'
+          },
+          {
+            text: 'Flashing Manually',
+            link: '/docs/firmware/manual-flashing',
           },
           {
             text: 'Booting Your OS',
