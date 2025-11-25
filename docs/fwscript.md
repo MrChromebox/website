@@ -173,13 +173,62 @@ The script handles all data extraction, validation, and injection automatically.
 
 *   **Set Boot Options (GBB Flags)**
 
-    This script function allows one to change the timeout for the Developer Mode boot screen (2s or 30s) and the default boot target (ChromeOS or Legacy Boot Mode). Setting the boot target to Legacy Boot removes the requirement of pressing `[CTRL+L]` at boot; instead, you must press `[CTRL+D]` to boot ChromeOS. This function is just a wrapper around the `gbb_utility` application built into ChromeOS that will read the GBB region from the stock firmware, set the GBB flags based on user input, and write it back to flash. For all options except 'Factory Default,' the GBB flags will also be set to force-enable legacy booting (GBB_FLAG_FORCE_DEV_BOOT_LEGACY), which overrides the crosssytem `dev_boot_legacy` flag, and to force-enable Developer Mode (GBB_FLAG_FORCE_DEV_SWITCH_ON), which prevents exiting Developer Mode via the spacebar (either accidentally or intentionally).
+    This script function allows you to customize the Developer Mode boot screen behavior, including the timeout and default boot target. This is a wrapper around the `gbb_utility` application that reads the GBB (Google Binary Block) region from the stock firmware, sets the flags based on your selection, and writes it back to flash.
 
-    Regardless of which default boot mode is selected, one can always override the default via keystroke: `[CTRL+D]` for ChromeOS Developer Mode, or `[CTRL+L]` for Legacy Boot Mode.
+    **Available Options:**
 
-    **Note:** Whenever the GBB Flags are set to anything besides the Factory Default, their current value will be displayed in a small black box in the upper-left corner of the Developer Mode boot screen, along with other some other firmware/OS-related info. This is normal and no cause for alarm, though you'll need to re-run the script and reset them to the Factory Default before exiting Developer Mode (should you want to do so).
+    The script presents six boot option configurations:
 
-    After setting the Boot Options / GBB flags, the boot timeout and default OS will be whatever you selected, and can be changed at any time by re-running this script function.
+    1. **Short boot delay (1s) + Legacy Boot/AltFw default**
+       * Developer Mode screen shows for only 1 second
+       * Automatically boots to Legacy Boot Mode (RW_LEGACY firmware)
+       * Press `[CTRL+D]` to override and boot ChromeOS
+       * Ideal for users who primarily use Legacy Boot Mode
+
+    2. **Long boot delay (30s) + Legacy Boot/AltFw default**
+       * Developer Mode screen shows for 30 seconds
+       * Automatically boots to Legacy Boot Mode (RW_LEGACY firmware)
+       * Press `[CTRL+D]` to override and boot ChromeOS
+       * Useful if you need time to interrupt the boot process
+
+    3. **Short boot delay (1s) + ChromeOS default**
+       * Developer Mode screen shows for only 1 second
+       * Automatically boots to ChromeOS (standard behavior, but faster)
+       * Press `[CTRL+L]` to override and boot Legacy Boot Mode
+       * Good for ChromeOS users who want a quick boot
+
+    4. **Long boot delay (30s) + ChromeOS default**
+       * Developer Mode screen shows for 30 seconds (factory default timing)
+       * Automatically boots to ChromeOS
+       * Press `[CTRL+L]` to override and boot Legacy Boot Mode
+       * Standard configuration with more time to select boot mode
+
+    5. **Reset to factory default**
+       * Restores all GBB flags to factory defaults (0x0)
+       * 30-second timeout, ChromeOS default boot
+       * Required before exiting Developer Mode
+       * Removes all custom boot options
+
+    6. **Cancel/exit**
+       * Returns to main menu without making changes
+
+    **Automatic Flag Settings:**
+
+    For all options except "Factory Default," the script automatically sets additional flags:
+
+    * `GBB_FLAG_FORCE_DEV_BOOT_LEGACY` (0x400): Forces Legacy Boot Mode to be available, overriding the crossystem `dev_boot_legacy` flag
+    * `GBB_FLAG_FORCE_DEV_SWITCH_ON` (0x8): Prevents accidentally exiting Developer Mode via spacebar, protecting your configuration and data
+
+    **Visual Indicator:**
+
+    When GBB Flags are set to anything besides Factory Default, a small black box appears in the upper-left corner of the Developer Mode boot screen showing the current flag value and other firmware/OS info. This is normal and expected behavior.
+
+    **Important Notes:**
+
+    * You can always override the default boot target with keystrokes: `[CTRL+D]` for ChromeOS, `[CTRL+L]` for Legacy Boot Mode
+    * Boot options can be changed at any time by re-running this function
+    * You must reset flags to Factory Default (option 5) before you can exit Developer Mode
+    * This function only works with stock ChromeOS firmware or stock + RW_LEGACY firmware
 
     **Supported Devices:** `All ChromeOS devices running stock (or stock + RW_LEGACY) firmware`
 
