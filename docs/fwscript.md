@@ -247,10 +247,44 @@ In the screenshots above, only the script functions available for the device and
     **Requires firmware write-protect disabled:** `YES`
 
 
+*   **Clear UEFI NVRAM**
+
+    This function erases the SMMSTORE firmware region, which contains the UEFI NVRAM (Non-Volatile RAM) variables. This is only available when running UEFI Full ROM firmware.
+
+    **What is NVRAM?**
+    
+    NVRAM stores UEFI firmware settings and variables that persist across reboots, including:
+    
+    * Boot order entries (which devices/OSes to boot and in what order)
+    * Boot loader paths for installed operating systems
+    * UEFI firmware configuration settings
+    * Secure Boot variables (if applicable)
+    * Other OS-specific UEFI variables
+
+    **When would you need to clear NVRAM?**
+    
+    * Boot order is corrupted or contains invalid entries
+    * System fails to boot and you suspect NVRAM corruption
+    * After major OS changes or reinstallation
+    * To reset all UEFI settings to defaults
+    * Troubleshooting boot-related issues
+    * After failed OS installations that left broken boot entries
+
+    **What happens after clearing NVRAM?**
+    
+    After clearing NVRAM and rebooting:
+    1. The firmware will boot to the EFI shell or boot menu (no default boot entry exists)
+    2. Boot entries will be automatically recreated when you boot an OS or update a bootloader
+    3. You may need to manually boot your OS using "Boot From File" in the boot menu the first time
+    4. The default boot order will need to be re-established
+
+    **Note:** Clearing NVRAM is a safe operation and will not affect your installed operating systems or their data - it only removes the firmware's knowledge of how to boot them. Your OS files remain intact on disk.
+
+    **Supported Devices:** `All ChromeOS devices running UEFI Full ROM firmware`
+
+    **Requires firmware write-protect disabled:** `YES`
+
 The Reboot and Power Off options are (hopefully) sufficiently self-explanatory :).
-
-If running UEFI Full ROM firmware, there will be an additional option to clear the NVRAM. This will delete all bootorder entries stored in NVRAM, and they will be created again on the next boot (or next time grub is updated).
-
 
 
 The source for the Firmware Utility Script (as well as all helper/accessory scripts) can be found [on my 'scripts' GitHub repository](https://github.com/MrChromebox/scripts). Any issues, feature requests, and/or improvements can be reported via the issue tracker or a pull request.
