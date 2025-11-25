@@ -17,14 +17,18 @@ The hardware write protection is an electrical circuit which prevents writing to
 #### HW WP Implementation
 
 *   Early Chromebook models (2012-2013): use a jumper or switch to implement hardware write protection. All models prior to the 2013 Chromebook Pixel fall into this group.
-*   Pre-CR50 models (2014-2017): use a screw to complete the ground; removing it leaves the !WP pin floating, effectively disabled. The 2013 Chromebook Pixel was the first device to use a WP screw; all Haswell, Broadwell, Baytrail, Skylake, and Braswell-based devices do as well.
-*   CR50 models (2017+): On all Chromebook models with the CR50/Google Security Chip (all Kabylake/Apollolake and newer models), the !WP pin is controlled by the CR50.
+*   Pre-CR50 models (2014-2017): use a screw to complete the ground; removing it leaves the !WP pin floating, effectively disabled. The 2013 Chromebook Pixel was the first device to use a WP screw; all Haswell, Broadwell, Baytrail, Skylake, and Braswell-based devices do as well.
+*   CR50/Ti50 models (2017+): On all Chromebook models with the CR50 or Ti50 Google Security Chip (GSC) (all Kabylake/Apollolake and newer models), the !WP pin is controlled by the security chip.
 
 On most early CR50 platforms, the CR50 sets the WP state to follow the battery sense line, so disconnecting the battery cable **from the mainboard** will disable the hardware write protect.
 
 On some newer platforms, WP cannot be disabled by disconnecting the battery; instead there is an unpopulated jumper on the board which must be bridged.
 
-On all CR50 devices, it is also possible to change the WP state using the [closed-case debugging (CCD)](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_gsc.md) features of the CR50, along with a special USB-C debug cable (called a SuzyQable). See the [CCD section under Disabling FW WP](/docs/firmware/wp/disabling.html#using-closed-case-debugging-ccd-using-a-suzyqable).
+On all CR50/Ti50 devices, it is also possible to change the WP state using the [closed-case debugging (CCD)](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_gsc.md) features of the security chip, along with a special USB-C debug cable (called a SuzyQable). See the [CCD section under Disabling FW WP](/docs/firmware/wp/disabling.md#using-closed-case-debugging-ccd-using-a-suzyqable).
+
+::: warning Ti50 DEVICES
+Devices with Ti50 security chips (2023+) have an additional AP RO Firmware Verification feature that must be disabled when flashing custom firmware. See the [Ti50 RO Verification section in Disabling FW WP](/docs/firmware/wp/disabling.md#disable-ap-ro-firmware-verification) for details.
+:::
 
 ## Why Disable Firmware Write Protection?
 
@@ -44,7 +48,7 @@ The GBB Flags are used to modify the boot behavior of a ChromeOS device in Devel
 *   Force enablement of Legacy Boot Mode (regardless of crossystem flag value)
 *   Set Legacy Boot Mode as the default boot path (negates the need to use CTRL+L)
 
-For most users, there's no need to set these flags manually, as the [Firmware Utility Script](/docs/fwscript.md) provides the functionality to set the desired timeout and default boot option, while setting the other flags to sane defaults.
+For most users, there's no need to set these flags manually, as the [Firmware Utility Script](/docs/fwscript.md) provides the functionality to set the desired timeout and default boot option, while setting the other flags to sane defaults. See the [Set Boot Options (GBB Flags) section](/docs/fwscript.md#set-boot-options-gbb-flags-stock-firmware) for detailed documentation of all available options.
 
 ::: tip NOTE
 The GBB flags are a construct of the stock ChromeOS device firmware. They do not exist / cannot be set when running custom firmware which replaces the stock firmware (e.g., MrChromebox's UEFI Firmware).
