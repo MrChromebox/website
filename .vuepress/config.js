@@ -76,6 +76,10 @@ export default defineUserConfig ({
         link: '/docs/known-issues',
       },
       {
+        text: 'Glossary',
+        link: '/docs/glossary',
+      },
+      {
         text: 'Supported Devices',
         link: '/docs/supported-devices',
       },

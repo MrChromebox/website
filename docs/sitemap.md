@@ -7,6 +7,7 @@ Complete overview of all available documentation on MrChromebox.tech.
 - **[Getting Started](/docs/getting-started.md)** - First-time user guide with decision tree
 - **[FAQ](/docs/faq.md)** - Frequently asked questions
 - **[Known Issues](/docs/known-issues.md)** - Common problems and solutions
+- **[Glossary](/docs/glossary.md)** - Terms and acronyms explained
 - **[Supported Devices](/docs/supported-devices.md)** - Device compatibility lookup
 
 ## Firmware Documentation
@@ -71,6 +72,12 @@ Complete overview of all available documentation on MrChromebox.tech.
   - Write protection method
   - Platform information
 
+## Reference
+
+- **[Glossary](/docs/glossary.md)** - Terms and acronyms
+- **[FAQ](/docs/faq.md)** - Frequently asked questions
+- **[Known Issues](/docs/known-issues.md)** - Common problems and solutions
+
 ## External Resources
 
 ### Community & Support
@@ -104,10 +111,11 @@ Complete overview of all available documentation on MrChromebox.tech.
 
 ### Beginners
 1. [Getting Started](/docs/getting-started.md)
-2. [FAQ](/docs/faq.md)
-3. [Boot Modes Overview](/docs/boot-modes/index.md)
-4. [Firmware Utility Script](/docs/fwscript.md)
-5. [Supported Devices](/docs/supported-devices.md)
+2. [Glossary](/docs/glossary.md)
+3. [FAQ](/docs/faq.md)
+4. [Boot Modes Overview](/docs/boot-modes/index.md)
+5. [Firmware Utility Script](/docs/fwscript.md)
+6. [Supported Devices](/docs/supported-devices.md)
 
 ### Intermediate
 1. [Firmware Overview](/docs/firmware/index.md)
