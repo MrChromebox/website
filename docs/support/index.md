@@ -1,36 +1,134 @@
-
-
 # Help & Support
 
-First and foremost, read all of the documentation here on this site (especially the [FAQ](/docs/faq.md)), as well as the [chrultrabook docs](https://docs.chrultrabook.com)
+## Before Asking for Help
+
+1. **Read the documentation** - Check the [FAQ](/docs/faq.md), [Known Issues](/docs/known-issues.md), and [Getting Started](/docs/getting-started.md)
+2. **Search existing issues** - Your problem may already be documented with solutions
+3. **Verify your device** - Know your board name (HWID), not just manufacturer model
+4. **Collect logs** - See [Debugging Guide](/docs/support/debugging.md) for log collection
+
+## Where to Get Help
+
+Getting your issue resolved quickly depends on asking in the right place:
+
+### General Help & OS Issues
+
+**[Chrultrabook Forums](https://forum.chrultrabook.com/)** - Best for:
+- OS installation help (Linux, Windows)
+- Driver issues and hardware compatibility
+- General ChromeOS hardware questions
+- Community support and discussion
+
+### Firmware Issues
+
+**[Firmware Issue Tracker](https://github.com/MrChromebox/firmware/issues/)** - For:
+- Firmware bugs (boot failures, hardware not detected)
+- Feature requests for firmware
+- UEFI/coreboot specific problems
+
+::: warning IMPORTANT
+**NOT for OS issues** - driver problems, software bugs, OS compatibility belong on Chrultrabook Forums
+:::
+
+### Script Issues
+
+**[Scripts Issue Tracker](https://github.com/MrChromebox/scripts/issues/)** - For:
+- Firmware Utility Script bugs
+- Script download/execution problems
+- Script feature requests
+
+### Website Issues
+
+**[Website Issue Tracker](https://github.com/MrChromebox/website/issues/)** - For:
+- Documentation errors or improvements
+- Website bugs or suggestions
+- Broken links or outdated information
 
 
-Getting your issue resolved is largely a function of asking for help properly, and in the correct place:
+## How to Report Issues Effectively
 
-*   For the quickest help with all issues related to flashing firmware, OS install/drivers, please use the [chrultrabook forums](https://forum.chrultrabook.com/)
+When reporting any issue, always include:
 
-*   Issues running the Firmware Utility Script can be reported on the [scripts issue tracker](https://github.com/MrChromebox/scripts/issues/)
+1. **Device board name (HWID)** - e.g., "EVE", "BANSHEE", not "HP Chromebook 14a"
+2. **Firmware version** - found in firmware menu or via `sudo dmidecode -t bios`
+3. **What you're trying to do** - step-by-step description
+4. **What's happening instead** - error messages, unexpected behavior
+5. **What you've tried** - troubleshooting steps already attempted
+6. **Relevant logs** - cbmem, dmesg, or debug bundle (see [Debugging](/docs/support/debugging.md))
 
-*   Firmware bugs (**NOT OS issues**) can be reported on the [firmware issue tracker](https://github.com/MrChromebox/firmware/issues/)
+::: danger CRITICAL
+**Do not use manufacturer model names** when reporting issues. Model names like "HP Chromebook 14a" or "Acer Chromebook 314" don't uniquely identify devices. Always use the **board name/HWID**. Issues without board names may be ignored.
+:::
 
-*   Website issues can be reported on the [website issue tracker](https://github.com/MrChromebox/website/issues/)
+## Device & Firmware Support Requests
 
-*   (Archival info) [Chromebox E-Z Setup Script thread on Kodi forums](http://forum.kodi.tv/showthread.php?tid=194362)
+### New Device Support
 
-*   (Archival info) [Kodi Chromebox wiki page](https://kodi.wiki/view/Archive:Chromebox)
+Adding support for new devices often requires:
+- Physical hardware for testing and debugging
+- Device is x86_64 (Intel/AMD) - ARM devices not supported
+- Device has community interest (multiple users requesting)
 
+If you can loan or donate hardware for development, this significantly speeds up the process.
 
-## Firmware/Device Support Requests
+### Feature Requests
 
-The firmware updates available via this site are designed to meet the needs of the broadest possible user base, for devices on which I'm able to test (or at least, have a high confidence that it will work). If there's a feature you'd like to see implemented, I'm happy to take requests if it's something that's fairly easy to implement / not determental to the wider user base. Adding support for new devices (eg, Braswell-based Chromebooks) often requires actually having hardware to debug, so if one is able to loan/donate hardware for development purposes, that will definitely speed things along.
+Feature requests are welcome if they:
+- Benefit the broader user base (not device-specific hacks)
+- Are technically feasible with current coreboot/edk2
+- Don't compromise security or stability
 
-Firmware related issues and feature requests are best handled via the [firmware issue tracker](https://github.com/MrChromebox/firmware/issues).
+Submit feature requests via the [firmware issue tracker](https://github.com/MrChromebox/firmware/issues).
 
-Commerical entities looking for a custom firmware solution for their ChromeOS device(s) should just [email me directly](mailto:MrChromebox@gmail.com)
+### Commercial Support
+
+Commercial entities looking for custom firmware solutions for ChromeOS devices should [email directly](mailto:MrChromebox@gmail.com) to discuss requirements and pricing.
 
 
 ## Unbricking Service
 
-If you've taken a wrong turn somehow and, despite the safeguards in the Firmware Utility Script, ended up with a bricked device (whether from my firmware or someone else's), and are unable to recover the device yourself, MrChromebox offers a low-cost unbricking service to anyone in the USA (or anyone who cares to cover shipping to/from really). Simply [shoot me an email](mailto:MrChromebox@gmail.com) and we can go from there. With any luck, it might not even be bricked :)
+### DIY Recovery First
 
-If your device is bricked, many times it is fairly easy to recover - see [Unbricking](/docs/support/unbricking/index.md)
+Most "bricked" devices can be recovered without professional help:
+
+- **Black screen after flash** - Wait 90 seconds (RAM training), try hard reset
+- **Boot loop** - May need firmware re-flash or external programmer
+- **External flashing** - See [Unbricking Guide](/docs/support/unbricking/index.md) for:
+  - CH341A programmer usage
+  - SuzyQable recovery (CR50/Ti50 devices)
+  - Step-by-step recovery procedures
+
+Many times what appears to be a brick is actually just RAM training or a recoverable issue.
+
+### Professional Unbricking Service
+
+If you've tried DIY recovery and your device is truly bricked, MrChromebox offers a low-cost unbricking service:
+
+- **Available to**: USA residents (international shipping at your cost)
+- **Covers**: All ChromeOS devices, any firmware (MrChromebox or other)
+- **Process**: [Email for details](mailto:MrChromebox@gmail.com)
+- **Cost**: Low-cost service, exact pricing provided via email
+
+Service includes diagnosis (may not actually be bricked!), firmware recovery, and testing before return.
+
+## Additional Support Resources
+
+### Documentation
+
+- **[FAQ](/docs/faq.md)** - Frequently asked questions with answers
+- **[Known Issues](/docs/known-issues.md)** - Common problems and solutions
+- **[Getting Started](/docs/getting-started.md)** - First-time user guide
+- **[Debugging Guide](/docs/support/debugging.md)** - How to collect logs
+- **[Unbricking Guide](/docs/support/unbricking/index.md)** - Recovery procedures
+
+### External Resources
+
+- **[Chrultrabook Documentation](https://docs.chrultrabook.com/)** - OS installation and compatibility
+- **[Chrultrabook Forums](https://forum.chrultrabook.com/)** - Community support
+- **[Coreboot Documentation](https://doc.coreboot.org/)** - Technical firmware details
+- **[edk2/Tianocore Docs](https://github.com/tianocore/tianocore.github.io/wiki)** - UEFI payload information
+
+### Archive / Historical Information
+
+- [Chromebox E-Z Setup Script (Kodi forums)](http://forum.kodi.tv/showthread.php?tid=194362) - Legacy LibreELEC/Kodi script
+- [Kodi Chromebox Wiki](https://kodi.wiki/view/Archive:Chromebox) - Archived Kodi-specific info
