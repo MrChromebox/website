@@ -83,7 +83,6 @@ For a Linux ISO, select the ISO, then change the write mode from 'ISO Image' to 
   * For Windows, use Rufus or the Windows Media Creation Tool. Almost any options in Rufus should work, but UEFI/GPT is recommended. FAT vs NTFS should not matter. The UEFI firmware supports both
   * For Linux, ensure your distro supports UEFI. Any tool that supports UEFI Linux (such as Rufus) or a dd mode or dd itself on any \*nix should be able to make a working installation USB. Do **not** use Unetbootin. It is known to have issues making UEFI-capable installation USBs.
 
-* On Chromeboxes, the rear USB ports are more reliable, so use those. Also, sometimes USB keyboards can interfere with detection of USB media, so try booting without the keyboard connected.
 
 * Any blogs, guides, or instructions that tell you to enable Legacy/CSM mode as part of installation are not relevant for ChromeOS hardware and should be discarded completely. The UEFI firmware does not support Legacy/CSM mode. All new PCs, even if they have a Legacy/CSM mode, ship with UEFI as the default. Windows 8+ has good UEFI support. Linux has had EFI/UEFI support for over a decade. macOS has never supported Legacy BIOS. Common \*BSD variants either have UEFI support or are in the process of adding it. You should not need any Legacy mode
 
