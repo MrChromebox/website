@@ -9,6 +9,27 @@ Any and all changes are made **at your own risk**!
 If your device is currently managed/enrolled by an organization (such as a school or employer), then you do not own the device, and you should not be modifying it in any way without direct, express, written permission.
 :::
 
+## Quick Start Checklist
+
+Before you begin, ensure you have:
+
+- [ ] Read and understood the warnings above
+- [ ] Verified your device is x86_64 (Intel/AMD) - check [Supported Devices](/docs/supported-devices.md)
+- [ ] Found your device's board name (HWID)
+- [ ] **Backed up all important data** - switching to Developer Mode **wipes everything**
+- [ ] Chromebook battery charged (>50%) and power adapter connected
+- [ ] USB drive(s) for backups and OS installation (8GB+ recommended)
+- [ ] Another device available for troubleshooting/research
+- [ ] Set aside 1-3 hours for the complete process
+- [ ] Read the [FAQ](/docs/faq.md) to understand common issues
+
+::: tip TIME EXPECTATIONS
+- **RW_LEGACY (Dual Boot)**: 30-60 minutes total
+- **UEFI Full ROM (Replace ChromeOS)**: 1-3 hours total (including OS installation)
+
+First-time users should budget extra time for reading documentation and troubleshooting.
+:::
+
 ## Prerequisites
 
 * An x86_64 (Intel/AMD) architecture device — ARM-based devices are not supported
@@ -31,6 +52,7 @@ Following a YouTube video or blog post with "simplified" instructions will only 
 
 If you want to dual boot ChromeOS and Linux on your device:
 
+* **BACKUP YOUR DATA** - Enabling Developer Mode wipes all user data
 * Verify your device has [RW_LEGACY support](/docs/supported-devices.md)
 * Put your device in [Developer Mode](/docs/boot-modes/developer.md)
 * Open a terminal/shell:
@@ -59,9 +81,10 @@ This method does NOT require disabling firmware write-protect. Do not open your 
 
 If you want to wipe ChromeOS from your device and replace it with Linux or Windows:
 
+* **BACKUP YOUR DATA** - You will lose access to all ChromeOS data after flashing
 * Verify your device has [UEFI Full ROM support](/docs/supported-devices.md)
 * Put your device in [Developer Mode](/docs/boot-modes/developer.md)
-* Disable the device's **hardware** [firmware write protection](firmware/wp/index.md)
+* Disable the device's **hardware** [firmware write protection](/docs/firmware/wp/index.md)
     * Check the [Supported Devices page](/docs/supported-devices.md) for your device's WP method
     * Methods include: WP screw removal, battery disconnect, jumper bridging, or CCD/SuzyQable
 * Open a terminal/shell:
@@ -85,9 +108,51 @@ If you want to wipe ChromeOS from your device and replace it with Linux or Windo
 Again, I cannot stress it enough: flashing your device's firmware and changing the OS is not a simple or minor procedure. If you don't fully read and understand the process and what the tools you're using are doing, it's going to be very hard to troubleshoot if something goes wrong. The documentation here is dense for a reason.
 :::
 
-## Asking for help properly
+## If You Run Into Issues
 
-If you are facing an issue, please read the [FAQ](faq.md) first.
+Common first-time problems and where to find solutions:
 
+- **Can't enter Developer/Recovery Mode** → See [Known Issues: Boot Mode Issues](/docs/known-issues.md#cant-enter-developer-mode--recovery-mode)
+- **Script won't run (R117+)** → See [FAQ: VT2 Terminal Requirement](/docs/faq.md#why-cant-i-run-sudo-commands-in-crosh-anymore)
+- **Device won't boot after flash** → See [Known Issues: Device Won't Boot](/docs/known-issues.md#device-wont-boot-after-firmware-flash)
+- **Write protection issues** → See [Write Protection Guide](/docs/firmware/wp/index.md)
+- **Lost firmware backup** → See [Reverting to Stock](/docs/reverting/index.md)
+- **Other issues** → Check [FAQ](/docs/faq.md) and [Known Issues](/docs/known-issues.md)
 
-**Do not use the manufacturer's model name when asking for help** (e.g. HP Chromebook 14a), as it doesn't help with identifying the machine. Provide the HWID/boardname (e.g. CAREENA), otherwise your support request will be ignored.
+## Asking for Help Properly
+
+Before asking for help, please:
+
+1. **Read the [FAQ](/docs/faq.md)** - many common questions are answered there
+2. **Check [Known Issues](/docs/known-issues.md)** - your problem may be documented with solutions
+3. **Search existing issues** on [GitHub](https://github.com/MrChromebox/firmware/issues)
+
+### Where to Get Help
+
+- **Firmware issues**: [MrChromebox Firmware Issue Tracker](https://github.com/MrChromebox/firmware/issues/)
+- **Script issues**: [MrChromebox Scripts Issue Tracker](https://github.com/MrChromebox/scripts/issues/)
+- **OS installation/drivers**: [Chrultrabook Forums](https://forum.chrultrabook.com/)
+- **General help**: [Chrultrabook Forums](https://forum.chrultrabook.com/)
+
+### What Information to Provide
+
+When asking for help, always include:
+
+- **Board name (HWID)** - e.g., "EVE", "BANSHEE", "OCTOPUS" (NOT "HP Chromebook 14a")
+- **Firmware version** - found in firmware menu or boot screen
+- **What you were trying to do** - step-by-step description
+- **What happened instead** - error messages, unexpected behavior -- screenshots/pics are helpful
+- **What you've already tried** - troubleshooting steps taken
+
+::: danger CRITICAL
+**Do not use the manufacturer's model name** (e.g., "HP Chromebook 14a", "Acer Chromebook 314") when asking for help. These names don't uniquely identify devices. Always provide the **board name/HWID** (e.g., "CAREENA", "SHUBOZ"). It's not possible to support requests without board names.
+:::
+
+## Additional Resources
+
+- **[FAQ](/docs/faq.md)**: Answers to frequently asked questions
+- **[Firmware Types](/docs/firmware/types.md)**: Understanding RW_LEGACY vs UEFI Full ROM
+- **[Firmware Utility Script](/docs/fwscript.md)**: Complete script documentation
+- **[Supported Devices](/docs/supported-devices.md)**: Check device compatibility
+- **[Reverting to Stock](/docs/reverting/index.md)**: How to restore ChromeOS
+- **[Chrultrabook Docs](https://docs.chrultrabook.com/)**: OS installation guides and compatibility
