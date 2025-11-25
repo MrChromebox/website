@@ -87,15 +87,47 @@ In the screenshots above, only the script functions available for the device and
     **Requires firmware write-protect disabled:** `YES`
 
 
-*   **Set Hardware ID (HWID)**
+*   **Set Hardware ID (HWID) - Stock Firmware**
 
-    This script function is also just a wrapper around the `gbb_utility` application built into ChromeOS. It will read the GBB region from the stock firmware, set the HWID based on user input, and write it back to flash. The only time this function is needed is if one flashed a generic recovery image firmware (aka a shellball ROM) instead of restoring a backup of their own device firmware. Shellball ROMs extracted from a recovery image have a generic HWID embedded which ChromeOS does not recognize as valid for purposes of OS and firmware updates (among other things), so it's necessary to set a valid one. HWIDs aren't unique, so any valid one for a given board will do.
+    This script function is a wrapper around the `gbb_utility` application built into ChromeOS. It will read the GBB region from the stock firmware, set the HWID based on user input, and write it back to flash. The only time this function is needed is if one flashed a generic recovery image firmware (aka a shellball ROM) instead of restoring a backup of their own device firmware. Shellball ROMs extracted from a recovery image have a generic HWID embedded which ChromeOS does not recognize as valid for purposes of OS and firmware updates (among other things), so it's necessary to set a valid one. HWIDs aren't unique, so any valid one for a given device with the same board name will work.
 
     **Note:** If you restored your stock firmware using the option from this script, it is not necessary to (nor should you) set the HWID afterward.
 
     After setting a valid HWID, simply reboot and ChromeOS updates should work normally.
 
     **Supported Devices:** `All ChromeOS devices running stock (or stock + RW_LEGACY) firmware`
+
+    **Requires firmware write-protect disabled:** `YES`
+
+
+*   **Set Hardware ID (HWID) - UEFI Firmware**
+
+    For devices running UEFI Full ROM firmware, the HWID is stored differently than on stock firmware - it's stored in the CBFS (coreboot File System) rather than the GBB region. This function uses `cbfstool` to modify the HWID.
+
+    ::: warning IMPORTANT
+    Changing the HWID on UEFI firmware is rarely needed and can be dangerous. An incorrect HWID could result in the wrong firmware being flashed during an update, which could brick your device. Only change the HWID if you fully understand the implications.
+    :::
+
+    The script will:
+    1. Display your current HWID (if present)
+    2. Ask for confirmation multiple times (this is serious!)
+    3. Read the current firmware from the flash chip
+    4. Remove the old HWID entry (if present)
+    5. Add the new HWID to the firmware
+    6. Disable software write-protect
+    7. Write the modified firmware back to the flash chip
+
+    **When would you need this?**
+    
+    * If you flashed a generic/wrong firmware build for your device
+    * If your HWID was lost or corrupted during a custom firmware flash
+    * If you're building custom firmware and need to set a proper HWID
+
+    **Note:** The script automatically preserves the HWID when flashing official MrChromebox firmware or using the custom firmware flash function, so manually setting it should rarely be necessary.
+
+    After setting the HWID, reboot for the change to take effect. You can verify the HWID was set correctly by re-running the script and checking the value displayed.
+
+    **Supported Devices:** `All ChromeOS devices running UEFI Full ROM firmware`
 
     **Requires firmware write-protect disabled:** `YES`
 
