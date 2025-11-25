@@ -211,11 +211,21 @@ MrChromebox custom firmware offers several advantages over stock Google firmware
 - Regular updates with latest coreboot and edk2 improvements
 - Optimized for running Linux and Windows
 
-## Additional Resources
+## Related Documentation
 
-- **[Firmware Types](/docs/firmware/types.md)**: Detailed explanation of each firmware type
-- **[Flashing Firmware](/docs/firmware/flashing-firmware.md)**: How to install firmware using the Firmware Utility Script
-- **[Write Protection](/docs/firmware/wp/index.md)**: Understanding and disabling write protection
-- **[Updating Firmware](/docs/firmware/updating-firmware.md)**: How to update already-installed UEFI firmware
-- **[Manual Flashing](/docs/firmware/manual-flashing.md)**: Advanced: manually flash firmware without the script
-- **[Firmware Utility Script](/docs/fwscript.md)**: Complete guide to the script's features and functions
+### Firmware Details
+- **[Firmware Types](/docs/firmware/types.md)** - Detailed RW_LEGACY, UEFI Full ROM, BOOT_STUB comparison
+- **[Booting](/docs/firmware/booting.md)** - Understanding boot process and boot order
+- **[Write Protection](/docs/firmware/wp/index.md)** - HW/SW write protection explained
+
+### Installing & Managing Firmware
+- **[Firmware Utility Script](/docs/fwscript.md)** - Complete script feature reference
+- **[Flashing Firmware](/docs/firmware/flashing-firmware.md)** - Using the script to install firmware
+- **[Updating Firmware](/docs/firmware/updating-firmware.md)** - Updating existing UEFI firmware
+- **[Manual Flashing](/docs/firmware/manual-flashing.md)** - Advanced manual flashing procedures
+
+### Getting Started
+- **[Getting Started](/docs/getting-started.md)** - First-time user guide with decision tree
+- **[Supported Devices](/docs/supported-devices.md)** - Check device firmware compatibility
+- **[Boot Modes](/docs/boot-modes/index.md)** - Understanding ChromeOS boot modes
+- **[Developer Mode](/docs/boot-modes/developer.md)** - Required for firmware modifications

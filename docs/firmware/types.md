@@ -91,3 +91,24 @@ My personal coreboot, SeaBIOS, edk2, and EC firmware repositories, along with th
 These repos contain not only the source used to build the current firmware releases, but also the build scripts and configurations used as well.
 
 See [Compiling Your Own Firmware](/docs/support/compiling.md) for full info.
+
+## Related Documentation
+
+### Understanding Firmware
+- **[Firmware Overview](/docs/firmware/index.md)** - ChromeOS firmware architecture and regions
+- **[Booting](/docs/firmware/booting.md)** - Boot process differences between firmware types
+- **[Getting Started](/docs/getting-started.md)** - Decision guide: which firmware type for your needs?
+
+### Installing Firmware
+- **[Firmware Utility Script](/docs/fwscript.md)** - Installing RW_LEGACY or UEFI Full ROM
+- **[Flashing Firmware](/docs/firmware/flashing-firmware.md)** - Step-by-step installation guide
+- **[Write Protection](/docs/firmware/wp/index.md)** - Required for UEFI Full ROM installation
+
+### Advanced Topics
+- **[Updating Firmware](/docs/firmware/updating-firmware.md)** - Updating existing UEFI firmware
+- **[Manual Flashing](/docs/firmware/manual-flashing.md)** - Manual firmware flashing procedures
+- **[Compiling Firmware](/docs/support/compiling.md)** - Building custom firmware from source
+
+### Reverting
+- **[Reverting to Stock](/docs/reverting/index.md)** - Restoring stock ChromeOS firmware
+- **[Known Issues](/docs/known-issues.md)** - Firmware type limitations and quirks

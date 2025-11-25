@@ -22,3 +22,21 @@ This is useful if you're planning to sell your device.
 ::: tip NOTE
 If you only flashed RW_LEGACY firmware to your device, there is no need to flash the stock firmware back on the device -- you're already running it. Simply perform a ChromeOS USB recovery and exit Developer Mode.
 :::
+
+## Related Documentation
+
+### Reverting Process
+- **[Flashing Stock Firmware](/docs/reverting/flashing-stock.md)** - Step-by-step restoration process
+- **[Making Recovery USB](/docs/reverting/making-recovery-usb.md)** - Creating ChromeOS recovery media
+- **[Booting Recovery USB](/docs/reverting/booting-recovery-usb.md)** - How to boot from recovery media
+- **[Making Bootable USB](/docs/reverting/bootableusb.md)** - Creating Linux/Windows installation media
+
+### Understanding Firmware
+- **[Firmware Types](/docs/firmware/types.md)** - What you're reverting from (RW_LEGACY vs UEFI)
+- **[Firmware Utility Script](/docs/fwscript.md)** - Script's backup and restore functions
+- **[Write Protection](/docs/firmware/wp/index.md)** - Required for stock firmware restoration
+
+### Troubleshooting
+- **[Known Issues](/docs/known-issues.md)** - EOL device restrictions and common problems
+- **[FAQ](/docs/faq.md)** - AUE/EOL device questions
+- **[Unbricking](/docs/support/unbricking/index.md)** - If restoration fails

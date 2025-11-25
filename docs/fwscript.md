@@ -503,5 +503,28 @@ The script handles all data extraction, validation, and injection automatically.
 
 The Reboot and Power Off options are (hopefully) sufficiently self-explanatory :).
 
+## Related Documentation
+
+### Before Using the Script
+- **[Getting Started](/docs/getting-started.md)** - Prerequisites and decision guide
+- **[Supported Devices](/docs/supported-devices.md)** - Check device compatibility
+- **[Write Protection](/docs/firmware/wp/index.md)** - Disabling hardware WP (required for some functions)
+- **[Boot Modes](/docs/boot-modes/index.md)** - Understanding Developer Mode
+
+### Understanding Firmware
+- **[Firmware Overview](/docs/firmware/index.md)** - ChromeOS firmware architecture
+- **[Firmware Types](/docs/firmware/types.md)** - RW_LEGACY vs UEFI Full ROM comparison
+- **[Booting](/docs/firmware/booting.md)** - Boot process and boot order
+
+### Reverting & Recovery
+- **[Reverting to Stock](/docs/reverting/index.md)** - Restoring ChromeOS firmware
+- **[Unbricking](/docs/support/unbricking/index.md)** - Recovery from failed flash
+
+### Troubleshooting
+- **[FAQ](/docs/faq.md)** - Common questions and answers
+- **[Known Issues](/docs/known-issues.md)** - Platform-specific problems
+- **[Debugging](/docs/support/debugging.md)** - Collecting diagnostic logs
+
+---
 
 The source for the Firmware Utility Script (as well as all helper/accessory scripts) can be found [on my 'scripts' GitHub repository](https://github.com/MrChromebox/scripts). Any issues, feature requests, and/or improvements can be reported via the issue tracker or a pull request.
