@@ -49,6 +49,54 @@ Firmware Utility Script, on device with Full ROM firmware and WP disabled
 In the screenshots above, only the script functions available for the device and current firmware are enabled (cyan text); unavailable functions are in grey. Features which require the firmware WP to be disabled are clearly labeled as such, along with the ability of that function to be used based on the current WP state.
 
 
+## Understanding the Menu System
+
+The Firmware Utility Script displays a dynamic menu that adapts based on your device's current state. Understanding how the menu works will help you know which options are available and why.
+
+### Menu Detection and Display
+
+When the script starts, it automatically detects:
+
+* **Device Information:** Board name, hardware platform, device description
+* **Current Firmware Type:** Stock ChromeOS, Stock + RW_LEGACY, or UEFI Full ROM
+* **Firmware Version and Date:** Currently installed firmware version
+* **Write-Protection Status:** Whether hardware/software write-protect is enabled or disabled
+* **Device Support:** Which firmware types are available for your specific device
+
+Based on this information, the script shows one of two main menus:
+
+1. **Stock Firmware Menu:** Shown when running stock ChromeOS firmware (with or without RW_LEGACY)
+2. **UEFI Firmware Menu:** Shown when running UEFI Full ROM firmware
+
+### Menu Options: Enabled vs Disabled
+
+Menu options are displayed in different colors to indicate availability:
+
+* **Cyan/Blue text:** Function is available and can be used
+* **Grey text:** Function is not available for your current configuration
+
+Options may be disabled (greyed out) for several reasons:
+
+* Firmware type incompatibility (e.g., RW_LEGACY not available on UEFI firmware)
+* Device has reached End of Life (EOL)
+* Feature not supported on your specific device model
+* Device capability limitations
+
+### Write-Protection Indicators
+
+Options that require firmware write-protection to be disabled are clearly marked with **[WP]** in the menu. The script also displays your current write-protect status in the header:
+
+* **Red "Enabled":** Write-protect is enabled - options marked [WP] cannot be used
+* **Green "Disabled":** Write-protect is disabled - all compatible options are available
+
+Note that not all functions require WP to be disabled. For example, installing RW_LEGACY firmware and backing up firmware work with WP enabled.
+
+### Firmware Update Notifications
+
+If you're running UEFI Full ROM firmware and an update is available, the script will display a green notification message showing the available update date. This allows you to easily see when newer firmware is available without manually checking.
+
+The update check compares your current firmware date against the latest available firmware file for your device.
+
 
 ### Script Functions Explained
 
