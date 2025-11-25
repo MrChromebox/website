@@ -12,13 +12,13 @@ If your device has hit AUE (Automatic Update Expiration), you will not be able t
 
 - A PC or laptop to make a ChromeOS recovery USB.
 - An external drive like a USB drive or SD card that is at least 8GB.
-- Another external drive that contains your stock ROM backup (If backup is avaliable).
+- Another external drive that contains your stock ROM backup (if backup is available).
 - An understanding that this guide has the potential to brick your device.
 
 You can revert your firmware back to stock and reinstall ChromeOS.
 
-This is useful if your planning to sell your device.
+This is useful if you're planning to sell your device.
 
 ::: tip NOTE
-If you only flashed RW_LEGACY firmware to your device, there is no need to flash the stock firmware back on the device -- you're already running it. Simply perfom a ChromeOS USB recovery and exit Developer Mode.
+If you only flashed RW_LEGACY firmware to your device, there is no need to flash the stock firmware back on the device -- you're already running it. Simply perform a ChromeOS USB recovery and exit Developer Mode.
 :::
