@@ -109,6 +109,42 @@ If you're running UEFI Full ROM firmware and an update is available, the script 
 The update check compares your current firmware date against the latest available firmware file for your device.
 
 
+### Automatic Data Preservation
+
+When flashing firmware (UEFI Full ROM or Custom Firmware), the script automatically preserves critical device-specific data to ensure your device maintains its unique identifiers and optimal performance. This happens transparently - you don't need to do anything.
+
+**What data is preserved:**
+
+* **Serial Number:** Your device's unique serial number (if present in the current firmware). This maintains device traceability and identification.
+
+* **Hardware ID (HWID):** The board-specific hardware identifier that identifies your device model. This is essential for proper firmware identification and updates. For stock firmware, this is extracted from the GBB region; for UEFI firmware, it's extracted from CBFS.
+
+* **Vital Product Data (VPD):** Contains manufacturing and device-specific information including:
+  * **MAC Address:** The unique Ethernet MAC address (critical for Chromeboxes)
+  * Region/localization data
+  * Manufacturing date and other product identifiers
+  * Calibration data for certain hardware components
+
+* **RW_MRC_CACHE:** Memory Reference Code cache containing memory training data. Preserving this significantly speeds up the first boot after flashing (by up to 60 seconds), as the system doesn't need to retrain memory timings.
+
+* **SMMSTORE:** Firmware region containing UEFI NVRAM variables (on UEFI firmware). This preserves your boot order, boot entries, and other UEFI settings when updating UEFI firmware.
+
+**When preservation occurs:**
+
+* Installing/updating UEFI Full ROM firmware
+* Flashing custom firmware
+* Restoring stock firmware (VPD and HWID are merged when available)
+
+**Why this matters:**
+
+* **Chromeboxes:** Without VPD preservation, the Ethernet MAC address would be lost, requiring manual configuration or resulting in a duplicate/invalid MAC address on the network.
+* **All devices:** Preserving the HWID ensures the correct firmware can be identified for future updates.
+* **Performance:** MRC cache preservation means you don't experience slow first boots after firmware updates.
+* **Convenience:** SMMSTORE preservation means your boot order and UEFI settings persist across firmware updates.
+
+The script handles all data extraction, validation, and injection automatically. If any component cannot be extracted from the current firmware, the script will continue safely - the only impact is that specific data won't be available in the new firmware (e.g., you may need to set a new HWID or MAC address manually).
+
+
 ### Script Functions Explained
 
 *   **Install/Update the RW_LEGACY Firmware**
