@@ -73,10 +73,7 @@ For a Linux ISO, select the ISO, then change the write mode from 'ISO Image' to 
 
 * You have two options:
   1. Reinstall your OS
-  2. Boot a UEFI-capable ISO from USB, then re-run the Firmware Utility Script. From the main menu, choose the unlock option (U), then you can go back to your previous firmware, by one of the following:
-     - Restore from a backup file
-     - Choose the option to flash the Full ROM, then choose Legacy Boot (L) when prompted
-     - Restore the stock firmware, then re-flash either the RW_LEGACY or BOOT_STUB firmware, as applicable for your device
+  2. Boot a UEFI-capable ISO from USB, then re-run the Firmware Utility Script. From the main menu, choose the unlock option (U), then you can go back to your previous firmware by choosing to restore from a backup file.
 
 NOTE: re-flashing the Legacy Full ROM option is only available to a small subset of devices — be sure to consult the [Supported Devices page](/docs/supported-devices.md) to be sure it's an option for your device.
 
