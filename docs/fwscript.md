@@ -10,11 +10,12 @@ Currently, it allows the user to:
 
 *   Install/Update the RW_LEGACY firmware (allows dual booting of ChromeOS + Linux)
 *   Install/Update coreboot/UEFI Full ROM firmware (for running Linux/Windows without ChromeOS)
+*   Backup Current Firmware (to local filesystem or USB device)
+*   Flash Custom Firmware (from local filesystem or USB device)
 *   Set the Boot Options (GBB Flags) (only for stock ChromeOS firmware)
-*   Set the device's Hardware ID (only for stock ChromeOS firmware)
-*   Remove the ChromeOS Developer/Recovery mode Bitmaps (only for stock ChromeOS firmware)
-*   Restore the ChromeOS Bitmaps (only for stock ChromeOS firmware)
+*   Set the device's Hardware ID (for both stock and UEFI firmware)
 *   Restore the Stock Firmware (only for devices which have not reached EOL)
+*   Clear UEFI NVRAM (only for UEFI Full ROM firmware)
 
 At startup, the Firmware Utility Script will automatically detect the device, OS, and current firmware details, and show a customized menu options based on this information. Some options may be greyed-out/disabled for some devices. Because most of these operations are being done to normally read-only parts of the firmware, the firmware write protect will need to be removed for most of the script's functions. This is documented for each function below, and the script will likewise check and display the write-protect state for each function that requires it to be disabled.
 
@@ -95,6 +96,61 @@ In the screenshots above, only the script functions available for the device and
     After setting a valid HWID, simply reboot and ChromeOS updates should work normally.
 
     **Supported Devices:** `All ChromeOS devices running stock (or stock + RW_LEGACY) firmware`
+
+    **Requires firmware write-protect disabled:** `YES`
+
+
+*   **Backup Current Firmware**
+
+    This function allows you to create a backup of the current firmware before making any changes. This is highly recommended before flashing Full ROM firmware or making other significant changes.
+
+    The script offers two backup destinations:
+    
+    1. **Backup to local filesystem:** Save the firmware backup to a directory on the system (you can specify a custom path or use the current directory). The backup will be named `BACKUP-[boardname]-[version]-[date].rom`
+    
+    2. **Backup to USB device:** Save the firmware backup directly to a USB drive or SD card. The script will list available USB devices and you can select which one to use.
+
+    After creating a backup, store it in a safe place (Google Drive, another PC, etc) as you may need it to recover from a bad flash or to restore your device later.
+
+    **Supported Devices:** `All ChromeOS devices`
+
+    **Requires firmware write-protect disabled:** `NO`
+
+
+*   **Flash Custom Firmware**
+
+    This is an advanced function that allows you to flash a custom firmware image from a file. This is useful for testing custom builds, flashing firmware from other sources, or restoring from a non-standard backup.
+
+    ::: danger ADVANCED USERS ONLY
+    This function is for advanced users who understand firmware internals. Flashing incompatible or corrupted firmware will brick your device. Only use this if you know what you're doing and have the ability to recover from a bad flash.
+    :::
+
+    The script offers two source options:
+    
+    1. **Flash from local filesystem:** Provide the full path to a firmware file (.rom or .bin) stored on the system
+    
+    2. **Flash from USB device:** Select a firmware file from a USB drive or SD card. The script will list available firmware files (.rom, .ROM, .bin, .BIN) and you can choose which one to flash.
+
+    **Automatic Data Preservation:**
+    
+    When flashing custom firmware, the script will automatically attempt to extract and preserve device-specific data from your current firmware:
+    
+    * Serial number (if present)
+    * Hardware ID (HWID)
+    * Vital Product Data (VPD) - includes MAC address and other device info
+    * RW_MRC_CACHE - memory training data for faster boot times
+    * SMMSTORE - UEFI NVRAM variables
+
+    This data will be injected into the custom firmware before flashing, ensuring your device retains its unique identifiers and settings.
+
+    **Important Notes:**
+    
+    * Always create a backup of your current firmware before flashing custom firmware
+    * Ensure the custom firmware is compatible with your specific device
+    * The firmware write-protect must be disabled before using this function
+    * If the flash fails, **DO NOT REBOOT** - use the restore option to flash your backup
+
+    **Supported Devices:** `All ChromeOS devices running UEFI Full ROM firmware`
 
     **Requires firmware write-protect disabled:** `YES`
 
