@@ -7,7 +7,7 @@ Putting your ChromeOS device into [Developer Mode](https://www.chromium.org/chro
 *   Provides full root access to the system via a VT2 (virtual terminal) shell
 *   Allows modification of the ChromeOS kernel and root filesystems
 *   Allows for booting alternate OSes via Legacy Boot Mode/Alternative Bootloader Menu on supported systems
-*   Allows for serveral types of firmware updates/upgrades (some of which require disabling the firmware write-protect first)
+*   Allows for several types of firmware updates/upgrades (some of which require disabling the firmware write-protect first)
 
 Because Developer Mode is inherently less secure than Verified Boot Mode, as a warning when booting you will be greeted by the developer mode boot screen:
 
@@ -23,9 +23,9 @@ From the Developer Mode boot screen, the following keyboard shortcuts are availa
 
 By default, after the timeout ChromeOS will boot from internal storage if no option is selected. The length of the timeout (2s or 30s) and the default boot target (ChromeOS or Legacy Boot Mode) can be changed by setting the firmware boot flags (aka GBB flags).
 
-**Note:** the easiest way to set the firmware boot flags is via the [ChromeOS Firmware Utility Script](docs/fwscript); it presents users with the option to set the boot timeout and boot target without having to know which flags to set / what values to use.
+**Note:** the easiest way to set the firmware boot flags is via the [ChromeOS Firmware Utility Script](/docs/fwscript.md); it presents users with the option to set the boot timeout and boot target without having to know which flags to set / what values to use.
 
-This script function also sets the flags to force-enable Developer Mode (so you don't accidentially exit it) and force enable Legacy Boot Mode (so you battery dying doesn't reset the crossystem legacy boot flag). Setting the firmware boot flags / GBB flags requires the firmware write-protect to be disabled, since it's modifying a normally-read-only section of the firmware (the GBB region).
+This script function also sets the flags to force-enable Developer Mode (so you don't accidentally exit it) and force enable Legacy Boot Mode (so your battery dying doesn't reset the crossystem legacy boot flag). Setting the firmware boot flags / GBB flags requires the firmware write-protect to be disabled, since it's modifying a normally-read-only section of the firmware (the GBB region).
 
 
 
