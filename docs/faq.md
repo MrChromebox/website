@@ -185,7 +185,7 @@ then reboot to test. What we're doing is copying the grub EFI boot stub from the
 
 ### I am trying to boot Linux from USB and getting an error: "error: unknown filesystem. alloc magic is broken at 0x78cd97c0" — how do I fix it?
 
-* Your ISO wasn't written to USB properly — as an image, not an ISO — and you need to redo it [using the proper tool/settings](/docs/reverting/bootableusb.md). Etcher or Rufus in dd mode are the recommended options. The ChromeOS Recovery tool also works properly.
+* Your ISO wasn't written to USB properly — as an image, not an ISO — and you need to redo it [using the proper tool/settings](/docs/support/bootableusb.md). Etcher or Rufus in dd mode are the recommended options. The ChromeOS Recovery tool also works properly.
 
 ## Post-Installation / OS Issues
 

@@ -29,7 +29,7 @@ If you only flashed RW_LEGACY firmware to your device, there is no need to flash
 - **[Flashing Stock Firmware](/docs/reverting/flashing-stock.md)** - Step-by-step restoration process
 - **[Making Recovery USB](/docs/reverting/making-recovery-usb.md)** - Creating ChromeOS recovery media
 - **[Booting Recovery USB](/docs/reverting/booting-recovery-usb.md)** - How to boot from recovery media
-- **[Making Bootable USB](/docs/reverting/bootableusb.md)** - Creating Linux/Windows installation media
+- **[Making Bootable USB](/docs/support/bootableusb.md)** - Creating Linux/Windows installation media
 
 ### Understanding Firmware
 - **[Firmware Types](/docs/firmware/types.md)** - What you're reverting from (RW_LEGACY vs UEFI)

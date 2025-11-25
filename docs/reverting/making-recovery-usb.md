@@ -32,8 +32,8 @@ The easiest way to do so is using the Chromebook Recovery Utility, but if that f
 
 ### Windows
 
-Use [Rufus](bootableusb.md#flashing-using-rufus-windows) to flash the recovery .bin file to USB but make sure to flash in "dd" mode.
+Use [Rufus](/docs/support/bootableusb.md#flashing-using-rufus-windows) to flash the recovery .bin file to USB but make sure to flash in "dd" mode.
 
 ### macOS/ChromeOS/Linux
 
-Use [dd](bootableusb.md#flashing-with-dd-linux-macos) to flash the recovery .bin file to USB.
+Use [dd](/docs/support/bootableusb.md#flashing-with-dd-linux-macos) to flash the recovery .bin file to USB.

@@ -6,7 +6,7 @@ If your device has hit AUE/EOL, you will not be able to revert it to ChromeOS.
 
 ## Requirements
 
-* Linux installed on the device, or a [bootable Linux live USB](./bootableusb.md).
+* Linux installed on the device, or a [bootable Linux live USB](/docs/support/bootableusb.md).
 * Network connectivity
 * A USB containing your stock firmware backup image, or
 * A ChromeOS [Recovery USB](./making-recovery-usb.md)

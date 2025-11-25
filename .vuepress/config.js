@@ -154,10 +154,6 @@ export default defineUserConfig ({
             link: '/docs/reverting/flashing-stock',
           },
           {
-            text: 'Making a Bootable USB',
-            link: '/docs/reverting/bootableusb',
-          },
-          {
             text: 'Making a Recovery USB',
             link: '/docs/reverting/making-recovery-usb',
           },
@@ -172,6 +168,10 @@ export default defineUserConfig ({
         link: '/docs/support/',
         collapsible: true,
         children: [
+          {
+            text: 'Making a Bootable USB',
+            link: '/docs/support/bootableusb',
+          },
           {
             text: 'Debugging / Getting Help',
             link: '/docs/support/debugging',
