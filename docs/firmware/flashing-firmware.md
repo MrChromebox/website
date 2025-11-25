@@ -33,6 +33,6 @@ If your device still hasn't booted after 2 full minutes, perform a Hard Reset (`
 
 ### RW_LEGACY Firmware
 
-On the Developer Mode boot screen, press Ctrl+L. If a payload menu selection appears, choose `edk2` or `Tianocore`.
+On the Developer Mode boot screen, press Ctrl+L. If a payload menu selection appears, choose `edk2`.
 
 Press `ESC` when you see the boot splash screen for either SeaBIOS or edk2 to access the boot menu / select your boot device.
