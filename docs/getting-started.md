@@ -33,14 +33,26 @@ If you want to dual boot ChromeOS and Linux on your device:
 
 * Verify your device has [RW_LEGACY support](/docs/supported-devices.md)
 * Put your device in [Developer Mode](/docs/boot-modes/developer.md)
-* Run the [Firmware Utility Script](fwscript.md)
-* Flash the [RW_LEGACY Firmware](firmware/types.md)
-* Reboot
-* Press `[CTRL+L]` to boot in legacy boot mode / to the AltFw menu
-* Boot and install your new OS
+* Open a terminal/shell:
+    * **ChromeOS (R117+):** Press `[CTRL+ALT+F2]` at login screen, login as `chronos`
+    * **ChromeOS (older):** Press `[CTRL+ALT+T]`, type `shell` and press Enter
+    * **Linux:** Open your distribution's terminal application
+* Run the [Firmware Utility Script](fwscript.md):
+    ```
+    cd; curl -LOf https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
+    ```
+* Select option 1: "Install/Update RW_LEGACY Firmware" from the script menu
+* Follow the prompts and choose your preferred boot options
+* Reboot when complete
+* Press `[CTRL+L]` on the Developer Mode boot screen to boot in Legacy Boot Mode
+* Boot your Linux USB/SD and install your new OS
 
 ::: tip NOTE
 Installing Linux on the internal storage along with ChromeOS requires repartitioning the device using tools which can handle ChromeOS partition types; see the [Chrultrabook docs](https://docs.chrultrabook.com) for more info.
+:::
+
+::: note
+This method does NOT require disabling firmware write-protect. Do not open your device or remove screws unless instructed to do so.
 :::
 
 ### Replacing ChromeOS via Full ROM firmware
@@ -50,11 +62,24 @@ If you want to wipe ChromeOS from your device and replace it with Linux or Windo
 * Verify your device has [UEFI Full ROM support](/docs/supported-devices.md)
 * Put your device in [Developer Mode](/docs/boot-modes/developer.md)
 * Disable the device's **hardware** [firmware write protection](firmware/wp/index.md)
-    (via screw, jumper, battery, or CCD)
-* Run the [Firmware Utility Script](fwscript.md)
-* Flash the [UEFI Full ROM Firmware](firmware/types.md)
-* Reboot
-* Boot and install your new OS
+    * Check the [Supported Devices page](/docs/supported-devices.md) for your device's WP method
+    * Methods include: WP screw removal, battery disconnect, jumper bridging, or CCD/SuzyQable
+* Open a terminal/shell:
+    * **ChromeOS:** Press `[CTRL+ALT+F2]` at login screen, login as `chronos`
+    * **Linux:** Open your distribution's terminal application
+* Run the [Firmware Utility Script](fwscript.md):
+    ```
+    cd; curl -LOf https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
+    ```
+* Select option 2: "Install/Update UEFI (Full ROM) Firmware" from the script menu
+* **IMPORTANT:** When prompted, create a backup of your stock firmware
+    * Save this backup to a safe location (Google Drive, another PC, USB drive)
+    * You will need this backup if you ever want to restore ChromeOS
+* Follow the prompts to complete the firmware flash
+* Power off the device using the script menu option (do not reboot immediately)
+* If you disconnected the battery, reconnect it now
+* Power on and boot your Linux/Windows installation media
+* Install your new OS
 
 ::: warning
 Again, I cannot stress it enough: flashing your device's firmware and changing the OS is not a simple or minor procedure. If you don't fully read and understand the process and what the tools you're using are doing, it's going to be very hard to troubleshoot if something goes wrong. The documentation here is dense for a reason.
