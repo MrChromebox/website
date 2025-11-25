@@ -337,9 +337,64 @@ The script handles all data extraction, validation, and injection automatically.
 
 *   **Restore Stock Firmware**
 
-    This script function will restore the stock firmware, preferably from a backed-up copy on USB. For most devices, if a user-provided backup is not available, the script will download the firmware from a recovery image (a shellball ROM). For Chromeboxes, if the current fimware contains an embedded VPD region, it will be extracted and merged before flashing. These (device-specific) shellball ROMs have been modified to include a valid hardware ID (HWID), so ChromeOS updates will work normally. Support for flashing shellball ROMs for additional devices is planned for the near future.
+    This script function restores the stock ChromeOS firmware to your device, allowing you to return to the original factory configuration. The script provides two methods for restoration, and will guide you through the process based on what's available.
 
-    After restoring the stock firmware, you will need to reboot and reinstall ChromeOS from the recovery media. After booting ChromeOS, you will need to re-run this script and reset the Boot Flags/GBB Flags in order to exit Developer Mode and fully return to stock.
+    **Restoration Methods:**
+
+    The script offers two options for restoring stock firmware:
+
+    1. **Restore from USB Backup**
+       * Use a firmware backup file you previously created
+       * Most reliable method as it restores your exact original firmware
+       * Preserves your device's original serial number and other unique identifiers
+       * The script will prompt you to insert the USB drive containing your backup
+       * You'll select the backup file from the list of firmware files on the USB
+
+    2. **Restore from ChromeOS Recovery USB**
+       * Extract the stock firmware directly from a ChromeOS recovery image
+       * Useful if you don't have a backup of your original firmware
+       * Requires a ChromeOS recovery USB created for your specific device model
+       * The script will automatically extract and prepare the firmware from the recovery image
+
+    **Recovery USB Firmware Extraction Process:**
+
+    When restoring from a recovery USB, the script performs several sophisticated steps:
+
+    1. Prompts you to insert a ChromeOS recovery USB for your device
+    2. Uses `debugfs` to extract the `chromeos-firmwareupdate` shellball from the recovery image
+    3. Unpacks the shellball to access the firmware components
+    4. Locates the correct BIOS image for your specific board
+    5. Extracts the firmware version information
+    6. Creates a properly-named firmware file
+
+    **Automatic Data Merging:**
+
+    During restoration, the script automatically preserves and merges critical data:
+
+    * **VPD (Vital Product Data):** Extracted from your current firmware if present, then merged into the stock firmware. This is essential for Chromeboxes to preserve the Ethernet MAC address.
+    
+    * **HWID (Hardware ID):** If extracted from your current firmware, it's injected into the restored firmware using `gbb_utility`. If extraction fails, a valid generic HWID for your board is set.
+    
+    * **GBB Flags:** Automatically reset to factory default (0x0) before flashing
+
+    **Modified Shellball ROMs:**
+
+    For most devices, if a backup isn't available, the script can download a pre-extracted shellball ROM from a recovery image. These device-specific shellball ROMs have been:
+
+    * Modified to include a valid hardware ID (HWID) for the device model
+    * Pre-configured to ensure ChromeOS updates work normally after restoration
+    * Tested to verify proper functionality
+
+    **After Restoration:**
+
+    Once stock firmware is restored:
+
+    1. The script re-enables software write-protect to prevent recovery issues
+    2. Reboot your device
+    3. Create and boot from ChromeOS recovery media to reinstall ChromeOS
+    4. After ChromeOS is installed and booted, re-run the Firmware Utility Script
+    5. Reset the Boot Options/GBB Flags to factory default (if needed)
+    6. (Optional) Exit Developer Mode to fully return to stock configuration
 
     ::: danger EOL DEVICES - DO NOT RESTORE STOCK FIRMWARE
     The Firmware Utility Script will **NOT** allow you to restore stock firmware on devices that have reached End of Life (EOL/AUE). This restriction exists because:
