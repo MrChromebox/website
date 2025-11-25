@@ -2,7 +2,30 @@
 
 Once you've flashed MrChromebox firmware on your device (either RW_LEGACY/AltFw or UEFI Full ROM), next you need to boot and install your OS.
 
-To do that's let's get familiar with the [edk2 (aka Tianocore)](https://www.tianocore.org/) user interface as found in the MrChromebox firmware.
+To do that, let's get familiar with the [edk2 (aka Tianocore)](https://www.tianocore.org/) user interface as found in the MrChromebox firmware.
+
+## Firmware Type Differences
+
+The boot experience differs slightly depending on which firmware type you installed:
+
+### UEFI Full ROM Firmware
+
+* Device boots directly to the edk2 boot splash screen
+* Full NVRAM support allows saving boot order and boot entries
+* Boot order can be modified using the Boot Manager
+* No Developer Mode boot screen (ChromeOS is completely removed)
+
+### RW_LEGACY (AltFw) Firmware
+
+* Device boots to the ChromeOS Developer Mode boot screen first
+* Press `[CTRL+L]` on the Developer Mode screen to boot into Legacy Boot Mode / edk2
+* **Limited functionality:** Does not support UEFI NVRAM, so boot order and boot entries cannot be saved
+* Each boot requires pressing `[CTRL+L]` unless GBB Flags are set to make Legacy Boot the default
+* Boot menu entries cannot be modified or reordered
+
+::: tip NOTE
+If you set the GBB Flags to default to Legacy Boot Mode, your device will automatically boot to edk2 without pressing `[CTRL+L]`. See the [Firmware Utility Script documentation](/docs/fwscript.md#set-boot-options-gbb-flags) for details.
+:::
 
 ## Boot Splash
 
@@ -56,7 +79,9 @@ If you are trying to boot from USB (or SD card) and the device is not shown in t
 
 If you are running the UEFI Full ROM firmware on your device, boot devices/entries in this list can be added/removed/reordered using the edk2 Boot Manager.
 
-RW_LEGACY firmware does not support UEFI NVRAM, and so the boot menu entries cannot be modified.
+::: note
+RW_LEGACY firmware does not support boot menu modification due to lack of UEFI NVRAM support.
+:::
 
 
 ## edk2 Boot Manager
@@ -66,8 +91,11 @@ RW_LEGACY firmware does not support UEFI NVRAM, and so the boot menu entries can
 The edk2 Boot Manager primarily allows for the manipulation of the boot device entries;
 secondarily, it allows for the manual selection of the on-disk EFI bootloader via the Boot From File function.
 
-The `Change/Add/Remove` Boot Order entry functions only work when running the UEFI Full ROM firmware.
-Changes made here must be saved and take effect immediately.
+::: warning UEFI FULL ROM ONLY
+The `Change/Add/Remove Boot Order` entry functions only work when running UEFI Full ROM firmware. These options are not available with RW_LEGACY firmware due to lack of NVRAM support.
+:::
+
+Changes made in the Boot Manager must be saved and take effect immediately.
 
 
 ## edk2 EFI Shell
