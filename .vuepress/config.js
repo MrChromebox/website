@@ -62,13 +62,18 @@ export default defineUserConfig ({
       {
         text: 'News & Updates',
         link: '/docs/news',
-      },{
+      },
+      {
         text: 'Getting Started',
         link: '/docs/getting-started',
       },
       {
         text: 'FAQ',
         link: '/docs/faq',
+      },
+      {
+        text: 'Known Issues',
+        link: '/docs/known-issues',
       },
       {
         text: 'Supported Devices',
@@ -140,8 +145,27 @@ export default defineUserConfig ({
         ]
       },
       {
-        text: 'Known Issues',
-        link: '/docs/known-issues',
+        text: 'Reverting to ChromeOS',
+        link: '/docs/reverting/',
+        collapsible: true,
+        children: [
+          {
+            text: 'Flashing Stock Firmware',
+            link: '/docs/reverting/flashing-stock',
+          },
+          {
+            text: 'Making a Bootable USB',
+            link: '/docs/reverting/bootableusb',
+          },
+          {
+            text: 'Making a Recovery USB',
+            link: '/docs/reverting/making-recovery-usb',
+          },
+          {
+            text: 'Booting the Recovery USB',
+            link: '/docs/reverting/booting-recovery-usb',
+          }
+        ]
       },
       {
         text: 'Help and Support',
@@ -174,29 +198,14 @@ export default defineUserConfig ({
         ]
       },
       {
-        text: 'Reverting to ChromeOS',
-        link: '/docs/reverting/',
-        collapsible: true,
-        children: [
-          {
-            text: 'Flashing Stock Firmware',
-            link: '/docs/reverting/flashing-stock',
-          },
-          {
-            text: 'Making a Recovery USB',
-            link: '/docs/reverting/making-recovery-usb',
-          },
-          {
-            text: 'Booting the Recovery USB',
-            link: '/docs/reverting/booting-recovery-usb',
-          }
-        ]
+        text: 'Documentation Sitemap',
+        link: '/docs/sitemap',
+      },
+      {
+        text: 'Contributing',
+        link: '/docs/contributing',
       },
     ]
-  },
-  {
-    text: 'Contributing',
-    link: '/docs/contributing',
   }),
   plugins: [
     searchPlugin({
