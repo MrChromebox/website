@@ -154,12 +154,8 @@ export default defineUserConfig ({
             link: '/docs/reverting/flashing-stock',
           },
           {
-            text: 'Making a Recovery USB',
-            link: '/docs/reverting/making-recovery-usb',
-          },
-          {
-            text: 'Booting the Recovery USB',
-            link: '/docs/reverting/booting-recovery-usb',
+            text: 'ChromeOS Recovery USB',
+            link: '/docs/reverting/recovery-usb',
           }
         ]
       },

@@ -2,7 +2,7 @@
 
 Creating a bootable USB drive is essential for installing an operating system on your Chromebook/Chromebox after flashing custom firmware, or for creating a ChromeOS recovery USB to restore stock firmware.
 
-This guide covers creating bootable USB drives for Linux and Windows installation. For creating a ChromeOS recovery USB, see [Making a ChromeOS Recovery USB](/docs/reverting/making-recovery-usb.md).
+This guide covers creating bootable USB drives for Linux and Windows installation. For creating a ChromeOS recovery USB, see [ChromeOS Recovery USB](/docs/reverting/recovery-usb.md).
 
 ::: danger DATA LOSS WARNING
 Flashing Ventoy or ISOs to an external drive will **wipe all data** on that drive. Back up any important files before proceeding.

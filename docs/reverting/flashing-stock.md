@@ -9,7 +9,7 @@ If your device has hit AUE/EOL, you will not be able to revert it to ChromeOS.
 * Linux installed on the device, or a [bootable Linux live USB](/docs/support/bootableusb.md).
 * Network connectivity
 * A USB containing your stock firmware backup image, or
-* A ChromeOS [Recovery USB](./making-recovery-usb.md)
+* A ChromeOS [Recovery USB](./recovery-usb.md)
 
 ## Restoring
 
@@ -33,4 +33,4 @@ If your device has hit AUE/EOL, you will not be able to revert it to ChromeOS.
 
 8. Reboot after successful completion
 
-With the stock ChromeOS firmware restored, you can now perform a [ChromeOS USB recovery](./booting-recovery-usb.md) to reload ChromeOS.
+With the stock ChromeOS firmware restored, you can now perform a [ChromeOS USB recovery](./recovery-usb.md#part-2-booting-from-the-recovery-usb) to reload ChromeOS.

@@ -48,8 +48,7 @@ Complete overview of all available documentation on MrChromebox.tech.
 
 - **[Reverting Overview](/docs/reverting/index.md)** - Options for restoring stock firmware
 - **[Flashing Stock Firmware](/docs/reverting/flashing-stock.md)** - Restoring stock ChromeOS firmware
-- **[Making Recovery USB](/docs/reverting/making-recovery-usb.md)** - Creating ChromeOS recovery media
-- **[Booting Recovery USB](/docs/reverting/booting-recovery-usb.md)** - How to boot from recovery media
+- **[ChromeOS Recovery USB](/docs/reverting/recovery-usb.md)** - Creating and using recovery media
 
 ## Support & Troubleshooting
 
