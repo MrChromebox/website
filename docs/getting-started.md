@@ -46,7 +46,52 @@ It cannot be stressed enough: **This is NOT a one-click procedure**. Modifying y
 Following a YouTube video or blog post with "simplified" instructions will only end in tears.
 :::
 
-## What's the TL;DR?
+## Decision Guide: Which Firmware Should I Use?
+
+Use this decision tree to determine the right path for your needs:
+
+```
+                    ┌─────────────────────────────────────┐
+                    │  What do you want to do?            │
+                    └──────────────┬──────────────────────┘
+                                   │
+                ┌──────────────────┴───────────────────┐
+                │                                      │
+         Keep ChromeOS?                        Replace ChromeOS?
+                │                                      │
+                ▼                                      ▼
+    ┌───────────────────────┐              ┌──────────────────────┐
+    │   RW_LEGACY Firmware  │              │  UEFI Full ROM       │
+    │   (Dual Boot)         │              │  (Complete Replace)  │
+    ├───────────────────────┤              ├──────────────────────┤
+    │ ✓ Keep ChromeOS       │              │ ✓ Full OS control    │
+    │ ✓ Boot Linux via      │              │ ✓ Best hardware      │
+    │   CTRL+L              │              │   support            │
+    │ ✓ No hardware         │              │ ✓ NVRAM/boot order   │
+    │   modification needed │              │ ✓ Windows support    │
+    │ ✗ Limited boot options│              │ ✗ Removes ChromeOS   │
+    │ ✗ No NVRAM            │              │ ✗ Requires HW WP     │
+    │                       │              │   disable            │
+    └───────────┬───────────┘              └──────────┬───────────┘
+                │                                      │
+                ▼                                      ▼
+    See "Dual Booting" below          See "Replacing ChromeOS" below
+
+
+    Special Cases:
+    ┌────────────────────────────────────────────────────────────┐
+    │ • EOL Device? → UEFI Full ROM only (RW_LEGACY blocked)     │
+    │ • Ti50 Device (2022+)? → Extra caution reverting to stock  │
+    │ • Need Windows? → Must use UEFI Full ROM                   │
+    │ • Just testing Linux? → RW_LEGACY is simpler, reversible   │
+    └────────────────────────────────────────────────────────────┘
+```
+
+::: tip NOT SURE?
+If you're uncertain, start with **RW_LEGACY** - it's easier, reversible, and lets you test without committing. You can always upgrade to UEFI Full ROM later if needed.
+:::
+
+ ## What's the TL;DR?
 
 ### Dual Booting via RW_LEGACY firmware
 
@@ -148,11 +193,27 @@ When asking for help, always include:
 **Do not use the manufacturer's model name** (e.g., "HP Chromebook 14a", "Acer Chromebook 314") when asking for help. These names don't uniquely identify devices. Always provide the **board name/HWID** (e.g., "CAREENA", "SHUBOZ"). It's not possible to support requests without board names.
 :::
 
-## Additional Resources
+## Related Documentation
 
-- **[FAQ](/docs/faq.md)**: Answers to frequently asked questions
-- **[Firmware Types](/docs/firmware/types.md)**: Understanding RW_LEGACY vs UEFI Full ROM
-- **[Firmware Utility Script](/docs/fwscript.md)**: Complete script documentation
-- **[Supported Devices](/docs/supported-devices.md)**: Check device compatibility
-- **[Reverting to Stock](/docs/reverting/index.md)**: How to restore ChromeOS
-- **[Chrultrabook Docs](https://docs.chrultrabook.com/)**: OS installation guides and compatibility
+### Essential Reading
+- **[FAQ](/docs/faq.md)** - Frequently asked questions and answers
+- **[Known Issues](/docs/known-issues.md)** - Common problems and solutions
+- **[Supported Devices](/docs/supported-devices.md)** - Check what firmware your device supports
+
+### Firmware Documentation
+- **[Firmware Overview](/docs/firmware/index.md)** - Understanding ChromeOS firmware architecture
+- **[Firmware Types](/docs/firmware/types.md)** - RW_LEGACY vs UEFI Full ROM detailed comparison
+- **[Firmware Utility Script](/docs/fwscript.md)** - Complete script feature documentation
+- **[Write Protection](/docs/firmware/wp/index.md)** - How to disable hardware write protection
+
+### Boot Modes
+- **[Boot Modes Overview](/docs/boot-modes/index.md)** - Understanding ChromeOS boot modes
+- **[Developer Mode](/docs/boot-modes/developer.md)** - How to enable and use Developer Mode
+- **[Legacy Boot Mode](/docs/boot-modes/legacy.md)** - Using CTRL+L to boot alternate OSes
+
+### Reverting & Recovery
+- **[Reverting to Stock](/docs/reverting/index.md)** - How to restore ChromeOS
+- **[Unbricking Guide](/docs/support/unbricking/index.md)** - Recovery from failed firmware flash
+
+### OS Installation (External)
+- **[Chrultrabook Documentation](https://docs.chrultrabook.com/)** - Comprehensive OS installation guides and device compatibility information
