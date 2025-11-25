@@ -73,7 +73,7 @@ For a Linux ISO, select the ISO, then change the write mode from 'ISO Image' to 
 
 * You have two options:
   1. Reinstall your OS
-  2. Boot a UEFI-capable ISO from USB, then re-run the Firmware Utility Script. From the main menu, choose the option to 'Flash Custom Firmware',from which you can go back to your previous firmware by choosing to restore from a backup file.
+  2. Boot a UEFI-capable ISO from USB, then re-run the Firmware Utility Script. From the main menu, choose the option to 'Flash Custom Firmware', from which you can go back to your previous firmware by choosing to restore from a backup file.
 
 
 ### I flashed the firmware and need to install an OS, but my USB drive isn't detected/isn't booting — what now?
