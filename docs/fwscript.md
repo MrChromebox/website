@@ -38,12 +38,15 @@ Starting with ChromeOS R117, this script must be run from a VT2 terminal (from l
 :::
 
 ![fwscript WP ON](/images/fwutil_cros_wp-on.png)
+
 Firmware Utility Script, on device with stock firmware and WP enabled
 
 ![fwscript WP OFF](/images/fwutil_cros_wp-off.png)
+
 Firmware Utility Script, on device with stock firmware and WP disabled
 
-![fwscript UEFI menu](/images/fwutil_uefi_menu.png)
+![fwscript UEFI menu](/images/fwutil_uefi_menu_update.png)
+
 Firmware Utility Script, on device with Full ROM firmware and WP disabled
 
 In the screenshots above, only the script functions available for the device and current firmware are enabled (cyan text); unavailable functions are in grey. Features which require the firmware WP to be disabled are clearly labeled as such, along with the ability of that function to be used based on the current WP state.
