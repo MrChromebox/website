@@ -198,6 +198,55 @@ In the screenshots above, only the script functions available for the device and
     **Requires firmware write-protect disabled:** `YES`
 
 
+### Device-Specific Functions
+
+*   **Downgrade Touchpad Firmware (Pixelbook/EVE only)**
+
+    This function is specific to the Google Pixelbook (device codename: EVE) and downgrades the touchpad firmware to an older version that is compatible with Windows.
+
+    ::: warning IMPORTANT
+    If you plan to run Windows on your Pixelbook, you **must** downgrade the touchpad firmware, otherwise the touchpad will not work under Windows. The stock touchpad firmware only works with ChromeOS/Linux.
+    :::
+
+    **When to use this:**
+    
+    * After flashing UEFI Full ROM firmware on a Pixelbook
+    * Before installing Windows on a Pixelbook
+    * Ideally performed before the first reboot after flashing UEFI firmware
+
+    The script will download the downgrade firmware file, verify its checksum, and flash it to the touchpad's EC (Embedded Controller). Do not touch the touchpad during the flashing process.
+
+    **Note:** This function may not work reliably under all Linux distributions. If it fails under Linux, try running it from ChromeOS (before flashing UEFI firmware) or from the ChromiumOS environment.
+
+    **Supported Devices:** `Google Pixelbook (EVE) only`
+
+    **Requires firmware write-protect disabled:** `YES`
+
+
+*   **Upgrade Touchpad Firmware (Pixelbook/EVE only)**
+
+    This function is specific to the Google Pixelbook (device codename: EVE) and upgrades the touchpad firmware back to the stock version that is compatible with ChromeOS.
+
+    ::: warning IMPORTANT
+    If you plan to restore ChromeOS on your Pixelbook, you **must** upgrade the touchpad firmware back to stock, otherwise the touchpad will not work under ChromeOS.
+    :::
+
+    **When to use this:**
+    
+    * After restoring stock firmware on a Pixelbook
+    * Before reinstalling ChromeOS on a Pixelbook
+    * After you previously downgraded the touchpad firmware for Windows
+    * Ideally performed before rebooting after restoring stock firmware
+
+    The script will download the stock touchpad firmware file, verify its checksum, and flash it to the touchpad's EC (Embedded Controller). Do not touch the touchpad during the flashing process.
+
+    **Note:** This function may not work reliably under all Linux distributions. If it fails under Linux, try running it from ChromeOS after restoring stock firmware.
+
+    **Supported Devices:** `Google Pixelbook (EVE) only`
+
+    **Requires firmware write-protect disabled:** `YES`
+
+
 The Reboot and Power Off options are (hopefully) sufficiently self-explanatory :).
 
 If running UEFI Full ROM firmware, there will be an additional option to clear the NVRAM. This will delete all bootorder entries stored in NVRAM, and they will be created again on the next boot (or next time grub is updated).
