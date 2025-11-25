@@ -49,7 +49,7 @@ See [Debugging Guide](/docs/support/debugging.md) for log collection instruction
 
 Firmware improvements and bug fixes are welcome! The MrChromebox firmware is based on coreboot.
 
-- **Firmware source**: [MrChromebox Coreboot](https://github.com/MrChromebox/coreboot)
+- **Firmware source**: [MrChromebox coreboot](https://github.com/MrChromebox/coreboot)
 - **edk2 payload**: [MrChromebox edk2](https://github.com/MrChromebox/edk2)
 - **Requirements**: 
   - Understanding of coreboot development

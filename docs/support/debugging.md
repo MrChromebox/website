@@ -194,7 +194,7 @@ chmod +x debugging.sh
 The script automatically collects:
 - **ACPI tables** - System hardware description from firmware
 - **DMI information** - System/board identification (`dmidecode`)
-- **cbmem log** - Coreboot firmware boot log
+- **cbmem log** - coreboot firmware boot log
 - **dmesg** - Linux kernel messages and errors
 - **lspci -vvnn** - Detailed PCI device information
 - **lsusb -vv** - Detailed USB device information

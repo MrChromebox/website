@@ -125,7 +125,7 @@ Service includes diagnosis (may not actually be bricked!), firmware recovery, an
 
 - **[Chrultrabook Documentation](https://docs.chrultrabook.com/)** - OS installation and compatibility
 - **[Chrultrabook Forums](https://forum.chrultrabook.com/)** - Community support
-- **[Coreboot Documentation](https://doc.coreboot.org/)** - Technical firmware details
+- **[coreboot Documentation](https://doc.coreboot.org/)** - Technical firmware details
 - **[edk2/Tianocore Docs](https://github.com/tianocore/tianocore.github.io/wiki)** - UEFI payload information
 
 ### Archive / Historical Information

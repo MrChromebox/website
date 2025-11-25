@@ -83,7 +83,7 @@ Complete overview of all available documentation on MrChromebox.tech.
 - **[MrChromebox Website Issues](https://github.com/MrChromebox/website/issues/)** - Documentation improvements
 
 ### Technical References
-- **[Coreboot Documentation](https://doc.coreboot.org/)** - Coreboot project documentation
+- **[coreboot Documentation](https://doc.coreboot.org/)** - coreboot project documentation
 - **[edk2/Tianocore Wiki](https://github.com/tianocore/tianocore.github.io/wiki)** - UEFI payload documentation
 - **[ChromiumOS Docs](https://www.chromium.org/chromium-os/)** - ChromeOS developer documentation
 

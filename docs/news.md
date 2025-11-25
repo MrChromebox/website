@@ -163,7 +163,7 @@ This new release is based on the coreboot 25.09 tag (September 2025) and include
 
 ### MrChromebox-Specific Enhancements
 
-#### Coreboot Firmware Runtime (CFR) Support
+#### coreboot Firmware Runtime (CFR) Support
 Added CFR configuration support to enable runtime firmware option changes via edk2 setup menu:
 - **Mainboards**: Brya, Volteer, Drallion, Hatch, Octopus, Reef, Eve, Poppy, Glados, Auron, Slippy, Link, Rex, Zork, Puff, Fizz
 - **ChromeEC options**: Keyboard backlight level at boot, EC sync, RW jump control
