@@ -78,9 +78,20 @@ Menu options are displayed in different colors to indicate availability:
 Options may be disabled (greyed out) for several reasons:
 
 * Firmware type incompatibility (e.g., RW_LEGACY not available on UEFI firmware)
-* Device has reached End of Life (EOL)
+* Device has reached End of Life (EOL) - see restrictions below
 * Feature not supported on your specific device model
 * Device capability limitations
+
+### End of Life (EOL) Device Restrictions
+
+Devices that have reached Google's Automatic Update Expiration (AUE) date are considered End of Life (EOL). For EOL devices, certain script functions are intentionally restricted:
+
+* **RW_LEGACY firmware updates:** Not available - use UEFI Full ROM firmware instead
+* **Stock firmware restoration:** Blocked to prevent restoring outdated, insecure ChromeOS versions
+
+**Why these restrictions?** EOL devices no longer receive ChromeOS updates from Google, making the stock firmware insecure and unsupported. The script enforces these restrictions to guide users toward better alternatives (UEFI firmware + Linux/Windows/ChromeOS Flex) that continue to receive security updates.
+
+UEFI Full ROM firmware installation remains fully supported on EOL devices, providing a path forward for continued device use.
 
 ### Write-Protection Indicators
 
@@ -105,6 +116,10 @@ The update check compares your current firmware date against the latest availabl
     This option performs two simple tasks: it sets the crossystem boot flag necessary to enable Legacy Boot mode, and it installs an RW_LEGACY firmware update appropriate for the device. Users will have the option to set the default boot device (internal storage \[default\] or USB/SD); Haswell/Broadwell Chromebox users will also have the option to enable "headless" (no display attached) booting, which is really only useful if you're going to run the box without a display and connect remotely (e.g., via ssh). Changing either of these options requires re-running this script function.
 
     After updating the RW_LEGACY firmware, Legacy Boot Mode can be accessed via `[CTRL+L]` on the Developer Mode boot screen. It can also be set as the default by changing the GBB Flags via 'Set Boot Options' feature below.
+
+    ::: warning EOL DEVICES
+    RW_LEGACY firmware updates are **not available** for devices which have reached End of Life (EOL/AUE). For EOL devices, use the UEFI Full ROM firmware instead to continue using your device with an alternate OS.
+    :::
 
     **Requires firmware write-protect disabled:** `NO`
 
@@ -240,6 +255,17 @@ The update check compares your current firmware date against the latest availabl
     This script function will restore the stock firmware, preferably from a backed-up copy on USB. For most devices, if a user-provided backup is not available, the script will download the firmware from a recovery image (a shellball ROM). For Chromeboxes, if the current fimware contains an embedded VPD region, it will be extracted and merged before flashing. These (device-specific) shellball ROMs have been modified to include a valid hardware ID (HWID), so ChromeOS updates will work normally. Support for flashing shellball ROMs for additional devices is planned for the near future.
 
     After restoring the stock firmware, you will need to reboot and reinstall ChromeOS from the recovery media. After booting ChromeOS, you will need to re-run this script and reset the Boot Flags/GBB Flags in order to exit Developer Mode and fully return to stock.
+
+    ::: danger EOL DEVICES - DO NOT RESTORE STOCK FIRMWARE
+    The Firmware Utility Script will **NOT** allow you to restore stock firmware on devices that have reached End of Life (EOL/AUE). This restriction exists because:
+    
+    * Restoring an old, insecure, unsupported version of ChromeOS serves no useful purpose
+    * The device will not receive OS, browser, or security updates
+    * Better alternatives exist (Linux, ChromeOS Flex) that provide ongoing updates
+    * If selling the device, shipping it with an outdated OS that can't be updated is irresponsible
+    
+    **For EOL devices:** Continue using UEFI firmware with Linux, Windows, or ChromeOS Flex. See the [FAQ](/docs/faq.md#misc) for more information about EOL devices and alternatives.
+    :::
 
     **Supported Devices:** `All non-EOL ChromeOS devices running non-stock firmware`
 
