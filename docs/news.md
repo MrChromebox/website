@@ -1,6 +1,50 @@
 # Latest Updates
 
 
+## Major Documentation Overhaul
+
+(2025.11.25)
+
+The website documentation has received a comprehensive update (thanks Cursor AI!) to better reflect the current state of the Firmware Utility Script and improve the user experience. This is the most significant documentation update since the 2024 website migration to Vuepress.
+
+**Firmware Utility Script Documentation (`/docs/fwscript.md`):**
+* Added documentation for previously undocumented features:
+  - Backup Current Firmware (local filesystem and USB methods)
+  - Flash Custom Firmware (advanced feature with automatic data preservation)
+  - Set Hardware ID (HWID) for UEFI firmware
+  - Device-specific functions (Pixelbook touchpad firmware management)
+* Expanded existing sections:
+  - Complete GBB Flags documentation (all 6 menu options explained)
+  - Enhanced Clear UEFI NVRAM section
+  - Comprehensive data preservation explanation (serial, HWID, VPD, MRC cache, SMMSTORE)
+  - Detailed restore methods documentation
+* Added new "Understanding the Menu System" section explaining dynamic menus, write-protect indicators, and firmware update notifications
+* Added prominent EOL device restrictions with explanations
+
+**Other Documentation Updates:**
+* **getting-started.md:** Added complete script execution details, terminal instructions, and backup reminders
+* **firmware/booting.md:** Added firmware type distinctions section explaining RW_LEGACY vs UEFI boot flows and limitations
+* **firmware/types.md:** Updated RW_LEGACY description (now uses edk2), added NVRAM limitation documentation, removed outdated references
+* **firmware/updating-firmware.md:** Clarified this is for updating existing UEFI installations, not initial flashing
+* **firmware/wp/index.md:** Added Ti50 security chip information and RO verification warnings
+* **reverting/** documentation: Fixed typos and added detailed restoration method explanations
+
+**FAQ Reorganization (`/docs/faq.md`):**
+* Complete restructure into 6 logical sections: About the Project, Before You Start, Firmware Questions, Booting & Installation, Post-Installation/OS Issues, and Firmware Utility Script
+* Added 12 new FAQ entries covering common issues:
+  - What's the difference between RW_LEGACY and UEFI Full ROM?
+  - Device taking forever to boot (RAM training explanation)
+  - Ti50 device won't boot recovery instructions
+  - Battery reconnection timing
+  - VT2 terminal requirement for ChromeOS R117+
+  - Clear UEFI NVRAM explanation
+  - Firmware backup recommendations
+  - And more...
+* Improved existing entries with more actionable answers and better cross-referencing
+
+All documentation now accurately reflects the current firmware script functionality, provides better guidance for common issues, and offers clearer explanations of technical concepts. Special thanks to the community for feedback that helped identify areas needing improvement.
+
+
  ## MrChromebox-2509.3 Release
 
 (2025.11.08)
