@@ -166,3 +166,11 @@ The ChromeOS/ChromiumOS version of flashrom can manipulate the software write pr
 *   Change software write protection addresses range:
 
 `sudo flashrom --wp-range 0 0` (`--wp-range 0,0` on newer versions of flashrom)
+
+## Related Documentation
+
+- **[Write Protection Overview](/docs/firmware/wp/index.md)** - Understanding firmware write protection
+- **[Flashing Firmware](/docs/firmware/flashing-firmware.md)** - What to do after disabling WP
+- **[Supported Devices](/docs/supported-devices.md)** - Find your device's WP method
+- **[Developer Mode](/docs/boot-modes/developer.md)** - Required before disabling WP
+- **[Unbricking](/docs/support/unbricking/index.md)** - Recovery from WP-related issues

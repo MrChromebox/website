@@ -36,3 +36,13 @@ If your device still hasn't booted after 2 full minutes, perform a Hard Reset (`
 On the Developer Mode boot screen, press Ctrl+L. If a payload menu selection appears, choose `edk2`.
 
 Press `ESC` when you see the boot splash screen for either SeaBIOS or edk2 to access the boot menu / select your boot device.
+
+## Related Documentation
+
+- **[Firmware Utility Script](/docs/fwscript.md)** - Complete script feature reference
+- **[Firmware Types](/docs/firmware/types.md)** - Understanding RW_LEGACY vs UEFI Full ROM
+- **[Disabling Write Protection](/docs/firmware/wp/disabling.md)** - Required for UEFI Full ROM
+- **[Developer Mode](/docs/boot-modes/developer.md)** - How to enable Developer Mode
+- **[Booting Your OS](/docs/firmware/booting.md)** - Next steps after flashing
+- **[Updating Firmware](/docs/firmware/updating-firmware.md)** - How to update UEFI firmware
+- **[Unbricking](/docs/support/unbricking/index.md)** - Recovery from failed flash

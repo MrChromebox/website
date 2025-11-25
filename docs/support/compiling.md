@@ -30,3 +30,12 @@ Building and flashing your own firmware has the potential to brick your device. 
      * If successful, the compiled image will be found in `~/dev/roms`
 
 7. **See [Flashing Manually](/docs/firmware/manual-flashing.md) to flash**
+
+## Related Documentation
+
+- **[Manual Flashing](/docs/firmware/manual-flashing.md)** - How to flash your custom firmware
+- **[MrChromebox coreboot Repository](https://github.com/MrChromebox/coreboot)** - Firmware source code
+- **[MrChromebox edk2 Repository](https://github.com/MrChromebox/edk2)** - UEFI payload source
+- **[coreboot Documentation](https://doc.coreboot.org/)** - Upstream coreboot documentation
+- **[Contributing](/docs/contributing.md)** - How to contribute firmware improvements
+- **[Unbricking](/docs/support/unbricking/index.md)** - Recovery from bad flash

@@ -7,3 +7,10 @@ In Normal/Verified Boot Mode, the read-only (RO) part of the firmware verifies t
 *   No root (sudo) access to the system, no ability to boot Linux natively (aka bare metal)
 *   Automatically boots to Recovery Mode if any step of Verified Boot fails
 *   This is the default / out-of-the-box configuration for all ChromeOS devices
+
+## Related Documentation
+
+- **[Boot Modes Overview](/docs/boot-modes/index.md)** - Understanding all ChromeOS boot modes
+- **[Developer Mode](/docs/boot-modes/developer.md)** - How to enable Developer Mode
+- **[Recovery Mode](/docs/boot-modes/recovery.md)** - Entering and using Recovery Mode
+- **[Getting Started](/docs/getting-started.md)** - Begin your firmware journey

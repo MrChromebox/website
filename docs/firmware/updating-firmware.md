@@ -24,3 +24,11 @@ To install it, run: `sudo apt update && sudo apt install -y curl`
 ::: tip NOTE
 Firmware write-protect does not need to be disabled when updating UEFI firmware, as the software write-protect remains disabled after the initial installation. If you previously re-enabled hardware write-protect (reconnected battery, reinstalled WP screw), you do not need to disable it again for updates.
 :::
+
+## Related Documentation
+
+- **[Firmware Utility Script](/docs/fwscript.md)** - Complete script feature reference
+- **[Flashing Firmware](/docs/firmware/flashing-firmware.md)** - Initial installation guide
+- **[Making a Bootable USB](/docs/support/bootableusb.md)** - Create Linux live USB for updates
+- **[Manual Flashing](/docs/firmware/manual-flashing.md)** - Advanced manual update methods
+- **[Known Issues](/docs/known-issues.md)** - Common update problems and solutions
