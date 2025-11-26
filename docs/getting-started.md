@@ -183,7 +183,7 @@ Before asking for help, please:
 
 When asking for help, always include:
 
-- **Board name (HWID)** - e.g., "EVE", "BANSHEE", "OCTOPUS" (NOT "HP Chromebook 14a")
+- **Board name (HWID)** - e.g., "EVE", "BANSHEE", "BLUEBIRD" (NOT "HP Chromebook 14a")
 - **Firmware version** - found in firmware menu or boot screen
 - **What you were trying to do** - step-by-step description
 - **What happened instead** - error messages, unexpected behavior -- screenshots/pics are helpful

@@ -208,7 +208,7 @@ If you encounter an issue not listed here:
 
 ::: warning IMPORTANT
 When reporting issues, always include:
-- Device board name (e.g., OCTOPUS, EVE, BANSHEE)
+- Device board name (e.g., BLUEBIRD, EVE, BANSHEE)
 - Firmware version (found in firmware menu or boot screen)
 - What you were doing when the issue occurred
 - Any error messages (exact text or screenshots)
