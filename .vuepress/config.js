@@ -42,6 +42,7 @@ export default defineUserConfig ({
     prevLinks: false,
     editLink: false,
     contributors: false,
+    lineNumbers: false,
     navbar: [
       {
         text: 'Donate via Paypal',
