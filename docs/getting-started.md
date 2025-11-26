@@ -13,15 +13,15 @@ If your device is currently managed/enrolled by an organization (such as a schoo
 
 Before you begin, ensure you have:
 
-- [ ] Read and understood the warnings above
-- [ ] Verified your device is x86_64 (Intel/AMD) - check [Supported Devices](/docs/supported-devices.md)
-- [ ] Found your device's board name (HWID)
-- [ ] **Backed up all important data** - switching to Developer Mode **wipes everything**
-- [ ] Chromebook battery charged (>50%) and power adapter connected
-- [ ] USB drive(s) for backups and OS installation (8GB+ recommended)
-- [ ] Another device available for troubleshooting/research
-- [ ] Set aside 1-3 hours for the complete process
-- [ ] Read the [FAQ](/docs/faq.md) to understand common issues
+- ☐ Read and understood the warnings above
+- ☐ Verified your device is x86_64 (Intel/AMD) - check [Supported Devices](/docs/supported-devices.md)
+- ☐ Found your device's board name (HWID)
+- ☐ **Backed up all important data** - switching to Developer Mode **wipes everything**
+- ☐ Chromebook battery charged (>50%) and power adapter connected
+- ☐ USB drive(s) for backups and OS installation (8GB+ recommended)
+- ☐ Another device available for troubleshooting/research
+- ☐ Set aside 1-3 hours for the complete process
+- ☐ Read the [FAQ](/docs/faq.md) to understand common issues
 
 ::: tip TIME EXPECTATIONS
 - **RW_LEGACY (Dual Boot)**: 30-60 minutes total
