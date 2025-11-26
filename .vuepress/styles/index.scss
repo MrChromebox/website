@@ -26,6 +26,13 @@
   --vp-c-accent-bg: #3D50F5;
   --vp-c-accent-hover: #4e5ff8;
   --badge-c-tip-bg: #45d48c;
+  
+  --vp-font-family-base: 'Inconsolata', monospace;
+  --vp-font-family-mono: 'Inconsolata', monospace;
+}
+
+body {
+  font-family: 'Inconsolata', monospace;
 }
 
 :root[data-theme='dark'] {
