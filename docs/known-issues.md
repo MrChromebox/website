@@ -42,7 +42,7 @@ RW_LEGACY firmware has inherent limitations compared to UEFI Full ROM:
 
 ### AMD Platform Issues
 
-**AMD Stoneyridge (Zen/Zen+):**
+**AMD Stoneyridge (pre-Zen):**
 - Most Stoney Ridge devices do not currently have functional Legacy Boot Mode due to bugs in Google's stock firmware.
 
 **AMD Cezanne (Zen 3):**
