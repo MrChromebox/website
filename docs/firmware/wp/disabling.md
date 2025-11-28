@@ -66,7 +66,7 @@ This method requires a ChromeOS debug cable (aka SuzyQ cable or SuzyQable).
 2. Open VT-2 terminal: press `[CTRL+ALT+F2]` (F2 is the right arrow).
 3. Login as `root`.
 4. Open the CCD: run `gsctool -a -o`.
-5. You will be prompted to press the `PP` (physical presence) button several times. On almost all devices, this means to press the power button. Opening the CCD requires you to press the `PP` button several times over a 2-3 minute period.  with the message `PP Done!`.
+5. You will be prompted to press the `PP` (physical presence) button several times. On almost all devices, this means to press the power button. Opening the CCD requires you to press the `PP` button several times over a 2-3 minute period.
 6. When the open CCD process is complete, you will see a message showing `PP Done!` and the device will reboot in Normal/Verified Boot Mode.
 7. Re-enable developer mode and continue with the instructions below.
 
