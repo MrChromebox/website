@@ -1,6 +1,35 @@
 # Latest Updates
 
 
+ ## MrChromebox-2509.4 Release
+
+(2025.11.30)
+
+This point release addresses issues in the previous 2509.3 release, with a few improvements as well:
+
+### coreboot Fixes/Improvements
+- **CFR support** added for multiple Google boards: Skyrim, Kahlee, Guybrush
+- **iPXE booting** integrated into EDK2 payload for network booting on boards with onboard LAN
+- **ACPI S3 sleep state** fixed for Brya-based boards
+- **RGB keyboard configuration** support at boot via Chrome EC for boards equipped with one
+- **SMMSTORE region size increased** to fix UEFI DBX (revocation database) updates via fwupd
+- **Improved Intel ME mode change handling**: Enhanced CSE reset error detection and fallback logic
+- **Samsung Lumpy**: Fixed HDA pin configuration issues causing speakers to not be disabled when plugging headphones
+- **Samsung Stumpy**: Improved fan configuration
+
+### EDK2 Improvements
+- **Battery status display** added to Frontpage with new BatteryStatus protocol
+- **Time/Date Settings** allows for configuration via edk2 settings
+- **Frontpage improvements**: Increased banner row count, fixed center-aligned banner position
+- "Advanced Configuration" menu renamed to "System Configuration"
+- SecureBootConfig: Made current state display non-selectable to avoid confusion
+- Improved UFS boot device enumeration (skip non-zero LUNs, better naming)
+
+
+### Important:
+Due to changing the size of the UEFI variable store, all configuration items (include boot entries) will be erased and reset to their default values.  
+For some users, this may mean needing to boot their OS via Boot Manager/Boot From File and manually re-adding the BootOrder entry if the OS does not do it automatically.
+
 ## Major Documentation Overhaul
 
 (2025.11.25)
