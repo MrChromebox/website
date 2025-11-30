@@ -24,6 +24,35 @@ MrChromebox firmware uses upstream coreboot (with modifications), coupled with t
 
 When people say they are "flashing coreboot" on a ChromeOS device, what they really mean is they are flashing a non-Google, upstream-based coreboot firmware image (such as the ones provided by MrChromebox).
 
+### How does the MrChromebox fork of edk2 differ from upstream?
+
+MrChromebox's edk2 fork adds many fixes and new features on top of edk2:
+
+* **TPM Support**: Complete TPM 1.2 and TPM 2.0 support added to UefiPayloadPkg, including TPM detection, Physical Presence Interface (PPI) integration with coreboot handoff buffer parsing, and TCG Configuration menu in BIOS setup.
+
+* **Secure Boot**: Full Secure Boot implementation with default key enrollment (DB, DBX), Microsoft UEFI certificate enrollment, DBX update support, enhanced error messages with verbose logging, and improved Secure Boot configuration UI with state display indicators.
+
+* **Network Infrastructure**: Full network stack implementation with UEFI PXE boot support and iPXE network boot option integration, enabling modern network boot capabilities with network boot enumeration and Shell network command support (TFTP, etc.).
+
+* **Universal Flash Storage (UFS)**: Major performance enhancement with source-based UFS platform driver. Achieves 12x boot performance improvement. Supports Intel Alderlake and Meteor Lake platforms with UFS device enumeration and boot options.
+
+* **Storage Controller Drivers**: New SdMmcPciGli driver for GLI SD/MMC controllers (GL9750/GL9755) with ASPM re-enable support, PLL/SSC configuration improvements, and MISC register handling fixes. Added AmdPcoSdhciDxe driver for AMD Picasso eMMC support.
+
+* **Boot Manager**: Complete redesign and renaming with improved boot menu, better device descriptions and naming, UFS LUN enumeration improvements, boot progress messages, and option to prioritize internal devices.
+
+* **Frontpage Enhancements**: Battery status display, SMBIOS device name lookup, reworked layout with SMBIOS data display, memory type fallback handling (Type 17 as fallback to Type 19), banner positioning fixes, and increased row count.
+
+* **Configuration Options**: New Time/Date Settings formset DXE driver, Device Manager renamed to "System Configuration" with improved organization, battery status display with new BatteryStatus protocol and EcAcpiBatteryStatusDxe driver.
+
+* **coreboot Form Representation (CFR)**: Implementation of CFR support for initial bootloader records with version number tracking, min/max/step values, and hex flag options.
+
+* **SMM Store**: Enhanced SMM store capabilities with 64-bit MMIO store support, sticky-write flash support, erase-before-write fixes, and store region capabilities configuration.
+
+* **System Configuration**: New filesystem drivers, increased firmware device (FD) size, forced 4k alignment for all component types, PlatformGopPolicy implementation, enhanced ACPI table checking and validation, coreboot SDK compatibility fixes, and memory attribute mask corrections.
+
+* **Hardware Drivers**: Improved USB error handling for faulting devices, keyboard driver cleanup, Graphics Output Protocol (GOP) improvements with framebuffer offset support, serial port initialization fixes, and fault tolerant write alignment improvements.
+
+
 ### What is ChromeOS automatic update expiration (AUE)?
 
 * When Google first ships a ChromeOS device based on a given hardware platform, they guarantee the device will get OS, browser, and security updates for a specific amount of time. Historically, this was around 6.5 years, though newer devices now are guaranteed [10 years of updates](https://support.google.com/chromebook/answer/9367166?hl=en).
