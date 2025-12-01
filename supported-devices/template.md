@@ -13,6 +13,11 @@ NOTE - do not edit the supported-devices.md file, edit the template file in the 
 
 What's in a name? All ChromeOS devices have a board/device name, which determines which firmware, OS build, etc a device uses. The board name is listed at the bottom of both the Recovery Mode and Developer Mode screens -- it's the first part of the hardware ID (HWID), before any spaces or hyphens.
 
+**Examples:**
+- If your HWID shows `ZAKO A2A-397`, your board name is `ZAKO`
+- If your HWID shows `NOCTURNE D5B-A4E-B47-H6A-A8L`, your board name is `NOCTURNE`
+- If your HWID shows `CROTA-LPXP D5B-B2K-D4D-A9E-77V-42Y-A9F`, your board name is `CROTA`
+
 ::: important
 **Your device's board name is what determines if it's supported or not** -- not the make, model, CPU, or anything else. The only thing that matters is the name, so use that when determining support in the table below (or for anything else really).
 :::
@@ -33,7 +38,9 @@ The best resource for OS compatibility is the [chrultrabook Supported Devices Pa
 
 ## Device Listing
 
-Supported devices are listed in the table below, grouped by platform/family, roughly in chronological order. To reiterate, support is determined entirely and exclusively by the device's ChromeOS HWID/board name. Device names are just for reference, and may be incomplete as many models/sub-models may use the same HWID/board name. Please don't ask if your HP Chromebook 14b-ca0023dx (eg) is supported. Figure out the Board Name and then locate it in the table. If it's not listed, it's not supported (in which case you are encouraged to email me so I can add support for it).
+Supported devices are listed in the table below, grouped by platform/family, roughly in chronological order. To reiterate, support is determined entirely and exclusively by the device's ChromeOS HWID/board name. Device names are just for reference, and may be incomplete as many models/sub-models may use the same HWID/board name.
+
+Please don't ask if your HP Chromebook 14b-ca0023dx (eg) is supported. Figure out the Board Name and then locate it in the table. If it's not listed, it's not supported (in which case you are encouraged to email me so I can add support for it).
 
 ::: tip
 If you're on a smaller screen, scroll sideways to see whole table.
