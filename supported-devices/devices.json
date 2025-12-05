@@ -1352,13 +1352,14 @@
                     "Dell Chromebook 3110"
                 ],
                 "boardname": "CRET",
-                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Cret_jumper.jpg\" class=\"internal\" title=\"Cret_jumper.jpg\" target=\"_blank\">jumper</a>"
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Cret_jumper.jpg\" class=\"internal\" title=\"Cret_jumper.jpg\" target=\"_blank\">screw/jumper</a>"
             },
             {
                 "device": [
                     "Dell Chromebook 3110 2-in-1"
                 ],
-                "boardname": "CRET360"
+                "boardname": "CRET360",
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Cret_jumper.jpg\" class=\"internal\" title=\"Cret_jumper.jpg\" target=\"_blank\">screw/jumper</a>"
             },
             {
                 "device": [
