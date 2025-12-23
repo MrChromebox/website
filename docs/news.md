@@ -1,6 +1,17 @@
 # Latest Updates
 
 
+## Firmware Utility Script: CR50 NVRAM Reset Feature
+
+(2025.23.23)
+
+A new feature has been added to the Firmware Utility Script to help address "Secure NVRAM (TPM) Initialization" issues that can occur when restoring stock ChromeOS firmware on devices with CR50 security chips.
+
+When restoring stock firmware using the script, users with CR50-based devices (Apollo Lake and newer) will now automatically have the TPM and kernel version data in the CR50 NVRAM reset to their factory default values. This reset ensures the TPM and kernel versions are in a known good state, preventing initialization errors after restoring stock firmware.
+
+For more information on this feature, see the [Firmware Utility Script documentation](/docs/fwscript).
+
+
  ## MrChromebox-2509.4 Release
 
 (2025.11.30)

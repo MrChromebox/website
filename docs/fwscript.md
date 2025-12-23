@@ -388,16 +388,31 @@ The script handles all data extraction, validation, and injection automatically.
     * Pre-configured to ensure ChromeOS updates work normally after restoration
     * Tested to verify proper functionality
 
+    **CR50 TPM NVRAM Reset (Automatic):**
+
+    For devices with CR50 security chips (Apollo Lake and newer), the script automatically resets the TPM and kernel version data stored in the CR50 NVRAM to the factory defaults after successfully restoring stock firmware. This helps prevent "Secure NVRAM (TPM) Initialization" errors that can occur when booting ChromeOS after restoration.
+
+    The script automatically:
+    
+    * Detects if your device uses a CR50 security chip
+    * Downloads the `tpmc` utility if needed
+    * Resets the TPM data at NVRAM index 0x1007
+    * Determines the appropriate kernel version reset command based on the firmware version (FWID)
+    * Resets the kernel version data at NVRAM index 0x1008
+    
+    This automatic reset eliminates the need for manual TPM reset procedures and should resolve common initialization issues when restoring stock firmware.
+
     **After Restoration:**
 
     Once stock firmware is restored:
 
     1. The script re-enables software write-protect to prevent recovery issues
-    2. Reboot your device
-    3. Create and boot from ChromeOS recovery media to reinstall ChromeOS
-    4. After ChromeOS is installed and booted, re-run the Firmware Utility Script
-    5. Reset the Boot Options/GBB Flags to factory default (if needed)
-    6. (Optional) Exit Developer Mode to fully return to stock configuration
+    2. For CR50 devices, the script automatically resets TPM and kernel version data in CR50 NVRAM
+    3. Reboot your device
+    4. Create and boot from ChromeOS recovery media to reinstall ChromeOS
+    5. After ChromeOS is installed and booted, re-run the Firmware Utility Script
+    6. Reset the Boot Options/GBB Flags to factory default (if needed)
+    7. (Optional) Exit Developer Mode to fully return to stock configuration
 
     ::: danger EOL DEVICES - DO NOT RESTORE STOCK FIRMWARE
     The Firmware Utility Script will **NOT** allow you to restore stock firmware on devices that have reached End of Life (EOL/AUE). This restriction exists because:
