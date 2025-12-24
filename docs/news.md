@@ -3,7 +3,7 @@
 
 ## Firmware Utility Script: CR50 NVRAM Reset Feature
 
-(2025.23.23)
+(2025.12.23)
 
 A new feature has been added to the Firmware Utility Script to help address "Secure NVRAM (TPM) Initialization" issues that can occur when restoring stock ChromeOS firmware on devices with CR50 security chips.
 
