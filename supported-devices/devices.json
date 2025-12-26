@@ -1288,7 +1288,8 @@
                 "device": [
                     "ASUS Chromebook CX1405CKA/CB1405CKA"
                 ],
-                "boardname": "AWASUKI"
+                "boardname": "AWASUKI",
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/awasuki_wp_jumper.jpg\" class=\"internal\" title=\"awasuki_wp_jumper.jpg\" target=\"_blank\">jumper</a>"
             },
             {
                 "device": [
