@@ -43,6 +43,16 @@ Enabling Developer Mode is the first step to running an alternate OS on your Chr
 
 First, boot to [Recovery Mode](recovery.md). Then proceed below with the applicable instructions for your device.
 
+::: tip NOTE
+If you're unable to enable Developer Mode and the device keeps returning to Verified Boot (Normal) Mode, it may be due to an MDM (Mobile Device Management) restriction. This can occur on previously managed devices which have not been fully reset. To resolve this:
+
+1. Boot normally and complete the OOBE (Out-of-Box Experience) setup with a Google account (non-guest)
+2. Perform a Powerwash (Settings → Advanced → Reset settings → Powerwash)
+3. After the Powerwash completes, boot to Recovery Mode and try enabling Developer Mode again
+
+Logging in as a non-guest user takes ownership of the device, removing any previous MDM restrictions. Once this is done, Developer Mode should enable successfully.
+:::
+
 ### Chromebooks/Chromeboxes
 
 1. Press `[CTRL+D]`. This should bring up a warning asking for confirmation for either "Turn OS Verification OFF" or "Enable Developer Mode".
