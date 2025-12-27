@@ -379,7 +379,7 @@
                     "Asus Chromebook C300SA/C301SA"
                 ],
                 "boardname": "TERRA",
-                "wpMethod": "<a href=\"/images/wp/C202sa_wp.jpg\" class=\"internal\" title=\"C202sa wp.jpg\" target=\"_blank\">screw</a>"
+                "wpMethod": "screw <a href=\"/images/wp/C202sa_wp.jpg\" class=\"internal\" title=\"C202sa wp.jpg\" target=\"_blank\">(C202SA)</a>&nbsp<a href=\"/images/wp/C300sa_wp.jpg\" class=\"internal\" title=\"C300sa wp.jpg\" target=\"_blank\">(C300SA)</a>"
             },
             {
                 "device": [
