@@ -5,9 +5,9 @@ Building and flashing your own firmware has the potential to brick your device. 
 :::
 
 1. **Install tools and libraries needed for coreboot/edk2:**
-   * Debian/Ubuntu based distros: `sudo apt install -y bison build-essential curl flex git gnat imagemagick libncurses5-dev m4 nasm python-is-python3 uuid-dev zlib1g-dev libssl-dev`
-   * Arch based distros: `sudo pacman --needed -S base-devel curl git gcc-ada ncurses zlib nasm imagemagick`
-   * Redhat based distros: `sudo dnf install git make gcc-gnat flex bison xz bzip2 gcc g++ ncurses-devel wget zlib-devel patch openssl libuuid-devel nasm texinfo`
+   * Debian/Ubuntu based distros: `sudo apt install -y bison build-essential curl flex git gnat imagemagick libncurses5-dev m4 nasm python-is-python3 uuid-dev zlib1g-dev libssl-dev pkg-config libcmocka-dev libnss3-dev`
+   * Arch based distros: `sudo pacman --needed -S base-devel curl git gcc-ada ncurses zlib nasm imagemagick pkgconf cmocka nss`
+   * Redhat based distros: `sudo dnf install git make gcc-gnat flex bison xz bzip2 gcc g++ ncurses-devel wget zlib-devel patch openssl libuuid-devel nasm texinfo pkgconfig cmocka-devel nss-devel`
 
 2. **Clone the repository:**
    * `git clone https://github.com/mrchromebox/coreboot.git`
