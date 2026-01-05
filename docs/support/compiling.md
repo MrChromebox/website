@@ -12,24 +12,29 @@ Building and flashing your own firmware has the potential to brick your device. 
 2. **Clone the repository:**
    * `git clone https://github.com/mrchromebox/coreboot.git`
 
-3. **Clone the submodules:**
+3. **(Optional) Checkout a specific branch:**
    * `cd coreboot`
+   * `git checkout <branch-name>`
+     * For example, `git checkout MrChromebox-2509` or `git checkout MrChromebox-2512`
+
+4. **Clone the submodules:**
+   * `cd coreboot` (if not already in the directory)
    * `git submodule update --init --checkout --recursive`
 
-4. **Build the coreboot toolchain**
+5. **Build the coreboot toolchain**
    * `make crossgcc-i386 CPUS=$(nproc)`
 
-5. **Make changes now, if needed.**
+6. **Make changes now, if needed.**
    * Common changes include:
      * Replacing the default logo (`Documentation/coreboot_logo.bmp`)
      * Enabling serial debug output (`CONFIG_CONSOLE_SERIAL=y`)
 
-6. **Build the firmware**
+7. **Build the firmware**
    * `./build-uefi.sh <boardname>`
      * For example, `./build-uefi.sh panther`
      * If successful, the compiled image will be found in `~/dev/roms`
 
-7. **See [Flashing Manually](/docs/firmware/manual-flashing.md) to flash**
+8. **See [Flashing Manually](/docs/firmware/manual-flashing.md) to flash**
 
 ## Related Documentation
 
