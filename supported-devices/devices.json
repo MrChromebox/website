@@ -323,7 +323,8 @@
                 "device": [
                     "Samsung Chromebook 3"
                 ],
-                "boardname": "CELES"
+                "boardname": "CELES",
+                "wpMethod": "<a href=\"/images/wp/celes_wp_screw.jpg\" class=\"internal\" title=\"celes_wp_screw.jpg\" target=\"_blank\">screw</a>"
             },
             {
                 "device": [
