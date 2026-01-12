@@ -307,6 +307,6 @@ The script will prompt you to create a backup when flashing UEFI firmware. Store
 
 ### Where can I find a SuzyQ cable (SuzyQable)?
 
-* They used to be available from Sparkfun, but aren't any longer. A young entrepreneur has made some cables/adapters available and [sells them on eBay](https://www.ebay.com/itm/316024978790).
+* They used to be available from Sparkfun, but aren't any longer. A young entrepreneur has made some cables/adapters available and [sells them on eBay](https://www.ebay.com/itm/316024978790). They are also available from [Frya Labs](https://shop.fyralabs.com/products/suzyq-board).
 
 There are also schematics online which show how to make a cable using a USB-C cable and a breakout board, along with a few resistors.
