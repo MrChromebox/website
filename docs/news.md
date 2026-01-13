@@ -1,6 +1,29 @@
 # Latest Updates
 
 
+ ## MrChromebox-2512.0 Release
+
+(2026.01.13)
+
+This new release is based on the coreboot 25.12 tag (December 2025) and includes the following changes:
+
+### coreboot fixes and enhancements:
+- Fixed coreboot setup options intermittently not saving on Broadwell and earlier platforms
+- Fixed power-on-after-fail behavior on Fizz-based devices (7th/8th-gen Chromeboxes)
+- Reverted to using FW config for touchpad device selection on GALTIC (and similar boards)
+- Added Windows-compatible camera interface for many devices which use MIPI (vs USB) cameras
+- Added more CFR setup options for various devices
+- Improved robustness of EC -RW firmware update mechanism
+- Misc other minor fixes/improvements
+
+### edk2 Payload Updated
+- Updated edk2 payload to rebase on upstream tag edk2-stable202511.
+- Improvements to battery detection
+- Added password lock feature to edk2 setup
+- Added option to set boot timeout
+- Added option to prioritize internal or external boot devices
+
+
 ## Firmware Utility Script: CR50 NVRAM Reset Feature
 
 (2025.12.23)
