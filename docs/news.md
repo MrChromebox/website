@@ -1,6 +1,17 @@
 # Latest Updates
 
 
+ ## MrChromebox-2512.1 Release
+
+(2026.01.15)
+
+A small bug (mainly affecting AMD Picasso-based boards) was discovered in the 2512.0 release, but I thought it better just to rebuild all images to be safe:
+
+- Fixed a ChromeEC bug where data returned to coreboot from the EC could be corrupted
+- Updated ECRW images for AMD Picasso-based boards to latest upstream
+- Added Vivaldi keyboard support for AMD Picasso devices
+
+
  ## MrChromebox-2512.0 Release
 
 (2026.01.13)
