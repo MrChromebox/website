@@ -85,7 +85,7 @@ This method requires a ChromeOS debug cable (aka SuzyQ cable or SuzyQable).
     - `echo "wp false atboot" > /dev/ttyUSB0`
 7. Run `echo "ccd reset factory" > /dev/ttyUSB0`.
     This ensures that you will be able to unbrick the device (if needed) using a SuzyQable.
-    It also disables AP RO Firmware Verification, and is mantory if flashing the firmware on a device with a Gen2 CR50 chip (aka `Ti50`).
+    It also disables AP RO Firmware Verification, and is mandatory if flashing the firmware on a device with a Gen2 CR50 chip (aka `Ti50`).
 8. Run `gsctool -a -I` to verify the CCD is opened, and that the factory values are set.
     The current value for all CCD flags should be set to Y/Always.
 9. Run `crossystem wpsw_cur` and verify it returns `0`.
