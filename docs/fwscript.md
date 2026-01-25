@@ -19,6 +19,12 @@ Currently, it allows the user to:
 
 At startup, the Firmware Utility Script will automatically detect the device, OS, and current firmware details, and show a customized menu options based on this information. Some options may be greyed-out/disabled for some devices. Because most of these operations are being done to normally read-only parts of the firmware, the firmware write protect will need to be removed for most of the script's functions. This is documented for each function below, and the script will likewise check and display the write-protect state for each function that requires it to be disabled.
 
+::: warning NOTE
+Starting with ChromeOS R117, this script must be run from a VT2 terminal (from login screen: `[CTRL+ALT+F2]`, login `chronos`); it cannot be run from a crosh shell (`[CTRL+ALT+T]` when logged in) due to the removal of sudo, or from a crostini (penguin) terminal; crostini is a virtualized container and lacks the necessary access to read or modify the firmware.
+:::
+
+If running the script from Linux (vs ChromeOS), any terminal app will do. On most distros `CTRL+ALT+T` or `Super/Search+T` will open the default terminal.
+
 ::: warning IMPORTANT
 This script must be run **as a normal/non-root user**. Running it as root will break things. DO NOT RUN 'SUDO SU' BEFORE RUNNING THE SCRIPT CMD BELOW.
 :::
@@ -32,10 +38,6 @@ and press `[ENTER]`.
 If you encounter certificate related errors when downloading the script from ChromeOS, then add `-k` to the curl command to bypass SSL certificate checking as so:
 `cd; curl -LOfk https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh`
 and press `[ENTER]`.
-
-::: warning NOTE
-Starting with ChromeOS R117, this script must be run from a VT2 terminal (from login screen: `[CTRL+ALT+F2]`, login `chronos`); it cannot be run from a crosh shell (`[CTRL+ALT+T]` when logged in) due to the removal of sudo, or from a crostini (penguin) terminal; crostini is a virtualized container and lacks the necessary access to read or modify the firmware.
-:::
 
 ![fwscript WP ON](/images/fwutil_cros_wp-on.png)
 
