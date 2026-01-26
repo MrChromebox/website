@@ -1,6 +1,13 @@
 # Latest Updates
 
 
+ ## MrChromebox-2512.2 Release
+
+(2026.01.25)
+
+A small bug related to EC firmware sync/update (mainly affecting Puff-based Chromeboxes) was discovered in the 2512.1 release, but I thought it better just to rebuild all images to be safe. This resolves an issue with EC software sync failing, which caused USB-A ports to be unpowered on Puff Chromeboxes.
+
+
  ## MrChromebox-2512.1 Release
 
 (2026.01.15)
