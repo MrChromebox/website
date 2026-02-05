@@ -52,6 +52,13 @@ RW_LEGACY firmware has inherent limitations compared to UEFI Full ROM:
 
 ### Google Security Chip (CR50/Ti50) Issues
 
+**TPM 2.0 implementation (all GSC devices — CR50 and Ti50):**
+- The TPM 2.0 interface exposed by the Google Security Chip is **not a full TPM 2.0 implementation**. It implements a subset of the TPM 2.0 specification required for ChromeOS.
+- **Missing command support** prevents use with features that rely on full TPM 2.0 semantics:
+  - **Windows Bitlocker**: Bitlocker expects TPM commands (e.g. for sealing keys, PCR policies, or attestation) that the GSC does not support.
+  - **Linux FDE with GRUB**: Full-disk encryption setups that use GRUB to unlock LUKS with a TPM-bound key (e.g. `grub2-emu` or TPM-based key sealing in the boot path) depend on TPM commands that the GSC does not provide. Such configurations are not supported.
+- **Workaround**: Use software-only or password-based disk encryption (e.g. LUKS with a passphrase, or Bitlocker with a recovery key / PIN only) if you need encryption on MrChromebox firmware. The GSC TPM is suitable for ChromeOS and for basic use, but not for TPM-bound disk encryption under Windows or Linux.
+
 **Ti50 Devices (2022 and newer):**
 - **RO Firmware Verification**: Ti50 performs additional verification of RO firmware regions. If RO verification fails, the device will not boot, even to recovery mode.
 - **Recovery Requirement**: Failed RO verification requires physical intervention - either external flashing hardware or a SuzyQable cable.
