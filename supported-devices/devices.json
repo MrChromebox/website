@@ -1046,7 +1046,7 @@
                 ],
                 "boardname": "AMBASSADOR",
                 "rwLegacy": true,
-                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, jumper"
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/ambassador_wp_screw.jpg\" class=\"internal\" title=\"ambassador_wp_screw.jpg\" target=\"_blank\">screw (insert)</a>"
             },
             {
                 "device": [
