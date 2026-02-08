@@ -37,7 +37,7 @@ For CR50 devices which tie WP to the battery sense line, the process is similarl
 * Reassemble the device
 * Boot the device using external power (45W USB-PD charger minimum)
 
-Once you have finished flashing the firmware (or doing whatever you needed to do which required WP disabled), power off the device, remove external power, and **carefully** reattach the battery connector to the mainboard. You will likely need to connect external power to wake/boot the device.
+Once you have finished flashing the firmware (or doing whatever you needed to do which required WP disabled), power off the device, remove external power, and **carefully** reattach the battery connector to the mainboard (failing to fully power off the device runs a risk of permanently bricking it). You will likely need to connect external power to wake/boot the device.
 
 ## Bridging a Jumper
 
