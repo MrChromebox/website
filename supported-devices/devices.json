@@ -1736,13 +1736,15 @@
                 "device": [
                     "Acer Chromebook Plus 514"
                 ],
-                "boardname": "JUBILANT"
+                "boardname": "JUBILANT",
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50/Ti50 (SuzyQ)</a>"
             },
             {
                 "device": [
                     "Acer Chromebook Plus 516"
                 ],
-                "boardname": "JUBILEUM"
+                "boardname": "JUBILEUM",
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50/Ti50 (SuzyQ)</a>"
             },
             {
                 "device": [
@@ -1774,7 +1776,8 @@
                 "device": [
                     "Lenovo Chromebook Plus 2-in-1"
                 ],
-                "boardname": "LOTSO"
+                "boardname": "LOTSO",
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50/Ti50 (SuzyQ)</a>"
             },
             {
                 "device": [
