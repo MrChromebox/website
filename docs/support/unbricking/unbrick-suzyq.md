@@ -126,6 +126,14 @@ Now that everything is prepped, time to flash the device.
 
     Where `<filename>` is the name of your backup file, UEFI firmware file, or shellball firmware file. This will usually take 3-5 mins to complete; flashrom will first read the flash chip, determine which sectors differ, erase those sectors, write the new data, then verify the data written. The initial CCD setup make take a minute or so and not show any progress.
 
+2. Disable software write-protect and clear wp-range (UEFI first-time flash only)
+
+    This step is only necessary when flashing the UEFI Full ROM firmware on a device running stock firmware which has not previously been flashed. It is necessary for the UEFI firmware to boot properly. Run the following commands:
+
+    * `sudo flashrom -p raiden_debug_spi:target=AP --wp-disable`
+    * `sudo flashrom -p raiden_debug_spi:target=AP --wp-range 0,0`
+
+
 ### Clean Up
 
 Once flashing is complete, disconnect the Suzy-Q cable. If the internal battery was not disconnected, the device will likely reboot as soon as flashing has completed. If the internal battery was disconnected, reconnect it and replace the bottom cover/keyboard. Flip over the device, connect external power, press the power button, and cross your fingers :)

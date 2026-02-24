@@ -165,6 +165,13 @@ Now that everything is prepped, time to flash the device. To be thorough, we'll 
 
     Using the same filename as before. If the verification passes, then disconnect the CH341a from the host machine, and then remove the chip clip.
 
+3. Disable software write-protect and clear wp-range (UEFI first-time flash only)
+
+    This step is only necessary when flashing the UEFI Full ROM firmware on a device running stock firmware which has not previously been flashed. It is necessary for the UEFI firmware to boot properly. Run the following commands:
+
+    * `sudo flashrom -p ch341a_spi --wp-disable`
+    * `sudo flashrom -p ch341a_spi --wp-range 0,0`
+
 ### Clean Up
 
 Reassembly is the reverse of disassembly. Reconnect the internal battery and replace the bottom cover/keyboard. Flip over the device, connect external power, press the power button, and cross your fingers :)
