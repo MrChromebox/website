@@ -13,6 +13,9 @@
     "device-table": "node supported-devices/index.js"
   },
   "license": "MIT",
+  "overrides": {
+    "serialize-javascript": "^7.0.4"
+  },
   "devDependencies": {
     "@vuepress/bundler-webpack": "2.0.0-rc.26",
     "@vuepress/plugin-back-to-top": "^2.0.0-rc.124",
