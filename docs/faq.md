@@ -216,6 +216,14 @@ then reboot to test. What we're doing is copying the grub EFI boot stub from the
 
 * Your ISO wasn't written to USB properly — as an image, not an ISO — and you need to redo it [using the proper tool/settings](/docs/support/bootableusb.md). Etcher or Rufus in dd mode are the recommended options. The ChromeOS Recovery tool also works properly.
 
+### After a firmware update, my device won't boot my OS — what happened?
+
+* Sometimes a firmware update clears boot order entries stored in NVRAM. Your OS is still installed; the firmware just no longer knows how to find it. You have two options:
+
+  1. **Manually re-add the boot entry:** Type `exit` to reach the UEFI settings menu, then go to Boot Manager. Add the bootloader on your internal drive (or the appropriate EFI partition) as a boot option and set it as the first boot device.
+
+  2. **Boot From File and reinstall your bootloader:** Select Boot From File, navigate to `/EFI/[distro name]/grubx64.efi` (or the equivalent for your bootloader), and boot into your OS. Once booted, reinstall GRUB (or whatever bootloader you use) so it re-registers the boot entry with the firmware. For GRUB on Linux: `sudo grub-install` (and optionally `sudo update-grub`).
+
 ## Post-Installation / OS Issues
 
 ### I've installed Windows or Linux, and now something doesn't work?
