@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 24
       # run build script in package.json
       - name: Build VuePress site
         run: npm i && npm run build && mv ./.vuepress/dist/ "./_site"
