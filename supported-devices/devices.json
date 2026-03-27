@@ -676,7 +676,7 @@
                     "Acer Chromebase 24I2"
                 ],
                 "boardname": "KARMA",
-                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, screw"
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/karma_wp_screw.jpg\" class=\"internal\" title=\"karma_wp_screw.jpg\" target=\"_blank\">screw</a>"
             },
             {
                 "device": [
