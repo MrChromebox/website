@@ -1,6 +1,28 @@
 # Latest Updates
 
 
+ ## MrChromebox-2603.0 Release
+
+(2026.03.29)
+
+This new release is based on the coreboot 26.03 tag (March 2026) and includes the following changes:
+
+### coreboot fixes and enhancements:
+- Improved tablet mode support on many boards (including TAEKO and CYAN)
+- Added ability to adjust PL1/PL2 power levels on 4th-10th gen Chromeboxes
+- Added ability to adjust FIVR voltages (ie, undervolt) on 4th-10th gen Chromeboxes
+- Added ability to show/hide the Intel ME HECI interface from the OS
+- Fixed long cold boot times on 10th-gen Chromeboxes
+- Improved Windows-compatible camera interface for many devices which use MIPI (vs USB) cameras
+- Added more CFR setup options for various devices
+
+### edk2 Payload Updated
+- Updated edk2 payload to rebase on upstream tag edk2-stable202602.
+- Re-added support for PXE booting using USB NICs
+- Improvements to UI options and layout
+- 'Platform Setup' menu hidden when no options available
+
+
  ## MrChromebox-2512.2 Release
 
 (2026.01.25)
