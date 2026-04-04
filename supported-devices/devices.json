@@ -432,7 +432,8 @@
                 "device": [
                     "HP Chromebook 13 G1"
                 ],
-                "boardname": "CHELL"
+                "boardname": "CHELL",
+                "wpMethod": "<a href=\"/images/wp/chell_wp_screw.jpg\" class=\"internal\" title=\"chell_wp_screw.jpg\" target=\"_blank\">screw</a>"
             },
             {
                 "device": [
