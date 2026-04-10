@@ -1,6 +1,19 @@
 # Latest Updates
 
 
+
+ ## MrChromebox-2603.1 Release
+
+(2026.04.09)
+
+A small update with a few bug fixes:
+
+- Fixed an edk2 issue with eMMC and/or SD card detection at boot
+- Fixed the default storage type for TANIKS/TAEKO (so should work OOTB now)
+- Fixed the G2 touchscreen on BLIPPER/BEETLEY
+- Fixed the RGB keyboard backlight on MITHRAX
+
+
  ## MrChromebox-2603.0 Release
 
 (2026.03.29)
