@@ -14,7 +14,8 @@
   },
   "license": "MIT",
   "overrides": {
-    "serialize-javascript": "^7.0.5"
+    "serialize-javascript": "^7.0.5",
+    "uuid": "14.0.0"
   },
   "devDependencies": {
     "@vuepress/bundler-webpack": "2.0.0-rc.22",
