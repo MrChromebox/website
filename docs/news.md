@@ -2,6 +2,23 @@
 
 
 
+ ## MrChromebox-2603.2 Release
+
+(2026.05.17)
+
+Another small update with a few tweaks and bug fixes:
+
+- Fixed tablet mode detection on several reef, octopus, and poppy variants
+- Added runtime-D3 (RTD3) power management for NVMe on several brya-based boards
+- Fixed a S0ix issue on brya-based boards with optional fingerprint reader
+- Updated VBTs for brox variants
+- Added firmware image for pujjoniro variant
+- Fixed discrete WiFi on pirika boards
+- Added an '--ipxe' option to the build script
+- Fixed eMMC/NVMe selection on taeko4es
+- Misc fixes for sarien (unsupported / still under testing)
+
+
  ## MrChromebox-2603.1 Release
 
 (2026.04.09)
