@@ -14,6 +14,8 @@
   },
   "license": "MIT",
   "overrides": {
+    "esbuild": "0.28.1",
+    "esbuild-loader": "4.5.0",
     "serialize-javascript": "^7.0.5",
     "uuid": "14.0.0"
   },

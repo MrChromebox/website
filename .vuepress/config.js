@@ -9,9 +9,32 @@ import path from "path"
 
 const base = "/";
 
+const patchEsbuildLoaderRules = (rules) => {
+  if (!rules) return;
+  for (const rule of rules) {
+    if (rule.use) {
+      const uses = Array.isArray(rule.use) ? rule.use : [rule.use];
+      for (const use of uses) {
+        if (typeof use === "object" && use.loader?.includes("esbuild-loader")) {
+          use.options = {
+            ...use.options,
+            supported: {
+              ...use.options?.supported,
+              destructuring: true,
+            },
+          };
+        }
+      }
+    }
+    patchEsbuildLoaderRules(rule.oneOf);
+    patchEsbuildLoaderRules(rule.rules);
+  }
+};
+
 export default defineUserConfig ({
   bundler: webpackBundler({
     configureWebpack: (config) => {
+      patchEsbuildLoaderRules(config.module?.rules);
       config.devtool = 'source-map';
       config.optimization = {
         usedExports: true,
