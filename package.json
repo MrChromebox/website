@@ -18,8 +18,13 @@
   },
   "overrides": {
     "esbuild": "0.28.1",
+    "gray-matter": "github:erikzaadi/gray-matter#ba2bc22b06834a2878d55b75312d20e9f39448e8",
+    "http-proxy-middleware": "3.0.6",
+    "js-yaml": "4.2.0",
+    "launch-editor": "2.14.1",
     "serialize-javascript": "^7.0.5",
-    "uuid": "14.0.0"
+    "uuid": "14.0.0",
+    "webpack-dev-server": "5.2.5"
   },
   "devDependencies": {
     "@vuepress/bundler-webpack": "2.0.0-rc.30",
