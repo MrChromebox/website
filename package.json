@@ -13,22 +13,24 @@
     "device-table": "node supported-devices/index.js"
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=22.18.0"
+  },
   "overrides": {
     "esbuild": "0.28.1",
-    "esbuild-loader": "4.5.0",
     "serialize-javascript": "^7.0.5",
     "uuid": "14.0.0"
   },
   "devDependencies": {
-    "@vuepress/bundler-webpack": "2.0.0-rc.22",
-    "@vuepress/plugin-back-to-top": "^2.0.0-rc.98",
-    "@vuepress/plugin-medium-zoom": "^2.0.0-rc.98",
-    "@vuepress/plugin-register-components": "^2.0.0-rc.98",
-    "@vuepress/plugin-search": "^2.0.0-rc.98",
-    "@vuepress/theme-default": "2.0.0-rc.98",
+    "@vuepress/bundler-webpack": "2.0.0-rc.30",
+    "@vuepress/plugin-back-to-top": "2.0.0-rc.130",
+    "@vuepress/plugin-medium-zoom": "2.0.0-rc.130",
+    "@vuepress/plugin-register-components": "2.0.0-rc.130",
+    "@vuepress/plugin-search": "2.0.0-rc.130",
+    "@vuepress/theme-default": "2.0.0-rc.130",
     "sass-embedded": "^1.98.0",
-    "sass-loader": "^16.0.7",
-    "vue": "^3.5.30",
-    "vuepress": "2.0.0-rc.22"
+    "sass-loader": "^16.0.8",
+    "vue": "^3.5.34",
+    "vuepress": "2.0.0-rc.30"
   }
 }

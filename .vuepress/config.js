@@ -1,40 +1,20 @@
+import { createRequire } from 'node:module'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { defineUserConfig } from 'vuepress'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { defaultTheme } from '@vuepress/theme-default'
-import { description } from '../package.json'
 
 import path from "path"
 
-const base = "/";
+const require = createRequire(import.meta.url)
+const { description } = require('../package.json')
 
-const patchEsbuildLoaderRules = (rules) => {
-  if (!rules) return;
-  for (const rule of rules) {
-    if (rule.use) {
-      const uses = Array.isArray(rule.use) ? rule.use : [rule.use];
-      for (const use of uses) {
-        if (typeof use === "object" && use.loader?.includes("esbuild-loader")) {
-          use.options = {
-            ...use.options,
-            supported: {
-              ...use.options?.supported,
-              destructuring: true,
-            },
-          };
-        }
-      }
-    }
-    patchEsbuildLoaderRules(rule.oneOf);
-    patchEsbuildLoaderRules(rule.rules);
-  }
-};
+const base = "/";
 
 export default defineUserConfig ({
   bundler: webpackBundler({
     configureWebpack: (config) => {
-      patchEsbuildLoaderRules(config.module?.rules);
       config.devtool = 'source-map';
       config.optimization = {
         usedExports: true,
