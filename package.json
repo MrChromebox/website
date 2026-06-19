@@ -19,7 +19,7 @@
   "overrides": {
     "esbuild": "0.28.1",
     "gray-matter": "github:erikzaadi/gray-matter#ba2bc22b06834a2878d55b75312d20e9f39448e8",
-    "http-proxy-middleware": "3.0.6",
+    "http-proxy-middleware": "3.0.7",
     "js-yaml": "4.2.0",
     "launch-editor": "2.14.1",
     "serialize-javascript": "^7.0.5",
