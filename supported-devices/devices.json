@@ -1689,7 +1689,7 @@
                     "Google Meet Series Two"
                 ],
                 "boardname": "CONSTITUTION",
-                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ),</a>, <a href=\"/images/wp/intrepid_wp_jumper.jpg\" class=\"internal\" title=\"intrepid_wp_jumper\" target=\"_blank\">jumper)</a>"
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ),</a>, <a href=\"/images/wp/intrepid_wp_jumper.png\" class=\"internal\" title=\"intrepid_wp_jumper\" target=\"_blank\">jumper)</a>"
             },
             {
                 "device": [
@@ -1732,7 +1732,7 @@
                     "CTL Meet Compute System GQE20C"
                 ],
                 "boardname": "INTREPID",
-                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/intrepid_wp_jumper.jpg\" class=\"internal\" title=\"intrepid_wp_jumper\" target=\"_blank\">jumper</a>"
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/intrepid_wp_jumper.png\" class=\"internal\" title=\"intrepid_wp_jumper\" target=\"_blank\">jumper</a>"
             },
             {
                 "device": [
