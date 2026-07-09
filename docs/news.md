@@ -2,6 +2,54 @@
 
 
 
+ ## MrChromebox-2606.6 Release
+
+(2026.07.09)
+
+This is a big one - I highly recommended to back up your existing firmware (via the script) before updating so you can revert if necessary.
+
+### Highlights 
+
+- coreboot rebased on tag 26.06
+- edk2 rebased on ta edk2-stable202605
+
+### New Boards Added
+
+Nine new **AlderLake-N/TwinLake** boards added:
+
+- **kaladin** — HP Chromebook Plus x360 14c-ce0
+- **meliks** — Samsung Galaxy Chromebook 3 360
+- **pujjocento** — Lenovo Chromebook 100e Gen 5
+- **pujjolo** — Lenovo Chromebook 500e 2-in-1 Gen 5
+- **quandiso2** — CTL Chromebook NL73 Gen 2
+- **uldrenite** — Dell Chromebook 11 CC11260
+- **epic**, **tereid**, **tivviks** — new ADL-N variants (board support present; product names TBD)
+
+### Existing Device Improvements
+
+- **Brya/ADL (Crota):** eMMC RTD3 GPIO fix; PCIe RTD3 for NVMe root ports
+- **Puff/CML:** fixed RAM training running on cold boot
+- **Puff/CML (Wyvern):** RTL8111H overridetree fix
+- **Dedede/JSL (Blipper):** GTCH7503 touch controller `stop_gpio` / `stop_delays`
+- **Poppy/KBL (Nami):** correct convertible system type in SMBIOS
+- **Picasso / Mendocino / Glinda / Cezanne:** sleep button handled as ACPI control-method device (cleaner FADT on AMD platforms)
+- **Cezanne:** USB3 port-order fix; HDA block enablement
+- Hide ACPI battery/MKBP devices when hardware is absent
+- S0ix: EC/CREC sleep notification hooks; PEP calls EC S0ix methods
+- CFR: automatic fan control defaults to enabled
+
+### edk2 Payload
+
+- New Setup UI using **LVGL graphical renderer**
+- Reworked SecureBoot configuration UI
+- DBX revocation list updated to **20260402**
+- Updated `DeviceNameFromProduct` mappings for better appearance
+
+### Build script improvements
+
+- Ability to easily generate builds with debug enabled, PXE support, iPXE, etc
+
+
  ## MrChromebox-2603.2 Release
 
 (2026.05.17)
