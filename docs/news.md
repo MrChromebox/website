@@ -1,8 +1,19 @@
 # Latest Updates
 
 
+## MrChromebox-2606.1 Release
 
- ## MrChromebox-2606.6 Release
+(2026.07.14)
+
+A small update with a few tweaks and bug fixes:
+
+- Fixed Linux booting on AMD StoneyRidge devices (#966)
+- Fixed Windows booting on Intel Haswell/Broadwell/Baytrail devices (#967)
+- Updated EC firmware on Puff-based Chromeboxes (10th-gen) to improve fan control and fix S0ix (#963)
+- Fixed pre-OS external display output on Tigerlake (volteer) and Alderlake/Raptorlake-U/P (brya) based boards
+
+
+## MrChromebox-2606.6 Release
 
 (2026.07.09)
 
