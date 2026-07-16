@@ -1,6 +1,25 @@
 # Latest Updates
 
 
+## Script Updates
+
+(2026.07.15)
+
+Firmware Utility Script improvements:
+
+- Ability to roll back to the previous (n-1) Full ROM release when eligible
+- Automatic retry after a failed Full ROM flash, then restore the previous firmware if the retry fails
+- Update/rollback menus show release versions (not just dates)
+- Per-board hotfix overrides for shipping fixes outside a full release train
+- Clearer software write-protect handling before flashes and GBB/HWID writes
+- More reliable USB device selection and mount handling (backup, custom flash, stock restore)
+- Cleaner menu error handling and assorted setup/flash path bug fixes
+
+New helper:
+
+- `download-fullrom.sh` — download one or more Full ROM images from the CDN for offline flashing / unbricking (board name or HWID; latest or pinned release). See the [scripts README](https://github.com/MrChromebox/scripts#offline-full-rom-downloads) or `./download-fullrom.sh -h`.
+
+
 ## MrChromebox-2606.1 Release
 
 (2026.07.14)

@@ -47,14 +47,16 @@ Let's get to it:
         * If using this, simply copy the file from USB into the home directory of the live USB user
 
       **Option 2: The UEFI Full ROM firmware for the device**
-        * If you were flashing the UEFI firmware when things went sideways, then that's the easiest way to proceed. You can download the UEFI firmware for your device by examining the [sources.sh file from the Firmware Utility Script GitHub repo](https://github.com/MrChromebox/scripts/blob/master/sources.sh). Simply concatenate the device-specific filename to the Full ROM base path:
-          * `wget <Full ROM base path><device specific filename>`
-          * Example for the Acer Chromebook 14 CB3-431 (EDGAR):
-            * `wget https://mrchromebox.tech/files/firmware/full_rom/coreboot_tiano-edgar-mrchromebox_20180827.rom`
-            * Don't forget to get the SHA1 file for verification:
-            * `wget https://mrchromebox.tech/files/firmware/full_rom/coreboot_tiano-edgar-mrchromebox_20180827.rom.sha1`
-            * Then verify the download:
-            * `sha1sum -c coreboot_tiano-edgar-mrchromebox_20180827.rom.sha1`
+        * If you were flashing the UEFI firmware when things went sideways, then that's the easiest way to proceed. Use [`download-fullrom.sh`](https://github.com/MrChromebox/scripts/blob/main/download-fullrom.sh) to fetch the correct image from the CDN (resolves board slugs and HWIDs via `device-db.sh`):
+          * `wget https://raw.githubusercontent.com/MrChromebox/scripts/main/download-fullrom.sh`
+          * `chmod +x download-fullrom.sh`
+          * `./download-fullrom.sh <board or HWID>`
+          * Examples for the Acer Chromebook 14 CB3-431 (EDGAR):
+            * `./download-fullrom.sh edgar`
+            * `./download-fullrom.sh EDGAR`
+            * `./download-fullrom.sh -n edgar` (dry-run: print the URL only)
+          * Pin a specific release train if needed: `./download-fullrom.sh 2606.1 edgar`
+          * The `.rom` is written under `./MrChromebox-<version>/` by default (`-o DIR` to choose another). Run `./download-fullrom.sh -h` for all options.
 
       **Option 3: The shellball firmware for the device**
         * A shellball image is a generic firmware image embedded in a ChromeOS recovery image. It doesn't contain any unique data for your device (serial, HWID, MAC address, etc) and the GBB flags are set to force Developer Mode on, among other things.
@@ -66,27 +68,6 @@ Let's get to it:
             * `wget https://github.com/coreboot/coreboot/raw/refs/heads/main/util/chromeos/crosfirmware.sh`
             * `bash crosfirmware.sh edgar`
           * This will produce a shellball firmware image named `coreboot-Google_Edgar.<version>.bin`. It will not have a valid HWID and will need the GBB flags reset after flashing to the device.
-
-### Determining the Correct UEFI Firmware Image Name
-
-::: warning IMPORTANT
-The UEFI firmware image name is not always the same as your device's board name. Many devices use a common firmware image and only differ by HWID. You must check the device database to determine the correct firmware image name.
-:::
-
-Before downloading the UEFI firmware (for Option 2 above), you need to determine the correct firmware image name:
-
-1. **Identify your device's board name**: This is typically the first part of your device's HWID (Hardware ID), before any dashes. For example, if your HWID is `VORTICON ABC-XYZ-123`, your board name is `VORTICON`.
-
-2. **Check for a device override**: Check the [device-db.sh file from the Firmware Utility Script GitHub repo](https://github.com/MrChromebox/scripts/blob/master/device-db.sh):
-   * Search for your board name (case-insensitive) in the file
-   * The format is: `["BOARD_NAME*"]="Description|CPU|device override|flags|"`
-   * Look at the third field (device override):
-     * If it's **empty** (nothing between the pipes `||`), use your board name as the firmware image name
-     * If it contains a value (e.g., `|meep|`), use that value as the firmware image name
-
-3. **Examples**:
-   * **PANTHER** (ASUS Chromebox CN60): The entry is `["PANTHER*"]="ASUS Chromebox (CN60)|HSW||isCbox,hasLAN|"` - the device override field is empty (`||`), so the firmware image name is `panther`
-   * **VORTICON** (HP Chromebook 11 G8 EE): The entry is `["VORTICON*"]="HP Chromebook 11 G8 EE|GLK|meep||"` - the device override field contains `meep`, so the firmware image name is `meep` (not `vorticon`)
 
 ### Persisting the board's Vital Product Data (VPD) and Hardware ID (HWID)
 
