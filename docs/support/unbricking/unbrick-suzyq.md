@@ -107,6 +107,19 @@ Now that everything is prepped, time to flash the device.
 
     Where `<filename>` is the name of your backup file, UEFI firmware file, or shellball firmware file. This will usually take 3-5 mins to complete; flashrom will first read the flash chip, determine which sectors differ, erase those sectors, write the new data, then verify the data written. The initial CCD setup make take a minute or so and not show any progress.
 
+::: tip NOTE
+Some Brya-based boards may require extra steps to flash reliably via SuzyQ (confirmed for KANO, BANSHEE, XOL).
+1. With CCD enabled, access the EC console: 
+      * `sudo minicom -D /dev/ttyUSB2`
+2. In the EC terminal, shut down the AP:
+      * `apshutdown`
+3. Wait 5 seconds.
+4. In the EC terminal, enable the S5 rails (the exact command may differ; use `gpioget` to find the correct argument for `gpioset`):
+      * `gpioset en_S5_rails 1`
+5. Flash using a modified flashrom command:
+      * `sudo flashrom -p raiden_debug_spi:target=AP,custom_rst=True -w <filename> --ifd -i bios -N`
+:::
+
 2. Disable software write-protect and clear wp-range (UEFI first-time flash only)
 
     This step is only necessary when flashing the UEFI Full ROM firmware on a device running stock firmware which has not previously been flashed. It is necessary for the UEFI firmware to boot properly. Run the following commands:
