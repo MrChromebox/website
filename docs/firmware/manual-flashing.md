@@ -145,7 +145,7 @@ If your current firmware is from the Firmware Utility Script:
 
 If your current firmware is stock ChromeOS firmware:
 ```bash
-./gbb_utility backup.rom --get --hwid > hwid.txt
+./gbb_utility backup.rom --get --hwid | sed 's/[^ ]* //' > hwid.txt
 ```
 
 Add HWID to your custom ROM:
