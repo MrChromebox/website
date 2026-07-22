@@ -24,7 +24,7 @@
     "launch-editor": "2.14.1",
     "serialize-javascript": "^7.0.5",
     "uuid": "14.0.0",
-    "webpack-dev-server": "5.2.5"
+    "webpack-dev-server": "5.2.6"
   },
   "devDependencies": {
     "@vuepress/bundler-webpack": "2.0.0-rc.30",
