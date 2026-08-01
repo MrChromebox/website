@@ -163,6 +163,7 @@ To exit: `CTRL+A` then `K` (minicom), `CTRL+A` then `CTRL+X` (picocom), `CTRL+A`
 
 - [Sparkfun: Servo Micro](https://www.sparkfun.com/products/15879) + proper USB-C cable
 - Search online for "SuzyQable" or "CCD cable"
+- [Fyra Labs SuzyQ Board](https://shop.fyralabs.com/products/suzyq-board)
 - Not all USB-C debug cables work - must be SuzyQable-compatible
 
 ## Comprehensive Debug Bundle (Linux)
