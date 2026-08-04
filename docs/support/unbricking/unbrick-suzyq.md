@@ -8,7 +8,7 @@
 These instructions do not apply to any device which is locked/managed. Enterprise and/or EDU enrollment locks out CCD functionality completely.
 :::
 
-* A USB-C debug cable ([aka Suzy-Q cable](https://www.sparkfun.com/products/retired/14746))
+* A USB-C debug cable ([aka Suzy-Q cable](https://shop.fyralabs.com/products/suzyq-board))
 * The device must have the CCD flags factory reset (as per instructions to [Disable write protect with a SuzyQable](/docs/firmware/wp/disabling.html#using-closed-case-debugging-ccd-using-a-suzyqable)), or the battery must be unplugged/disconnected from the mainboard.
 * Another device running Linux, preferably a current Debian/Ubuntu-based distro
 
