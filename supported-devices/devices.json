@@ -400,7 +400,8 @@
                     "Wizpig BSW Chromebook",
                     "Haier Convertible Chromebook 11 C"
                 ],
-                "boardname": "WIZPIG"
+                "boardname": "WIZPIG",
+                "wpMethod": "<a href=\"/images/wp/wizpig_wp_screw.png\" class=\"internal\" title=\"wizpig_wp_screw.png\" target=\"_blank\">screw</a>"
             }
         ]
     },
