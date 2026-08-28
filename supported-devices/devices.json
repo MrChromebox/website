@@ -1687,6 +1687,12 @@
             },
             {
                 "device": [
+                    "HP Elite 6 G2i Chromebook Plus"
+                ],
+                "boardname": "CABOC"
+            },
+            {
+                "device": [
                     "Google Meet Series Two"
                 ],
                 "boardname": "CONSTITUTION",
@@ -1769,9 +1775,10 @@
             },
             {
                 "device": [
+                    "AOPEN Chromebox 4",
+                    "Centerm Chromebox D661",
                     "CTL Chromebox CBx3",
-                    "Promethean Chromebox 3",
-                    "Centerm Chromebox D661"
+                    "Promethean Chromebox 3"
                 ],
                 "boardname": "LISBON"
             },
@@ -1879,7 +1886,7 @@
             },
             {
                 "device": [
-                    "Galaxy Chromebook Plus"
+                    "Samsung Galaxy Chromebook Plus"
                 ],
                 "boardname": "XOL"
             },
@@ -2051,6 +2058,24 @@
             },
             {
                 "device": [
+                    "HP Chromebook Plus x360 14c-ce0xxx"
+                ],
+                "boardname": "KALADIN"
+            },
+            {
+                "device": [
+                    "HP Chromebook 14a-nk0xxx"
+                ],
+                "boardname": "KELSIER"
+            },
+            {
+                "device": [
+                    "Samsung Galaxy Chromebook 3 360"
+                ],
+                "boardname": "MELIKS"
+            },
+            {
+                "device": [
                     "Lenovo 500e Yoga Chromebook Gen 4",
                     "Lenovo Flex 3i Chromebook 12\" / IdeaPad Flex 3i Chromebook 12\""
                 ],
@@ -2061,6 +2086,12 @@
                     "Lenovo 100e Chromebook Gen 4"
                 ],
                 "boardname": "PUJJO1E"
+            },
+            {
+                "device": [
+                    "Lenovo Chromebook 100e Gen 5"
+                ],
+                "boardname": "PUJJOCENTO"
             },
             {
                 "device": [
@@ -2082,10 +2113,22 @@
             },
             {
                 "device": [
+                    "Lenovo Chromebook 500e 2-in-1 Gen 5"
+                ],
+                "boardname": "PUJJOLO"
+            },
+            {
+                "device": [
                     "Lenovo Chromebook Plus 2-in-1 14ITN10",
                     "Lenovo Chromebook 2-in-1 14ITN10"
                 ],
                 "boardname": "PUJJONIRU"
+            },
+            {
+                "device": [
+                    "Lenovo Chromebook 15"
+                ],
+                "boardname": "PUJJOQUINCE"
             },
             {
                 "device": [
@@ -2100,6 +2143,12 @@
                     "Lenovo 14e Chromebook Gen 3"
                 ],
                 "boardname": "PUJJOTEEN15W"
+            },
+            {
+                "device": [
+                    "Lenovo Chromebook 14"
+                ],
+                "boardname": "PUJJOTEENLO"
             },
             {
                 "device": [
@@ -2207,6 +2256,24 @@
                     "Dell Chromebook 3120 2-in-1"
                 ],
                 "boardname": "ULDREN360"
+            },
+            {
+                "device": [
+                    "Dell Chromebook 11 CC11260"
+                ],
+                "boardname": "ULDRENITE"
+            },
+            {
+                "device": [
+                    "Dell Chromebook 11 CC11260 2-in-1"
+                ],
+                "boardname": "ULDRENITE360"
+            },
+            {
+                "device": [
+                    "Dell Chromebook 14 CC14260"
+                ],
+                "boardname": "ULDRINO"
             },
             {
                 "device": [
