@@ -1823,12 +1823,6 @@
             },
             {
                 "device": [
-                    "Acer Chromebook Plus Enterprise 515 (CBE595-2/2T)"
-                ],
-                "boardname": "OMNIKNIGHT"
-            },
-            {
-                "device": [
                     "Acer Chromebook Plus Enterprise 515 (CBE595-2/CBE595-2T)"
                 ],
                 "boardname": "ONMIKNIGHT",
@@ -2011,7 +2005,6 @@
             },
             {
                 "device": [
-                    "Gothrax",
                     "Positivo Chromebook N2422",
                     "Centerm Chromebook M612B",
                     "Aiwa Chromebook S11",
@@ -2023,7 +2016,6 @@
             {
                 "device": [
                     "Centerm Chromebook M612A",
-                    "GothraxCS",
                     "Positivo Chromebook N2420",
                     "Multi Chromebook M11C-PC926"
                 ],
