@@ -112,10 +112,10 @@ The **WP_RO** region at the bottom of the layout is read-only, enforced by [hard
 
 Write protection is a security feature that prevents unauthorized modification of critical firmware regions. It consists of two components:
 
-1. **Hardware Write Protection (HW WP)**: A physical mechanism (screw, jumper, or battery disconnect) that prevents firmware modification at the hardware level
-2. **Software Write Protection (SW WP)**: A software flag that can be disabled in Developer Mode (when HW WP is also disabled)
+1. **Hardware Write Protection (HW WP)**: Prevents changing the flash chip's software WP registers. On boards with no Google Security Chip (GSC) this is a screw, jumper, or switch. On CR50 it is usually battery sense, a jumper, or a screw (or a SuzyQable). On Ti50 the GSC drives `!WP`; disable it with `gsctool` or a SuzyQable — there is no battery or jumper WP method.
+2. **Software Write Protection (SW WP)**: Registers on the flash chip that mark ranges read-only. You can only change them while HW WP is off.
 
-To perform certain firmware modifications (installing UEFI Full ROM, setting GBB flags, restoring stock firmware), hardware write protection **must** be disabled. See the [Write Protection documentation](/docs/firmware/wp/index.md) for detailed information.
+To install UEFI Full ROM, set GBB flags, or restore stock firmware, hardware write protection **must** be disabled. On Ti50 you must also set `AllowUnverifiedRo=always` first. See [Write Protection](/docs/firmware/wp/index.md) and [Disabling Write Protection](/docs/firmware/wp/disabling.md).
 
 ## Firmware Modification Types
 
@@ -134,7 +134,7 @@ When we talk about updating or modifying the firmware on ChromeOS devices, we're
 
 - **Completely replaces** the stock firmware with custom coreboot + UEFI firmware
 - **Removes** ChromeOS capability - device will only boot alternate OSes
-- **Requires** disabling hardware write protection
+- **Requires** disabling hardware write protection (and on Ti50, `AllowUnverifiedRo=always`)
 - Provides better hardware support and functionality for Linux/Windows
 - Automatically preserves critical data (HWID, VPD, serial number)
 - See [Firmware Types: UEFI Full ROM](/docs/firmware/types.md#uefi-full-rom-firmware) for details
@@ -152,7 +152,7 @@ Not sure which firmware option is right for you? Here's a quick decision guide:
 
 ### Choose RW_LEGACY if you want to:
 - **Keep ChromeOS** and dual-boot with Linux
-- Avoid hardware modifications (no need to disable write protection)
+- Avoid opening the case or disabling write protection
 - Have a simple, reversible setup
 - Test Linux compatibility before fully committing
 
