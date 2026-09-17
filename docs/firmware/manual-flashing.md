@@ -4,19 +4,17 @@
 Flashing your own firmware has the potential to brick your device. Do not do this unless you are sure you know what you're doing **and have a way to recover from a bad flash**. Some level of knowledge with using the Linux command line is required.
 :::
 
+::: warning USE THE SCRIPT
+If the device still boots, it is not recommended to flash manually — not even a self-compiled image. Run the [Firmware Utility Script](/docs/fwscript.md) and choose **Flash Custom Firmware**. Manual `flashrom` on a running machine is how people skip backups and lose VPD/HWID, or otherwise get in trouble.
+
+This page is really just to document what the script does under the hood.
+:::
+
 ## When to Flash Manually
 
-Most users should use the [Firmware Utility Script](/docs/fwscript.md) to flash firmware, as it handles all the complexity automatically, including custom firmware builds via the "Flash Custom Firmware" option. Manual flashing is appropriate for:
+Unbricking: the device will not boot, so the script cannot run. Use a [SuzyQable](/docs/support/unbricking/unbrick-suzyq.md), [CH341A](/docs/support/unbricking/unbrick-ch341a.md), or similar external programmer.
 
-- **Script unavailable**: Running an OS/environment where the script doesn't work (e.g., non-Linux systems)
-- **Advanced debugging**: Troubleshooting firmware issues that require fine-grained control over the flashing process
-- **External flashing**: Using a hardware programmer (CH341A, Raspberry Pi, flashrom-compatible device) to recover a bricked device
-- **Educational purposes**: Learning how the flashing process works under the hood
-- **Scripted automation**: Integrating firmware flashing into custom deployment workflows
-
-::: tip RECOMMENDATION
-If you're installing MrChromebox firmware or flashing custom builds, use the [Firmware Utility Script](/docs/fwscript.md) instead. It's safer, faster, handles data preservation automatically, and supports custom firmware via the "Flash Custom Firmware" option.
-:::
+The in-OS procedure below is the same flow the script uses (write-protect, backup, preserve VPD/HWID/MRC, flashrom). Keep it as a reference; do not follow it as an install guide when the script is an option.
 
 ## Prerequisites
 
@@ -58,14 +56,14 @@ AMD devices don't use Intel's IFD layout, so they don't need the `--ifd` or `-i 
 
 ## Platform-Specific Warnings
 
-### Ti50 Devices (2022 and newer)
+### Ti50 Devices (generally 2023 and newer)
 
-Devices with the Ti50 security chip perform additional RO firmware verification. **Critical warnings:**
+Devices with the Ti50 Google Security Chip (GSC) verify the AP's read-only firmware and the software WP registers at boot. **Critical warnings:**
 
-- If RO verification fails, the device **will not boot** - not even to recovery mode
-- External flashing hardware (SuzyQable or CH341A) will be required for recovery
+- Set `AllowUnverifiedRo=always` with `gsctool` (CCD must be Open) **before** you flash Full ROM or change software WP. Battery disconnect will not help.
+- If RO verification fails, the device **will not boot** — not even to Recovery Mode. A 15-minute key sequence can get you back; see [Ti50 recovery](/docs/firmware/wp/disabling.md#recovering-a-device-bricked-by-ro-verification).
+- If UEFI is already on the chip, ChromeOS `gsctool` is gone. Permanent disable is then SuzyQ console (`ccd set AllowUnverifiedRo Always`) or a CH341A if the image itself is bad.
 - Always create a backup before flashing
-- Ensure your custom firmware is compatible with Ti50 RO verification
 
 See [Write Protection: Ti50 Considerations](/docs/firmware/wp/index.md#ti50-considerations) for detailed information.
 
@@ -75,7 +73,7 @@ Some newer devices may require additional steps or have specific quirks. Check t
 
 ## Manual Flashing Procedure
 
-The steps below assume you are flashing an image named `coreboot.rom`; substitute the filename as necessary.
+The steps below assume you are flashing an image named `coreboot.rom`; substitute the filename as necessary. This is the in-OS flow the Firmware Utility Script performs; for a brick, use the [SuzyQable](/docs/support/unbricking/unbrick-suzyq.md) or [CH341A](/docs/support/unbricking/unbrick-ch341a.md) guides instead.
 
 ### Step 1: Download Required Tools
 
@@ -241,7 +239,7 @@ sudo dmidecode -t bios
 - [Unbricking Guide](/docs/support/unbricking/index.md) - Recovery from failed flash
 - [Compiling Firmware](/docs/support/compiling.md) - Build your own firmware from source
 - [Flashrom Documentation](https://flashrom.org/Flashrom) - Official flashrom documentation
-- [Write Protection](/docs/firmware/wp/index.md) - Understanding and disabling WP
+- [Write Protection](/docs/firmware/wp/disabling.md) - Understanding and disabling WP
 
 ## External Flashing
 
