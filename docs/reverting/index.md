@@ -32,7 +32,7 @@ If you only flashed RW_LEGACY firmware to your device, there is no need to flash
 ### Understanding Firmware
 - **[Firmware Types](/docs/firmware/types.md)** - What you're reverting from (RW_LEGACY vs UEFI)
 - **[Firmware Utility Script](/docs/fwscript.md)** - Script's backup and restore functions
-- **[Write Protection](/docs/firmware/wp/index.md)** - Required for stock firmware restoration
+- **[Write Protection](/docs/firmware/wp/disabling.md)** - Required for stock firmware restoration
 
 ### Troubleshooting
 - **[Known Issues](/docs/known-issues.md)** - EOL device restrictions and common problems

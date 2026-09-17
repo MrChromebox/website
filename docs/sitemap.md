@@ -105,7 +105,7 @@ Complete overview of all available documentation on MrChromebox.tech.
 - **Check device compatibility** → [Supported Devices](/docs/supported-devices.md)
 - **Get help with an issue** → [Help & Support](/docs/support/index.md)
 - **Understand firmware types** → [Firmware Types](/docs/firmware/types.md)
-- **Disable write protection** → [Write Protection Guide](/docs/firmware/wp/index.md)
+- **Disable write protection** → [Disabling Write Protection](/docs/firmware/wp/disabling.md)
 
 ## Documentation by Experience Level
 

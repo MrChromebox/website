@@ -154,6 +154,6 @@ How boot modes interact with different firmware types:
 
 - **[Firmware Types](/docs/firmware/types.md)**: Understanding RW_LEGACY vs UEFI Full ROM
 - **[Firmware Utility Script](/docs/fwscript.md)**: Tool for installing and managing firmware
-- **[Write Protection](/docs/firmware/wp/index.md)**: Understanding and disabling hardware WP
+- **[Write Protection](/docs/firmware/wp/disabling.md)**: Understanding and disabling hardware WP
 - **[Getting Started](/docs/getting-started.md)**: Quick start guide for dual-booting or replacing ChromeOS
 - **[Supported Devices](/docs/supported-devices.md)**: Check what firmware types your device supports
