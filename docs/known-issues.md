@@ -50,7 +50,7 @@ RW_LEGACY firmware has inherent limitations compared to UEFI Full ROM:
 - Backlight functions normally once the OS loads.
 - Workaround: Use UEFI Full ROM firmware for proper backlight control throughout the boot process.
 
-### Google Security Chip (CR50/Ti50) Issues
+### Google Security Chip (GSC) Issues
 
 **TPM 2.0 implementation (all GSC devices — CR50 and Ti50):**
 - The TPM 2.0 interface exposed by the Google Security Chip is **not a full TPM 2.0 implementation**. It implements a subset of the TPM 2.0 specification required for ChromeOS.
@@ -59,15 +59,16 @@ RW_LEGACY firmware has inherent limitations compared to UEFI Full ROM:
   - **Linux FDE with GRUB**: Full-disk encryption setups that use GRUB to unlock LUKS with a TPM-bound key (e.g. `grub2-emu` or TPM-based key sealing in the boot path) depend on TPM commands that the GSC does not provide. Such configurations are not supported.
 - **Workaround**: Use software-only or password-based disk encryption (e.g. LUKS with a passphrase, or Bitlocker with a recovery key / PIN only) if you need encryption on MrChromebox firmware. The GSC TPM is suitable for ChromeOS and for basic use, but not for TPM-bound disk encryption under Windows or Linux.
 
-**Ti50 Devices (2022 and newer):**
-- **RO Firmware Verification**: Ti50 performs additional verification of RO firmware regions. If RO verification fails, the device will not boot, even to recovery mode.
-- **Recovery Requirement**: Failed RO verification requires physical intervention - either external flashing hardware or a SuzyQable cable.
-- **Affected Actions**: Installing UEFI Full ROM, restoring stock firmware, or any operation that modifies normally write-protected regions.
+**Ti50 Devices (generally 2023 and newer):**
+- **RO Firmware Verification**: Ti50 checks the AP's read-only firmware and the software WP registers at boot. If either check fails, the device will not boot, even to Recovery Mode.
+- **You must disable it first**: set `AllowUnverifiedRo=always` with `gsctool` (or a SuzyQable) **before** flashing Full ROM or changing software WP. Battery disconnect does not turn this off.
+- **Recovery**: a key sequence buys 15 minutes (Refresh/`F2` on Chromebooks). Permanently fix it on the GSC in that window. If UEFI is already flashed, ChromeOS `gsctool` is gone — use a SuzyQable. A CH341A is only needed if the flash image itself is bad.
+- **Affected actions**: installing UEFI Full ROM, restoring stock firmware, or any operation that modifies normally write-protected regions.
 
 **Risk Mitigation:**
 - Always create a firmware backup before flashing UEFI Full ROM on Ti50 devices
 - Understand that reverting to stock firmware carries higher risk on Ti50 devices
-- Have recovery hardware available (SuzyQable or CH341A programmer) before attempting firmware modifications
+- Have a SuzyQable (or CH341A) available before attempting firmware modifications
 
 See [Write Protection: Ti50 Considerations](/docs/firmware/wp/index.md#ti50-considerations) for detailed information.
 
