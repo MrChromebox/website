@@ -85,9 +85,11 @@ See [Firmware Types](/docs/firmware/types.md) for detailed comparison.
 
 * **RW_LEGACY firmware:** No. It does not require disabling firmware write-protect.
 
-* **UEFI Full ROM firmware:** Yes, in most cases. You need to disable hardware write-protect, which usually requires opening the device to remove a screw, disconnect the battery, bridge a jumper, or use a SuzyQ cable with CCD.
+* **UEFI Full ROM firmware:** You need hardware write-protect off. Whether that means opening the case depends on the chip:
+  * **No Google Security Chip (GSC) / CR50:** usually yes — screw, battery disconnect, or jumper. A SuzyQable is the no-disassembly option.
+  * **Ti50:** no. Use `gsctool` from ChromeOS. A SuzyQable is optional (worth having if you want an easy unbrick path).
 
-See [Disabling Write Protection](/docs/firmware/wp/disabling.md) for details on your specific device.
+See [Disabling Write Protection](/docs/firmware/wp/disabling.md) for your board.
 
 ## Firmware Questions
 
@@ -95,7 +97,7 @@ See [Disabling Write Protection](/docs/firmware/wp/disabling.md) for details on 
 
 * **RW_LEGACY** is for dual-booting ChromeOS + Linux. It updates only the legacy boot payload, leaves ChromeOS intact, doesn't require opening your device, and carries zero risk of bricking. However, it has limitations like no NVRAM support (boot order can't be saved between boots).
 
-* **UEFI Full ROM** completely replaces the stock firmware, removes ChromeOS entirely, requires opening the device to disable write-protect, and carries a small bricking risk. It provides full UEFI functionality, better OS support, and turns your Chromebook into a regular PC.
+* **UEFI Full ROM** completely replaces the stock firmware, removes ChromeOS entirely, requires disabling write-protect, and carries a small bricking risk. It provides full UEFI functionality, better OS support, and turns your Chromebook into a regular PC.
 
 See [Firmware Types](/docs/firmware/types.md) for detailed comparison.
 
@@ -105,9 +107,9 @@ See [Firmware Types](/docs/firmware/types.md) for detailed comparison.
 
 ### Can I update my UEFI firmware without disabling write-protect again?
 
-* Yes! Once you've disabled firmware write-protect to install UEFI firmware, the **software** write-protect remains disabled even if you reconnect the battery or reinstall the WP screw. You can safely update your firmware anytime without reopening the device.
+* Yes. Once software write-protect is off, it stays off even if hardware WP comes back (battery reconnected, WP screw back in, or the GSC reboots after `gsctool -a -w disable`). You can update UEFI without repeating the hardware WP dance.
 
-The script automatically handles all write-protect requirements during updates.
+Hardware WP from `gsctool` is only off until the GSC reboots; that does not matter for later updates because the script only needs software WP off. A SuzyQ `wp disable atboot` is optional insurance, not required for updates.
 
 ### My device is taking forever to boot after flashing UEFI firmware - is it bricked?
 
@@ -123,17 +125,22 @@ If you see a completely black screen with nothing, wait 2 minutes, then try a ha
 
 ### I flashed UEFI firmware on my Ti50 device and now it won't boot - what happened?
 
-* Ti50 devices (2023+) have AP RO Firmware Verification that must be disabled before flashing custom firmware. If you didn't disable it, your device will refuse to boot.
+* Ti50 devices (generally 2023+) verify the AP's read-only firmware (and the software WP registers) at boot. If you flash Full ROM without setting `AllowUnverifiedRo=always` first, the Google Security Chip (GSC) holds the AP in reset. The device will not boot, including Recovery Mode.
 
 **To recover:**
-1. Press and hold Power + tap Refresh/F3 twice + release Power
-2. Repeat step 1 a second time
-3. This temporarily disables RO verification for 15 minutes
-4. Quickly boot Linux and run the Firmware Utility Script
-5. Properly disable RO verification: `gsctool -a -I AllowUnverifiedRo:always`
-6. Reboot normally
 
-See [Disabling Write Protection](/docs/firmware/wp/disabling.md#disable-ap-ro-firmware-verification) for details.
+1. Temporarily disable RO verification for 15 minutes:
+   * **Chromebooks:** hold Power, tap Refresh (`F2`) twice, release Power. Do the whole sequence a second time.
+   * **Chromeboxes:** same, but tap the recovery pinhole instead of Refresh.
+   * **Tablets:** see [the WP page](/docs/firmware/wp/disabling.md#recovering-a-device-bricked-by-ro-verification).
+2. That window does **not** repair a bad flash image. If the firmware itself is corrupt, you still need a SuzyQable or CH341A.
+3. Permanently disable verification **on the GSC** before the 15 minutes expire:
+   * If ChromeOS still boots: CCD must be Open, then `sudo gsctool -a -I AllowUnverifiedRo:always` (press Power when asked).
+   * If you already flashed UEFI, ChromeOS `gsctool` is gone. Use a SuzyQable on the GSC console (`/dev/ttyUSB0`): `ccd set AllowUnverifiedRo Always` (or `ccd reset factory`).
+
+Do not boot a Linux live USB and expect to run ChromeOS `gsctool` from there.
+
+See [Disabling Write Protection](/docs/firmware/wp/disabling.md#recovering-a-device-bricked-by-ro-verification) for the full sequences.
 
 ### I'm trying to exit Developer Mode, but when I press space it says "WARNING: TONORM prohibited by GBB_FORCE_DEV_SWITCH_ON" — how do I fix this?
 
