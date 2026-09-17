@@ -2,23 +2,25 @@
 
 ## Requirements
 
-* A ChromeOS device with CCD (closed-case debugging) enabled on one of the USB-C ports. If your device uses CR50 for the firmware write protection, then it has CCD capability.
+* A ChromeOS device with CCD (closed-case debugging) on one of the USB-C ports. CR50 and Ti50 boards have this; 2016-and-earlier boards (no GSC) do not.
 
 ::: warning NOTE
 These instructions do not apply to any device which is locked/managed. Enterprise and/or EDU enrollment locks out CCD functionality completely.
 :::
 
 * A USB-C debug cable ([aka Suzy-Q cable](https://shop.fyralabs.com/products/suzyq-board))
-* The device must have the CCD flags factory reset (as per instructions to [Disable write protect with a SuzyQable](/docs/firmware/wp/disabling.html#using-closed-case-debugging-ccd-using-a-suzyqable)), or the battery must be unplugged/disconnected from the mainboard.
+* The device must have CCD factory-reset ([Disable write protect with a SuzyQable](/docs/firmware/wp/disabling.md#using-closed-case-debugging-ccd-using-a-suzyqable)). That is what you want.
+
+  If you skipped that step: on **CR50**, disconnecting the battery from the mainboard often lets CCD/WP proceed anyway. On **Ti50**, battery disconnect does not disable WP or RO verification, and it will not unlock `FlashAP` if CCD was never factory-reset — use a [CH341A](/docs/support/unbricking/unbrick-ch341a.md) (or the [15-minute RO-verify sequence](/docs/firmware/wp/disabling.md#recovering-a-device-bricked-by-ro-verification) if the image is fine and the GSC is just holding the AP in reset).
 * Another device running Linux, preferably a current Debian/Ubuntu-based distro
 
 ## Hardware Disassembly
 
-As above, this is only needed if you failed to factory reset the CCD flags if you didn't follow the guide to [Disable write protect with a SuzyQable](/docs/firmware/wp/disabling.html#using-closed-case-debugging-ccd-using-a-suzyqable). While this is somewhat device-specific, the main points are the same:
+Only needed if CCD was never factory-reset **and** you are on a CR50 board where disconnecting the battery is enough. Ti50 users who skipped `ccd reset factory` should not expect battery disconnect to make SuzyQ flashing work.
 
 * Disconnect all external power
 * Remove bottom cover (screws are often located under rubber feet or strips)
-  - Some Chromebooks open up through the back and some through the keyboard, and as mentioned in [Disabling write protect via Battery](/docs/firmware/wp/disabling.html#disconnecting-the-battery). On keyboard, you have to pry it out and remove a ribbon wire under the keyboard.
+  - Some Chromebooks open up through the back and some through the keyboard; see [Disconnecting the Battery](/docs/firmware/wp/disabling.md#disconnecting-the-battery). On keyboard-open boards you have to pry the keyboard and disconnect a ribbon.
 * Disconnect the internal battery
 
 ## Prepping to Flash

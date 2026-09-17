@@ -25,7 +25,7 @@ While this is somewhat device-specific, the main points are the same:
 
 * Disconnect all external power
 * Remove bottom cover (screws are often located under rubber feet or strips)
-  * Some Chromebooks open up through the back and some through the keyboard, and as mentioned in [Disabling write protect via Battery](/docs/firmware/wp/disabling.html#disconnecting-the-battery). On keyboard, you have to pry it out and remove a ribbon wire under the keyboard.
+  * Some Chromebooks open up through the back and some through the keyboard; see [Disconnecting the Battery](/docs/firmware/wp/disabling.md#disconnecting-the-battery). On keyboard-open boards you have to pry the keyboard and disconnect a ribbon.
 * Disconnect the internal battery (for Chromeboxes, disconnect the small CMOS battery)
 * Locate the SPI flash chip
 
