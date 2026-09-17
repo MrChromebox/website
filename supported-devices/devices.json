@@ -1689,7 +1689,8 @@
                 "device": [
                     "HP Elite 6 G2i Chromebook Plus"
                 ],
-                "boardname": "CABOC"
+                "boardname": "CABOC",
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html#ti50-considerations\" title=\"Firmware Write Protect\">Ti50 (gsctool / SuzyQ)</a>"
             },
             {
                 "device": [
@@ -1746,14 +1747,14 @@
                     "Acer Chromebook Plus 514"
                 ],
                 "boardname": "JUBILANT",
-                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50/Ti50 (SuzyQ)</a>"
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html#ti50-considerations\" title=\"Firmware Write Protect\">Ti50 (gsctool / SuzyQ)</a>"
             },
             {
                 "device": [
                     "Acer Chromebook Plus 516"
                 ],
                 "boardname": "JUBILEUM",
-                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50/Ti50 (SuzyQ)</a>"
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html#ti50-considerations\" title=\"Firmware Write Protect\">Ti50 (gsctool / SuzyQ)</a>"
             },
             {
                 "device": [
@@ -1787,7 +1788,7 @@
                     "Lenovo Chromebook Plus 2-in-1"
                 ],
                 "boardname": "LOTSO",
-                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50/Ti50 (SuzyQ)</a>"
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html#ti50-considerations\" title=\"Firmware Write Protect\">Ti50 (gsctool / SuzyQ)</a>"
             },
             {
                 "device": [
@@ -1893,7 +1894,7 @@
         ]
     },
     "Intel Alderlake-N": {
-        "default_wpmethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50/Ti50 (SuzyQ)</a>",
+        "default_wpmethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html#ti50-considerations\" title=\"Firmware Write Protect\">Ti50 (gsctool / SuzyQ)</a>",
         "default_rwLegacy": true,
         "default_fullrom": true,
         "devices": [
@@ -2283,8 +2284,7 @@
                 "device": [
                     "HP Chromebook Plus 14a-nf0"
                 ],
-                "boardname": "YAHIKO",
-                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50/Ti50 (SuzyQ)</a>, <a href=\"/images/wp/yahiko_wp_jumper.jpg\" class=\"internal\" title=\"yahiko_wp\" target=\"_blank\">jumper</a>"
+                "boardname": "YAHIKO"
             },
             {
                 "device": [
@@ -2313,7 +2313,7 @@
         ]
     },
     "Intel Meteorlake": {
-        "default_wpmethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50/Ti50 (SuzyQ)</a>",
+        "default_wpmethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html#ti50-considerations\" title=\"Firmware Write Protect\">Ti50 (gsctool / SuzyQ)</a>",
         "default_rwLegacy": true,
         "default_fullrom": true,
         "devices": [
@@ -2484,7 +2484,7 @@
         ]
     },
     "AMD Mendocino": {
-        "default_wpmethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50/Ti50 (SuzyQ)</a>, jumper",
+        "default_wpmethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html#ti50-considerations\" title=\"Firmware Write Protect\">Ti50 (gsctool / SuzyQ)</a>",
         "default_rwLegacy": true,
         "default_fullrom": true,
         "devices": [
@@ -2498,8 +2498,7 @@
                 "device": [
                     "Asus Chromebook CM34 Flip"
                 ],
-                "boardname": "FROSTFLOW",
-                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50/Ti50 (SuzyQ)</a>, <a href=\"/images/wp/frostflow_wp_jumper.jpg\" class=\"internal\" title=\"frostflow_wp\" target=\"_blank\">jumper</a>"
+                "boardname": "FROSTFLOW"
             },
             {
                 "device": [
