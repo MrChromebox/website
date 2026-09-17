@@ -98,8 +98,8 @@ The SuzyQable provides three serial console ports (UARTs):
 minicom -D /dev/ttyUSB0
 ```
 - Google Security Chip console
-- Used for CCD unlock, RO verification debugging
-- Required for Ti50 device recovery
+- Used to open CCD, disable WP (`wp disable` / `atboot`), and set `AllowUnverifiedRo`
+- Required for Ti50 device recovery if ChromeOS `gsctool` is gone
 
 **Port 2: CPU Console** (`/dev/ttyUSB1`)
 ```bash
@@ -123,11 +123,20 @@ Standard MrChromebox firmware does not include serial console output by default.
 
 **For coreboot/firmware debugging:**
 
-Compile custom firmware with these options enabled:
+Build with the `--debug` flag on the UEFI build script (replace `redrix` with your board name):
+
+```
+./build-uefi.sh --debug redrix
+```
+
+Or set these options yourself if you are building by hand:
+
 ```
 CONFIG_CONSOLE_SERIAL=y
 CONFIG_EDK2_SERIAL_SUPPORT=y
 ```
+
+`--debug` turns those two options on.
 
 See [Compiling Firmware](/docs/support/compiling.md) for build instructions.
 
@@ -235,51 +244,56 @@ sudo acpidump > acpi-tables.txt
 
 ## Google Security Chip Tools (gsctool)
 
-The `gsctool` utility communicates with the GSC (Google Security Chip - CR50 or Ti50) and is primarily used for CCD (Closed Case Debugging) operations from ChromeOS.
+The `gsctool` utility communicates with the Google Security Chip (GSC — CR50 or Ti50) and is primarily used for CCD (Closed Case Debugging) operations from ChromeOS.
 
 ### What is CCD?
 
-CCD (Closed Case Debugging) allows:
-- Disabling firmware write-protection without opening the device
-- Accessing debug interfaces via SuzyQable
-- Useful for developers and advanced users
+CCD (Closed Case Debugging) is a GSC feature. Opening it (`gsctool -a -o`) lets you change CCD capabilities and, on a SuzyQable, talk to the GSC console.
 
 ::: warning IMPORTANT
-CCD unlock is **not** required for standard firmware modifications. Most users should just remove the WP screw or disconnect the battery per the [Write Protection Guide](/docs/firmware/wp/index.md).
+On **CR50** (and older), you do **not** need to open CCD for a normal Full ROM flash. Use the screw, battery, or jumper for your board.
+
+On **Ti50**, you do. Hardware WP and `AllowUnverifiedRo` are both done with `gsctool` from ChromeOS (or a SuzyQable). Battery disconnect will not help. See [Disabling Write Protection](/docs/firmware/wp/disabling.md).
 :::
 
 ### Using gsctool (ChromeOS only)
 
-**Check CCD status:**
+**Check CCD status and capabilities:**
 ```bash
 sudo gsctool -a -I
 ```
 
-**Unlock CCD:**
+**Check hardware WP state:**
+```bash
+sudo gsctool -a -w
+```
+
+**Open CCD** (not "unlock" — that is `gsctool -a -u`, a weaker state):
 ```bash
 sudo gsctool -a -o
 ```
 
 This initiates a multi-step process:
-1. You'll be prompted multiple times over 5-10 minutes to press the power button
-2. Device will reboot between prompts
-3. After final prompt, device reboots to Verified Boot Mode
-4. CCD will be unlocked, allowing SuzyQable access and WP control
+1. You'll be prompted to press the power button several times over up to about five minutes. Press when it says `Press PP button now!`; wait when it says `Another press will be required!`
+2. After the last press, the device reboots into Verified Boot Mode (Developer Mode is off)
+3. Re-enable Developer Mode. CCD is then **Open**, which allows SuzyQable access and (on Ti50) `gsctool` WP / `AllowUnverifiedRo` commands
 
 **Important CCD notes:**
-- Only works from ChromeOS (not Linux or after flashing UEFI firmware)
+- Only works from ChromeOS (not Linux, and not after flashing UEFI firmware)
 - Requires physical presence (power button presses)
-- Ti50 devices may have additional restrictions
-- Once UEFI firmware is flashed, CCD state is preserved but `gsctool` won't work
+- On Ti50, after CCD is Open you still need `AllowUnverifiedRo:always` and `gsctool -a -w disable` before flashing Full ROM
+- Once UEFI firmware is flashed, CCD **state** is preserved on the GSC but the ChromeOS `gsctool` binary is gone
 
 ### Alternative: Physical Write-Protect Methods
 
-For most users, physical WP methods are simpler:
-- **Remove WP screw** - see device-specific instructions
-- **Disconnect battery** - on devices without WP screw
-- **SuzyQable CCD** - if already unlocked
+These apply to **no-GSC and CR50** boards, not Ti50:
 
-See [Write Protection Guide](/docs/firmware/wp/index.md) for detailed instructions.
+- **Remove WP screw**
+- **Disconnect battery**
+- **Bridge a jumper**
+- **SuzyQable** — after CCD is Open, GSC console `wp disable`
+
+See [Disabling Write Protection](/docs/firmware/wp/disabling.md) for the actual procedures.
 
 ## Additional Resources
 
@@ -287,4 +301,4 @@ See [Write Protection Guide](/docs/firmware/wp/index.md) for detailed instructio
 - **[Chrultrabook Forums](https://forum.chrultrabook.com/)** - Get help with debugging
 - **[Unbricking Guide](/docs/support/unbricking/index.md)** - Recover from failed flashes
 - **[Compiling Firmware](/docs/support/compiling.md)** - Build custom firmware with debug options
-- **[Write Protection](/docs/firmware/wp/index.md)** - Understanding and disabling WP
+- **[Write Protection](/docs/firmware/wp/disabling.md)** - Understanding and disabling WP
