@@ -390,13 +390,13 @@ The script handles all data extraction, validation, and injection automatically.
     * Pre-configured to ensure ChromeOS updates work normally after restoration
     * Tested to verify proper functionality
 
-    **CR50 TPM NVRAM Reset (Automatic):**
+    **GSC TPM NVRAM Reset (Automatic):**
 
-    For devices with CR50 security chips (Apollo Lake and newer), the script automatically resets the TPM and kernel version data stored in the CR50 NVRAM to the factory defaults after successfully restoring stock firmware. This helps prevent "Secure NVRAM (TPM) Initialization" errors that can occur when booting ChromeOS after restoration.
+    For devices with a Google Security Chip (the script's CR50/GSC path — Apollo Lake and newer), the script automatically resets the TPM and kernel version data stored in GSC NVRAM to the factory defaults after successfully restoring stock firmware. This helps prevent "Secure NVRAM (TPM) Initialization" errors that can occur when booting ChromeOS after restoration.
 
     The script automatically:
     
-    * Detects if your device uses a CR50 security chip
+    * Detects if your device uses a GSC (CR50/Ti50) TPM
     * Downloads the `tpmc` utility if needed
     * Resets the TPM data at NVRAM index 0x1007
     * Determines the appropriate kernel version reset command based on the firmware version (FWID)
@@ -409,7 +409,7 @@ The script handles all data extraction, validation, and injection automatically.
     Once stock firmware is restored:
 
     1. The script re-enables software write-protect to prevent recovery issues
-    2. For CR50 devices, the script automatically resets TPM and kernel version data in CR50 NVRAM
+    2. For GSC devices, the script automatically resets TPM and kernel version data in GSC NVRAM
     3. Reboot your device
     4. Create and boot from ChromeOS recovery media to reinstall ChromeOS
     5. After ChromeOS is installed and booted, re-run the Firmware Utility Script
@@ -525,7 +525,7 @@ The Reboot and Power Off options are (hopefully) sufficiently self-explanatory :
 ### Before Using the Script
 - **[Getting Started](/docs/getting-started.md)** - Prerequisites and decision guide
 - **[Supported Devices](/docs/supported-devices.md)** - Check device compatibility
-- **[Write Protection](/docs/firmware/wp/index.md)** - Disabling hardware WP (required for some functions)
+- **[Write Protection](/docs/firmware/wp/disabling.md)** - Disabling hardware WP (required for some functions)
 - **[Boot Modes](/docs/boot-modes/index.md)** - Understanding Developer Mode
 
 ### Understanding Firmware
