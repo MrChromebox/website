@@ -14,7 +14,7 @@
 Some older ChromeOS devices (mostly EOL) use SeaBIOS instead of edk2. All modern ChromeOS devices use edk2.
 :::
 
-**RW_LEGACY** firmware is for users who want to dual-boot ChromeOS + Linux, or users who want to run Linux without having to open the device/disable the firmware write-protect (and are ok with the NVRAM limitation).
+**RW_LEGACY** firmware is for users who want to dual-boot ChromeOS + Linux, or who want to run Linux without disabling firmware write-protect (and are ok with the NVRAM limitation).
 
 
 ##   **BOOT_STUB** (now deprecated; listed for historical purposes only)
@@ -45,7 +45,7 @@ Some older ChromeOS devices (mostly EOL) use SeaBIOS instead of edk2. All modern
     *   Requires installation of a UEFI-compatible OS after flashing
     *   Essentially turns your ChromeOS device into a "regular" PC / laptop
 
-The **(UEFI) Full ROM** firmware is the best option for all users who no longer need/want to run ChromeOS (ie, want to run Linux/Windows exclusively), and who don't mind opening their device to disable the firmware write-protect.
+The **(UEFI) Full ROM** firmware is the best option for users who no longer need/want to run ChromeOS (ie, want to run Linux/Windows exclusively), and who can disable hardware write-protect. That is a screw, jumper, or battery disconnect on older boards; on Ti50 it is `gsctool` from ChromeOS (no case opening). See [Disabling Write Protection](/docs/firmware/wp/disabling.md).
 
 
 
@@ -102,7 +102,7 @@ See [Compiling Your Own Firmware](/docs/support/compiling.md) for full info.
 ### Installing Firmware
 - **[Firmware Utility Script](/docs/fwscript.md)** - Installing RW_LEGACY or UEFI Full ROM
 - **[Flashing Firmware](/docs/firmware/flashing-firmware.md)** - Step-by-step installation guide
-- **[Write Protection](/docs/firmware/wp/index.md)** - Required for UEFI Full ROM installation
+- **[Write Protection](/docs/firmware/wp/disabling.md)** - Required for UEFI Full ROM installation
 
 ### Advanced Topics
 - **[Updating Firmware](/docs/firmware/updating-firmware.md)** - Updating existing UEFI firmware
