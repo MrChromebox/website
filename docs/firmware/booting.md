@@ -59,7 +59,7 @@ Below that you will find several menu options:
 * `Reboot`: selecting this will reboot the device
 
 ::: tip NOTE
-The TPM management functions are currently only available for TPM 1.2 devices; they are not currently available for devices which use Google's security chip (GSC/CR50/Ti50) for TPM 2.0.
+The TPM management functions are currently only available for TPM 1.2 devices; they are not currently available for devices which use the Google Security Chip (GSC — CR50 or Ti50) for TPM 2.0.
 :::
 
 
