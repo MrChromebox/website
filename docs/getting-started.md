@@ -81,7 +81,7 @@ Use this decision tree to determine the right path for your needs:
     Special Cases:
     ┌────────────────────────────────────────────────────────────┐
     │ • EOL Device? → UEFI Full ROM only (RW_LEGACY blocked)     │
-    │ • Ti50 Device (2022+)? → Extra caution reverting to stock  │
+    │ • Ti50 (2023+)? → gsctool + AllowUnverifiedRo before flash │
     │ • Need Windows? → Must use UEFI Full ROM                   │
     │ • Just testing Linux? → RW_LEGACY is simpler, reversible   │
     └────────────────────────────────────────────────────────────┘
@@ -129,9 +129,10 @@ If you want to wipe ChromeOS from your device and replace it with Linux or Windo
 * **BACKUP YOUR DATA** - You will lose access to all ChromeOS data after flashing
 * Verify your device has [UEFI Full ROM support](/docs/supported-devices.md)
 * Put your device in [Developer Mode](/docs/boot-modes/developer.md)
-* Disable the device's **hardware** [firmware write protection](/docs/firmware/wp/index.md)
+* Disable the device's **hardware** [firmware write protection](/docs/firmware/wp/disabling.md)
     * Check the [Supported Devices page](/docs/supported-devices.md) for your device's WP method
-    * Methods include: WP screw removal, battery disconnect, jumper bridging, or CCD/SuzyQable
+    * **CR50 / no Google Security Chip (GSC):** WP screw, battery disconnect, jumper, or a SuzyQable
+    * **Ti50:** `gsctool` from ChromeOS (no case opening). A SuzyQable is optional. See [Disabling Write Protection](/docs/firmware/wp/disabling.md#ti50-considerations).
 * Open a terminal/shell:
     * **ChromeOS:** Press `[CTRL+ALT+F2]` at login screen, login as `chronos`
     * **Linux:** Open your distribution's terminal application
@@ -160,7 +161,7 @@ Common first-time problems and where to find solutions:
 - **Can't enter Developer/Recovery Mode** → See [Known Issues: Boot Mode Issues](/docs/known-issues.md#cant-enter-developer-mode--recovery-mode)
 - **Script won't run (R117+)** → See [FAQ: VT2 Terminal Requirement](/docs/faq.md#why-cant-i-run-sudo-commands-in-crosh-anymore)
 - **Device won't boot after flash** → See [Known Issues: Device Won't Boot](/docs/known-issues.md#device-wont-boot-after-firmware-flash)
-- **Write protection issues** → See [Write Protection Guide](/docs/firmware/wp/index.md)
+- **Write protection issues** → See [Disabling Write Protection](/docs/firmware/wp/disabling.md)
 - **Lost firmware backup** → See [Reverting to Stock](/docs/reverting/index.md)
 - **Other issues** → Check [FAQ](/docs/faq.md) and [Known Issues](/docs/known-issues.md)
 
@@ -204,7 +205,7 @@ When asking for help, always include:
 - **[Firmware Overview](/docs/firmware/index.md)** - Understanding ChromeOS firmware architecture
 - **[Firmware Types](/docs/firmware/types.md)** - RW_LEGACY vs UEFI Full ROM detailed comparison
 - **[Firmware Utility Script](/docs/fwscript.md)** - Complete script feature documentation
-- **[Write Protection](/docs/firmware/wp/index.md)** - How to disable hardware write protection
+- **[Write Protection](/docs/firmware/wp/disabling.md)** - How to disable hardware write protection
 
 ### Boot Modes
 - **[Boot Modes Overview](/docs/boot-modes/index.md)** - Understanding ChromeOS boot modes
