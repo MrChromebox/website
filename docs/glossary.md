@@ -30,7 +30,7 @@ Common terms and acronyms used in ChromeOS firmware and the MrChromebox project.
 : The file system used within coreboot firmware images to store payloads, configuration data, and other components.
 
 **CCD (Closed Case Debugging)**
-: A feature of CR50/Ti50 security chips that allows debugging and firmware manipulation without opening the device, using a SuzyQable cable.
+: A Google Security Chip (GSC) feature (CR50/Ti50) that lets you change debug and write-protect controls after opening CCD with `gsctool`. A SuzyQable talks to the GSC/AP/EC consoles; it is not required to open CCD or to disable WP on Ti50.
 
 **coreboot**
 : Open-source firmware project that initializes hardware during boot. All ChromeOS devices (2013+) use coreboot as their firmware base. MrChromebox firmware uses upstream coreboot with (extensive) modifications.
@@ -83,7 +83,7 @@ Common terms and acronyms used in ChromeOS firmware and the MrChromebox project.
 : Generic term for Google's security chips (CR50 or Ti50) that control hardware write protection and provide security features.
 
 **gsctool**
-: Command-line utility for interacting with the Google Security Chip (CR50/Ti50). Used for CCD operations and firmware updates.
+: ChromeOS command-line utility for talking to the Google Security Chip (CR50/Ti50). Used to open CCD (`gsctool -a -o`), query WP (`-w`), and on Ti50 to set `AllowUnverifiedRo` and disable hardware WP. Does not run after UEFI Full ROM is installed.
 
 ## H
 
@@ -153,12 +153,12 @@ Common terms and acronyms used in ChromeOS firmware and the MrChromebox project.
 : The original ChromeOS firmware installed by Google/the manufacturer. Can be restored from a backup or extracted from a recovery image.
 
 **SuzyQable / SuzyQ Cable**
-: A special USB Type-C debugging cable used for Closed Case Debugging (CCD) on CR50/Ti50 devices. Allows firmware manipulation without opening the device.
+: A USB Type-C debug cable that exposes GSC, AP, and EC serial consoles on CR50/Ti50 devices. Used for persistent WP disable (`wp disable atboot`), `ccd reset factory`, and unbricking. Ti50 WP disable from ChromeOS uses `gsctool` and does not require this cable.
 
 ## T
 
 **Ti50**
-: Google Security Chip (GSC) found in ChromeOS devices from 2023 onwards. Successor to CR50 with additional security features including AP RO Verification.
+: Google Security Chip (GSC) on most ChromeOS device families first sold in 2023 or later (Nissa, Skyrim, Brox, Rex, and similar). Successor to CR50. Adds AP RO firmware verification; there is no battery or jumper WP method. Disable WP and RO verification with `gsctool` from ChromeOS, or with a SuzyQable.
 
 **Tianocore**
 : The project name for edk2. Sometimes used interchangeably with edk2.
@@ -182,10 +182,10 @@ Common terms and acronyms used in ChromeOS firmware and the MrChromebox project.
 ## W
 
 **WP (Write Protection)**
-: Security mechanism that prevents modification of firmware regions. Consists of hardware write protection (physical mechanism) and software write protection (flash chip registers). Must be disabled to flash UEFI Full ROM firmware.
+: Prevents modification of firmware regions. Hardware WP is a screw, jumper, battery sense, or the GSC `!WP` pin; software WP is flash-chip registers. Must be disabled to flash UEFI Full ROM firmware. On Ti50 you must also set `AllowUnverifiedRo=always`.
 
 **WP Screw**
-: A screw used on some ChromeOS devices (2013-2017) to enable hardware write protection. Removing it disables hardware WP.
+: A screw used on some ChromeOS devices to assert hardware write protection. Common on 2013–2016 boards (no GSC) and on a few later CR50 boards. Removing it disables hardware WP. Ti50 boards do not use a WP screw.
 
 ## Related Documentation
 
