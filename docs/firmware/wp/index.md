@@ -16,19 +16,28 @@ The hardware write protection is an electrical circuit which prevents writing to
 
 #### HW WP Implementation
 
-*   Early Chromebook models (2012-2013): use a jumper or switch to implement hardware write protection. All models prior to the 2013 Chromebook Pixel fall into this group.
-*   Pre-CR50 models (2014-2017): use a screw to complete the ground; removing it leaves the !WP pin floating, effectively disabled. The 2013 Chromebook Pixel was the first device to use a WP screw; all Haswell, Broadwell, Baytrail, Skylake, and Braswell-based devices do as well.
-*   CR50/Ti50 models (2017+): On all Chromebook models with the CR50 or Ti50 Google Security Chip (GSC) (all Kabylake/Apollolake and newer models), the !WP pin is controlled by the security chip.
+On devices without a Google Security Chip (GSC), a jumper, switch, or screw grounds the `!WP` pin. On CR50 and Ti50, the GSC drives it.
 
-On most early CR50 platforms, the CR50 sets the WP state to follow the battery sense line, so disconnecting the battery cable **from the mainboard** will disable the hardware write protect.
+*   **No GSC (2012–2016):** everything through Skylake/Braswell. The 2013 Chromebook Pixel was the first WP screw; Haswell, Broadwell, Baytrail, Skylake, and Braswell followed.
+*   **CR50 (2017 through most 2022 devices):** Kabylake, Apollolake, and later up through Alder Lake-P. On most early CR50 boards, WP follows the battery sense line, so disconnecting the battery cable **from the mainboard** disables hardware WP. Some later CR50 boards use an unpopulated jumper or a screw instead. You can also change WP from the GSC console with a SuzyQable.
+*   **Ti50 (most 2023+ families):** Nissa, Skyrim, Brox, Rex, and similar. The GSC still drives `!WP`, but there is no battery or jumper WP method. Disable hardware WP with `gsctool` from ChromeOS, or with a SuzyQable. Ti50 also verifies AP firmware at boot; see [Ti50 considerations](#ti50-considerations).
 
-On some newer platforms, WP cannot be disabled by disconnecting the battery; instead there is an unpopulated jumper on the board which must be bridged.
+`gsctool` talks to the GSC from ChromeOS (no cable). That is how you disable WP on Ti50. On CR50 it is used to **open** CCD before a SuzyQable can change WP from the GSC console. A [SuzyQable](/docs/firmware/wp/disabling.md#using-closed-case-debugging-ccd-using-a-suzyqable) is also the way to keep WP off across a GSC reboot, or to factory-open CCD for later unbricking.
 
-On all CR50/Ti50 devices, it is also possible to change the WP state using the [closed-case debugging (CCD)](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_gsc.md) features of the security chip, along with a special USB-C debug cable (called a SuzyQable). See the [CCD section under Disabling FW WP](/docs/firmware/wp/disabling.md#using-closed-case-debugging-ccd-using-a-suzyqable).
+Check the [Supported Devices](/docs/supported-devices.md) WP Method column for your board, then follow [Disabling Firmware Write Protection](/docs/firmware/wp/disabling.md).
 
-::: warning Ti50 DEVICES
-Devices with Ti50 security chips (2023+) have an additional AP RO Firmware Verification feature that must be disabled when flashing custom firmware. See the [Ti50 RO Verification section in Disabling FW WP](/docs/firmware/wp/disabling.md#disable-ap-ro-firmware-verification) for details.
-:::
+## Ti50 considerations
+
+Ti50 is a different chip from CR50, not a second-generation CR50. Besides driving `!WP`, it checks two things every boot:
+
+1. The read-only (RO) portion of the AP firmware
+2. The software write-protect registers (enable bit **and** range)
+
+If either check fails, the AP is held in reset — no boot, no Recovery Mode. Disconnecting the battery does not turn this off.
+
+Before flashing Full ROM (or otherwise changing SW WP) you must set `AllowUnverifiedRo` to `always`, then disable hardware WP. Both are done with `gsctool` from ChromeOS, or from the GSC console on a SuzyQable. Step-by-step is on [Disabling Firmware Write Protection](/docs/firmware/wp/disabling.md#ti50-considerations).
+
+Google's writeup is [Read-only firmware unlock on 2023+ devices](https://www.chromium.org/chromium-os/developer-library/guides/device/ro-firmware-unlock/).
 
 ## Why Disable Firmware Write Protection?
 
@@ -57,3 +66,5 @@ The GBB flags are a construct of the stock ChromeOS device firmware. They do not
 ### Custom Firmware
 
 Flashing custom firmware which completely replaces the stock firmware requires disabling the firmware write protect, since all RO and RW portions of the chip are overwritten.
+
+See [Disabling Firmware Write Protection](/docs/firmware/wp/disabling.md) for the actual procedures.
