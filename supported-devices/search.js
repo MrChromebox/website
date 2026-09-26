@@ -5,7 +5,14 @@
     const searchbox = document.querySelector(".deviceSearch");
     let devices = [];
     try {
-        devices = JSON.parse(await (await fetch("../../devices.json")).text());
+        const res = await fetch("../../devices.json");
+        if (!res.ok) throw new Error("Failed to fetch devices.json");
+        const parsed = JSON.parse(await res.text());
+        const isValid = parsed && typeof parsed === "object" && !Array.isArray(parsed) &&
+            Object.values(parsed).every(gen => gen && Array.isArray(gen.devices) &&
+                gen.devices.every(d => d && Array.isArray(d.device) && typeof d.boardname === "string"));
+        if (!isValid) throw new Error("devices.json failed schema validation");
+        devices = parsed;
     } catch(e) {
         console.warn(e);
         searchbox.parentElement.remove();
