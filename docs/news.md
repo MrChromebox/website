@@ -1,6 +1,64 @@
 # Latest Updates
 
 
+## MrChromebox-2609.0 Release
+
+(2026.09.26)
+
+This is another big one :)
+
+### Highlights 
+
+- coreboot rebased on tag 26.09
+- edk2 rebased on tag edk2-stable202608
+
+### Improvements and Fixes
+
+- New setup options:
+    - Battery charge limit (requires OS to not clobber)
+    - Vivaldi/Fn key toggle
+    - Prevent boot when lid-closed (default on)
+    - Runtime serial console (CR50/Ti50 boards)
+    - BIOS lock (prevent unathorized firmware updates)
+- Improved MIPI camera support for KBL devices
+- Fixed I2C4 Code 10 under Windows on Alderlake boards
+- Fixed eMMC boot failures on Ultima
+- Fixed intermitten eMMC boot failures on Alderlake-N boards
+- Fixed touchscreen init issues on Synaptics 7817 touchscreens
+- Fixed 800MHz CPU lock on StoneyRidge devices
+- Fixed framebuffer compression (FBC) on Geminilake devices
+
+
+### edk2 Payload
+
+- Ability to load a custom bootsplash from the Setup UI, persisted in the ESP
+- UEFI Capsule update support (not yet used for MrChromebox firmware)
+- Fix: Power button on AMD devices
+- New SD/eMMC driver for Baytrail/Braswell/AMD Picasso devices
+- Support for HS400-ES eMMC mode on Intel-based devices
+- Secure Boot DBX updated to 20260707
+
+### ECRW Firmware improvements
+
+- Top-row Fn toggle (Vivaldi <-> F1…Fn)
+- Battery level reporting fixes
+- Added Charge-limit / battery sustainer on more platforms
+- Added Vivaldi keyboard on more platforms (Skylake→Picasso set)
+- EC now goes into low power G3 when system hibernated (S4)
+- Infinite host-sleep timeout default (work around linux EC driver bug)
+- Fan curve / table fixes (slam-to-max, stall, OOB reads)
+- Improved tablet mode switching on Nocturne (via base attach)
+- Fan retune / resume power control on Link
+
+### Fimrware Utility script improvements
+
+- Ti50 AP RO verification: block Full ROM / SW WP until AllowUnverifiedRo=always
+- Secure Boot & BIOS Lock: detect early; stop before hangy flashrom ops
+- PR0/GPR0 SPI locks: refuse writes when ranges overlap BIOS (ignore ME-only)
+- Restore Stock Firmware: reject non-stock images
+- Flashrom: new 2.0.0-devel build (glibc 2.34) + clear early failure if it can’t run
+
+
 ## Script Updates
 
 (2026.07.15)
@@ -32,7 +90,7 @@ A small update with a few tweaks and bug fixes:
 - Fixed pre-OS external display output on Tigerlake (volteer) and Alderlake/Raptorlake-U/P (brya) based boards
 
 
-## MrChromebox-2606.6 Release
+## MrChromebox-2606.0 Release
 
 (2026.07.09)
 
