@@ -1505,7 +1505,8 @@
                 "device": [
                     "HP Chromebook x360 14b-cb0"
                 ],
-                "boardname": "MADOO"
+                "boardname": "MADOO",
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/madoo_wp_jumper.jpg\" class=\"internal\" title=\"madoo_wp_jumper.jpg\" target=\"_blank\">jumper</a>"
             },
             {
                 "device": [
