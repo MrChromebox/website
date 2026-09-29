@@ -905,13 +905,13 @@ As usual, the full list of changes can be found [on my github repos](https://git
 
 (2020.02.23)
 
-RW_LEGACY firmware has been added for the Google Pixel Slate, so masochists who want to run Linux natively whilst dual booting ChromeOS now have that option. As mentioned below but worth repeating: firmware support often preceeds OS support, so users shouldn't expect any additional functionality under Linux compared to any other Kabylake devices (and in the case of NOCTURNE, it's probably worse, due to Linux's poor support for DPCD backlight control).
+RW_LEGACY firmware has been added for the Google Pixel Slate, so masochists who want to run Linux natively whilst dual booting ChromeOS now have that option. As mentioned below but worth repeating: firmware support often precedes OS support, so users shouldn't expect any additional functionality under Linux compared to any other Kabylake devices (and in the case of NOCTURNE, it's probably worse, due to Linux's poor support for DPCD backlight control).
 
 ## UEFI Firmware Added for ATLAS and NOCTURNE
 
 (2020.02.15)
 
-Completing support for Kabylake ChromeOS devices, support has been added for ATLAS (Google Pixelbook Go) and NOCTURNE (Google Pixel Slate). As is often the case, the availablity of custom UEFI firmware preceeds OS support, so users shouldn't expect any additional functionality under Linux compared to any other Kabylake devices (and in the case of NOCTURNE, it's probably worse, due to Linux's poor support for DPCD backlight control).
+Completing support for Kabylake ChromeOS devices, support has been added for ATLAS (Google Pixelbook Go) and NOCTURNE (Google Pixel Slate). As is often the case, the availability of custom UEFI firmware precedes OS support, so users shouldn't expect any additional functionality under Linux compared to any other Kabylake devices (and in the case of NOCTURNE, it's probably worse, due to Linux's poor support for DPCD backlight control).
 
 ## Pixelbook Windows backlight control fixed!
 
@@ -1040,7 +1040,7 @@ The UEFI Full ROM firmware for all devices has been updated and rebuilt, with th
  * updated the CPU microcode on all devices to the latest Intel recommended versions (which includes mitigations for Meltdown/Spectre)
  * added support for the 2018/Kabylake Chromeboxes
  * fixed DisplayPort outputs on Stumpy (Samsung Series 3 Chromebox)
- * fixed cooling fan occassionally stalling on Link (Chromebook Pixel 2013)
+ * fixed cooling fan occasionally stalling on Link (Chromebook Pixel 2013)
  * improved compatibility for Braswell devices with newer (4.13+) Linux kernels
  * script now double verifies Full ROM firmware flashes
  * script now uses the firmware flash chip's built-in write-protect functionality to protect the Full ROM firmware after flashing, which should hopefully significantly reduce any chance of bricking (not yet implemented for Skylake/Kabylake)
@@ -1142,7 +1142,7 @@ The big feature in this release is that we're now able to update not only the ma
  * Resume from suspend via opening the lid is now fixed on all Haswell Chromebooks (Falco, Leon, Peppy, and Wolf)
  * Adjusted the fan speeds on the HP Chromebook 14 G1 (Falco), which was a universal complaint from all owners
 
-While updating the EC firmware is something that's usually fraught with dragons, on Chromebooks it's easy and safe: the EC maintains two copies of the firmware - a read-only (RO) copy and a read-write (RW) copy. When the system boots, the main firmware checks that the version of the EC RW firmware matches what's expected; if there's a mismatch, the RW copy gets updated. Upon successful update, or if no update is needed, the EC is rebooted using the RW firwmare and system boot proceeds as normal. If there's a problem updating, then the EC uses the RO firmware and an update attempt is made again on the next reboot. All of this is completely transparent to the end user, and adds less than 0.1s to the boot time.
+While updating the EC firmware is something that's usually fraught with dragons, on Chromebooks it's easy and safe: the EC maintains two copies of the firmware - a read-only (RO) copy and a read-write (RW) copy. When the system boots, the main firmware checks that the version of the EC RW firmware matches what's expected; if there's a mismatch, the RW copy gets updated. Upon successful update, or if no update is needed, the EC is rebooted using the RW firmware and system boot proceeds as normal. If there's a problem updating, then the EC uses the RO firmware and an update attempt is made again on the next reboot. All of this is completely transparent to the end user, and adds less than 0.1s to the boot time.
 
 These EC firmware updates are included for all Haswell, Broadwell, and Baytrail Chromebooks running the UEFI Full ROM firmware. Older SandyBridge/IvyBridge devices don't use Google's ChromeEC, so can't be updated. Chromeboxes don't use an EC, so this doesn't apply to them.
 
