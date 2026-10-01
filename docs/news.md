@@ -1,6 +1,45 @@
 # Latest Updates
 
 
+## MrChromebox-2609.1 Release
+
+(2026.10.01)
+
+A handful of fixes/enhancements addressing issues found in the 2609.0 release.
+
+### coreboot Improvements and Fixes
+
+- Fixed EC Interrupts
+    - caused incomplete lid close status under Linux; internal panel stayed on when lid closed
+- Fixed non-working I2C-HID touchpads due to invalid ACPI CID 
+- Added support for devices with ChargeControl v3 (nissa)
+- Expanded ranges for charge control limits in setup menu
+- Updated VBTs for Baytrail devices, eliminating the need to use VBIOS display init. All BYT
+  devices will now get edk2 display init at native screen resolution
+- Fixed function keys under Linux when Vivaldi disabled in setup menu
+
+### edk2 Payload
+
+- Fixed setup-initiated resets which caused TPM operations to fail
+- Improved documentation on custom boot logo use, including how to create
+
+### ECRW Firmware improvements
+
+- Battery charge limits now act as start/stop thresholds: charging holds at the max on AC instead of draining to the min
+- Fixed charge limits being ignored on Nocturne and Rammus
+
+### Fimrware Utility script improvements
+
+- Fixed/improved SecureBoot detection
+- Only reset CR50 NVRAM when restoring stock firmware if current NVRAM invalid
+- Flashrom: new 2.0.0-devel build supporting additional flash chips
+
+### RW_LEGACY Payload updates
+
+- edk2 RW_LEGACY payloads were rebuilt using all of the fixes in the 2606/2609 releases, including
+  the shiny new LVGL-based GUI. For all platforms Skylake and newer.
+
+
 ## MrChromebox-2609.0 Release
 
 (2026.09.26)
