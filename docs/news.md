@@ -28,7 +28,7 @@ A handful of fixes/enhancements addressing issues found in the 2609.0 release.
 - Battery charge limits now act as start/stop thresholds: charging holds at the max on AC instead of draining to the min
 - Fixed charge limits being ignored on Nocturne and Rammus
 
-### Fimrware Utility script improvements
+### Firmware Utility script improvements
 
 - Fixed/improved SecureBoot detection
 - Only reset CR50 NVRAM when restoring stock firmware if current NVRAM invalid
@@ -89,7 +89,7 @@ This is another big one :)
 - Improved tablet mode switching on Nocturne (via base attach)
 - Fan retune / resume power control on Link
 
-### Fimrware Utility script improvements
+### Firmware Utility script improvements
 
 - Ti50 AP RO verification: block Full ROM / SW WP until AllowUnverifiedRo=always
 - Secure Boot & BIOS Lock: detect early; stop before hangy flashrom ops
