@@ -1777,6 +1777,12 @@
             },
             {
                 "device": [
+                    "ASUS Chromebox 6a"
+                ],
+                "boardname": "KULNEX"
+            },
+            {
+                "device": [
                     "AOPEN Chromebox 4",
                     "Centerm Chromebox D661",
                     "CTL Chromebox CBx3",
@@ -1815,6 +1821,13 @@
                     "Acer Chromebox CXI6"
                 ],
                 "boardname": "MOXIE"
+            },
+            {
+                "device": [
+                    "Acer Chromebox CX7",
+                    "AOPEN Chromebox Commercial 5"
+                ],
+                "boardname": "MOXOE"
             },
             {
                 "device": [
@@ -1946,6 +1959,12 @@
                     "Acer Chromebook 511 (C736, C736T, C736L, C736LT)"
                 ],
                 "boardname": "CRAASKVIN"
+            },
+            {
+                "device": [
+                    "Acer Chromebook Spin 311 [ROA733T/ROA733TN]"
+                ],
+                "boardname": "CRAASKYU2"
             },
             {
                 "device": [
@@ -2199,6 +2218,12 @@
             },
             {
                 "device": [
+                    "Acer Chromebook 315(CB315-7H/7HT)"
+                ],
+                "boardname": "RUKEN"
+            },
+            {
+                "device": [
                     "Acer Chromebook 514 C937"
                 ],
                 "boardname": "RULL"
@@ -2235,9 +2260,21 @@
             },
             {
                 "device": [
+                    "ASUS Chromebook CX15 [N50]"
+                ],
+                "boardname": "TELITHN50"
+            },
+            {
+                "device": [
                     "ASUS Chromebook CX14 (CX1405CTA)"
                 ],
                 "boardname": "TELTIC"
+            },
+            {
+                "device": [
+                    "ASUS Chromebook CX14 [N50]"
+                ],
+                "boardname": "TELTICN50"
             },
             {
                 "device": [
