@@ -1,6 +1,31 @@
 # Latest Updates
 
 
+## MrChromebox-2609.2 Release
+
+(2026.10.15)
+
+Fixes and display-init changes since the 2609.1 release.
+
+### coreboot Improvements and Fixes
+
+- Switched Baytrail, Braswell, Haswell, Broadwell, and the remaining Kabylake/Comet Lake devices to libgfxinit display init
+- Fixed missing lid, AC, and battery events on Coral devices whose EC advertises unified wake masks but does not support the host event command
+- Power-on-after-fail from the setup menu is now correctly applied on Fizz-based Chromeboxes
+- Added support for kulnex (ASUS Chromebox 6a) and moxoe (Acer Chromebox CX7)
+
+### edk2 Payload
+
+- Fixed writing a Secure Boot key from Linux, which faulted in runtime free and disabled EFI runtime services
+- Bootloaders and option ROMs without NX_COMPAT now enter compatibility mode, so they can run with memory protections enabled
+- Factory Secure Boot enrollment keeps the full Microsoft DBX and appends the newer signed update, so older revocations are retained
+- Fixed writing to EFI variables on first boot after flashing or clearing NVRAM
+
+### ECRW Firmware improvements
+
+- Fizz: fixed previous power-state detection, so power-on-after-fail sees the right state
+
+
 ## MrChromebox-2609.1 Release
 
 (2026.10.01)
