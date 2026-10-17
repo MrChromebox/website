@@ -17,6 +17,15 @@
     "node": ">=22.18.0"
   },
   "overrides": {
+    "@vue/compiler-core": "3.5.39",
+    "@vue/compiler-dom": "3.5.39",
+    "@vue/compiler-sfc": "3.5.39",
+    "@vue/compiler-ssr": "3.5.39",
+    "@vue/reactivity": "3.5.39",
+    "@vue/runtime-core": "3.5.39",
+    "@vue/runtime-dom": "3.5.39",
+    "@vue/server-renderer": "3.5.39",
+    "@vue/shared": "3.5.39",
     "esbuild": "0.28.1",
     "gray-matter": "github:erikzaadi/gray-matter#ba2bc22b06834a2878d55b75312d20e9f39448e8",
     "http-proxy-middleware": "3.0.7",
@@ -35,7 +44,7 @@
     "@vuepress/theme-default": "2.0.0-rc.130",
     "sass-embedded": "^1.98.0",
     "sass-loader": "^16.0.8",
-    "vue": "^3.5.43",
+    "vue": "3.5.39",
     "vuepress": "2.0.0-rc.30"
   }
 }
