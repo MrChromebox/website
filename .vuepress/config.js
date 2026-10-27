@@ -14,7 +14,10 @@ const base = "/";
 
 export default defineUserConfig ({
   bundler: webpackBundler({
-    configureWebpack: (config) => {
+    // Vue 3.5.40+ makes @vue/server-renderer import @vue/runtime-dom directly.
+    // VuePress only externalizes `vue`, so the server bundle can inline a second
+    // @vue/runtime-dom and crash on useTemplateRef. Externalize @vue/* too.
+    configureWebpack: (config, isServer) => {
       config.devtool = 'source-map';
       config.optimization = {
         usedExports: true,
@@ -23,6 +26,13 @@ export default defineUserConfig ({
       config.performance = {
         maxAssetSize: 400000,
         maxEntrypointSize: 400000
+      }
+      if (isServer) {
+        const existing = config.externals
+        config.externals = [
+          ...(Array.isArray(existing) ? existing : existing ? [existing] : []),
+          /^@vue\//,
+        ]
       }
     },
   }),
