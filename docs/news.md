@@ -1,6 +1,13 @@
 # Latest Updates
 
 
+## RW_LEGACY support for Cometlake Chromebooks Added
+
+(2026.10.28)
+
+Hatch-based Cometlake Chromebooks previously lacked functional RW_LEGACY / Legacy Boot Mode due to a config in Google's stock firmware that broke edk2. That limitation has been worked around, so RW_LEGACY is now available for all Cometlake Chromebooks (Chromeboxes already had support). Install or update via the Firmware Utility Script as usual — write-protect does not need to be disabled.
+
+
 ## MrChromebox-2609.3 Release
 
 (2026.10.27)

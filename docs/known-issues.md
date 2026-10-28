@@ -36,7 +36,6 @@ RW_LEGACY firmware has inherent limitations compared to UEFI Full ROM:
 
 **Device-Specific:**
 - **GeminiLake**: Legacy Boot Mode/Alternative Firmware menu works but does not show payload list. Boot device selection is non-functional.
-- **CometLake**:  Chromebooks do not currently have functional Legacy Boot Mode due to bugs in Google's stock firmware.
 
 **Workaround**: For the best experience with alternate OSes, use UEFI Full ROM firmware instead of RW_LEGACY.
 

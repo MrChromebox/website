@@ -1032,7 +1032,7 @@
     },
     "Intel Cometlake": {
         "default_wpmethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ, battery)</a>",
-        "default_rwLegacy": false,
+        "default_rwLegacy": true,
         "default_fullrom": true,
         "devices": [
             {
@@ -1047,7 +1047,6 @@
                     "CTL Meet Compute System (Intel 10th Gen)"
                 ],
                 "boardname": "AMBASSADOR",
-                "rwLegacy": true,
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/ambassador_wp_screw.jpg\" class=\"internal\" title=\"ambassador_wp_screw.jpg\" target=\"_blank\">screw (insert)</a>"
             },
             {
@@ -1055,7 +1054,6 @@
                     "HP Chromebase 21.5\""
                 ],
                 "boardname": "DOOLY",
-                "rwLegacy": true,
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, jumper"
             },
             {
@@ -1068,15 +1066,13 @@
                 "device": [
                     "Dell Latitude 7410 Chromebook Enterprise"
                 ],
-                "boardname": "DRALLION",
-                "rwLegacy": true
+                "boardname": "DRALLION"
             },
             {
                 "device": [
                     "Dell Latitude 7410 2-in-1 Chromebook Enterprise"
                 ],
-                "boardname": "DRALLION360",
-                "rwLegacy": true
+                "boardname": "DRALLION360"
             },
             {
                 "device": [
@@ -1089,7 +1085,6 @@
                     "Asus Chromebox 4"
                 ],
                 "boardname": "DUFFY",
-                "rwLegacy": true,
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Duffy_wp_jumper.png\" class=\"internal\" title=\"Duffy wp jumper.png\" target=\"_blank\">jumper</a>"
             },
             {
@@ -1097,7 +1092,6 @@
                     "Asus Fanless Chromebox"
                 ],
                 "boardname": "FAFFY",
-                "rwLegacy": true,
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, jumper"
             },
             {
@@ -1105,7 +1099,6 @@
                     "Google Meet Series One (Intel 10th Gen)"
                 ],
                 "boardname": "GENESIS",
-                "rwLegacy": true,
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, jumper"
             },
             {
@@ -1126,7 +1119,6 @@
                     "Acer Chromebox CXI4"
                 ],
                 "boardname": "KAISA",
-                "rwLegacy": true,
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Kaisa_wp.jpg\" class=\"internal\" title=\"Kaisa_wp.jpg\" target=\"_blank\">jumper</a>"
             },
             {
@@ -1152,7 +1144,6 @@
                     "Avocor Series One Board 65"
                 ],
                 "boardname": "MOONBUGGY",
-                "rwLegacy": true,
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, jumper"
             },
             {
@@ -1166,7 +1157,6 @@
                     "HP Chromebox G3"
                 ],
                 "boardname": "NOIBAT",
-                "rwLegacy": true,
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Noibat_wp.png\" class=\"internal\" title=\"Noibat wp.png\" target=\"_blank\">jumper</a>"
             },
             {
@@ -1174,7 +1164,6 @@
                     "Avocor Series One Desk 27"
                 ],
                 "boardname": "SCOUT",
-                "rwLegacy": true,
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, jumper"
             },
             {
@@ -1185,7 +1174,6 @@
                     "Wyvern MobLab"
                 ],
                 "boardname": "WYVERN",
-                "rwLegacy": true,
                 "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Wyvern_WP_jumper.png\" class=\"internal\" title=\"Wyvern WP jumper.png\" target=\"_blank\">jumper</a>"
             }
         ]
