@@ -1,6 +1,38 @@
 # Latest Updates
 
 
+## MrChromebox-2609.3 Release
+
+(2026.10.27)
+
+Fixes since the 2609.2 release.
+
+### coreboot Improvements and Fixes
+
+- Reverted Hatch and Drallion CometLake Chroembooks to use FSP GOP for display init
+- Fixed ME enable/disable corrupting the ME region by resetting while the CSE was still writing it
+- Fixed a Windows resource conflict on Braswell (cyan) between the DPTF processor device and the SD card reader
+- rex: added default GMA backlight methods, fixes ACPI error under Linux, Windows backlight control
+- screebo: keep the SD card reader's clock running in RTD3, fixing long s2idle resumes
+- stumpy: re-enabled PCIe root port 3 (mini PCIe slot)
+
+### libgfxinit
+
+- Fixed display init issues on some Haswell and Broadwell devices (Falco)
+- Fixed Windows driver black screen issues on Baytrail devices
+
+### edk2 Payload
+
+- New feature: automatic fallthru on failed boot devices; boot continues to the next BootOrder entry when a device is missing (on by default).
+  - A manual menu selection, hotkey, or BootNext still shows the failure prompt
+- Fixed "Entering Setup..." being drawn after the timeout prompt was cleared
+
+### ECRW Firmware improvements
+
+- cave (ASUS Chromebook Flip C302SA) and lars (Acer Chromebook 14 for Work): fixed keyboard backlight PWM init
+- Added ECRW updates for kanix (Acer Chromebook Plus 714), karis (Acer Chromebook Plus Spin 714), and screebo (ASUS ExpertBook CX54 Chromebook Plus)
+
+
 ## MrChromebox-2609.2 Release
 
 (2026.10.15)
