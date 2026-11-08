@@ -1396,7 +1396,7 @@
                     "HP Fortis 14 G10 Chromebook"
                 ],
                 "boardname": "DRAWPER",
-                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Drawman_wp.jpg\" class=\"internal\" title=\"Drawman wp.jpg\" target=\"_blank\">jumper</a>"
+                "wpMethod": "<a href=\"https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html\" title=\"Firmware Write Protect\">CR50 (SuzyQ)</a>, <a href=\"/images/wp/Drawper_wp.png\" class=\"internal\" title=\"Drawper wp.png\" target=\"_blank\">jumper</a>"
             },
             {
                 "device": [
